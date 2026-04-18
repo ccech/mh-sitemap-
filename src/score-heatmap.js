@@ -109,9 +109,48 @@ function main() {
     const tierScores = { 0: 10, 1: 7, 2: 4, 3: 2 };
     const entryFrequency = tierScores[page.navTier] || 1;
 
-    // 4. Drop-off risk: higher if page is in many paths for priority-1 stories
-    const highPriorityLinks = linked.filter(s => s.priority === 1).length;
-    const dropOffRisk = Math.min(10, highPriorityLinks * 3);
+    // 4. Drop-off risk — three independent signals:
+    //    a) Bottleneck: how many distinct P1 paths depend on this page (more = higher stakes)
+    //    b) Funnel depth: pages in the middle of a flow have highest abandonment risk
+    //       (parabola: 0 at entry and conversion ends, peaks at midpoint)
+    //    c) Known gap: any P1 story routing here already has a content gap note
+
+    // Collect all P1 flow paths that include this page
+    const p1Paths = [];
+    for (const flow of flows.flows) {
+      for (const p of flow.paths) {
+        if (p.priority !== 1) continue;
+        const idx = p.path.findIndex(pg => pg.id === page.id);
+        if (idx >= 0) p1Paths.push({ pathLen: p.path.length, pageIdx: idx });
+      }
+    }
+
+    // a) Bottleneck: 2 P1 paths → 4pts, 5+ P1 paths → 10pts
+    const bottleneckScore = Math.min(10, p1Paths.length * 2);
+
+    // b) Funnel depth: parabola 4·r·(1−r) — 0 at r=0 (entry) and r=1 (conversion), 1 at r=0.5
+    let depthScore = 0;
+    if (p1Paths.length > 0) {
+      const avgRisk = p1Paths.reduce((sum, { pathLen, pageIdx }) => {
+        if (pathLen <= 1) return sum;
+        const r = pageIdx / (pathLen - 1);
+        return sum + 4 * r * (1 - r);
+      }, 0) / p1Paths.length;
+      depthScore = Math.round(avgRisk * 10);
+    }
+
+    // c) Known gap: any P1 story routing through this page has a contentGapNote
+    const hasKnownGap = linked.some(l => {
+      if (l.priority !== 1) return false;
+      const story = (stories.userStories || []).find(s => s.id === l.storyId);
+      return story && story.contentGapNote;
+    });
+    const gapScore = hasKnownGap ? 10 : 0;
+
+    // Weighted composite: bottleneck + depth weighted equally, gap acts as a flag
+    const dropOffRisk = Math.min(10, Math.round(
+      (bottleneckScore * 0.4 + depthScore * 0.4 + gapScore * 0.2) * 10
+    ) / 10);
 
     // 5. Audience overlap: 10 if serves both personas, 5 if serves one, 0 if none
     const audienceOverlap = personasReached.size >= 2 ? 10 : personasReached.size === 1 ? 5 : 0;
