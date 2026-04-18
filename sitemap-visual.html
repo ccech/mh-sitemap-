@@ -364,6 +364,28 @@
       letter-spacing: 0.2px;
     }
 
+    /* ── CLUSTER CTA CHIPS ── */
+    .cluster-cta-chip {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #92400e;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-family: inherit;
+      text-align: left;
+      line-height: 1.3;
+      cursor: pointer;
+      transition: background 0.1s, border-color 0.1s;
+    }
+    .cluster-cta-chip:hover { background: #ffedd5; border-color: #f97316; }
+    .cluster-cta-chip-dest { font-size: 11px; color: #c2763b; font-weight: 700; display: block; }
+    .cluster-cta-chip-label { color: #78350f; font-weight: 400; display: block; }
+
     /* ── CROSS-LINK CHIPS (in expanded panel) ── */
     .cross-link-chip {
       cursor: pointer;
@@ -687,6 +709,23 @@
           </button>`).join('')}
       </div>` : '';
 
+    // Above-footer content cluster CTAs
+    const ctaPairs = page.contentClusterCTAs || [];
+    const clusterCTARow = ctaPairs.length ? `
+      <div class="detail-section-label" style="color:#92400e;margin-top:10px;border-top:1px solid #fed7aa;padding-top:8px;">Above-footer CTAs</div>
+      <div class="detail-tags" style="flex-direction:column;">
+        ${ctaPairs.map((ct, i) => {
+          const dest = (SITEMAP.pages || []).find(p => p.id === ct.toId);
+          const destName = dest ? dest.name : ct.toId;
+          return `<button class="cluster-cta-chip" onclick="jumpToPage('${ct.toId}')">
+            <span>
+              <span class="cluster-cta-chip-dest">CTA ${i + 1} → ${destName}</span>
+              <span class="cluster-cta-chip-label">${ct.label}</span>
+            </span>
+          </button>`;
+        }).join('')}
+      </div>` : '';
+
     return `
       <div class="node-detail" id="detail-${page.id}">
         <div class="detail-purpose">${pc.purpose}</div>
@@ -696,6 +735,7 @@
         ${tone}
         ${crossLinksRow}
         ${inboundRow}
+        ${clusterCTARow}
       </div>`;
   }
 

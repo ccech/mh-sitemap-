@@ -49,6 +49,16 @@
           "toId": "members",
           "context": "Member / employee routing path"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "See client outcomes"
+        },
+        {
+          "toId": "care-every-challenge",
+          "label": "Explore care for every challenge"
+        }
       ]
     },
     {
@@ -250,6 +260,16 @@
           "toId": "res-mh-workplace",
           "context": "Employee communication toolkits for your rollout"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "See how companies like yours measure up"
+        },
+        {
+          "toId": "res-mh-workplace",
+          "label": "Employee communication and launch toolkits"
+        }
       ]
     },
     {
@@ -292,6 +312,16 @@
           "toId": "economic-roi",
           "context": "ROI benchmarks to support the business case"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Shareable client case studies for your prospects"
+        },
+        {
+          "toId": "clinical-research",
+          "label": "Peer-reviewed clinical evidence"
+        }
       ]
     },
     {
@@ -329,6 +359,16 @@
           "toId": "clinical-outcomes",
           "context": "Clinical quality evidence for partner due diligence"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "Clinical quality evidence for partner due diligence"
+        },
+        {
+          "toId": "case-studies",
+          "label": "Enterprise client outcomes at scale"
+        }
       ]
     },
     {
@@ -352,7 +392,17 @@
           "Connect with Partnerships Team"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Client outcomes to share with partners"
+        },
+        {
+          "toId": "webinars",
+          "label": "Educational content for your clients"
+        }
+      ]
     },
     {
       "id": "members",
@@ -389,6 +439,16 @@
           "toId": "nav-member-login",
           "context": "Already have an account? Log in here"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "care-every-challenge",
+          "label": "Find support for your situation"
+        },
+        {
+          "toId": "blog",
+          "label": "Stories and perspectives"
+        }
       ]
     },
     {
@@ -416,6 +476,16 @@
         {
           "toId": "economic-roi",
           "context": "Model the full financial ROI case alongside pricing"
+        }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "See what peer companies invested and gained"
+        },
+        {
+          "toId": "res-mh-workplace",
+          "label": "Business case and communication resources"
         }
       ]
     },
@@ -454,6 +524,16 @@
           "toId": "health-plans",
           "context": "Enterprise and health plan partnership overview"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "Published evidence behind our network quality"
+        },
+        {
+          "toId": "webinars",
+          "label": "Learn more about our care model"
+        }
       ]
     },
     {
@@ -478,7 +558,17 @@
           "Request a Demo"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "How global enterprises use Modern Health"
+        },
+        {
+          "toId": "clinical-research",
+          "label": "Global outcomes data"
+        }
+      ]
     },
     {
       "id": "mh-by-your-side",
@@ -511,6 +601,16 @@
         {
           "toId": "employers",
           "context": "Back to the full employer overview"
+        }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "res-mh-workplace",
+          "label": "Download launch and communication toolkits"
+        },
+        {
+          "toId": "webinars",
+          "label": "Implementation and adoption webinars"
         }
       ]
     },
@@ -556,6 +656,16 @@
           "toId": "provider-inquiry",
           "context": "Clinicians: interested in joining our network?"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "Published research behind our clinical model"
+        },
+        {
+          "toId": "case-studies",
+          "label": "See these outcomes in enterprise practice"
+        }
       ]
     },
     {
@@ -590,6 +700,16 @@
           "toId": "members",
           "context": "Get started — activate your benefit"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "blog",
+          "label": "Workplace mental health perspectives"
+        },
+        {
+          "toId": "webinars",
+          "label": "Live and on-demand support sessions"
+        }
       ]
     },
     {
@@ -614,7 +734,17 @@
           "Activate Benefit / Log In"
         ],
         "toneNote": "Highly empathetic and first-person. Never clinical or diagnostic. Validates the human experience."
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "blog",
+          "label": "More perspectives on this topic"
+        },
+        {
+          "toId": "webinars",
+          "label": "Live support and community sessions"
+        }
+      ]
     },
     {
       "id": "responsible-ai",
@@ -636,7 +766,17 @@
         ],
         "conversionActions": [],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "Our clinical evidence and governance standards"
+        },
+        {
+          "toId": "case-studies",
+          "label": "How enterprise clients trust our platform"
+        }
+      ]
     },
     {
       "id": "care-modalities",
@@ -661,7 +801,17 @@
           "Activate Benefit / Log In"
         ],
         "toneNote": "Jargon-free. Emphasize variety and accessibility — there is something for everyone regardless of need severity."
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "care-every-challenge",
+          "label": "Find support for your specific challenge"
+        },
+        {
+          "toId": "webinars",
+          "label": "See care modalities in action"
+        }
+      ]
     },
     {
       "id": "pathways",
@@ -683,7 +833,17 @@
           "Activate Benefit / Log In"
         ],
         "toneNote": "Reassuring and clear. Reduce anxiety about the unknown first steps."
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "care-every-challenge",
+          "label": "Browse all support topics"
+        },
+        {
+          "toId": "blog",
+          "label": "Member stories and resources"
+        }
+      ]
     },
     {
       "id": "circles-marketing",
@@ -706,7 +866,17 @@
           "Activate Benefit / Log In"
         ],
         "toneNote": "Warm, peer-focused, community-oriented. Emphasize belonging, not clinical treatment."
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "care-every-challenge",
+          "label": "Find support beyond community sessions"
+        },
+        {
+          "toId": "blog",
+          "label": "Stories about connection and community"
+        }
+      ]
     },
     {
       "id": "circles-product",
@@ -728,7 +898,17 @@
           "Activate Benefit / Log In"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "care-every-challenge",
+          "label": "Explore other care options"
+        },
+        {
+          "toId": "webinars",
+          "label": "Join a live support session"
+        }
+      ]
     },
     {
       "id": "case-studies",
@@ -763,6 +943,16 @@
           "toId": "res-case-study",
           "context": "Download PDF versions to share with leadership"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "The clinical evidence behind these results"
+        },
+        {
+          "toId": "res-mh-workplace",
+          "label": "Business case and ROI resources"
+        }
       ]
     },
     {
@@ -787,7 +977,17 @@
           "Request a Demo"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "Clinical evidence behind these results"
+        },
+        {
+          "toId": "webinars",
+          "label": "Hear directly from our clinical team"
+        }
+      ]
     },
     {
       "id": "economic-roi",
@@ -824,6 +1024,16 @@
         {
           "toId": "clinical-outcomes",
           "context": "See the clinical results that drive the financial impact"
+        }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "See how peer companies measured their return"
+        },
+        {
+          "toId": "res-mh-workplace",
+          "label": "Business case resources and toolkits"
         }
       ]
     },
@@ -873,6 +1083,16 @@
           "toId": "adaptive-care",
           "context": "Understand the care model behind the results"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "Published research behind these outcomes"
+        },
+        {
+          "toId": "webinars",
+          "label": "Clinical outcomes webinars"
+        }
       ]
     },
     {
@@ -896,7 +1116,17 @@
           "Download Research Report"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "See research outcomes in enterprise practice"
+        },
+        {
+          "toId": "webinars",
+          "label": "Research and clinical discussion webinars"
+        }
+      ]
     },
     {
       "id": "clinical-research-dp",
@@ -918,7 +1148,17 @@
         ],
         "conversionActions": [],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Enterprise outcomes that apply this research"
+        },
+        {
+          "toId": "webinars",
+          "label": "Research and clinical webinars"
+        }
+      ]
     },
     {
       "id": "events",
@@ -943,7 +1183,17 @@
           "Request a Demo"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "webinars",
+          "label": "Can't make it? Watch on-demand"
+        },
+        {
+          "toId": "case-studies",
+          "label": "Resources to share after the event"
+        }
+      ]
     },
     {
       "id": "events-detail",
@@ -968,7 +1218,17 @@
           "Watch Recording"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "webinars",
+          "label": "More on-demand sessions"
+        },
+        {
+          "toId": "clinical-research",
+          "label": "Supporting research and evidence"
+        }
+      ]
     },
     {
       "id": "blog",
@@ -989,7 +1249,17 @@
         ],
         "conversionActions": [],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Client outcomes and proof points"
+        },
+        {
+          "toId": "webinars",
+          "label": "On-demand educational sessions"
+        }
+      ]
     },
     {
       "id": "blog-pages",
@@ -1014,7 +1284,17 @@
           "Explore Resources"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "See client outcomes"
+        },
+        {
+          "toId": "webinars",
+          "label": "Related educational sessions"
+        }
+      ]
     },
     {
       "id": "resources",
@@ -1060,6 +1340,16 @@
           "toId": "webinars",
           "context": "On-demand and upcoming webinars"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "webinars",
+          "label": "Browse all on-demand webinars"
+        },
+        {
+          "toId": "case-studies",
+          "label": "Browse all client case studies"
+        }
       ]
     },
     {
@@ -1083,7 +1373,17 @@
           "Download Research Report"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Enterprise outcomes that apply this research"
+        },
+        {
+          "toId": "webinars",
+          "label": "Clinical discussion webinars"
+        }
+      ]
     },
     {
       "id": "res-clinical-res-dp",
@@ -1106,7 +1406,17 @@
           "Download Research Paper"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Enterprise outcomes in practice"
+        },
+        {
+          "toId": "webinars",
+          "label": "Related clinical webinars"
+        }
+      ]
     },
     {
       "id": "res-care-challenge",
@@ -1129,7 +1439,17 @@
           "Download Guide"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "blog",
+          "label": "Member perspectives and stories"
+        },
+        {
+          "toId": "webinars",
+          "label": "Live and on-demand support sessions"
+        }
+      ]
     },
     {
       "id": "res-care-challenge-dp",
@@ -1153,7 +1473,17 @@
           "Download Guide"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "blog",
+          "label": "More on this topic"
+        },
+        {
+          "toId": "webinars",
+          "label": "Live support and community sessions"
+        }
+      ]
     },
     {
       "id": "res-mh-workplace",
@@ -1176,7 +1506,17 @@
           "Download Toolkit"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "See what other companies have achieved"
+        },
+        {
+          "toId": "webinars",
+          "label": "HR and benefits-focused webinars"
+        }
+      ]
     },
     {
       "id": "res-mh-workplace-dp",
@@ -1198,7 +1538,17 @@
           "Download Toolkit"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Company outcomes from similar programs"
+        },
+        {
+          "toId": "webinars",
+          "label": "HR-focused on-demand sessions"
+        }
+      ]
     },
     {
       "id": "res-case-study",
@@ -1221,7 +1571,17 @@
           "Download Case Study"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "Clinical evidence behind these outcomes"
+        },
+        {
+          "toId": "webinars",
+          "label": "Educational content to share with clients"
+        }
+      ]
     },
     {
       "id": "res-case-study-dp",
@@ -1245,7 +1605,17 @@
           "Download Case Study"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "The clinical evidence behind these results"
+        },
+        {
+          "toId": "webinars",
+          "label": "Shareable educational sessions"
+        }
+      ]
     },
     {
       "id": "res-blog",
@@ -1265,7 +1635,17 @@
         ],
         "conversionActions": [],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Client outcomes and proof"
+        },
+        {
+          "toId": "webinars",
+          "label": "On-demand educational sessions"
+        }
+      ]
     },
     {
       "id": "webinars",
@@ -1291,7 +1671,17 @@
           "Watch On-Demand"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Client proof and outcomes"
+        },
+        {
+          "toId": "clinical-research",
+          "label": "Research referenced in our sessions"
+        }
+      ]
     },
     {
       "id": "about-us",
@@ -1312,7 +1702,17 @@
         ],
         "conversionActions": [],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Client outcomes and trust signals"
+        },
+        {
+          "toId": "clinical-research",
+          "label": "Our clinical credibility and published research"
+        }
+      ]
     },
     {
       "id": "press",
@@ -1333,7 +1733,17 @@
         ],
         "conversionActions": [],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "case-studies",
+          "label": "Client outcomes beyond press coverage"
+        },
+        {
+          "toId": "clinical-research",
+          "label": "Published clinical research"
+        }
+      ]
     },
     {
       "id": "work-with-us",
@@ -1356,7 +1766,17 @@
           "Apply for Job"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "Our clinical model and research base"
+        },
+        {
+          "toId": "webinars",
+          "label": "Learn about our care approach"
+        }
+      ]
     },
     {
       "id": "job-posting",
@@ -1376,7 +1796,17 @@
           "Apply Now"
         ],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "blog",
+          "label": "Life at Modern Health"
+        },
+        {
+          "toId": "clinical-research",
+          "label": "Our clinical mission and evidence"
+        }
+      ]
     },
     {
       "id": "provider-inquiry",
@@ -1409,6 +1839,16 @@
           "toId": "global-care-network",
           "context": "See the global network you would be joining"
         }
+      ],
+      "contentClusterCTAs": [
+        {
+          "toId": "clinical-research",
+          "label": "The clinical model you would be delivering"
+        },
+        {
+          "toId": "webinars",
+          "label": "Learn about our care approach"
+        }
       ]
     },
     {
@@ -1431,7 +1871,17 @@
         ],
         "conversionActions": [],
         "toneNote": null
-      }
+      },
+      "contentClusterCTAs": [
+        {
+          "toId": "blog",
+          "label": "Perspectives on inclusive workplace wellbeing"
+        },
+        {
+          "toId": "case-studies",
+          "label": "How enterprises build inclusive benefits programs"
+        }
+      ]
     }
   ]
 }
