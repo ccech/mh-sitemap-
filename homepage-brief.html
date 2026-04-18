@@ -10,6 +10,15 @@
       display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
       margin-bottom: 32px;
     }
+    @media (max-width: 900px) {
+      .phase-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .phase-grid { grid-template-columns: repeat(2, 1fr); }
+      .above-fold-item { flex-wrap: wrap; gap: 10px; }
+      .fold-score { margin-left: 0; }
+      .excluded-reason { display: none; }
+    }
     .phase-item {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 12px; text-align: center;

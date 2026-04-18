@@ -130,6 +130,15 @@
       gap: 24px;
       align-items: start;
     }
+    @media (max-width: 900px) {
+      .story-layout { grid-template-columns: 1fr; }
+      .persona-selector { padding: 12px 16px; }
+      .story-selector { padding: 0 16px; }
+    }
+    @media (max-width: 600px) {
+      .story-tab { padding: 10px 12px; font-size: 12px; max-width: 220px; }
+      .story-tab-title { font-size: 12px; }
+    }
 
     /* ─── FLOW DIAGRAM (LEFT) ─────────────────────────────────────────────── */
     .flow-diagram {
