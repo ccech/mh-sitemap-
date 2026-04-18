@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage Brief — MH Sitemap</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .phase-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+      margin-bottom: 32px;
+    }
+    .phase-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 12px; text-align: center;
+    }
+    .phase-num { font-size: 11px; font-weight: 700; color: var(--brand); margin-bottom: 4px; }
+    .phase-name { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .phase-output { font-size: 11px; color: var(--text-muted); }
+    .phase-item.done { border-color: #bbf7d0; background: #f0fdf4; }
+    .phase-item.done .phase-num { color: #16a34a; }
+    .phase-item.active { border-color: #93c5fd; background: var(--brand-light); }
+    .phase-item.active .phase-num { color: var(--brand); }
+    .phase-item.pending { opacity: 0.5; }
+
+    .above-fold-item {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 18px; margin-bottom: 10px;
+    }
+    .fold-rank {
+      width: 28px; height: 28px; border-radius: 99px;
+      background: var(--brand); color: white;
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .fold-info { flex: 1; }
+    .fold-name { font-size: 14px; font-weight: 600; color: var(--text); }
+    .fold-url  { font-size: 12px; color: var(--text-faint); }
+    .fold-rationale { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+    .fold-score { font-size: 22px; font-weight: 700; }
+    .fold-score.high   { color: var(--heat-high); }
+    .fold-score.medium { color: var(--heat-med); }
+
+    .excluded-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px; border-radius: var(--radius-sm);
+      background: #f8f9fb; border: 1px solid var(--border); margin-bottom: 6px;
+    }
+    .excluded-score { font-size: 13px; font-weight: 700; color: var(--text-faint); width: 28px; }
+    .excluded-name { font-size: 13px; color: var(--text-2); font-weight: 500; }
+    .excluded-reason { font-size: 11px; color: var(--text-faint); margin-left: auto; }
+    .fold-content-tags {
+      display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;
+    }
+    .fold-content-tag {
+      font-size: 10px; font-weight: 500;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 4px; padding: 2px 7px;
+      color: var(--text-muted);
+    }
+    .fold-conv-tag {
+      font-size: 10px; font-weight: 700;
+      background: #eff6ff; border: 1px solid #bfdbfe;
+      border-radius: 4px; padding: 2px 7px;
+      color: #1d4ed8;
+    }
+
+    .routing-insight {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px 20px; margin-bottom: 10px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .insight-num {
+      width: 22px; height: 22px; border-radius: 99px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      font-size: 11px; font-weight: 700; color: var(--brand);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .insight-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .insight-desc  { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <rect width="20" height="20" rx="4" fill="#1d4ed8"/>
+      <path d="M4 14 L4 8 L8 12 L12 6 L16 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    MH Sitemap
+    <span class="nav-brand-tag">Strategy Tool</span>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html">Heat Map</a>
+    <a href="sitemap-visual.html">Site Architecture</a>
+    <a href="flows.html">User Flows</a>
+    <a href="homepage-brief.html" class="active">Homepage Brief</a>
+  </nav>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Homepage Routing Brief</h1>
+  <p>Derived from heat map scores. Defines above-the-fold priorities, CTA hierarchy, and persona routing split for the homepage redesign.</p>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+  <div id="content"></div>
+</div>
+
+<!-- DATA -->
+<script src="data/personas.js"></script>
+<script src="data/sitemap.js"></script>
+<script src="data/user-stories.js"></script>
+<script src="data/flows.js"></script>
+<script src="data/heat-map.js"></script>
+<script src="data/homepage-brief.js"></script>
+
+<script>
+  function renderPhases() {
+    const phases = [
+      { n: 1, name: 'Persona Foundation',    output: 'personas.js',      status: 'done' },
+      { n: 2, name: 'User Stories',           output: 'user-stories.js',  status: 'done' },
+      { n: 3, name: 'Sitemap',               output: 'sitemap.js',       status: SITEMAP && SITEMAP.pages && SITEMAP.pages.length ? 'done' : 'pending' },
+      { n: 4, name: 'Flow Mapping',          output: 'flows.js',         status: FLOWS && FLOWS.status === 'generated' ? 'done' : 'pending' },
+      { n: 5, name: 'Heat Map',              output: 'heat-map.js',      status: HEAT_MAP && HEAT_MAP.status === 'generated' ? 'done' : 'pending' },
+      { n: 6, name: 'Homepage Brief',        output: 'homepage-brief.js',status: HOMEPAGE_BRIEF && HOMEPAGE_BRIEF.status === 'generated' ? 'active' : 'pending' },
+    ];
+    return `
+      <div class="phase-grid">
+        ${phases.map(p => `
+          <div class="phase-item ${p.status}">
+            <div class="phase-num">Phase ${p.n}</div>
+            <div class="phase-name">${p.name}</div>
+            <div class="phase-output">${p.output}</div>
+          </div>`).join('')}
+      </div>`;
+  }
+
+  function renderPending() {
+    return `
+      <div class="empty-state">
+        <div class="empty-state-icon">📄</div>
+        <h3>Brief not yet generated</h3>
+        <p>The homepage brief is derived from the heat map. Add the client sitemap, run the full pipeline, then return here.</p>
+        <br>
+        <code>npm run build</code>
+      </div>`;
+  }
+
+  function renderCTA(cta, isPrimary) {
+    const persona = PERSONAS.personas.find(p => p.id === cta.personaId);
+    const clsBox = isPrimary ? 'cta-box primary' : 'cta-box';
+    const typeLbl = isPrimary ? 'Primary CTA' : 'Secondary CTA';
+    return `
+      <div class="${clsBox}">
+        <div style="flex:1">
+          <div class="cta-type">${typeLbl} — ${persona ? persona.shortName : cta.personaId}</div>
+          <div class="cta-action">${cta.action}</div>
+          <div class="cta-rationale">${cta.rationale}</div>
+          <div class="cta-placement">📌 ${cta.placement}</div>
+        </div>
+        ${persona ? `<span class="badge badge-${cta.personaId === 'hr-buyer' ? 'hr' : 'broker'}" style="flex-shrink:0">${persona.icon} ${persona.role}</span>` : ''}
+      </div>`;
+  }
+
+  function getSitemapPage(pageId) {
+    return (SITEMAP.pages || []).find(p => p.id === pageId);
+  }
+
+  function personaBadgeAll(pid) {
+    const p = (PERSONAS.personas || []).find(per => per.id === pid);
+    if (!p) return '';
+    return `<span class="badge" style="background:${p.colorLight};color:${p.color};border:1px solid ${p.color}40">${p.icon} ${p.shortName}</span>`;
+  }
+
+  function renderBrief() {
+    const b = HOMEPAGE_BRIEF;
+    const hrPersona = PERSONAS.personas.find(p => p.id === 'hr-buyer');
+    const brokerPersona = PERSONAS.personas.find(p => p.id === 'broker');
+
+    let html = '';
+
+    // Project status tracker
+    html += renderPhases();
+
+    // Core principle
+    html += `
+      <div class="brief-principle">
+        <div class="label">Core Design Principle</div>
+        <p>${b.corePrinciple}</p>
+      </div>`;
+
+    // Persona routing split
+    html += `<div class="section-title"><span class="num">1</span> Audience Routing Split</div>`;
+    html += `
+      <div class="routing-grid mb-16">
+        <div class="routing-card hr">
+          <h3>${hrPersona.icon} ${hrPersona.name}</h3>
+          <div class="routing-insight">
+            <div class="insight-num">→</div>
+            <div>
+              <div class="insight-title">Speak to ROI and compliance</div>
+              <div class="insight-desc">This audience needs proof before anything else. Lead with utilization data, outcomes, and peer social proof.</div>
+            </div>
+          </div>
+          <div class="routing-insight">
+            <div class="insight-num">→</div>
+            <div>
+              <div class="insight-title">Entry: Paid search, peer referral</div>
+              <div class="insight-desc">Often arrives with a specific question. Route quickly to the right proof page, not a generic features overview.</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid #bfdbfe;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:6px;">Conversion goal</div>
+            <span class="badge badge-hr">${hrPersona.conversionAction}</span>
+          </div>
+        </div>
+        <div class="routing-card broker">
+          <h3>${brokerPersona.icon} ${brokerPersona.name}</h3>
+          <div class="routing-insight">
+            <div class="insight-num">→</div>
+            <div>
+              <div class="insight-title">Speak to differentiation and support</div>
+              <div class="insight-desc">Brokers vet many solutions at once. They need to quickly understand what's different and whether there's a dedicated broker program.</div>
+            </div>
+          </div>
+          <div class="routing-insight">
+            <div class="insight-num">→</div>
+            <div>
+              <div class="insight-title">Entry: Partner referral, events</div>
+              <div class="insight-desc">Often arrives already warm. Route to materials they can share with clients — don't make them search for it.</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid #ddd6fe;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:6px;">Conversion goal</div>
+            <span class="badge badge-broker">${brokerPersona.conversionAction}</span>
+          </div>
+        </div>
+      </div>`;
+
+    // Above the fold
+    html += `<div class="section-title mt-24"><span class="num">2</span> Above-the-Fold Priorities</div>`;
+    if (b.aboveTheFold && b.aboveTheFold.length) {
+      html += b.aboveTheFold.map((p, i) => {
+        const sp = getSitemapPage(p.pageId);
+        const pc = sp && sp.pageContent;
+        const tagsHtml = pc && pc.keyContent && pc.keyContent.length
+          ? `<div class="fold-content-tags">${pc.keyContent.map(t => `<span class="fold-content-tag">${t}</span>`).join('')}</div>` : '';
+        const convHtml = pc && pc.conversionActions && pc.conversionActions.length
+          ? `<div class="fold-content-tags">${pc.conversionActions.map(a => `<span class="fold-conv-tag">→ ${a}</span>`).join('')}</div>` : '';
+        return `
+        <div class="above-fold-item">
+          <div class="fold-rank">${i + 1}</div>
+          <div class="fold-info">
+            <div class="fold-name">${p.pageName}</div>
+            <div class="fold-url">${p.url || ''}</div>
+            <div class="fold-rationale">${p.rationale}</div>
+            ${tagsHtml}
+            ${convHtml}
+            <div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">
+              ${(p.personasServed||[]).map(personaBadgeAll).join('')}
+            </div>
+          </div>
+          <div>
+            <div class="fold-score ${p.heatLevel}">${p.heatScore}</div>
+            <span class="badge badge-high" style="margin-top:4px;display:block">High</span>
+          </div>
+        </div>`;
+      }).join('');
+    } else {
+      html += `<p class="text-muted text-small" style="padding:12px 0">Generate heat map first to populate above-the-fold priorities.</p>`;
+    }
+
+    // CTA hierarchy
+    html += `<div class="section-title mt-24"><span class="num">3</span> CTA Hierarchy</div>`;
+    if (b.primaryCTA) {
+      html += renderCTA(b.primaryCTA, true);
+      (b.secondaryCTAs || []).forEach(cta => { html += renderCTA(cta, false); });
+    } else {
+      // Static version from strategy doc
+      html += renderCTA({ personaId: 'hr-buyer', action: 'Request a Demo', rationale: 'Primary buyer persona. Demo request is the highest-value conversion for sales pipeline.', placement: 'Above the fold, primary button, repeated in nav' }, true);
+      html += renderCTA({ personaId: 'broker', action: 'Download resource or contact partner team', rationale: 'Broker persona needs a distinct path — they are not booking demos, they need materials.', placement: 'Secondary CTA area or dedicated broker pathway' }, false);
+      html += renderCTA({ personaId: 'hr-buyer', action: 'Explore case studies', rationale: 'Visitors not yet ready to demo need a trust-building next step.', placement: 'Below primary CTA or as tertiary nav link' }, false);
+    }
+
+    // What doesn't earn homepage real estate
+    if (b.excludedFromHomepage && b.excludedFromHomepage.length) {
+      html += `<div class="section-title mt-24"><span class="num">4</span> What Doesn't Earn Homepage Real Estate</div>`;
+      html += `<p class="text-muted text-small mb-16">These pages scored too low to deserve homepage visibility. They should be reachable via navigation, not promoted above the fold.</p>`;
+      html += b.excludedFromHomepage.map(p => `
+        <div class="excluded-item">
+          <span class="excluded-score">${p.heatScore}</span>
+          <span class="excluded-name">${p.pageName}</span>
+          <span class="excluded-reason">${p.reason}</span>
+        </div>`).join('');
+    }
+
+    // Key insights from the strategy doc (always shown)
+    html += `<div class="section-title mt-24"><span class="num">${b.excludedFromHomepage && b.excludedFromHomepage.length ? 5 : 4}</span> Key Routing Insights (from strategy doc)</div>`;
+    const insights = [
+      { title: 'Homepage as routing layer', desc: 'The homepage\'s primary job is to read the visitor quickly and direct them to the highest-value page for their context.' },
+      { title: 'Split audiences above the fold', desc: 'Because HR buyers and brokers have different highest-heat pages, the homepage must split them early — either explicitly with clear pathways or implicitly through self-selecting messaging and CTAs.' },
+      { title: 'Reduce homepage bloat', desc: 'Heat scores provide a principled basis for what earns homepage real estate. Pages not in the top tier of the heat map don\'t belong on the homepage.' },
+      { title: 'Highest-heat pages in 1 click', desc: 'Highest-heat pages should require the fewest clicks from the homepage, ideally one. Check click depth in the User Flows view.' },
+    ];
+    html += insights.map((ins, i) => `
+      <div class="routing-insight">
+        <div class="insight-num">${i + 1}</div>
+        <div>
+          <div class="insight-title">${ins.title}</div>
+          <div class="insight-desc">${ins.desc}</div>
+        </div>
+      </div>`).join('');
+
+    return html;
+  }
+
+  function render() {
+    document.getElementById('content').innerHTML = renderBrief();
+  }
+
+  render();
+</script>
+</body>
+</html>

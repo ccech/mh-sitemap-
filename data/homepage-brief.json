@@ -1,0 +1,271 @@
+{
+  "status": "generated",
+  "generated": "2026-04-18T00:54:26.165Z",
+  "corePrinciple": "The homepage is not a brand statement. It is a routing layer.",
+  "aboveTheFold": [
+    {
+      "pageId": "home",
+      "pageName": "Home",
+      "url": "/",
+      "heatScore": 9,
+      "personasServed": [
+        "hr-buyer",
+        "benefits-manager",
+        "broker",
+        "member",
+        "provider",
+        "partner",
+        "cfo"
+      ],
+      "rationale": "Heat score 9 — serves hr-buyer + benefits-manager + broker + member + provider + partner + cfo"
+    },
+    {
+      "pageId": "adaptive-care",
+      "pageName": "Adaptive Care",
+      "url": "/our-approach/adaptive-care",
+      "heatScore": 8.8,
+      "personasServed": [
+        "hr-buyer",
+        "benefits-manager",
+        "broker",
+        "member",
+        "provider"
+      ],
+      "rationale": "Heat score 8.8 — serves hr-buyer + benefits-manager + broker + member + provider"
+    },
+    {
+      "pageId": "economic-roi",
+      "pageName": "Economic Value / ROI",
+      "url": "/outcomes/economic-value",
+      "heatScore": 8.6,
+      "personasServed": [
+        "hr-buyer",
+        "cfo"
+      ],
+      "rationale": "Heat score 8.6 — serves hr-buyer + cfo"
+    },
+    {
+      "pageId": "clinical-outcomes",
+      "pageName": "Clinical Outcomes",
+      "url": "/outcomes/clinical",
+      "heatScore": 8.6,
+      "personasServed": [
+        "hr-buyer",
+        "broker",
+        "provider",
+        "partner"
+      ],
+      "rationale": "Heat score 8.6 — serves hr-buyer + broker + provider + partner"
+    },
+    {
+      "pageId": "global-care-network",
+      "pageName": "Global Care Network",
+      "url": "/our-approach/global-care-network",
+      "heatScore": 8.2,
+      "personasServed": [
+        "provider",
+        "partner"
+      ],
+      "rationale": "Heat score 8.2 — serves provider + partner"
+    }
+  ],
+  "primaryCTA": {
+    "personaId": "hr-buyer",
+    "action": "Request a Demo",
+    "rationale": "Primary buyer persona. Demo request is the highest-value conversion for sales pipeline.",
+    "placement": "Above the fold, primary button, repeated in nav"
+  },
+  "secondaryCTAs": [
+    {
+      "personaId": "broker",
+      "action": "Connect with Consultant Relations",
+      "rationale": "Broker persona needs a distinct path — they are not booking demos, they need materials.",
+      "placement": "Secondary CTA area or dedicated broker pathway"
+    },
+    {
+      "personaId": "hr-buyer",
+      "action": "Explore resources / case studies",
+      "rationale": "Visitors not yet ready to demo need a trust-building next step.",
+      "placement": "Below primary CTA or as tertiary nav link"
+    }
+  ],
+  "routingStrategy": {
+    "splitPoint": "Above the fold — messaging and CTAs should self-select each persona",
+    "hrBuyerPath": {
+      "label": "HR / Benefits Leader path",
+      "headline": "Speak to ROI, utilization, compliance",
+      "primaryCTA": "Request a Demo",
+      "highestHeatPages": [
+        "Home",
+        "Adaptive Care",
+        "Economic Value / ROI"
+      ]
+    },
+    "brokerPath": {
+      "label": "Broker path",
+      "headline": "Speak to differentiation, implementation, broker support",
+      "primaryCTA": "Connect with Consultant Relations",
+      "highestHeatPages": [
+        "Home",
+        "Adaptive Care",
+        "Clinical Outcomes"
+      ]
+    }
+  },
+  "excludedFromHomepage": [
+    {
+      "pageId": "global-capabilities",
+      "pageName": "Global Capabilities",
+      "heatScore": 0.8,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "events",
+      "pageName": "Events",
+      "heatScore": 0.8,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "blog",
+      "pageName": "Blog Index",
+      "heatScore": 0.8,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "about-us",
+      "pageName": "About Us",
+      "heatScore": 0.8,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "press",
+      "pageName": "Press",
+      "heatScore": 0.8,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "responsible-ai",
+      "pageName": "Responsible AI",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "case-study-detail",
+      "pageName": "Case Study Detail Pages",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "events-detail",
+      "pageName": "Events Detail Pages",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "blog-pages",
+      "pageName": "Blog Pages",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "res-clinical-research",
+      "pageName": "Clinical Research Index (Resources)",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "res-care-challenge",
+      "pageName": "Care for Every Challenge Index (Resources)",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "res-blog",
+      "pageName": "Blog Index (Resources)",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "webinars",
+      "pageName": "Webinars",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "job-posting",
+      "pageName": "Job Posting",
+      "heatScore": 0.4,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "care-every-challenge-dp",
+      "pageName": "Care for Every Challenge Detail Pages",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "pathways",
+      "pageName": "Pathways",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "circles-marketing",
+      "pageName": "Circles (Marketing Page)",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "circles-product",
+      "pageName": "Circles (Product Page)",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "clinical-research-dp",
+      "pageName": "Clinical Research Detail Pages",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "res-clinical-res-dp",
+      "pageName": "Clinical Research Detail Pages (Resources)",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "res-care-challenge-dp",
+      "pageName": "Care for Every Challenge Detail (Resources)",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "res-mh-workplace-dp",
+      "pageName": "MH in the Workplace Detail Pages",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "res-case-study-dp",
+      "pageName": "Case Study Detail Pages (Resources)",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    },
+    {
+      "pageId": "deib",
+      "pageName": "DEIB",
+      "heatScore": 0.2,
+      "reason": "Low heat score — does not serve a priority user story for either persona"
+    }
+  ],
+  "contentGaps": [
+    {
+      "page": "Care Modalities",
+      "gap": "High-heat page is 3+ levels deep in the nav — consider elevating or adding a cross-link from a tier-2 page"
+    },
+    {
+      "page": "Clinical Research Index",
+      "gap": "High-heat page is 3+ levels deep in the nav — consider elevating or adding a cross-link from a tier-2 page"
+    }
+  ]
+}

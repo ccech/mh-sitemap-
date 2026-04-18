@@ -1,0 +1,14 @@
+{
+  "name": "mh-sitemap",
+  "version": "1.0.0",
+  "description": "MH Website Persona Mapping & User Flow Strategy tool",
+  "scripts": {
+    "score": "node src/score-heatmap.js",
+    "flows": "node src/map-flows.js",
+    "brief": "node src/build-brief.js",
+    "build": "npm run flows && npm run score && npm run brief"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

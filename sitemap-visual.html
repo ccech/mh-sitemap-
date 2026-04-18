@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Architecture — MH Sitemap</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+
+    /* ── CANVAS ── */
+    .sitemap-canvas {
+      padding: 32px 32px 80px;
+      min-width: 900px;
+      overflow-x: auto;
+    }
+
+    /* ── HOME NODE ── */
+    .home-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+    .home-node {
+      width: 300px;
+    }
+
+    /* ── CONNECTOR: home → sections ── */
+    .trunk-connector {
+      position: relative;
+      height: 32px;
+      display: flex;
+      align-items: flex-end;
+    }
+    .trunk-connector::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: var(--border);
+    }
+    .trunk-connector::after {
+      content: '';
+      position: absolute;
+      left: calc(100% / 10);
+      right: calc(100% / 10);
+      bottom: 0;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── SECTION COLUMNS ── */
+    .sections-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .section-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .section-drop {
+      height: 16px;
+      position: relative;
+    }
+    .section-drop::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: var(--border);
+    }
+
+    /* ── TREE NODE ── */
+    .tree-node {
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    /* indentation by tier */
+    .tier-3 { padding-left: 14px; }
+    .tier-4 { padding-left: 28px; }
+    .tier-5 { padding-left: 42px; }
+
+    /* connector lines for nested pages */
+    .tier-3 > .node-btn,
+    .tier-4 > .node-btn,
+    .tier-5 > .node-btn {
+      position: relative;
+    }
+    .tier-3 > .node-btn::before,
+    .tier-4 > .node-btn::before,
+    .tier-5 > .node-btn::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      width: 8px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── NAV BAR REPRESENTATION ── */
+    .nav-bar-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0f172a;
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      margin-bottom: 0;
+      gap: 8px;
+    }
+    .nav-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-bar-center {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-bar-right {
+      display: flex;
+      align-items: center;
+    }
+    .nav-item-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #94a3b8;
+      padding: 5px 10px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.06);
+    }
+    .nav-cta-chip {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      padding: 5px 12px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: background 0.12s;
+      font-family: inherit;
+    }
+    .nav-cta-chip:hover { background: rgba(255,255,255,0.14); }
+    .nav-cta-chip.open { background: rgba(29,78,216,0.4); border-color: #3b82f6; color: #bfdbfe; }
+    .nav-cta-chip.primary-cta {
+      background: #1d4ed8;
+      border-color: #3b82f6;
+      color: #fff;
+    }
+    .nav-cta-chip.primary-cta:hover { background: #1e40af; }
+    .nav-cta-chip.primary-cta.open { background: #1e3a8a; }
+    .nav-cta-chevron { font-size: 10px; opacity: 0.6; transition: transform 0.15s; }
+    .nav-cta-chip.open .nav-cta-chevron { transform: rotate(180deg); }
+
+    /* detail panel for nav CTAs — floats below the nav bar */
+    .nav-cta-detail-wrap {
+      position: relative;
+    }
+    .nav-cta-panel {
+      display: none;
+      position: absolute;
+      top: 4px;
+      z-index: 10;
+      width: 280px;
+      background: var(--surface);
+      border: 1.5px solid var(--brand);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+    }
+    .nav-cta-panel.open { display: block; }
+    /* right-align the demo request panel */
+    .nav-cta-detail-wrap.align-right .nav-cta-panel { right: 0; }
+
+    /* ── FOOTER CTA STRIP ── */
+    .footer-cta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #0f172a;
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      margin-top: 0;
+    }
+    .footer-cta-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: #64748b;
+      white-space: nowrap;
+    }
+    .footer-cta-btn {
+      background: rgba(255,255,255,0.06) !important;
+      border-color: rgba(255,255,255,0.15) !important;
+    }
+    .footer-cta-btn:hover { background: rgba(255,255,255,0.12) !important; }
+
+    /* ── NODE BUTTON ── */
+    .node-btn {
+      width: 100%;
+      text-align: left;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-left: 3px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 7px 10px 7px 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      transition: border-color 0.12s, background 0.12s;
+      font-family: inherit;
+    }
+    .node-btn:hover {
+      border-color: #93c5fd;
+      background: #f8faff;
+    }
+    .node-btn.open {
+      border-color: var(--brand);
+      background: #eff6ff;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    /* heat-level border accent */
+    .node-btn.hl-high   { border-left-color: var(--heat-high); }
+    .node-btn.hl-medium { border-left-color: var(--heat-med); }
+    .node-btn.hl-low    { border-left-color: var(--heat-low); }
+    .node-btn.hl-none   { border-left-color: var(--border); }
+
+    /* home node extra weight */
+    .node-btn.is-home {
+      border-left-color: var(--brand);
+      background: #eff6ff;
+      padding: 11px 14px;
+    }
+    .node-btn.is-home .node-name { font-size: 15px; color: var(--brand); }
+
+    /* section label (nav dropdown — not a page) */
+    .section-label {
+      background: #1e293b;
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f1f5f9;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .section-label-tag {
+      font-size: 11px;
+      font-weight: 500;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      padding: 2px 6px;
+    }
+
+    .node-main { flex: 1; min-width: 0; }
+    .node-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .node-url {
+      font-size: 11px;
+      color: var(--text-faint);
+      font-family: 'Courier New', monospace;
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .node-right {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .node-heat-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .node-heat-dot.hl-high   { background: var(--heat-high); }
+    .node-heat-dot.hl-medium { background: var(--heat-med); }
+    .node-heat-dot.hl-low    { background: var(--heat-low); }
+    .node-heat-dot.hl-none   { display: none; }
+
+    .node-chevron {
+      font-size: 11px;
+      color: var(--text-faint);
+      transition: transform 0.15s;
+      user-select: none;
+    }
+    .node-btn.open .node-chevron { transform: rotate(180deg); }
+
+    /* ── CROSS-LINK BADGES (on collapsed nodes) ── */
+    .node-link-badge {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--brand);
+      background: #dbeafe;
+      border-radius: 99px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+      letter-spacing: 0.2px;
+    }
+    /* Inbound badge — how many pages link TO this page */
+    .node-inbound-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #065f46;
+      background: #d1fae5;
+      border: 1px solid #6ee7b7;
+      border-radius: 99px;
+      padding: 1px 6px;
+      flex-shrink: 0;
+      letter-spacing: 0.2px;
+    }
+
+    /* ── CROSS-LINK CHIPS (in expanded panel) ── */
+    .cross-link-chip {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--brand);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+      padding: 4px 10px;
+      transition: background 0.1s, border-color 0.1s;
+      font-family: inherit;
+      text-align: left;
+      line-height: 1.3;
+    }
+    .cross-link-chip:hover {
+      background: #dbeafe;
+      border-color: var(--brand);
+    }
+    .cross-link-chip-context {
+      font-size: 11px;
+      color: var(--text-faint);
+      font-weight: 400;
+      display: block;
+    }
+    .cross-link-chip-name {
+      font-weight: 600;
+    }
+
+    /* ── HIGHLIGHT FLASH when jumped to ── */
+    @keyframes link-flash {
+      0%   { box-shadow: 0 0 0 0 rgba(29,78,216,0.5); background: #fff; }
+      30%  { box-shadow: 0 0 0 6px rgba(29,78,216,0.2); background: #dbeafe; border-color: var(--brand); }
+      100% { box-shadow: 0 0 0 0 rgba(29,78,216,0); background: #fff; }
+    }
+    .node-btn.link-flash {
+      animation: link-flash 1.2s ease forwards;
+    }
+
+    /* ── EXPANDED DETAIL PANEL ── */
+    .node-detail {
+      display: none;
+      border: 1.5px solid var(--brand);
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      background: #f8faff;
+      padding: 10px 12px 12px;
+      margin-bottom: 4px;
+    }
+    .node-detail.open { display: block; }
+
+    .detail-purpose {
+      font-size: 13px;
+      color: var(--text-2);
+      font-style: italic;
+      line-height: 1.55;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dbeafe;
+    }
+
+    .detail-section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-faint);
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+    .detail-section-label:first-of-type { margin-top: 0; }
+
+    .detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .detail-tag {
+      font-size: 12px;
+      font-weight: 500;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3px 8px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .detail-tag.conv {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: var(--brand);
+      font-weight: 700;
+    }
+    .detail-tag.persona {
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .detail-tone {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #92400e;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 4px;
+      padding: 6px 10px;
+      line-height: 1.55;
+    }
+    .detail-tone-label {
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    /* ── LEGEND ── */
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 32px 16px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .legend-swatch {
+      width: 11px;
+      height: 11px;
+      border-radius: 2px;
+    }
+    .legend-swatch.high   { background: var(--heat-high); }
+    .legend-swatch.medium { background: var(--heat-med); }
+    .legend-swatch.low    { background: var(--heat-low); }
+
+    /* ── EXPAND/COLLAPSE ALL ── */
+    .canvas-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px 16px;
+    }
+    .toolbar-btn {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--brand);
+      background: none;
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-sm);
+      padding: 5px 14px;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+    .toolbar-btn:hover { background: #eff6ff; }
+    .toolbar-btns { display: flex; gap: 8px; }
+
+    .page-count-note {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <rect width="20" height="20" rx="4" fill="#1d4ed8"/>
+      <path d="M4 14 L4 8 L8 12 L12 6 L16 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    MH Sitemap
+    <span class="nav-brand-tag">Strategy Tool</span>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html">Heat Map</a>
+    <a href="sitemap-visual.html" class="active">Site Architecture</a>
+    <a href="flows.html">User Flows</a>
+    <a href="homepage-brief.html">Homepage Brief</a>
+  </nav>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Site Architecture</h1>
+  <p>45 pages across 5 nav sections, plus 4 persistent nav CTAs and a global footer Contact Us CTA. Click any node to expand its content summary. Left-border color indicates strategic heat.</p>
+</div>
+
+<!-- TOOLBAR -->
+<div class="canvas-toolbar">
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch high"></div> High heat</div>
+    <div class="legend-item"><div class="legend-swatch medium"></div> Medium heat</div>
+    <div class="legend-item"><div class="legend-swatch low"></div> Low heat</div>
+  </div>
+  <div class="toolbar-btns">
+    <button class="toolbar-btn" onclick="expandAll()">Expand all</button>
+    <button class="toolbar-btn" onclick="collapseAll()">Collapse all</button>
+  </div>
+</div>
+
+<div id="sitemap-canvas"></div>
+
+<!-- DATA -->
+<script src="data/personas.js"></script>
+<script src="data/sitemap.js"></script>
+<script src="data/heat-map.js"></script>
+
+<script>
+  // ── inbound link map (pageId → [{ fromId, fromName, context }]) ──────────
+  let inboundMap = {};
+
+  function buildInboundMap() {
+    inboundMap = {};
+    for (const page of SITEMAP.pages) {
+      for (const cl of (page.crossLinks || [])) {
+        if (!inboundMap[cl.toId]) inboundMap[cl.toId] = [];
+        inboundMap[cl.toId].push({ fromId: page.id, fromName: page.name, context: cl.context });
+      }
+    }
+  }
+
+  // ── helpers ───────────────────────────────────────────────────
+  function getHeat(pageId) {
+    return (HEAT_MAP.pages || []).find(p => p.id === pageId);
+  }
+
+  function getPersona(pid) {
+    return (PERSONAS.personas || []).find(p => p.id === pid);
+  }
+
+  function heatLevel(pageId) {
+    const h = getHeat(pageId);
+    return h ? h.heatLevel : 'none';
+  }
+
+  // Build parent → children map
+  function buildTree() {
+    const map = {};
+    for (const page of SITEMAP.pages) {
+      map[page.id] = { page, children: [] };
+    }
+    const roots = [];
+    for (const page of SITEMAP.pages) {
+      if (!page.parent) {
+        roots.push(map[page.id]);
+      } else if (map[page.parent]) {
+        map[page.parent].children.push(map[page.id]);
+      }
+    }
+    return { roots, map };
+  }
+
+  // ── rendering ─────────────────────────────────────────────────
+  function personaBadgeHtml(pid) {
+    const p = getPersona(pid);
+    if (!p) return `<span class="detail-tag persona">${pid}</span>`;
+    return `<span class="detail-tag persona" style="background:${p.colorLight};color:${p.color};border-color:${p.color}40">${p.icon} ${p.shortName}</span>`;
+  }
+
+  function detailHtml(page) {
+    const pc = page.pageContent;
+    if (!pc) return '';
+
+    const audiences = (pc.primaryAudiences || []).map(personaBadgeHtml).join('');
+    const tags = (pc.keyContent || []).map(t => `<span class="detail-tag">${t}</span>`).join('');
+    const actions = (pc.conversionActions || []).map(a => `<span class="detail-tag conv">→ ${a}</span>`).join('');
+    const tone = pc.toneNote
+      ? `<div class="detail-tone"><span class="detail-tone-label">Tone</span>${pc.toneNote}</div>`
+      : '';
+
+    const audienceRow = audiences
+      ? `<div class="detail-section-label">Audiences</div><div class="detail-tags">${audiences}</div>` : '';
+    const tagsRow = tags
+      ? `<div class="detail-section-label">Key Content</div><div class="detail-tags">${tags}</div>` : '';
+    const actionsRow = actions
+      ? `<div class="detail-section-label">Conversion Actions</div><div class="detail-tags">${actions}</div>` : '';
+
+    // Outbound cross-links (this page links TO)
+    const cls = page.crossLinks || [];
+    const crossLinksRow = cls.length ? `
+      <div class="detail-section-label" style="color:var(--brand);margin-top:10px;border-top:1px solid #dbeafe;padding-top:8px;">Links out to</div>
+      <div class="detail-tags" style="flex-direction:column;">
+        ${cls.map(cl => {
+          const target = (SITEMAP.pages || []).find(p => p.id === cl.toId);
+          const name = target ? target.name : cl.toId;
+          return `<button class="cross-link-chip" onclick="jumpToPage('${cl.toId}')">
+            <span>
+              <span class="cross-link-chip-name">→ ${name}</span>
+              <span class="cross-link-chip-context">${cl.context}</span>
+            </span>
+          </button>`;
+        }).join('')}
+      </div>` : '';
+
+    // Inbound cross-links (pages that link TO this page)
+    const inbound = inboundMap[page.id] || [];
+    const inboundRow = inbound.length ? `
+      <div class="detail-section-label" style="color:#065f46;margin-top:10px;border-top:1px solid #a7f3d0;padding-top:8px;">Linked from (${inbound.length})</div>
+      <div class="detail-tags" style="flex-direction:column;">
+        ${inbound.map(src => `
+          <button class="cross-link-chip" style="border-color:#6ee7b7;background:#f0fdf4;" onclick="jumpToPage('${src.fromId}')">
+            <span>
+              <span class="cross-link-chip-name" style="color:#065f46;">← ${src.fromName}</span>
+              <span class="cross-link-chip-context">${src.context}</span>
+            </span>
+          </button>`).join('')}
+      </div>` : '';
+
+    return `
+      <div class="node-detail" id="detail-${page.id}">
+        <div class="detail-purpose">${pc.purpose}</div>
+        ${audienceRow}
+        ${tagsRow}
+        ${actionsRow}
+        ${tone}
+        ${crossLinksRow}
+        ${inboundRow}
+      </div>`;
+  }
+
+  function renderNode({ page, children }, isHome = false, isSection = false) {
+    const hl = heatLevel(page.id);
+    const extraClass = isHome ? 'is-home' : isSection ? 'is-section' : '';
+    const hasDetail = !!page.pageContent;
+    const chevron = hasDetail ? `<span class="node-chevron">▾</span>` : '';
+    const heatDot = (!isHome && !isSection)
+      ? `<div class="node-heat-dot hl-${hl}"></div>` : '';
+    const linkCount = (page.crossLinks || []).length;
+    const linkBadge = linkCount ? `<span class="node-link-badge" title="${linkCount} outbound link${linkCount !== 1 ? 's' : ''} from this page">→ ${linkCount}</span>` : '';
+    const inboundCount = (inboundMap[page.id] || []).length;
+    const inboundBadge = inboundCount ? `<span class="node-inbound-badge" title="${inboundCount} page${inboundCount !== 1 ? 's' : ''} link to this page">← ${inboundCount}</span>` : '';
+
+    const btn = `
+      <button class="node-btn hl-${hl} ${extraClass}" id="btn-${page.id}"
+              onclick="${hasDetail ? `toggleNode('${page.id}', this)` : ''}"
+              style="${!hasDetail ? 'cursor:default' : ''}">
+        <div class="node-main">
+          <div class="node-name">${page.name}</div>
+          <div class="node-url">${page.url || ''}</div>
+        </div>
+        <div class="node-right">
+          ${inboundBadge}
+          ${linkBadge}
+          ${heatDot}
+          ${chevron}
+        </div>
+      </button>`;
+
+    const detail = hasDetail ? detailHtml(page) : '';
+    const childrenHtml = children.map(child => renderNode(child)).join('');
+
+    return `
+      <div class="tree-node tier-${page.navTier}">
+        ${btn}
+        ${detail}
+        ${childrenHtml}
+      </div>`;
+  }
+
+  // ── nav CTA detail panel ─────────────────────────────────────
+  function toggleCta(pageId, chip) {
+    // Close any other open CTA panels first
+    document.querySelectorAll('.nav-cta-panel.open').forEach(p => {
+      if (p.id !== 'cta-panel-' + pageId) {
+        p.classList.remove('open');
+        document.querySelectorAll('.nav-cta-chip.open').forEach(c => c.classList.remove('open'));
+      }
+    });
+    const panel = document.getElementById('cta-panel-' + pageId);
+    if (!panel) return;
+    const isOpen = panel.classList.contains('open');
+    panel.classList.toggle('open', !isOpen);
+    chip.classList.toggle('open', !isOpen);
+  }
+
+  // ── main render ───────────────────────────────────────────────
+  function render() {
+    buildInboundMap();
+    const { roots, map } = buildTree();
+    const homeNode = roots.find(r => r.page.id === 'home');
+    if (!homeNode) return;
+
+    // Nav CTAs — build the persistent nav bar representation
+    const ctaIds = ['nav-admin-login', 'nav-provider-login', 'nav-member-login', 'nav-demo-request'];
+    const ctaNodes = ctaIds.map(id => map[id]).filter(Boolean);
+
+    function ctaChip(node, isPrimary = false, alignRight = false) {
+      const pc = node.page.pageContent;
+      const panelHtml = pc ? `
+        <div class="nav-cta-panel" id="cta-panel-${node.page.id}">
+          <div class="detail-purpose">${pc.purpose}</div>
+          ${(pc.primaryAudiences||[]).length ? `<div class="detail-section-label">Audiences</div><div class="detail-tags">${pc.primaryAudiences.map(personaBadgeHtml).join('')}</div>` : ''}
+          ${(pc.conversionActions||[]).length ? `<div class="detail-section-label">Action</div><div class="detail-tags">${pc.conversionActions.map(a=>`<span class="detail-tag conv">→ ${a}</span>`).join('')}</div>` : ''}
+          ${pc.toneNote ? `<div class="detail-tone"><span class="detail-tone-label">Tone</span>${pc.toneNote}</div>` : ''}
+        </div>` : '';
+      return `
+        <div class="nav-cta-detail-wrap ${alignRight ? 'align-right' : ''}">
+          <button class="nav-cta-chip ${isPrimary ? 'primary-cta' : ''}"
+                  onclick="toggleCta('${node.page.id}', this)">
+            ${node.page.name}
+            <span class="nav-cta-chevron">▾</span>
+          </button>
+          ${panelHtml}
+        </div>`;
+    }
+
+    const loginNodes = ctaNodes.filter(n => n.page.id !== 'nav-demo-request');
+    const demoNode   = map['nav-demo-request'];
+
+    const navBarHtml = `
+      <div class="nav-bar-strip">
+        <div class="nav-bar-left">
+          ${loginNodes.map(n => ctaChip(n)).join('')}
+        </div>
+        <div class="nav-bar-center">
+          <span class="nav-item-label">Who We Serve ▾</span>
+          <span class="nav-item-label">Our Approach ▾</span>
+          <span class="nav-item-label">Outcomes ▾</span>
+          <span class="nav-item-label">Insights ▾</span>
+          <span class="nav-item-label">Company ▾</span>
+        </div>
+        <div class="nav-bar-right">
+          ${demoNode ? ctaChip(demoNode, true, true) : ''}
+        </div>
+      </div>`;
+
+    // Home node — rendered standalone, children become section columns
+    const homeHtml = `
+      <div class="home-row">
+        <div class="home-node">
+          <div class="tree-node tier-0">
+            <button class="node-btn is-home" id="btn-home" onclick="toggleNode('home', this)">
+              <div class="node-main">
+                <div class="node-name">Home</div>
+                <div class="node-url">/</div>
+              </div>
+              <div class="node-right">
+                <span class="node-chevron">▾</span>
+              </div>
+            </button>
+            ${detailHtml(homeNode.page)}
+          </div>
+        </div>
+      </div>`;
+
+    // Section columns in nav order
+    const sectionOrder = ['who-we-serve', 'our-approach', 'outcomes', 'insights', 'company'];
+    const sectionsHtml = sectionOrder.map(sid => {
+      const node = map[sid];
+      if (!node) return '<div class="section-col"></div>';
+      // Nav dropdown — not a page. Render as a non-interactive label.
+      const childCount = node.children.length;
+      const sectionHeader = `
+        <div class="section-label">
+          <div class="section-label-text">${node.page.name}</div>
+          <span class="section-label-tag">${childCount} pages</span>
+        </div>`;
+      const childrenHtml = node.children.map(child => renderNode(child)).join('');
+      return `
+        <div class="section-col">
+          <div class="section-drop"></div>
+          ${sectionHeader}
+          ${childrenHtml}
+        </div>`;
+    }).join('');
+
+    // Footer CTA strip
+    const footerCtaNode = map['footer-contact'];
+    const footerStripHtml = footerCtaNode ? (() => {
+      const pc = footerCtaNode.page.pageContent;
+      const panelHtml = pc ? `
+        <div class="nav-cta-panel" id="cta-panel-footer-contact">
+          <div class="detail-purpose">${pc.purpose}</div>
+          ${(pc.primaryAudiences||[]).length ? `<div class="detail-section-label">Audiences</div><div class="detail-tags">${pc.primaryAudiences.map(personaBadgeHtml).join('')}</div>` : ''}
+          ${(pc.keyContent||[]).length ? `<div class="detail-section-label">Key Content</div><div class="detail-tags">${pc.keyContent.map(t=>`<span class="detail-tag">${t}</span>`).join('')}</div>` : ''}
+          ${(pc.conversionActions||[]).length ? `<div class="detail-section-label">Action</div><div class="detail-tags">${pc.conversionActions.map(a=>`<span class="detail-tag conv">→ ${a}</span>`).join('')}</div>` : ''}
+          ${pc.toneNote ? `<div class="detail-tone"><span class="detail-tone-label">Tone</span>${pc.toneNote}</div>` : ''}
+        </div>` : '';
+      return `
+        <div style="height:24px;position:relative;">
+          <div style="position:absolute;left:50%;top:0;width:1px;height:100%;background:var(--border);"></div>
+        </div>
+        <div class="footer-cta-strip">
+          <div class="footer-cta-label">Appears above footer on every page</div>
+          <div class="nav-cta-detail-wrap">
+            <button class="nav-cta-chip footer-cta-btn" onclick="toggleCta('footer-contact', this)">
+              Contact Us (Global Footer CTA)
+              <span class="nav-cta-chevron">▾</span>
+            </button>
+            ${panelHtml}
+          </div>
+        </div>`;
+    })() : '';
+
+    document.getElementById('sitemap-canvas').innerHTML = `
+      <div class="sitemap-canvas">
+        ${navBarHtml}
+        <div style="height:16px;position:relative;">
+          <div style="position:absolute;left:50%;top:0;width:1px;height:100%;background:var(--border);"></div>
+        </div>
+        ${homeHtml}
+        <div class="trunk-connector"></div>
+        <div class="sections-row">${sectionsHtml}</div>
+        ${footerStripHtml}
+      </div>`;
+  }
+
+  // ── toggle expand/collapse ────────────────────────────────────
+  function toggleNode(pageId, btn) {
+    const detail = document.getElementById('detail-' + pageId);
+    if (!detail) return;
+    const isOpen = detail.classList.contains('open');
+    detail.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+  }
+
+  // ── jump to cross-linked page ─────────────────────────────────
+  function jumpToPage(pageId) {
+    const btn = document.getElementById('btn-' + pageId);
+    const detail = document.getElementById('detail-' + pageId);
+    if (!btn) return;
+
+    // Expand target if it has a detail panel
+    if (detail && !detail.classList.contains('open')) {
+      detail.classList.add('open');
+      btn.classList.add('open');
+    }
+
+    // Scroll into view
+    btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Flash highlight
+    btn.classList.remove('link-flash');
+    void btn.offsetWidth; // force reflow to restart animation
+    btn.classList.add('link-flash');
+    setTimeout(() => btn.classList.remove('link-flash'), 1300);
+  }
+
+  function expandAll() {
+    document.querySelectorAll('.node-detail').forEach(d => d.classList.add('open'));
+    document.querySelectorAll('.node-btn').forEach(b => b.classList.add('open'));
+  }
+
+  function collapseAll() {
+    document.querySelectorAll('.node-detail').forEach(d => d.classList.remove('open'));
+    document.querySelectorAll('.node-btn').forEach(b => b.classList.remove('open'));
+  }
+
+  render();
+</script>
+
+
+</body>
+</html>
