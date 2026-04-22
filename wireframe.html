@@ -633,6 +633,24 @@ function renderContentShell(page, banner) {
       </div>`
     : '';
 
+  const subPages = (childMap[page.id] || []);
+  const subPagesHtml = subPages.length
+    ? `<div class="wf-section">
+        <div class="wf-section-label">Sub-pages in This Section</div>
+        <div class="wf-dropdown-grid">
+          ${subPages.map(child => {
+            const purpose = child.pageContent?.purpose || '';
+            const truncated = purpose.length > 90 ? purpose.slice(0, 90) + '…' : purpose;
+            return `<button class="wf-dropdown-child" onclick="navigateTo('${child.id}')">
+              <div class="wf-dropdown-child-name">${child.name}</div>
+              ${child.url ? `<div class="wf-dropdown-child-url">${child.url}</div>` : ''}
+              ${truncated ? `<div class="wf-dropdown-child-purpose">${truncated}</div>` : ''}
+            </button>`;
+          }).join('')}
+        </div>
+      </div>`
+    : '';
+
   const clusterCtas = (page.contentClusterCTAs || []).filter(c => pageMap[c.toId]);
   const clusterHtml = clusterCtas.length
     ? `<div class="wf-section">
@@ -671,6 +689,7 @@ function renderContentShell(page, banner) {
       </div>
     </div>
     ${contentBlocksHtml}
+    ${subPagesHtml}
     ${crossLinksHtml}
     ${conversionHtml}
     ${clusterHtml}
