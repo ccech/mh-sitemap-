@@ -35,16 +35,31 @@
     .jp-toggle.collapsed { transform: rotate(180deg); }
     .jp-body { padding: 10px 12px 12px; }
 
-    .persona-pills { display: flex; flex-wrap: wrap; gap: 5px; }
-    .persona-pill-wf {
-      display: flex; align-items: center; gap: 4px;
-      padding: 4px 9px; border-radius: 99px;
-      font-size: 11px; font-weight: 500; cursor: pointer;
-      border: 1.5px solid var(--border);
-      background: var(--bg); color: var(--text-2);
-      transition: all 0.15s;
+    .persona-grid-wf {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
     }
-    .persona-pill-wf:hover { border-color: currentColor; }
+    .persona-card-wf {
+      display: flex; flex-direction: column;
+      padding: 8px 10px; cursor: pointer;
+      border: none; border-top: 3px solid transparent;
+      background: var(--surface); transition: background 0.15s;
+      text-align: left; font-family: inherit; width: 100%;
+    }
+    .persona-card-wf:hover { background: var(--bg); }
+    .persona-card-wf.active {
+      background: var(--pc-light, #dbeafe);
+      border-top-color: var(--pc-color, #2563eb);
+    }
+    .persona-card-wf-icon { font-size: 14px; margin-bottom: 2px; line-height: 1; }
+    .persona-card-wf-name { font-size: 11px; font-weight: 600; color: var(--text); line-height: 1.3; }
+    .persona-card-wf-role { font-size: 10px; color: var(--text-faint); margin-top: 1px; }
+    .persona-divider-wf {
+      grid-column: 1 / -1; padding: 6px 10px 3px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; color: var(--text-faint);
+      background: var(--surface); border-top: 1px solid var(--border);
+    }
 
     .story-tabs { margin-top: 10px; display: flex; flex-direction: column; gap: 2px; }
     .story-tab-wf {
@@ -375,6 +390,7 @@
     <span class="nav-brand-tag">Strategy Tool</span>
   </a>
   <div class="nav-links">
+    <a href="exec-summary.html">Executive Summary</a>
     <a href="index.html">Heat Map</a>
     <a href="sitemap-visual.html">Site Architecture</a>
     <a href="flows.html">User Flows</a>
@@ -395,7 +411,7 @@
         <button class="jp-toggle" id="jp-toggle" onclick="toggleJourneyPanel()">▲</button>
       </div>
       <div id="jp-body" class="jp-body">
-        <div class="persona-pills" id="persona-pills"></div>
+        <div class="persona-grid-wf" id="persona-pills"></div>
         <div class="story-tabs hidden" id="story-tabs"></div>
         <div class="step-nav hidden" id="step-nav">
           <button class="step-nav-btn" id="btn-prev" onclick="stepBack()">←</button>
@@ -428,6 +444,7 @@
 
 <script src="data/personas.js"></script>
 <script src="data/sitemap.js"></script>
+<script src="data/user-stories.js"></script>
 <script src="data/flows.js"></script>
 <script src="data/heat-map.js"></script>
 
@@ -453,6 +470,13 @@ for (const h of (HEAT_MAP?.pages || [])) {
 for (const p of PERSONAS.personas) {
   personaMap[p.id] = p;
 }
+for (const p of (PERSONAS.secondaryAudiences || [])) {
+  personaMap[p.id] = p;
+}
+
+function allPersonas() {
+  return [...PERSONAS.personas, ...(PERSONAS.secondaryAudiences || [])];
+}
 
 for (const page of SITEMAP.pages) {
   for (const cl of (page.crossLinks || [])) {
@@ -463,22 +487,27 @@ for (const page of SITEMAP.pages) {
 
 // Maps persona conversionAction text (lower) → nav page id
 const conversionTargetMap = {
-  'request a demo':                  'nav-demo-request',
-  'request demo':                    'nav-demo-request',
-  'activate benefit':                'nav-member-login',
-  'activate benefit / log in':       'nav-member-login',
-  'log in':                          'nav-member-login',
-  'member log in':                   'nav-member-login',
-  'member login':                    'nav-member-login',
-  'access provider portal':          'nav-provider-login',
-  'provider login':                  'nav-provider-login',
-  'admin login':                     'nav-admin-login',
-  'submit provider inquiry':         'footer-contact',
-  'connect with partnerships team':  'footer-contact',
-  'connect with consultant relations': 'footer-contact',
-  'submit inquiry':                  'footer-contact',
-  'partner with us':                 'footer-contact',
-  'contact us':                      'footer-contact',
+  'request a demo':                                      'nav-demo-request',
+  'request demo':                                        'nav-demo-request',
+  'request a demo (formal evaluation)':                  'nav-demo-request',
+  'request a demo (financial review)':                   'nav-demo-request',
+  'explore solutions / request a demo':                  'nav-demo-request',
+  'activate benefit':                                    'nav-member-login',
+  'activate benefit / log in':                           'nav-member-login',
+  'log in':                                              'nav-member-login',
+  'member log in':                                       'nav-member-login',
+  'member login':                                        'nav-member-login',
+  'access provider portal':                              'nav-provider-login',
+  'provider login':                                      'nav-provider-login',
+  'admin login':                                         'nav-admin-login',
+  'access compliance documentation':                     'footer-contact',
+  'access security documentation / technical review':    'footer-contact',
+  'submit provider inquiry':                             'footer-contact',
+  'connect with partnerships team':                      'footer-contact',
+  'connect with consultant relations':                   'footer-contact',
+  'submit inquiry':                                      'footer-contact',
+  'partner with us':                                     'footer-contact',
+  'contact us':                                          'footer-contact',
 };
 
 function resolveConversionTarget(actionText) {
@@ -993,6 +1022,28 @@ function renderMetaPanel(page) {
       </div>`
     : '';
 
+  const storiesHtml = (() => {
+    if (!window.USER_STORIES?.userStories) return '';
+    const matching = USER_STORIES.userStories.filter(s =>
+      (s.pageIds || []).includes(page.id)
+    );
+    if (!matching.length) return '';
+    return `<div class="wf-meta-section">
+      <div class="wf-meta-label">User Stories on This Page (${matching.length})</div>
+      ${matching.map(s => {
+        const p = personaMap[s.personaId];
+        const color = p?.color || '#6b7280';
+        const icon  = p?.icon  || '👤';
+        const gap = s.contentGapNote ? `<div style="font-size:10px;color:#dc2626;margin-top:3px">${s.contentGapNote}</div>` : '';
+        return `<div style="padding:5px 0;border-bottom:1px solid var(--border)">
+          <div style="font-size:11px;font-weight:600;color:${color};margin-bottom:2px">${icon} ${p?.shortName || s.personaId}</div>
+          <div style="font-size:11px;color:var(--text-2);line-height:1.4">${s.jobToBeDone}</div>
+          ${gap}
+        </div>`;
+      }).join('')}
+    </div>`;
+  })();
+
   return `
     <div class="wf-meta-page-name">${page.name}</div>
     ${page.url ? `<div class="wf-meta-url">${page.url}</div>` : ''}
@@ -1005,6 +1056,7 @@ function renderMetaPanel(page) {
     ${purposeHtml}
     ${audienceHtml}
     ${toneHtml}
+    ${storiesHtml}
     ${crossLinksHtml}
     ${clusterHtml}
   `;
@@ -1039,11 +1091,28 @@ function renderJourneyInMeta(page) {
 // ── LEFT SIDEBAR ──────────────────────────────────────────────────────────────
 function buildPersonaPills() {
   const container = document.getElementById('persona-pills');
-  container.innerHTML = PERSONAS.personas.map(p =>
-    `<button class="persona-pill-wf" id="pill-${p.id}"
-             style="border-color:var(--border)"
-             onclick="selectPersona('${p.id}')">${p.icon} ${p.shortName || p.name.split(' ')[0]}</button>`
-  ).join('');
+
+  function cardHtml(p) {
+    const color     = p.color     || '#6b7280';
+    const colorLight = p.colorLight || '#f3f4f6';
+    const icon      = p.icon      || '👤';
+    const shortName = p.shortName || p.name;
+    return `<button class="persona-card-wf" id="pill-${p.id}"
+              style="--pc-color:${color};--pc-light:${colorLight}"
+              onclick="selectPersona('${p.id}')">
+      <div class="persona-card-wf-icon">${icon}</div>
+      <div class="persona-card-wf-name">${shortName}</div>
+      <div class="persona-card-wf-role">${p.role || ''}</div>
+    </button>`;
+  }
+
+  const buyingGroup = PERSONAS.personas.map(cardHtml).join('');
+  const secondary   = (PERSONAS.secondaryAudiences || []).map(cardHtml).join('');
+  const secondarySection = secondary
+    ? `<div class="persona-divider-wf">Secondary Audiences</div>${secondary}`
+    : '';
+
+  container.innerHTML = buyingGroup + secondarySection;
 }
 
 function selectPersona(personaId) {
@@ -1052,19 +1121,9 @@ function selectPersona(personaId) {
   activeStepIdx   = 0;
   journeyActive   = true;
 
-  // Update pill styles
-  PERSONAS.personas.forEach(p => {
-    const pill = document.getElementById('pill-' + p.id);
-    if (!pill) return;
-    if (p.id === personaId) {
-      pill.style.background = p.color;
-      pill.style.borderColor = p.color;
-      pill.style.color = 'white';
-    } else {
-      pill.style.background = '';
-      pill.style.borderColor = 'var(--border)';
-      pill.style.color = '';
-    }
+  // Update card active states
+  document.querySelectorAll('.persona-card-wf').forEach(el => {
+    el.classList.toggle('active', el.id === 'pill-' + personaId);
   });
 
   buildStoryTabs(personaId);
@@ -1112,10 +1171,7 @@ function exitJourney() {
   activeStoryIdx  = 0;
   activeStepIdx   = 0;
 
-  PERSONAS.personas.forEach(p => {
-    const pill = document.getElementById('pill-' + p.id);
-    if (pill) { pill.style.background = ''; pill.style.borderColor = 'var(--border)'; pill.style.color = ''; }
-  });
+  document.querySelectorAll('.persona-card-wf').forEach(el => el.classList.remove('active'));
 
   document.getElementById('story-tabs').classList.add('hidden');
   document.getElementById('step-nav').classList.add('hidden');

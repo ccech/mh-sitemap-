@@ -43,8 +43,8 @@ function main() {
   const medPages    = heatMap.pages.filter(p => p.heatLevel === 'medium');
   const lowPages    = heatMap.pages.filter(p => p.heatLevel === 'low');
 
-  const hrPersona     = personas.personas.find(p => p.id === 'hr-buyer');
-  const brokerPersona = personas.personas.find(p => p.id === 'broker');
+  const hrPersona     = personas.personas.find(p => p.id === 'hr-benefits-manager');
+  const brokerPersona = personas.personas.find(p => p.id === 'benefits-consultant');
 
   // Above the fold: top high-heat pages (ideally 1 click from homepage)
   const aboveTheFold = highPages.slice(0, 5).map(p => ({
@@ -58,7 +58,7 @@ function main() {
 
   // Primary CTA: HR buyer conversion (demo request)
   const primaryCTA = {
-    personaId: 'hr-buyer',
+    personaId: 'hr-benefits-manager',
     action: hrPersona.conversionAction,
     rationale: 'Primary buyer persona. Demo request is the highest-value conversion for sales pipeline.',
     placement: 'Above the fold, primary button, repeated in nav'
@@ -67,13 +67,13 @@ function main() {
   // Secondary CTAs: broker conversion + not-yet-ready HR buyers
   const secondaryCTAs = [
     {
-      personaId: 'broker',
+      personaId: 'benefits-consultant',
       action: brokerPersona.conversionAction,
       rationale: 'Broker persona needs a distinct path — they are not booking demos, they need materials.',
       placement: 'Secondary CTA area or dedicated broker pathway'
     },
     {
-      personaId: 'hr-buyer',
+      personaId: 'hr-benefits-manager',
       action: 'Explore resources / case studies',
       rationale: 'Visitors not yet ready to demo need a trust-building next step.',
       placement: 'Below primary CTA or as tertiary nav link'
@@ -87,13 +87,13 @@ function main() {
       label: 'HR / Benefits Leader path',
       headline: 'Speak to ROI, utilization, compliance',
       primaryCTA: hrPersona.conversionAction,
-      highestHeatPages: highPages.filter(p => p.personasServed.includes('hr-buyer')).slice(0, 3).map(p => p.name)
+      highestHeatPages: highPages.filter(p => p.personasServed.includes('hr-benefits-manager')).slice(0, 3).map(p => p.name)
     },
     brokerPath: {
       label: 'Broker path',
       headline: 'Speak to differentiation, implementation, broker support',
       primaryCTA: brokerPersona.conversionAction,
-      highestHeatPages: highPages.filter(p => p.personasServed.includes('broker')).slice(0, 3).map(p => p.name)
+      highestHeatPages: highPages.filter(p => p.personasServed.includes('benefits-consultant')).slice(0, 3).map(p => p.name)
     }
   };
 

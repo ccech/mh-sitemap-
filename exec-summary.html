@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Summary — MH Sitemap</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+
+    /* ── HERO STATS ─────────────────────────────────────────────────────────── */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-stat {
+      background: var(--surface);
+      padding: 22px 16px;
+      text-align: center;
+    }
+    .hero-stat-num   { font-size: 34px; font-weight: 700; line-height: 1; color: var(--brand); }
+    .hero-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 5px; font-weight: 500; }
+    .hero-stat.accent-high .hero-stat-num { color: var(--heat-high); }
+    .hero-stat.accent-warn .hero-stat-num { color: #d97706; }
+    .hero-stat.accent-teal .hero-stat-num { color: #0891b2; }
+
+    /* ── EXEC SECTIONS ───────────────────────────────────────────────────────── */
+    .exec-section { margin-bottom: 44px; }
+
+    /* ── PRINCIPLE HERO ──────────────────────────────────────────────────────── */
+    .principle-card {
+      background: var(--brand-dark);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+    .principle-eyebrow {
+      font-size: 11px; font-weight: 700; opacity: 0.5;
+      letter-spacing: 1.2px; text-transform: uppercase; color: white; margin-bottom: 8px;
+    }
+    .principle-text { font-size: 22px; font-weight: 600; line-height: 1.4; color: white; }
+    .principle-sub  { font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 8px; line-height: 1.5; }
+
+    /* ── BUYING GROUP ────────────────────────────────────────────────────────── */
+    .buying-group-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 10px;
+    }
+    .psc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .psc-top { padding: 14px 14px 10px; display: flex; align-items: flex-start; gap: 10px; }
+    .psc-icon { font-size: 22px; flex-shrink: 0; line-height: 1.2; }
+    .psc-name { font-size: 13px; font-weight: 700; line-height: 1.3; }
+    .psc-role { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .psc-power {
+      font-size: 11px; font-weight: 600;
+      padding: 7px 14px;
+      border-top: 1px solid var(--border);
+    }
+    .psc-conv {
+      font-size: 11px; color: var(--text-muted);
+      padding: 7px 14px; border-top: 1px solid var(--border);
+      flex: 1;
+    }
+    .psc-conv strong { color: var(--text-2); display: block; margin-top: 1px; }
+
+    .section-sub-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--text-faint); margin: 16px 0 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-sub-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── NAV SECTION CHIPS ───────────────────────────────────────────────────── */
+    .nav-section-chips {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .nsc {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 12px; text-align: center;
+    }
+    .nsc-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .nsc-count { font-size: 11px; color: var(--text-muted); }
+    .nsc-new {
+      display: inline-block; font-size: 9px; font-weight: 700;
+      background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0;
+      border-radius: 99px; padding: 1px 6px; letter-spacing: 0.5px;
+      text-transform: uppercase; margin-left: 4px; vertical-align: middle;
+    }
+
+    /* ── IA CHANGE ROWS ──────────────────────────────────────────────────────── */
+    .ia-change {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 12px 16px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      margin-bottom: 8px;
+    }
+    .ia-arrow {
+      width: 20px; height: 20px; border-radius: 99px;
+      background: #f0fdf4; border: 1.5px solid #bbf7d0;
+      color: #15803d; font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .ia-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .ia-desc  { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    /* ── HEAT DISTRIBUTION ───────────────────────────────────────────────────── */
+    .heat-dist {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      margin-bottom: 20px;
+    }
+    .hdc {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 20px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hdc-num { font-size: 42px; font-weight: 700; line-height: 1; flex-shrink: 0; }
+    .hdc-num.high { color: var(--heat-high); }
+    .hdc-num.med  { color: var(--heat-med);  }
+    .hdc-num.low  { color: var(--heat-low);  }
+    .hdc-title { font-size: 14px; font-weight: 600; color: var(--text); }
+    .hdc-desc  { font-size: 12px; color: var(--text-muted); margin-top: 3px; line-height: 1.5; }
+
+    /* ── TOP PAGES LIST ──────────────────────────────────────────────────────── */
+    .top-page-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      margin-bottom: 6px;
+    }
+    .tpr-rank {
+      width: 22px; height: 22px; border-radius: 99px;
+      background: var(--brand); color: white;
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .tpr-info { flex: 1; min-width: 0; }
+    .tpr-name { font-size: 13px; font-weight: 600; color: var(--text); }
+    .tpr-url  { font-size: 11px; color: var(--text-faint); font-family: monospace; }
+    .tpr-badges { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+    .tpr-score { font-size: 20px; font-weight: 700; flex-shrink: 0; }
+    .tpr-score.high { color: var(--heat-high); }
+
+    /* ── GAP CARDS ───────────────────────────────────────────────────────────── */
+    .gap-card {
+      border-radius: var(--radius); padding: 14px 18px; margin-bottom: 10px;
+      border-left: 4px solid;
+    }
+    .gap-card.critical {
+      background: #fef2f2; border-color: #fecaca; border-left-color: #dc2626;
+    }
+    .gap-card.warning {
+      background: #fffbeb; border-color: #fde68a; border-left-color: #d97706;
+    }
+    .gap-jtbd  { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text-faint); margin-bottom: 5px; }
+    .gap-text  { font-size: 13px; line-height: 1.55; }
+    .gap-card.critical .gap-text { color: #7f1d1d; }
+    .gap-card.warning  .gap-text { color: #78350f; }
+    .gap-footer { margin-top: 8px; display: flex; align-items: center; gap: 6px; }
+
+    /* ── ABOVE FOLD ROWS ─────────────────────────────────────────────────────── */
+    .afr {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 16px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      margin-bottom: 7px;
+    }
+    .afr-rank {
+      width: 24px; height: 24px; border-radius: 99px;
+      background: var(--brand); color: white;
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .afr-name   { font-size: 13px; font-weight: 600; flex: 1; }
+    .afr-badges { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 3px; }
+    .afr-score  { font-size: 18px; font-weight: 700; color: var(--heat-high); flex-shrink: 0; }
+
+    /* ── NEXT STEPS ──────────────────────────────────────────────────────────── */
+    .next-step {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 18px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px;
+    }
+    .ns-num {
+      width: 24px; height: 24px; border-radius: 99px;
+      background: var(--brand-light); border: 1.5px solid var(--brand);
+      color: var(--brand); font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .ns-num.critical {
+      background: #fef2f2; border-color: #fca5a5; color: var(--heat-high);
+    }
+    .ns-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .ns-desc  { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .ns-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      border-radius: 99px; padding: 2px 8px; margin-top: 6px;
+      background: #f3f4f6; border: 1px solid var(--border); color: var(--text-muted);
+    }
+    .ns-tag.critical { background: #fef2f2; border-color: #fca5a5; color: var(--heat-high); }
+    .ns-tag.high     { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+
+    /* ── TWO COL ─────────────────────────────────────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .nav-section-chips { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .heat-dist { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .buying-group-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .nav-section-chips { grid-template-columns: repeat(2, 1fr); }
+      .buying-group-grid { grid-template-columns: 1fr; }
+      .principle-text { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <rect width="20" height="20" rx="4" fill="#1d4ed8"/>
+      <path d="M4 14 L4 8 L8 12 L12 6 L16 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    MH Sitemap
+    <span class="nav-brand-tag">Strategy Tool</span>
+  </a>
+  <nav class="nav-links">
+    <a href="exec-summary.html" class="active">Executive Summary</a>
+    <a href="index.html">Heat Map</a>
+    <a href="sitemap-visual.html">Site Architecture</a>
+    <a href="flows.html">User Flows</a>
+    <a href="homepage-brief.html">Homepage Brief</a>
+    <a href="wireframe.html">Wireframe</a>
+  </nav>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Executive Summary</h1>
+  <p>Modern Health website redesign — strategy findings across the full IA, buying group, and user journey analysis.</p>
+</div>
+
+<!-- HERO STATS -->
+<div id="hero-stats"></div>
+
+<!-- MAIN -->
+<div class="container">
+  <div id="content"></div>
+</div>
+
+<!-- DATA -->
+<script src="data/personas.js"></script>
+<script src="data/sitemap.js"></script>
+<script src="data/user-stories.js"></script>
+<script src="data/heat-map.js"></script>
+<script src="data/homepage-brief.js"></script>
+
+<script>
+
+  // ── Helpers ──────────────────────────────────────────────────────────────────
+
+  function allPersonas() {
+    return [...(PERSONAS.personas || []), ...(PERSONAS.secondaryAudiences || [])];
+  }
+
+  function findPersona(id) {
+    return allPersonas().find(p => p.id === id);
+  }
+
+  function personaBadge(pid) {
+    const p = PERSONAS.personas.find(pe => pe.id === pid);
+    if (!p) return '';
+    return `<span class="badge" style="background:${p.colorLight};color:${p.color};border:1px solid ${p.color}40;font-size:10px">${p.icon} ${p.shortName}</span>`;
+  }
+
+  function countDescendants(pageId, pages) {
+    let n = 0;
+    const children = pages.filter(p => p.parentId === pageId);
+    n += children.length;
+    children.forEach(c => { n += countDescendants(c.id, pages); });
+    return n;
+  }
+
+  // ── Hero stats ────────────────────────────────────────────────────────────────
+
+  function renderHeroStats() {
+    const contentPages = SITEMAP.pages.filter(p =>
+      p.type !== 'nav-dropdown' && p.type !== 'nav-cta' && p.type !== 'footer-cta'
+    );
+    const navSections = SITEMAP.pages.filter(p => p.navTier === 1).length;
+    const totalPersonas = allPersonas().length;
+    const totalStories  = USER_STORIES.userStories.length;
+    const highPages     = HEAT_MAP.summary.high;
+    const critGaps      = USER_STORIES.userStories.filter(s =>
+      s.contentGapNote && s.contentGapNote.startsWith('GAP:')
+    ).length;
+
+    document.getElementById('hero-stats').innerHTML = `
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">${contentPages.length}</div>
+          <div class="hero-stat-label">Pages in sitemap</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">${navSections}</div>
+          <div class="hero-stat-label">Nav sections</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">${totalPersonas}</div>
+          <div class="hero-stat-label">Personas mapped</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">${totalStories}</div>
+          <div class="hero-stat-label">User stories</div>
+        </div>
+        <div class="hero-stat accent-high">
+          <div class="hero-stat-num">${highPages}</div>
+          <div class="hero-stat-label">High-heat pages</div>
+        </div>
+        <div class="hero-stat accent-warn">
+          <div class="hero-stat-num">${critGaps}</div>
+          <div class="hero-stat-label">Critical gaps flagged</div>
+        </div>
+      </div>`;
+  }
+
+  // ── 1. Strategic framing ──────────────────────────────────────────────────────
+
+  function renderFraming() {
+    return `
+      <div class="exec-section">
+        <div class="section-title"><span class="num">1</span> Strategic Framing</div>
+        <div class="principle-card">
+          <div>
+            <div class="principle-eyebrow">Core Design Principle</div>
+            <p class="principle-text">${HOMEPAGE_BRIEF.corePrinciple}</p>
+            <p class="principle-sub">The site must navigate a 10-person evaluation committee — not just an HR buyer. Each persona enters with a different job, a different level of urgency, and a different definition of success. The site's job is to route each one to their answer in as few clicks as possible.</p>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ── 2. Buying group ───────────────────────────────────────────────────────────
+
+  function renderBuyingGroup() {
+    const buyerCards = PERSONAS.personas.map(p => `
+      <div class="psc" style="border-top:3px solid ${p.color}">
+        <div class="psc-top">
+          <span class="psc-icon">${p.icon}</span>
+          <div>
+            <div class="psc-name" style="color:${p.color}">${p.name}</div>
+            <div class="psc-role">${p.role}</div>
+          </div>
+        </div>
+        <div class="psc-power" style="color:${p.color};background:${p.colorLight}">
+          ${p.decisionPower}
+        </div>
+        <div class="psc-conv">
+          Conversion goal:
+          <strong>${p.conversionAction}</strong>
+        </div>
+      </div>`).join('');
+
+    const secondaryCards = PERSONAS.secondaryAudiences.map(p => `
+      <div class="psc" style="border-top:3px solid #9ca3af">
+        <div class="psc-top">
+          <div>
+            <div class="psc-name" style="color:#6b7280">${p.name}</div>
+            <div class="psc-role">${p.role}</div>
+          </div>
+        </div>
+        <div class="psc-conv" style="border-top:1px solid var(--border);">${p.note}</div>
+      </div>`).join('');
+
+    return `
+      <div class="exec-section">
+        <div class="section-title"><span class="num">2</span> The Buying Group</div>
+        <p class="text-muted text-small mb-16">8-persona buying committee plus 2 secondary audiences. Each has a distinct job to be done, a different entry point into the site, and a different conversion goal. The site must serve all of them simultaneously.</p>
+        <div class="buying-group-grid">${buyerCards}</div>
+        <div class="section-sub-label">Secondary audiences — not buying group members</div>
+        <div class="buying-group-grid">${secondaryCards}</div>
+      </div>`;
+  }
+
+  // ── 3. Site architecture ──────────────────────────────────────────────────────
+
+  function renderSiteArchitecture() {
+    const newSections = new Set(['solutions']);
+    const tier1 = SITEMAP.pages.filter(p => p.navTier === 1);
+
+    const chips = tier1.map(p => {
+      const childCount = countDescendants(p.id, SITEMAP.pages);
+      const isNew = newSections.has(p.id);
+      return `
+        <div class="nsc">
+          <div class="nsc-name">${p.name}${isNew ? '<span class="nsc-new">New</span>' : ''}</div>
+          <div class="nsc-count">${childCount} sub-page${childCount !== 1 ? 's' : ''}</div>
+        </div>`;
+    }).join('');
+
+    const changes = [
+      {
+        title: 'Solutions section added',
+        desc: 'Care Modalities and Care for Every Challenge elevated from Our Approach into a dedicated top-level nav section. Product depth now has direct top-level visibility.'
+      },
+      {
+        title: 'Population-Specific Needs added as 5th challenge category',
+        desc: 'Neurodivergent Support, Frontline Workforce, Multicultural Workforce, and First Responders consolidated under a single hub — was previously scattered across Life Stages and Workforce/Org Needs.'
+      },
+      {
+        title: 'Providers page elevated to Tier 2',
+        desc: 'Previously missing from the IA despite being a core audience. Now a direct sub-page under Who We Serve alongside Employers, Members, and Consultants.'
+      },
+      {
+        title: 'Resources Hub simplified',
+        desc: 'Replaced with Past Webinars and Gated Content — cleaner separation between thought leadership and downloadable assets for buyers and brokers.'
+      }
+    ];
+
+    const changesHtml = changes.map(c => `
+      <div class="ia-change">
+        <div class="ia-arrow">+</div>
+        <div>
+          <div class="ia-title">${c.title}</div>
+          <div class="ia-desc">${c.desc}</div>
+        </div>
+      </div>`).join('');
+
+    return `
+      <div class="exec-section">
+        <div class="section-title"><span class="num">3</span> Site Architecture</div>
+        <p class="text-muted text-small mb-16">74 pages across 6 top-level nav sections. Source: Figma Site Mapv2 + Content Map 4.26. One new nav section added; 4 structural changes from the prior IA.</p>
+        <div class="nav-section-chips">${chips}</div>
+        <div class="section-sub-label">Key IA changes in v2</div>
+        ${changesHtml}
+      </div>`;
+  }
+
+  // ── 4. Strategic heat ─────────────────────────────────────────────────────────
+
+  function renderHeatMap() {
+    const { high, medium, low } = HEAT_MAP.summary;
+
+    const dist = `
+      <div class="heat-dist">
+        <div class="hdc">
+          <div class="hdc-num high">${high}</div>
+          <div>
+            <div class="hdc-title">High-heat pages</div>
+            <div class="hdc-desc">Score ≥ 7. Multiple personas, priority-1 paths. These pages carry the evaluation — they must perform.</div>
+          </div>
+        </div>
+        <div class="hdc">
+          <div class="hdc-num med">${medium}</div>
+          <div>
+            <div class="hdc-title">Medium-heat pages</div>
+            <div class="hdc-desc">Score 4–6.9. Serve fewer personas or lower-priority stories. Important, not critical.</div>
+          </div>
+        </div>
+        <div class="hdc">
+          <div class="hdc-num low">${low}</div>
+          <div>
+            <div class="hdc-title">Low-heat pages</div>
+            <div class="hdc-desc">Score &lt; 4. Valid in the nav — not worth homepage real estate.</div>
+          </div>
+        </div>
+      </div>`;
+
+    const topPages = HEAT_MAP.pages.filter(p => p.heatLevel === 'high').slice(0, 8);
+    const topHtml = topPages.map((p, i) => {
+      const badges = p.personasServed.map(pid => personaBadge(pid)).join('');
+      return `
+        <div class="top-page-row">
+          <div class="tpr-rank">${i + 1}</div>
+          <div class="tpr-info">
+            <div class="tpr-name">${p.name}</div>
+            <div class="tpr-url">${p.url}</div>
+            <div class="tpr-badges">${badges}</div>
+          </div>
+          <div class="tpr-score high">${p.heatScore}</div>
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="exec-section">
+        <div class="section-title"><span class="num">4</span> Strategic Heat</div>
+        <p class="text-muted text-small mb-16">Each page scored on 5 weighted signals: story coverage (30%), conversion proximity (25%), entry frequency (20%), drop-off risk (15%), and audience overlap (10%). High-heat pages need the most design and content investment.</p>
+        ${dist}
+        <div class="section-sub-label">Top-ranked pages by heat score</div>
+        ${topHtml}
+      </div>`;
+  }
+
+  // ── 5. Content gaps ───────────────────────────────────────────────────────────
+
+  function renderContentGaps() {
+    const gaps  = USER_STORIES.userStories.filter(s => s.contentGapNote && s.contentGapNote.startsWith('GAP:'));
+    const notes = USER_STORIES.userStories.filter(s => s.contentGapNote && s.contentGapNote.startsWith('NOTE:'));
+
+    function gapCard(s, type) {
+      const p = findPersona(s.personaId);
+      const badge = p && p.color
+        ? `<span class="badge" style="background:${p.colorLight};color:${p.color};border:1px solid ${p.color}40;font-size:10px">${p.icon || ''} ${p.shortName || p.name}</span>`
+        : `<span class="badge badge-secondary">${s.personaId}</span>`;
+      const text = s.contentGapNote.replace(/^(GAP|NOTE):\s*/, '');
+      return `
+        <div class="gap-card ${type}">
+          <div class="gap-jtbd">${s.jobToBeDone}</div>
+          <div class="gap-text">${text}</div>
+          <div class="gap-footer">${badge}</div>
+        </div>`;
+    }
+
+    const gapsHtml  = gaps.map(s => gapCard(s, 'critical')).join('');
+    const notesHtml = notes.map(s => gapCard(s, 'warning')).join('');
+
+    return `
+      <div class="exec-section">
+        <div class="section-title"><span class="num">5</span> Content Gaps &amp; Risk Flags</div>
+        <p class="text-muted text-small mb-16">${gaps.length} critical gaps where a persona cannot complete their job to be done on the current site structure. ${notes.length} additional warnings where content framing or CTA placement needs attention.</p>
+        ${gaps.length ? `
+          <div class="section-sub-label" style="color:var(--heat-high);margin-top:0">Critical gaps — persona cannot complete their job</div>
+          ${gapsHtml}` : ''}
+        ${notes.length ? `
+          <div class="section-sub-label" style="color:#92400e;margin-top:${gaps.length ? 8 : 0}px">Warnings — content framing or CTA placement risks</div>
+          ${notesHtml}` : ''}
+      </div>`;
+  }
+
+  // ── 6. Homepage routing ───────────────────────────────────────────────────────
+
+  function renderHomepageRouting() {
+    const b = HOMEPAGE_BRIEF;
+    const aboveFold = (b.aboveTheFold || []).filter(p => p.pageId !== 'home');
+
+    const foldHtml = aboveFold.map((p, i) => {
+      const badges = (p.personasServed || []).map(pid => personaBadge(pid)).join('');
+      return `
+        <div class="afr">
+          <div class="afr-rank">${i + 1}</div>
+          <div style="flex:1;min-width:0">
+            <div class="afr-name">${p.pageName}</div>
+            <div class="afr-badges">${badges}</div>
+          </div>
+          <div class="afr-score">${p.heatScore}</div>
+        </div>`;
+    }).join('');
+
+    const ctaList = [b.primaryCTA, ...(b.secondaryCTAs || [])];
+    const ctaHtml = ctaList.map((cta, i) => {
+      const p = PERSONAS.personas.find(pe => pe.id === cta.personaId);
+      const isPrimary = i === 0;
+      return `
+        <div class="cta-box ${isPrimary ? 'primary' : ''}">
+          <div style="flex:1">
+            <div class="cta-type">${isPrimary ? 'Primary' : 'Secondary'} CTA${p ? ' — ' + p.shortName : ''}</div>
+            <div class="cta-action">${cta.action}</div>
+            <div class="cta-rationale">${cta.rationale}</div>
+          </div>
+          ${p ? `<span class="badge" style="flex-shrink:0;background:${p.colorLight};color:${p.color};border:1px solid ${p.color}40">${p.icon} ${p.role}</span>` : ''}
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="exec-section">
+        <div class="section-title"><span class="num">6</span> Homepage Routing Strategy</div>
+        <div class="two-col">
+          <div>
+            <div class="section-sub-label" style="margin-top:0">Pages that earn above-the-fold visibility</div>
+            ${foldHtml}
+          </div>
+          <div>
+            <div class="section-sub-label" style="margin-top:0">CTA hierarchy</div>
+            ${ctaHtml}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ── 7. Recommended next steps ─────────────────────────────────────────────────
+
+  function renderNextSteps() {
+    const steps = [
+      {
+        num: '!',
+        cls: 'critical',
+        tag: 'Deal-blocker',
+        tagCls: 'critical',
+        title: 'Surface compliance documentation on-site',
+        desc: 'Legal, IT, and Procurement cannot complete due diligence without HIPAA/BAA documentation, SOC 2 certification summaries, and privacy policy details accessible without a sales call. Three separate user stories flag this as a blocker. The deal stalls at the compliance gate.'
+      },
+      {
+        num: '!',
+        cls: 'critical',
+        tag: 'Deal-blocker',
+        tagCls: 'critical',
+        title: 'Create a dedicated Consultant relations path',
+        desc: 'Benefits Consultants are currently routed to the same demo form as HR buyers. A consultant-specific CTA on the Consultants page signals that Modern Health values the broker relationship — and increases the likelihood of a referral.'
+      },
+      {
+        num: '3',
+        cls: '',
+        tag: 'Priority: High',
+        tagCls: 'high',
+        title: 'Ungate pricing and ROI content',
+        desc: 'Finance leaders and procurement evaluate cost early. Any pricing or ROI content gated behind a demo request causes these personas to abandon before they can validate the investment case for leadership.'
+      },
+      {
+        num: '4',
+        cls: '',
+        tag: 'Priority: High',
+        tagCls: 'high',
+        title: 'Add security and SSO architecture detail to the site',
+        desc: 'IT/Security cannot make a provisioning recommendation without SSO/MFA compatibility details and security certification summaries. Without this, the vendor review process stalls or requires a lengthy pre-sales engagement before a basic pass/fail determination.'
+      },
+      {
+        num: '5',
+        cls: '',
+        tag: 'Next: Research',
+        tagCls: '',
+        title: 'Validate new persona user stories with stakeholders',
+        desc: 'Benefits Buyer/Procurement, Total Rewards, Legal/Compliance, and IT/Security now have mapped user stories and flows. These are grounded in the buying group JTBD source — validate against stakeholder interviews before finalizing content requirements for those pages.'
+      }
+    ];
+
+    const stepsHtml = steps.map(s => `
+      <div class="next-step">
+        <div class="ns-num ${s.cls}">${s.num}</div>
+        <div>
+          <div class="ns-title">${s.title}</div>
+          <div class="ns-desc">${s.desc}</div>
+          <span class="ns-tag ${s.tagCls}">${s.tag}</span>
+        </div>
+      </div>`).join('');
+
+    return `
+      <div class="exec-section">
+        <div class="section-title"><span class="num">7</span> Recommended Next Steps</div>
+        ${stepsHtml}
+      </div>`;
+  }
+
+  // ── Main render ───────────────────────────────────────────────────────────────
+
+  function render() {
+    renderHeroStats();
+    document.getElementById('content').innerHTML =
+      renderFraming() +
+      renderBuyingGroup() +
+      renderSiteArchitecture() +
+      renderHeatMap() +
+      renderContentGaps() +
+      renderHomepageRouting() +
+      renderNextSteps();
+  }
+
+  render();
+</script>
+</body>
+</html>

@@ -42,8 +42,9 @@ function main() {
 
   const pageById = Object.fromEntries(sitemap.pages.map(p => [p.id, p]));
 
-  // Build per-persona flow groups
-  const flows = personas.personas.map(persona => {
+  // Build per-persona flow groups (buying group + secondary audiences)
+  const allPersonas = [...personas.personas, ...(personas.secondaryAudiences || [])];
+  const flows = allPersonas.map(persona => {
     const personaStories = stories.userStories.filter(s => s.personaId === persona.id);
 
     const paths = personaStories.map(story => {
@@ -71,7 +72,7 @@ function main() {
     return {
       personaId: persona.id,
       personaName: persona.name,
-      conversionAction: persona.conversionAction,
+      conversionAction: persona.conversionAction || null,
       paths
     };
   });

@@ -1,6 +1,6 @@
 {
   "status": "generated",
-  "generated": "2026-04-18T01:45:18.243Z",
+  "generated": "2026-05-08T16:20:11.505Z",
   "weights": {
     "storyCoverage": 0.3,
     "conversionProximity": 0.25,
@@ -9,18 +9,10 @@
     "audienceOverlap": 0.1
   },
   "summary": {
-    "high": 13,
-    "medium": 8,
-    "low": 24,
+    "high": 16,
+    "medium": 5,
+    "low": 42,
     "gaps": [
-      {
-        "page": "Care Modalities",
-        "gap": "High-heat page is 3+ levels deep in the nav — consider elevating or adding a cross-link from a tier-2 page"
-      },
-      {
-        "page": "Members",
-        "gap": "High-heat page is 3+ levels deep in the nav — consider elevating or adding a cross-link from a tier-2 page"
-      },
       {
         "page": "Clinical Research Index",
         "gap": "High-heat page is 3+ levels deep in the nav — consider elevating or adding a cross-link from a tier-2 page"
@@ -29,30 +21,6 @@
   },
   "pages": [
     {
-      "id": "adaptive-care",
-      "name": "Adaptive Care",
-      "url": "/our-approach/adaptive-care",
-      "navTier": 2,
-      "heatScore": 8.5,
-      "heatLevel": "high",
-      "personasServed": [
-        "hr-buyer",
-        "benefits-manager",
-        "broker",
-        "member",
-        "provider"
-      ],
-      "storiesRouted": 5,
-      "signals": {
-        "storyCoverage": 10,
-        "conversionProximity": 10,
-        "entryFrequency": 4,
-        "dropOffRisk": 8,
-        "audienceOverlap": 10
-      },
-      "contentGaps": []
-    },
-    {
       "id": "home",
       "name": "Home",
       "url": "/",
@@ -60,15 +28,18 @@
       "heatScore": 8.4,
       "heatLevel": "high",
       "personasServed": [
-        "hr-buyer",
-        "benefits-manager",
-        "broker",
+        "hr-benefits-manager",
+        "benefits-consultant",
+        "benefits-buyer-procurement",
+        "total-rewards-professional",
+        "finance-leader",
+        "legal-compliance",
+        "it-security",
         "member",
         "provider",
-        "partner",
-        "cfo"
+        "partner"
       ],
-      "storiesRouted": 21,
+      "storiesRouted": 30,
       "signals": {
         "storyCoverage": 10,
         "conversionProximity": 6,
@@ -79,15 +50,16 @@
       "contentGaps": []
     },
     {
-      "id": "economic-roi",
-      "name": "Economic Value / ROI",
-      "url": "/outcomes/economic-value",
+      "id": "adaptive-care",
+      "name": "Adaptive Care",
+      "url": "/our-approach/adaptive-care",
       "navTier": 2,
       "heatScore": 8.3,
       "heatLevel": "high",
       "personasServed": [
-        "hr-buyer",
-        "cfo"
+        "benefits-consultant",
+        "total-rewards-professional",
+        "provider"
       ],
       "storiesRouted": 3,
       "signals": {
@@ -100,24 +72,88 @@
       "contentGaps": []
     },
     {
-      "id": "clinical-outcomes",
-      "name": "Clinical Outcomes",
-      "url": "/outcomes/clinical",
+      "id": "clinical-quality-standards",
+      "name": "Clinical Quality and Standards",
+      "url": "/our-approach/clinical-quality-standards",
       "navTier": 2,
-      "heatScore": 8,
+      "heatScore": 8.3,
       "heatLevel": "high",
       "personasServed": [
-        "hr-buyer",
-        "broker",
-        "provider",
-        "partner"
+        "benefits-buyer-procurement",
+        "legal-compliance",
+        "it-security"
+      ],
+      "storiesRouted": 6,
+      "signals": {
+        "storyCoverage": 10,
+        "conversionProximity": 10,
+        "entryFrequency": 4,
+        "dropOffRisk": 6.8,
+        "audienceOverlap": 10
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "economic-roi",
+      "name": "Economic Value / ROI",
+      "url": "/outcomes/economic-value",
+      "navTier": 2,
+      "heatScore": 8.2,
+      "heatLevel": "high",
+      "personasServed": [
+        "hr-benefits-manager",
+        "benefits-buyer-procurement",
+        "finance-leader"
       ],
       "storiesRouted": 4,
       "signals": {
         "storyCoverage": 10,
         "conversionProximity": 10,
         "entryFrequency": 4,
-        "dropOffRisk": 4.8,
+        "dropOffRisk": 6,
+        "audienceOverlap": 10
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "responsible-ai",
+      "name": "Responsible AI",
+      "url": "/our-approach/responsible-ai",
+      "navTier": 2,
+      "heatScore": 8,
+      "heatLevel": "high",
+      "personasServed": [
+        "benefits-buyer-procurement",
+        "legal-compliance",
+        "it-security"
+      ],
+      "storiesRouted": 5,
+      "signals": {
+        "storyCoverage": 10,
+        "conversionProximity": 10,
+        "entryFrequency": 4,
+        "dropOffRisk": 4.4,
+        "audienceOverlap": 10
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "care-modalities",
+      "name": "Care Modalities",
+      "url": "/solutions/care-modalities",
+      "navTier": 2,
+      "heatScore": 8,
+      "heatLevel": "high",
+      "personasServed": [
+        "hr-benefits-manager",
+        "total-rewards-professional"
+      ],
+      "storiesRouted": 3,
+      "signals": {
+        "storyCoverage": 10,
+        "conversionProximity": 10,
+        "entryFrequency": 4,
+        "dropOffRisk": 4.4,
         "audienceOverlap": 10
       },
       "contentGaps": []
@@ -130,7 +166,7 @@
       "heatScore": 7.8,
       "heatLevel": "high",
       "personasServed": [
-        "broker"
+        "benefits-consultant"
       ],
       "storiesRouted": 2,
       "signals": {
@@ -143,43 +179,22 @@
       "contentGaps": []
     },
     {
-      "id": "employers",
-      "name": "Employers",
-      "url": "/who-we-serve/employers",
+      "id": "partnering-with-your-team",
+      "name": "Partnering with Your Team",
+      "url": "/our-approach/partnering-with-your-team",
       "navTier": 2,
-      "heatScore": 7.6,
+      "heatScore": 7.8,
       "heatLevel": "high",
       "personasServed": [
-        "hr-buyer",
-        "benefits-manager"
-      ],
-      "storiesRouted": 2,
-      "signals": {
-        "storyCoverage": 10,
-        "conversionProximity": 8,
-        "entryFrequency": 4,
-        "dropOffRisk": 5.6,
-        "audienceOverlap": 10
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "global-care-network",
-      "name": "Global Care Network",
-      "url": "/our-approach/global-care-network",
-      "navTier": 2,
-      "heatScore": 7.5,
-      "heatLevel": "high",
-      "personasServed": [
-        "provider",
-        "partner"
+        "hr-benefits-manager",
+        "total-rewards-professional"
       ],
       "storiesRouted": 2,
       "signals": {
         "storyCoverage": 10,
         "conversionProximity": 10,
         "entryFrequency": 4,
-        "dropOffRisk": 1.6,
+        "dropOffRisk": 3.6,
         "audienceOverlap": 10
       },
       "contentGaps": []
@@ -189,65 +204,128 @@
       "name": "Case Studies Index",
       "url": "/outcomes/case-studies",
       "navTier": 2,
-      "heatScore": 7.5,
+      "heatScore": 7.8,
       "heatLevel": "high",
       "personasServed": [
-        "hr-buyer",
-        "cfo"
+        "hr-benefits-manager",
+        "benefits-consultant",
+        "finance-leader"
       ],
-      "storiesRouted": 2,
+      "storiesRouted": 3,
       "signals": {
         "storyCoverage": 10,
         "conversionProximity": 10,
         "entryFrequency": 4,
-        "dropOffRisk": 1.6,
+        "dropOffRisk": 3.6,
         "audienceOverlap": 10
       },
       "contentGaps": []
     },
     {
-      "id": "resources",
-      "name": "Resources",
-      "url": "/insights/resources",
+      "id": "members",
+      "name": "Members",
+      "url": "/who-we-serve/members",
       "navTier": 2,
-      "heatScore": 7.4,
+      "heatScore": 7.6,
       "heatLevel": "high",
       "personasServed": [
-        "benefits-manager",
-        "broker"
-      ],
-      "storiesRouted": 2,
-      "signals": {
-        "storyCoverage": 10,
-        "conversionProximity": 8,
-        "entryFrequency": 4,
-        "dropOffRisk": 4,
-        "audienceOverlap": 10
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "care-modalities",
-      "name": "Care Modalities",
-      "url": "/our-approach/care-modalities",
-      "navTier": 3,
-      "heatScore": 7.1,
-      "heatLevel": "high",
-      "personasServed": [
-        "benefits-manager",
         "member"
       ],
       "storiesRouted": 2,
       "signals": {
         "storyCoverage": 10,
         "conversionProximity": 10,
-        "entryFrequency": 2,
+        "entryFrequency": 4,
+        "dropOffRisk": 5.2,
+        "audienceOverlap": 5
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "clinical-outcomes",
+      "name": "Clinical Outcomes",
+      "url": "/outcomes/clinical",
+      "navTier": 2,
+      "heatScore": 7.6,
+      "heatLevel": "high",
+      "personasServed": [
+        "benefits-consultant",
+        "provider",
+        "partner"
+      ],
+      "storiesRouted": 3,
+      "signals": {
+        "storyCoverage": 10,
+        "conversionProximity": 8,
+        "entryFrequency": 4,
+        "dropOffRisk": 5.2,
+        "audienceOverlap": 10
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "employers",
+      "name": "Employers",
+      "url": "/who-we-serve/employers",
+      "navTier": 2,
+      "heatScore": 7.5,
+      "heatLevel": "high",
+      "personasServed": [
+        "hr-benefits-manager",
+        "benefits-buyer-procurement"
+      ],
+      "storiesRouted": 2,
+      "signals": {
+        "storyCoverage": 10,
+        "conversionProximity": 8,
+        "entryFrequency": 4,
+        "dropOffRisk": 4.8,
+        "audienceOverlap": 10
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "care-every-challenge",
+      "name": "Care for Every Challenge",
+      "url": "/solutions/care-for-every-challenge",
+      "navTier": 2,
+      "heatScore": 7.5,
+      "heatLevel": "high",
+      "personasServed": [
+        "total-rewards-professional",
+        "member"
+      ],
+      "storiesRouted": 3,
+      "signals": {
+        "storyCoverage": 10,
+        "conversionProximity": 10,
+        "entryFrequency": 4,
         "dropOffRisk": 1.6,
         "audienceOverlap": 10
       },
-      "contentGaps": [
-        "High-heat page is 3+ levels deep in the nav — consider elevating or adding a cross-link from a tier-2 page"
-      ]
+      "contentGaps": []
+    },
+    {
+      "id": "global-capabilities",
+      "name": "Global Capabilities",
+      "url": "/our-approach/global-capabilities",
+      "navTier": 2,
+      "heatScore": 7.4,
+      "heatLevel": "high",
+      "personasServed": [
+        "total-rewards-professional",
+        "it-security",
+        "partner"
+      ],
+      "storiesRouted": 3,
+      "signals": {
+        "storyCoverage": 10,
+        "conversionProximity": 10,
+        "entryFrequency": 4,
+        "dropOffRisk": 0.8,
+        "audienceOverlap": 10
+      },
+      "contentGaps": []
     },
     {
       "id": "health-plans",
@@ -268,28 +346,6 @@
         "audienceOverlap": 5
       },
       "contentGaps": []
-    },
-    {
-      "id": "members",
-      "name": "Members",
-      "url": "/who-we-serve/members",
-      "navTier": 3,
-      "heatScore": 7,
-      "heatLevel": "high",
-      "personasServed": [
-        "member"
-      ],
-      "storiesRouted": 2,
-      "signals": {
-        "storyCoverage": 10,
-        "conversionProximity": 8,
-        "entryFrequency": 2,
-        "dropOffRisk": 7.2,
-        "audienceOverlap": 5
-      },
-      "contentGaps": [
-        "High-heat page is 3+ levels deep in the nav — consider elevating or adding a cross-link from a tier-2 page"
-      ]
     },
     {
       "id": "clinical-research",
@@ -319,7 +375,7 @@
       "name": "Work with Us",
       "url": "/company/careers",
       "navTier": 2,
-      "heatScore": 6.1,
+      "heatScore": 5.8,
       "heatLevel": "medium",
       "personasServed": [
         "provider"
@@ -329,40 +385,20 @@
         "storyCoverage": 6,
         "conversionProximity": 8,
         "entryFrequency": 4,
-        "dropOffRisk": 6.4,
+        "dropOffRisk": 4.4,
         "audienceOverlap": 5
       },
       "contentGaps": []
     },
     {
-      "id": "sustainable-pricing",
-      "name": "Sustainable Pricing",
-      "url": "/our-approach/sustainable-pricing",
-      "navTier": 2,
-      "heatScore": 6,
-      "heatLevel": "medium",
-      "personasServed": [
-        "cfo"
-      ],
-      "storiesRouted": 1,
-      "signals": {
-        "storyCoverage": 6,
-        "conversionProximity": 10,
-        "entryFrequency": 4,
-        "dropOffRisk": 2.8,
-        "audienceOverlap": 5
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "mh-by-your-side",
-      "name": "Modern Health by Your Side",
-      "url": "/our-approach/modern-health-by-your-side",
+      "id": "provider-network",
+      "name": "Provider Network",
+      "url": "/our-approach/provider-network",
       "navTier": 2,
       "heatScore": 5.7,
       "heatLevel": "medium",
       "personasServed": [
-        "benefits-manager"
+        "provider"
       ],
       "storiesRouted": 1,
       "signals": {
@@ -375,34 +411,34 @@
       "contentGaps": []
     },
     {
-      "id": "provider-inquiry",
-      "name": "Provider Inquiry",
-      "url": "/company/careers/providers",
-      "navTier": 3,
-      "heatScore": 5.6,
+      "id": "gated-content",
+      "name": "Gated Content Index",
+      "url": "/insights/gated-content",
+      "navTier": 2,
+      "heatScore": 5.7,
       "heatLevel": "medium",
       "personasServed": [
-        "provider"
+        "benefits-consultant"
       ],
       "storiesRouted": 1,
       "signals": {
         "storyCoverage": 6,
         "conversionProximity": 10,
-        "entryFrequency": 2,
-        "dropOffRisk": 2.8,
+        "entryFrequency": 4,
+        "dropOffRisk": 0.8,
         "audienceOverlap": 5
       },
       "contentGaps": []
     },
     {
-      "id": "res-case-study",
-      "name": "Case Study Index (Resources)",
-      "url": "/insights/resources/case-studies",
+      "id": "provider-opportunities",
+      "name": "Provider Opportunities",
+      "url": "/company/careers/providers",
       "navTier": 3,
       "heatScore": 5.3,
       "heatLevel": "medium",
       "personasServed": [
-        "broker"
+        "provider"
       ],
       "storiesRouted": 1,
       "signals": {
@@ -435,19 +471,19 @@
       "contentGaps": []
     },
     {
-      "id": "care-every-challenge",
-      "name": "Care for Every Challenge",
-      "url": "/our-approach/care-for-every-challenge",
+      "id": "population-specific-needs",
+      "name": "Population-Specific Needs",
+      "url": "/solutions/care-for-every-challenge/population-specific-needs",
       "navTier": 3,
-      "heatScore": 4.8,
-      "heatLevel": "medium",
+      "heatScore": 3.7,
+      "heatLevel": "low",
       "personasServed": [
-        "member"
+        "total-rewards-professional"
       ],
       "storiesRouted": 1,
       "signals": {
         "storyCoverage": 4.5,
-        "conversionProximity": 10,
+        "conversionProximity": 6,
         "entryFrequency": 2,
         "dropOffRisk": 0,
         "audienceOverlap": 5
@@ -455,29 +491,9 @@
       "contentGaps": []
     },
     {
-      "id": "res-mh-workplace",
-      "name": "Mental Health in the Workplace Index",
-      "url": "/insights/resources/mental-health-workplace",
-      "navTier": 3,
-      "heatScore": 4.8,
-      "heatLevel": "medium",
-      "personasServed": [
-        "benefits-manager"
-      ],
-      "storiesRouted": 1,
-      "signals": {
-        "storyCoverage": 4.5,
-        "conversionProximity": 10,
-        "entryFrequency": 2,
-        "dropOffRisk": 0,
-        "audienceOverlap": 5
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "global-capabilities",
-      "name": "Global Capabilities",
-      "url": "/our-approach/global-capabilities",
+      "id": "events",
+      "name": "Events Index",
+      "url": "/insights/events",
       "navTier": 2,
       "heatScore": 0.8,
       "heatLevel": "low",
@@ -493,9 +509,9 @@
       "contentGaps": []
     },
     {
-      "id": "events",
-      "name": "Events",
-      "url": "/insights/events",
+      "id": "past-webinars",
+      "name": "Past Webinars Index",
+      "url": "/insights/past-webinars",
       "navTier": 2,
       "heatScore": 0.8,
       "heatLevel": "low",
@@ -565,9 +581,99 @@
       "contentGaps": []
     },
     {
-      "id": "responsible-ai",
-      "name": "Responsible AI",
-      "url": "/our-approach/responsible-ai",
+      "id": "mh-circles",
+      "name": "Modern Health Circles",
+      "url": "/solutions/care-modalities/circles",
+      "navTier": 3,
+      "heatScore": 0.4,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 2,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "mh-pathways",
+      "name": "Modern Health Pathways",
+      "url": "/solutions/care-modalities/pathways",
+      "navTier": 3,
+      "heatScore": 0.4,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 2,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "everyday-mental-health",
+      "name": "Everyday Mental Health & Well-being",
+      "url": "/solutions/care-for-every-challenge/everyday-mental-health",
+      "navTier": 3,
+      "heatScore": 0.4,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 2,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "life-stages",
+      "name": "Life Stages & Personal Challenges",
+      "url": "/solutions/care-for-every-challenge/life-stages",
+      "navTier": 3,
+      "heatScore": 0.4,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 2,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "workforce-org-needs",
+      "name": "Workforce & Organizational Needs",
+      "url": "/solutions/care-for-every-challenge/workforce-organizational",
+      "navTier": 3,
+      "heatScore": 0.4,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 2,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "clinical-complex-needs",
+      "name": "Clinical & Complex Needs",
+      "url": "/solutions/care-for-every-challenge/clinical-complex",
       "navTier": 3,
       "heatScore": 0.4,
       "heatLevel": "low",
@@ -619,8 +725,26 @@
       "contentGaps": []
     },
     {
+      "id": "past-webinars-dp",
+      "name": "Past Webinars Detail Pages",
+      "url": "/insights/past-webinars/:slug",
+      "navTier": 3,
+      "heatScore": 0.4,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 2,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
       "id": "blog-pages",
-      "name": "Blog Pages",
+      "name": "Blog Detail Pages",
       "url": "/insights/blog/:slug",
       "navTier": 3,
       "heatScore": 0.4,
@@ -637,63 +761,9 @@
       "contentGaps": []
     },
     {
-      "id": "res-clinical-research",
-      "name": "Clinical Research Index (Resources)",
-      "url": "/insights/resources/clinical-research",
-      "navTier": 3,
-      "heatScore": 0.4,
-      "heatLevel": "low",
-      "personasServed": [],
-      "storiesRouted": 0,
-      "signals": {
-        "storyCoverage": 0,
-        "conversionProximity": 0,
-        "entryFrequency": 2,
-        "dropOffRisk": 0,
-        "audienceOverlap": 0
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "res-care-challenge",
-      "name": "Care for Every Challenge Index (Resources)",
-      "url": "/insights/resources/care-for-every-challenge",
-      "navTier": 3,
-      "heatScore": 0.4,
-      "heatLevel": "low",
-      "personasServed": [],
-      "storiesRouted": 0,
-      "signals": {
-        "storyCoverage": 0,
-        "conversionProximity": 0,
-        "entryFrequency": 2,
-        "dropOffRisk": 0,
-        "audienceOverlap": 0
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "res-blog",
-      "name": "Blog Index (Resources)",
-      "url": "/insights/resources/blog",
-      "navTier": 3,
-      "heatScore": 0.4,
-      "heatLevel": "low",
-      "personasServed": [],
-      "storiesRouted": 0,
-      "signals": {
-        "storyCoverage": 0,
-        "conversionProximity": 0,
-        "entryFrequency": 2,
-        "dropOffRisk": 0,
-        "audienceOverlap": 0
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "webinars",
-      "name": "Webinars",
-      "url": "/insights/resources/webinars",
+      "id": "gated-content-dp",
+      "name": "Gated Content Detail Pages",
+      "url": "/insights/gated-content/:slug",
       "navTier": 3,
       "heatScore": 0.4,
       "heatLevel": "low",
@@ -727,9 +797,9 @@
       "contentGaps": []
     },
     {
-      "id": "care-every-challenge-dp",
-      "name": "Care for Every Challenge Detail Pages",
-      "url": "/our-approach/care-for-every-challenge/:slug",
+      "id": "burnout-workplace-stress",
+      "name": "Burnout & Workplace Stress",
+      "url": "/solutions/care-for-every-challenge/burnout-workplace-stress",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -745,9 +815,9 @@
       "contentGaps": []
     },
     {
-      "id": "pathways",
-      "name": "Pathways",
-      "url": "/our-approach/pathways",
+      "id": "financial-stress-wellbeing",
+      "name": "Financial Stress & Well-Being",
+      "url": "/solutions/care-for-every-challenge/financial-stress-wellbeing",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -763,9 +833,9 @@
       "contentGaps": []
     },
     {
-      "id": "circles-marketing",
-      "name": "Circles (Marketing Page)",
-      "url": "/circles",
+      "id": "preventative-early-support",
+      "name": "Preventative & Early Support",
+      "url": "/solutions/care-for-every-challenge/preventative-early-support",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -781,10 +851,352 @@
       "contentGaps": []
     },
     {
-      "id": "circles-product",
-      "name": "Circles (Product Page)",
-      "url": "/circles/product",
-      "navTier": 5,
+      "id": "caregiving",
+      "name": "Caregiving",
+      "url": "/solutions/care-for-every-challenge/caregiving",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "parenting-dependents",
+      "name": "Parenting & Dependents",
+      "url": "/solutions/care-for-every-challenge/parenting-dependents",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "serious-chronic-illness",
+      "name": "Serious or Chronic Illness",
+      "url": "/solutions/care-for-every-challenge/serious-chronic-illness",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "grief",
+      "name": "Grief",
+      "url": "/solutions/care-for-every-challenge/grief",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "life-transitions",
+      "name": "Life Transitions & Major Changes",
+      "url": "/solutions/care-for-every-challenge/life-transitions",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "womens-health",
+      "name": "Women's Health",
+      "url": "/solutions/care-for-every-challenge/womens-health",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "neurodivergent-support",
+      "name": "Neurodivergent Employee Support",
+      "url": "/solutions/care-for-every-challenge/neurodivergent-support",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "leadership-manager-support",
+      "name": "Leadership & Manager Support",
+      "url": "/solutions/care-for-every-challenge/leadership-manager-support",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "workforce-performance",
+      "name": "Workforce Performance & Presenteeism",
+      "url": "/solutions/care-for-every-challenge/workforce-performance-presenteeism",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "employee-retention",
+      "name": "Employee Retention & Engagement",
+      "url": "/solutions/care-for-every-challenge/employee-retention-engagement",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "crisis-preparedness",
+      "name": "Crisis Preparedness & Response",
+      "url": "/solutions/care-for-every-challenge/crisis-preparedness-response",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "career-growth",
+      "name": "Career Growth & Development",
+      "url": "/solutions/care-for-every-challenge/career-growth-development",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "leave-absence-accommodations",
+      "name": "Leave of Absence & Accommodations",
+      "url": "/solutions/care-for-every-challenge/leave-absence-accommodations",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "frontline-workforce",
+      "name": "Frontline & Deskless Workforce Support",
+      "url": "/solutions/care-for-every-challenge/frontline-deskless-workforce",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "multicultural-workforce",
+      "name": "Multicultural Workforce Support",
+      "url": "/solutions/care-for-every-challenge/multicultural-workforce",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "first-responders",
+      "name": "First Responders & Healthcare Workforce",
+      "url": "/solutions/care-for-every-challenge/first-responders-healthcare-workforce",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "substance-use",
+      "name": "Substance Use",
+      "url": "/solutions/care-for-every-challenge/substance-use",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "disordered-eating",
+      "name": "Disordered Eating",
+      "url": "/solutions/care-for-every-challenge/disordered-eating",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "depression-anxiety",
+      "name": "Depression & Anxiety Support",
+      "url": "/solutions/care-for-every-challenge/depression-anxiety",
+      "navTier": 4,
+      "heatScore": 0.2,
+      "heatLevel": "low",
+      "personasServed": [],
+      "storiesRouted": 0,
+      "signals": {
+        "storyCoverage": 0,
+        "conversionProximity": 0,
+        "entryFrequency": 1,
+        "dropOffRisk": 0,
+        "audienceOverlap": 0
+      },
+      "contentGaps": []
+    },
+    {
+      "id": "crisis-acute-mental-health",
+      "name": "Crisis & Acute Mental Health Support",
+      "url": "/solutions/care-for-every-challenge/crisis-acute-mental-health",
+      "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
       "personasServed": [],
@@ -802,96 +1214,6 @@
       "id": "clinical-research-dp",
       "name": "Clinical Research Detail Pages",
       "url": "/outcomes/clinical/research/:slug",
-      "navTier": 4,
-      "heatScore": 0.2,
-      "heatLevel": "low",
-      "personasServed": [],
-      "storiesRouted": 0,
-      "signals": {
-        "storyCoverage": 0,
-        "conversionProximity": 0,
-        "entryFrequency": 1,
-        "dropOffRisk": 0,
-        "audienceOverlap": 0
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "res-clinical-res-dp",
-      "name": "Clinical Research Detail Pages (Resources)",
-      "url": "/insights/resources/clinical-research/:slug",
-      "navTier": 4,
-      "heatScore": 0.2,
-      "heatLevel": "low",
-      "personasServed": [],
-      "storiesRouted": 0,
-      "signals": {
-        "storyCoverage": 0,
-        "conversionProximity": 0,
-        "entryFrequency": 1,
-        "dropOffRisk": 0,
-        "audienceOverlap": 0
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "res-care-challenge-dp",
-      "name": "Care for Every Challenge Detail (Resources)",
-      "url": "/insights/resources/care-for-every-challenge/:slug",
-      "navTier": 4,
-      "heatScore": 0.2,
-      "heatLevel": "low",
-      "personasServed": [],
-      "storiesRouted": 0,
-      "signals": {
-        "storyCoverage": 0,
-        "conversionProximity": 0,
-        "entryFrequency": 1,
-        "dropOffRisk": 0,
-        "audienceOverlap": 0
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "res-mh-workplace-dp",
-      "name": "MH in the Workplace Detail Pages",
-      "url": "/insights/resources/mental-health-workplace/:slug",
-      "navTier": 4,
-      "heatScore": 0.2,
-      "heatLevel": "low",
-      "personasServed": [],
-      "storiesRouted": 0,
-      "signals": {
-        "storyCoverage": 0,
-        "conversionProximity": 0,
-        "entryFrequency": 1,
-        "dropOffRisk": 0,
-        "audienceOverlap": 0
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "res-case-study-dp",
-      "name": "Case Study Detail Pages (Resources)",
-      "url": "/insights/resources/case-studies/:slug",
-      "navTier": 4,
-      "heatScore": 0.2,
-      "heatLevel": "low",
-      "personasServed": [],
-      "storiesRouted": 0,
-      "signals": {
-        "storyCoverage": 0,
-        "conversionProximity": 0,
-        "entryFrequency": 1,
-        "dropOffRisk": 0,
-        "audienceOverlap": 0
-      },
-      "contentGaps": []
-    },
-    {
-      "id": "deib",
-      "name": "DEIB",
-      "url": "/company/deib",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",

@@ -1,379 +1,458 @@
-// Phase 1: Persona Foundation
-// Source: ModernHealth_JTBD.pdf — March 2026
-// All seven personas from the JTBD document mapped to JTBD framework.
+// Phase 1: Persona Foundation — Buying Group
+// Source: buying_group_journey_map.xlsx — 2026-04-26
+// 8-persona buying group model from updated strategy doc.
+// Provider and partner remain as secondary audience references for site targeting.
+// Updated 2026-05-07 — full rebuild from buying_group_journey_map CSV
 window.PERSONAS = {
   personas: [
 
-    // ── PERSONA 01 — THE BUYER ──────────────────────────────────────────────
+    // ── PERSONA 01 — HR / BENEFITS MANAGER ─────────────────────────────────
     {
-      id: "hr-buyer",
-      name: "HR / Benefits Leader",
-      jtbdPersona: "The Buyer — Persona 01",
-      role: "Primary Buyer",
-      shortName: "HR Buyer",
+      id: "hr-benefits-manager",
+      name: "HR / Benefits Manager",
+      jtbdPersona: "Champion & Day-to-Day Owner — Persona 01",
+      role: "Primary Champion",
+      shortName: "HR / Benefits Mgr",
       color: "#2563eb",
       colorLight: "#dbeafe",
       icon: "👔",
+      decisionPower: "Recommends & drives",
 
-      jobStatement: "When I am evaluating mental health benefit platforms, I want to quickly understand Modern Health's clinical credibility, global reach, and measurable outcomes, so I can confidently bring a recommendation to my leadership team.",
+      jobStatement: "When I am evaluating and implementing a mental health benefit platform, I want to quickly build the internal case, benchmark Modern Health against the incumbent EAP, and understand what launch support looks like — so I can defend the switch internally and manage the change without the rollout falling entirely on me.",
 
-      primaryGoal: "Validate Modern Health as an enterprise-grade solution and bring a confident recommendation to leadership",
+      primaryGoal: "Build a defensible internal case for Modern Health, lead the evaluation, and own a successful implementation",
       functionalJobs: [
-        "Evaluate Modern Health against existing EAP or competitors",
-        "Understand ROI and utilization data",
-        "Assess global capabilities for a distributed workforce",
-        "Find case studies from companies similar to mine",
-        "Request a demo or speak with sales"
+        "Benchmark Modern Health against incumbent EAP and alternatives",
+        "Find outcome data and ROI proof to justify the switch to leadership",
+        "Understand what employee communication and launch support is included",
+        "Assess care modalities and member experience end-to-end",
+        "Request a demo or speak with sales when ready"
       ],
       emotionalJobs: [
-        "Feel confident I am choosing a best-in-class solution",
-        "Feel reassured that this will actually get used by employees",
-        "Feel protected from risk (clinical, privacy, compliance)"
+        "Feel confident I can defend this recommendation to skeptical leadership",
+        "Feel supported through implementation — not left to figure it out alone",
+        "Feel reassured that employees will actually engage with and use the benefit"
       ],
       painPoints: [
-        "Low utilization of current EAP — hard to justify spend",
-        "Pressure to show measurable mental health ROI to CFO",
-        "Uncertainty about whether a platform will work across regions",
-        "Fear of choosing a 'shiny object' that employees won't adopt"
+        "Current EAP has low utilization — hard to justify continued spend",
+        "Pressure to show measurable mental health ROI to the CFO",
+        "Fear of choosing a platform that employees won't adopt",
+        "Previous benefit launches had low awareness and poor rollout support"
       ],
       successCriteria: [
-        "Can quickly find outcome data and ROI benchmarks",
-        "Sees recognizable enterprise clients in case studies",
-        "Clear path to requesting a demo without friction",
-        "Understands how Modern Health differs from traditional EAPs"
+        "Can find outcome data and ROI benchmarks without gating",
+        "Sees recognizable enterprise clients in named case studies",
+        "Understands exactly what implementation and launch support looks like",
+        "Clear, frictionless path to requesting a demo"
       ],
       navImplications: [
-        "Outcomes and ROI data must be easy to find from homepage",
-        "Case studies and client logos should be prominent",
         "Who We Serve > Employers must speak directly to their challenges",
-        "CTA (demo request) should be visible at all times in nav"
+        "Our Approach > Partnering with Your Team is essential — not buried",
+        "Outcomes section must surface ROI and case study data prominently",
+        "Demo request CTA must be visible in persistent nav at all times"
       ],
 
-      anxieties: ["ROI justification", "Utilization rates", "Compliance", "Vendor reliability"],
-      successOnSite: "Finds outcome data and case studies, then requests a demo",
+      anxieties: ["ROI justification", "Utilization rates", "Implementation complexity", "Vendor support quality"],
+      successOnSite: "Finds outcome data and case studies, explores implementation support, requests a demo",
       conversionAction: "Request a Demo",
       conversionType: "primary",
-      entryPoints: ["Paid search", "Peer referral", "Conference follow-up"],
-      decisionRole: "Executive sponsor / primary decision maker"
+      entryPoints: ["Paid search", "Peer referral", "Conference follow-up", "CHRO direction"],
+      decisionRole: "Recommends and drives — runs the evaluation and owns the rollout"
     },
 
-    // ── PERSONA 02 — THE BENEFITS MANAGER ──────────────────────────────────
+    // ── PERSONA 02 — BENEFITS CONSULTANT ────────────────────────────────────
     {
-      id: "benefits-manager",
-      name: "Benefits Manager",
-      jtbdPersona: "The Benefits Manager — Persona 02",
-      role: "Internal Implementer",
-      shortName: "Benefits Mgr",
-      color: "#059669",
-      colorLight: "#d1fae5",
-      icon: "📋",
-
-      jobStatement: "When I am responsible for rolling out a new mental health benefit, I want to understand exactly how Modern Health works for employees, how implementation is supported, and what adoption looks like, so I can ensure a smooth launch and strong utilization.",
-
-      primaryGoal: "Understand the member experience and implementation logistics to ensure a successful launch and strong employee adoption",
-      functionalJobs: [
-        "Understand the member experience end-to-end",
-        "Learn about implementation support and onboarding",
-        "Find resources to communicate the benefit to employees",
-        "Evaluate care modalities (therapy, coaching, self-guided, community)",
-        "Understand how Flex EAP fits with existing benefits stack"
-      ],
-      emotionalJobs: [
-        "Feel supported — not alone — in the rollout process",
-        "Feel confident employees will actually understand and use the benefit",
-        "Feel organized and in control of the implementation timeline"
-      ],
-      painPoints: [
-        "Previous benefit launches had low awareness and adoption",
-        "Complex implementation processes with little vendor support",
-        "Difficulty communicating mental health benefits in a stigma-free way",
-        "Unclear how Modern Health integrates with existing HRIS/benefits systems"
-      ],
-      successCriteria: [
-        "Finds clear information on care modalities and member experience",
-        "Understands what implementation and onboarding support looks like",
-        "Can access resources or toolkits for employee communications",
-        "Sees Flex EAP positioning clearly relative to legacy EAPs"
-      ],
-      navImplications: [
-        "Our Approach nav section must be clear and scannable",
-        "Flex EAP and care modality pages need to be findable quickly",
-        "Resources section should include employer-facing toolkits",
-        "Modern Health by Your Side page directly serves this audience"
-      ],
-
-      anxieties: ["Adoption rates", "Implementation complexity", "Employee communication", "Integration"],
-      successOnSite: "Finds implementation details and care modalities, downloads communication resources",
-      conversionAction: "Explore Implementation Resources",
-      conversionType: "secondary",
-      entryPoints: ["Email / CHRO direction", "Direct navigation", "Internal referral"],
-      decisionRole: "Internal operator — researches and implements what the CHRO has approved"
-    },
-
-    // ── PERSONA 03 — THE BENEFITS CONSULTANT ───────────────────────────────
-    {
-      id: "broker",
+      id: "benefits-consultant",
       name: "Benefits Consultant",
-      jtbdPersona: "The Benefits Consultant — Persona 03",
+      jtbdPersona: "Trusted Advisor & Deal Broker — Persona 02",
       role: "Influencer",
-      shortName: "Broker",
+      shortName: "Consultant",
       color: "#7c3aed",
       colorLight: "#ede9fe",
       icon: "🤝",
+      decisionPower: "Influences strongly",
 
-      jobStatement: "When I am advising my employer clients on mental health benefits strategy, I want a clear and trustworthy understanding of Modern Health's clinical model, outcomes data, and product differentiation, so I can confidently recommend it across my client portfolio.",
+      jobStatement: "When I am advising employer clients on their mental health benefits strategy, I want to evaluate Modern Health's clinical credibility, understand how I'm compensated for a referral, and find differentiated proof points — so I can confidently recommend Modern Health over competing platforms I may have placed before.",
 
-      primaryGoal: "Vet clinical credibility and differentiation, gather shareable materials, and establish a consultant relationship with Modern Health",
+      primaryGoal: "Vet clinical credibility and differentiation, understand the commercial model, and gather shareable materials for client recommendations",
       functionalJobs: [
-        "Quickly understand Modern Health's clinical approach and evidence base",
-        "Find differentiated positioning vs. legacy EAPs and competitors",
-        "Access ROI data and clinical outcomes to share with clients",
-        "Understand global capabilities for multi-national clients",
-        "Connect with a Modern Health consultant relations contact"
+        "Evaluate Modern Health's clinical approach and evidence base for client conversations",
+        "Understand the commercial referral and compensation model",
+        "Find differentiated positioning vs. legacy EAPs and competing platforms",
+        "Access shareable case studies, outcome data, and client materials",
+        "Establish a consultant relationship and contact with Modern Health"
       ],
       emotionalJobs: [
-        "Feel credible and well-informed when recommending to clients",
-        "Feel confident Modern Health won't embarrass them if clients adopt it",
-        "Feel like Modern Health values and invests in the consultant relationship"
+        "Feel confident recommending Modern Health over platforms I've placed before",
+        "Feel like a knowledgeable, credible advisor to my employer clients",
+        "Feel that Modern Health respects and values the consultant relationship"
       ],
       painPoints: [
-        "Many platforms claim clinical rigor without backing it up",
-        "Hard to differentiate Modern Health from the crowded mental health market",
-        "Lack of dedicated consultant resources or relationship management",
-        "Clients ask about global coverage — need clear answers fast"
+        "Lack of clear differentiation evidence vs. competing platforms they already know",
+        "No dedicated consultant relations contact — treated like a generic demo prospect",
+        "Difficulty finding shareable client-ready materials (PDFs, data sheets)",
+        "Unclear how referrals are credited or compensated"
       ],
       successCriteria: [
-        "Finds a dedicated 'For Consultants' section with relevant content",
-        "Can access clinical outcomes data and third-party validation",
-        "Clear differentiation from EAP and competing platforms",
-        "Easy path to connect with a consultant relations team member"
+        "Finds differentiated clinical evidence they can use in client conversations",
+        "Sees a dedicated consultant-facing CTA, not a generic demo request",
+        "Can download shareable case studies and outcome reports",
+        "Understands the commercial model and referral process"
       ],
       navImplications: [
-        "Who We Serve > Consultants must be a destination, not a dead end",
-        "Clinical Outcomes and ROI data must be easy to surface from this entry point",
-        "Consider a consultant-specific resource hub or gated content",
-        "Direct CTA for consultant outreach (not just generic demo request)"
+        "Who We Serve > Consultants must be a real content destination, not a dead end",
+        "Outcomes section is the primary destination — outcomes data and case studies",
+        "Consultant-specific CTA must differ from the employer demo request",
+        "Gated content must include client-shareable PDFs and data sheets"
       ],
 
-      anxieties: ["Clinical differentiation", "Global coverage", "Dedicated broker support", "Client trust"],
-      successOnSite: "Finds differentiation content and clinical outcomes, downloads shareable materials, contacts consultant relations",
+      anxieties: ["Clinical credibility vs. competitors", "Referral compensation clarity", "Client satisfaction risk", "Differentiation evidence"],
+      successOnSite: "Downloads clinical outcomes data and case study PDFs, then contacts consultant relations",
       conversionAction: "Connect with Consultant Relations",
-      conversionType: "secondary",
-      entryPoints: ["Partner referral", "Event follow-up", "Direct navigation"],
-      decisionRole: "External advisor — shapes purchasing decisions across 20–100+ employer clients"
+      conversionType: "primary",
+      entryPoints: ["Direct navigation", "Conference relationship", "Peer referral from another consultant"],
+      decisionRole: "Influences strongly — recommends to employer clients who trust their guidance"
     },
 
-    // ── PERSONA 04 — THE MEMBER ─────────────────────────────────────────────
+    // ── PERSONA 03 — BENEFITS BUYER / PROCUREMENT ────────────────────────────
+    {
+      id: "benefits-buyer-procurement",
+      name: "Benefits Buyer / Procurement",
+      jtbdPersona: "Process Owner & Contract Gatekeeper — Persona 03",
+      role: "Procurement Gate",
+      shortName: "Procurement",
+      color: "#dc2626",
+      colorLight: "#fee2e2",
+      icon: "📑",
+      decisionPower: "Approves vendor selection",
+
+      jobStatement: "When I am managing the vendor evaluation and RFP process, I want to confirm that Modern Health meets our vendor risk and due diligence requirements and understand contract flexibility — so I can approve the vendor selection without exposing the organization to lock-in or hidden risk.",
+
+      primaryGoal: "Run a fair and compliant vendor evaluation and approve the selection once risk and contract terms are confirmed",
+      functionalJobs: [
+        "Manage the RFP/RFI process and ensure evaluation criteria are met",
+        "Confirm Modern Health meets vendor risk and due diligence standards",
+        "Understand contract flexibility — term length, exit clauses, pricing escalators",
+        "Ensure pricing and commercial terms are transparent before committing",
+        "Coordinate evaluation across HR, legal, IT, and finance stakeholders"
+      ],
+      emotionalJobs: [
+        "Feel confident the organization is protected against vendor lock-in",
+        "Feel the evaluation process was rigorous and defensible",
+        "Feel Modern Health is transparent about terms, not hiding gotchas"
+      ],
+      painPoints: [
+        "Vendors that obscure pricing or contract terms until late in the process",
+        "Difficulty coordinating a multi-stakeholder evaluation (legal, IT, finance, HR)",
+        "Risk of vendor lock-in with unfavorable pricing escalators at renewal",
+        "Unclear what due diligence materials are available without a sales call"
+      ],
+      successCriteria: [
+        "Finds clear, ungated information on pricing approach and contract structure",
+        "Can access security, compliance, and due diligence documentation",
+        "Understands contract flexibility and exit provisions without a sales gate",
+        "Sees a clear path to engaging the right Modern Health team for formal evaluation"
+      ],
+      navImplications: [
+        "Pricing and contract transparency content must be findable without a demo call",
+        "Security, compliance, and trust documentation should be accessible",
+        "Our Approach > Responsible AI page addresses governance and accountability concerns",
+        "Demo request should be positioned as 'formal evaluation' not just a sales call"
+      ],
+
+      anxieties: ["Contract lock-in", "Hidden pricing escalators", "Vendor risk", "Multi-stakeholder alignment"],
+      successOnSite: "Finds compliance documentation and pricing transparency content, then initiates formal evaluation",
+      conversionAction: "Request a Demo (formal evaluation)",
+      conversionType: "secondary",
+      entryPoints: ["Internal referral from HR team", "RFP process initiation", "Vendor shortlist review"],
+      decisionRole: "Approves vendor selection — can hold or block if process or contract terms aren't satisfied"
+    },
+
+    // ── PERSONA 04 — TOTAL REWARDS PROFESSIONAL ──────────────────────────────
+    {
+      id: "total-rewards-professional",
+      name: "Total Rewards Professional",
+      jtbdPersona: "Benefits Architect & Program Designer — Persona 04",
+      role: "Benefits Portfolio Architect",
+      shortName: "Total Rewards",
+      color: "#059669",
+      colorLight: "#d1fae5",
+      icon: "📊",
+      decisionPower: "Shapes requirements",
+
+      jobStatement: "When I am designing the total rewards benefits portfolio, I want to map Modern Health's coverage against our current benefits stack to identify duplication, gaps, and consolidation opportunities — so I can build a coherent, employee-facing benefits narrative that positions Modern Health as additive, not redundant.",
+
+      primaryGoal: "Assess fit within the broader benefits portfolio and build the employee-facing narrative for how Modern Health integrates with existing offerings",
+      functionalJobs: [
+        "Map Modern Health's coverage against current benefits stack for duplication and gaps",
+        "Identify what can be consolidated or retired when Modern Health is added",
+        "Build the employee-facing narrative positioning Modern Health in the benefits mix",
+        "Evaluate care modalities and member experience for population fit",
+        "Assess global capabilities for a geographically distributed workforce"
+      ],
+      emotionalJobs: [
+        "Feel the portfolio is coherent and well-designed — not a collection of overlapping vendors",
+        "Feel confident the employee experience across benefits is seamless and non-confusing",
+        "Feel like an architect, not just an administrator — shaping a strategic benefits program"
+      ],
+      painPoints: [
+        "Too many point solutions that overlap and confuse employees about what's available",
+        "Difficulty positioning mental health benefits alongside EAP without creating confusion",
+        "Pressure to simplify the benefits stack without sacrificing coverage",
+        "Unclear how Modern Health fits alongside existing vendors in the stack"
+      ],
+      successCriteria: [
+        "Finds clear content on care modalities and how they complement or replace existing solutions",
+        "Understands the full breadth of what Modern Health covers (challenges, populations)",
+        "Sees how Modern Health is positioned vs. EAP without requiring a sales call to understand",
+        "Can access information relevant to a distributed or global workforce"
+      ],
+      navImplications: [
+        "Solutions section (Care Modalities, Care for Every Challenge) is the primary destination",
+        "Our Approach > Adaptive Care must clearly articulate differentiation from EAP",
+        "Global Capabilities is important for enterprise/distributed workforce architects",
+        "Content should help them build the internal narrative, not just sell to them"
+      ],
+
+      anxieties: ["Benefits stack overlap", "Employee confusion", "Portfolio coherence", "Integration complexity"],
+      successOnSite: "Maps care modalities and challenge coverage to their portfolio, finds positioning content",
+      conversionAction: "Explore Solutions / Request a Demo",
+      conversionType: "secondary",
+      entryPoints: ["HR team direction", "Benefits audit process", "Annual renewal planning"],
+      decisionRole: "Shapes requirements — defines what the benefit must cover and how it fits the portfolio"
+    },
+
+    // ── PERSONA 05 — FINANCE LEADER ─────────────────────────────────────────
+    {
+      id: "finance-leader",
+      name: "Finance Leader",
+      jtbdPersona: "Budget Approver & ROI Validator — Persona 05",
+      role: "Budget Gatekeeper",
+      shortName: "Finance Leader",
+      color: "#b45309",
+      colorLight: "#fef3c7",
+      icon: "💰",
+      decisionPower: "Final budget approval",
+
+      jobStatement: "When I am reviewing the budget case for a new mental health benefit, I want to model the multi-year cost trajectory, understand whether pricing scales favorably as headcount grows, and quantify liability reduction — so I can approve or block budget based on a real financial justification, not wellness language.",
+
+      primaryGoal: "Validate the financial ROI and approve or block budget based on a quantified, multi-year cost and liability analysis",
+      functionalJobs: [
+        "Model the multi-year cost trajectory and pricing scalability",
+        "Quantify ROI — productivity, absenteeism, retention, healthcare cost reduction",
+        "Evaluate mental health investment as a liability reduction tool, not just a perk",
+        "Understand the pricing model clearly before approving budget",
+        "Compare total cost vs. legacy EAP and the cost of inaction"
+      ],
+      emotionalJobs: [
+        "Feel the investment is financially defensible — not just a feel-good wellness spend",
+        "Feel the pricing model is transparent and won't surprise us at renewal",
+        "Feel confident I can explain this spend to the board or CEO if asked"
+      ],
+      painPoints: [
+        "Wellness vendors that use vague ROI claims without quantifiable benchmarks",
+        "Pricing models that obscure true cost at scale or at renewal",
+        "Pressure to cut benefits costs while avoiding liability and compliance risk",
+        "Difficulty quantifying the financial impact of untreated mental health at work"
+      ],
+      successCriteria: [
+        "Finds ungated ROI data and cost benchmarks without a sales call",
+        "Can model cost vs. EAP alternatives and the cost of inaction",
+        "Sees the financial impact framed as risk mitigation, not just employee wellness",
+        "Understands pricing model structure without needing to talk to sales"
+      ],
+      navImplications: [
+        "Outcomes > Economic Value is the primary destination — must be ungated and data-rich",
+        "Case studies with quantified financial outcomes are critical proof points",
+        "No wellness language on financial pages — data-first, respect their expertise",
+        "CTA should be framed around 'model the ROI' or 'talk to our finance team'"
+      ],
+
+      anxieties: ["ROI justifiability", "Pricing escalation", "Board-level scrutiny", "Liability exposure"],
+      successOnSite: "Reviews ROI calculator and financial case studies, then approves budget or requests demo",
+      conversionAction: "Request a Demo (financial review)",
+      conversionType: "secondary",
+      entryPoints: ["HR leadership direction", "Budget cycle review", "CFO-level peer referral"],
+      decisionRole: "Final budget approval — signs off or vetoes based on financial justification"
+    },
+
+    // ── PERSONA 06 — LEGAL / COMPLIANCE OFFICER ──────────────────────────────
+    {
+      id: "legal-compliance",
+      name: "Legal / Compliance Officer",
+      jtbdPersona: "Risk Assessor & Contract Reviewer — Persona 06",
+      role: "Legal & Compliance Gate",
+      shortName: "Legal / Compliance",
+      color: "#0891b2",
+      colorLight: "#cffafe",
+      icon: "⚖️",
+      decisionPower: "Can veto or delay",
+
+      jobStatement: "When I am assessing a new mental health vendor, I want to understand how Modern Health handles data subject requests, HIPAA access rights, and deletion across jurisdictions — and confirm that the BAA, DPA, and liability language in the contract matches what's represented on the site — so I can mitigate legal, regulatory, and liability risks without blocking a benefit employees need.",
+
+      primaryGoal: "Identify and mitigate legal, regulatory, and liability risks — and confirm contract language matches the vendor's public representations",
+      functionalJobs: [
+        "Confirm HIPAA compliance, BAA terms, and DPA language are sound",
+        "Understand data subject rights handling (access, deletion, portability) across jurisdictions",
+        "Assess AI use and governance for regulatory and liability risk",
+        "Verify that liability language in the contract matches what's on the site",
+        "Identify any privacy law compliance gaps (GDPR, CCPA, global equivalents)"
+      ],
+      emotionalJobs: [
+        "Feel the organization is protected from regulatory exposure and data liability",
+        "Feel Modern Health's commitments are verifiable — not just marketing language",
+        "Feel the risk assessment is thorough enough to withstand internal or external scrutiny"
+      ],
+      painPoints: [
+        "Vendors whose contract language contradicts their public representations",
+        "Gaps in privacy law compliance for jurisdictions with strict data rights (GDPR, etc.)",
+        "Unclear AI governance and accountability frameworks",
+        "Difficulty getting security and compliance documentation without a lengthy sales process"
+      ],
+      successCriteria: [
+        "Finds clear, accessible documentation on HIPAA, GDPR, and data rights handling",
+        "Understands Modern Health's AI governance and human oversight model",
+        "Can review BAA and DPA terms without waiting for a sales engagement",
+        "Sees evidence that contract language is consistent with site-level claims"
+      ],
+      navImplications: [
+        "Our Approach > Responsible AI must address AI governance, safety, and human oversight",
+        "Clinical Quality & Standards should address accountability and oversight protocols",
+        "Security and compliance documentation should be findable without a demo call",
+        "Trust and governance content must speak to legal/compliance skeptics directly"
+      ],
+
+      anxieties: ["HIPAA liability", "GDPR and global privacy compliance", "AI governance risk", "Contract language gaps"],
+      successOnSite: "Reviews AI governance and compliance documentation, then escalates to contract review with Modern Health legal",
+      conversionAction: "Access Compliance Documentation",
+      conversionType: "secondary",
+      entryPoints: ["Internal referral from HR or procurement", "Due diligence process", "Contract review stage"],
+      decisionRole: "Can veto or delay — a compliance gap or contract concern stops the deal"
+    },
+
+    // ── PERSONA 07 — IT / SECURITY TEAM ─────────────────────────────────────
+    {
+      id: "it-security",
+      name: "IT / Security Team",
+      jtbdPersona: "Technical Validator & Integration Owner — Persona 07",
+      role: "Technical Gate",
+      shortName: "IT / Security",
+      color: "#374151",
+      colorLight: "#f3f4f6",
+      icon: "🔐",
+      decisionPower: "Can veto or delay",
+
+      jobStatement: "When I am technically validating a new mental health benefit vendor, I want to assess data security, understand the breach notification SLA, and confirm that Modern Health's authentication model meets our SSO and MFA requirements — so I can approve provisioning without introducing security risk or integration complexity.",
+
+      primaryGoal: "Validate data security, integration feasibility, and compliance with IT standards before approving provisioning",
+      functionalJobs: [
+        "Assess data security posture, certifications (SOC 2, ISO 27001), and encryption standards",
+        "Understand breach notification process and SLA obligations",
+        "Confirm SSO, MFA, and access control model compatibility",
+        "Evaluate integration complexity with existing HRIS and identity systems",
+        "Review API architecture and data residency requirements"
+      ],
+      emotionalJobs: [
+        "Feel the vendor meets our security bar without requiring a lengthy exception process",
+        "Feel the integration won't create technical debt or long-term ownership burden",
+        "Feel confident the breach notification SLA protects the organization if something goes wrong"
+      ],
+      painPoints: [
+        "Vendors who can't provide security documentation without a lengthy sales engagement",
+        "SSO and MFA requirements not met — requires custom integration work",
+        "Unclear data residency and cross-border data transfer implications",
+        "Breach notification SLAs that don't align with internal incident response requirements"
+      ],
+      successCriteria: [
+        "Finds security and compliance documentation (SOC 2, HIPAA, data residency) without a gate",
+        "Understands SSO/MFA and authentication model compatibility upfront",
+        "Can assess integration complexity without a lengthy technical pre-sales process",
+        "Sees breach notification and incident response language clearly stated"
+      ],
+      navImplications: [
+        "Our Approach > Responsible AI and Clinical Quality & Standards address governance and trust",
+        "Security and technical documentation must be accessible without a demo call",
+        "Global Capabilities should address data residency for multinational deployments",
+        "A dedicated security/trust page (or section) reduces friction for IT approval"
+      ],
+
+      anxieties: ["Security certification gaps", "SSO/MFA compatibility", "Data breach liability", "Integration complexity"],
+      successOnSite: "Reviews security documentation and architecture overview, then engages technical sales team",
+      conversionAction: "Access Security Documentation / Technical Review",
+      conversionType: "secondary",
+      entryPoints: ["Internal referral from HR or procurement", "Vendor security review process", "Technical pre-sales request"],
+      decisionRole: "Can veto or delay — a security gap or integration incompatibility stops provisioning approval"
+    },
+
+    // ── PERSONA 08 — MEMBER / EMPLOYEE ──────────────────────────────────────
     {
       id: "member",
-      name: "Member",
-      jtbdPersona: "The Member — Persona 04",
+      name: "Member / Employee",
+      jtbdPersona: "End User & Utilization Driver — Persona 08",
       role: "End User",
       shortName: "Member",
       color: "#db2777",
       colorLight: "#fce7f3",
-      icon: "💙",
+      icon: "🧠",
+      decisionPower: "Drives utilization & ROI",
 
-      jobStatement: "When I am struggling with my mental health or exploring support options, I want to quickly understand what Modern Health offers and how to get started, so I can access the right care without feeling overwhelmed or judged.",
+      jobStatement: "When I need support for something I'm going through, I want to understand what's available, confirm that using Modern Health is truly confidential from my employer, and find out if the type of support I need is actually covered under my specific plan — so I can get help without fear, confusion, or wasted time.",
 
-      primaryGoal: "Understand what care is available and take the first step toward accessing it — without stigma or friction",
+      primaryGoal: "Find and access the right type of support for my specific situation, confidently and without stigma",
       functionalJobs: [
-        "Understand what types of care are available (therapy, coaching, self-guided, community)",
-        "Find out if their employer offers Modern Health as a benefit",
-        "Log in or activate their account",
-        "Learn about privacy and confidentiality",
-        "Find support for a specific need (stress, relationships, substance use, family)"
+        "Understand what care types are available (therapy, coaching, self-guided, Circles)",
+        "Confirm that usage is confidential from my employer",
+        "Find out if my specific challenge or concern is covered",
+        "Activate my benefit or log in to access care",
+        "Understand what to expect from the first session or interaction"
       ],
       emotionalJobs: [
-        "Feel safe and not judged for seeking help",
-        "Feel like the platform understands people like them",
-        "Feel hopeful that support is accessible and actually helpful"
+        "Feel safe and unafraid to ask for help — no judgment, no stigma",
+        "Feel confident my privacy is protected and my employer can't see what I do",
+        "Feel like the support available matches my actual situation, not just generic wellness"
       ],
       painPoints: [
-        "Stigma and discomfort around seeking mental health support",
-        "Uncertainty about what's covered or what the experience will be like",
-        "Concern about privacy — will my employer know I'm using this?",
-        "Overwhelmed by too many options or clinical language"
+        "Uncertainty about whether their employer can see their usage or data",
+        "Not knowing which type of support is right for their specific situation",
+        "Confusion about whether their specific plan covers what they need",
+        "Fear that seeking support could affect their job or reputation"
       ],
       successCriteria: [
-        "Finds warm, approachable language that reduces stigma",
-        "Can quickly understand care options without jargon",
-        "Easy path to log in or activate benefit",
-        "Privacy and confidentiality are clearly explained"
+        "Quickly finds confirmation that usage is confidential from their employer",
+        "Understands the different care types in plain, non-clinical language",
+        "Finds their specific challenge type represented and normalized",
+        "Has a clear, low-friction path to activating their benefit or logging in"
       ],
       navImplications: [
-        "Who We Serve > Members must be a warm, human entry point",
-        "Care modalities (Adaptive Care, communities, self-guided) should feel accessible",
-        "Login / member access CTA must be prominent and not buried",
-        "Avoid clinical or corporate language in member-facing pages"
+        "Who We Serve > Members must lead with privacy assurance before anything else",
+        "Care for Every Challenge must show their specific situation — normalize it",
+        "Care Modalities must explain options in plain language, not clinical terminology",
+        "Login / Activate Benefit CTA must be visible and frictionless at all times"
       ],
 
-      anxieties: ["Stigma", "Privacy", "Complexity", "Whether it will actually help"],
-      successOnSite: "Understands care options, activates benefit or contacts a provider",
+      anxieties: ["Employer visibility", "Privacy and confidentiality", "Stigma", "Finding the right type of support"],
+      successOnSite: "Confirms confidentiality, finds their challenge represented, activates benefit or logs in",
       conversionAction: "Activate Benefit / Log In",
       conversionType: "primary",
-      entryPoints: ["Employer email", "Benefits portal", "Search", "Peer referral"],
-      decisionRole: "End user — decides whether to activate and engage with the benefit"
-    },
-
-    // ── PERSONA 05 — THE PROVIDER ───────────────────────────────────────────
-    {
-      id: "provider",
-      name: "Provider",
-      jtbdPersona: "The Provider — Persona 05",
-      role: "Clinical Partner",
-      shortName: "Provider",
-      color: "#0891b2",
-      colorLight: "#cffafe",
-      icon: "🩺",
-
-      jobStatement: "When I am evaluating whether to join the Modern Health provider network, I want to understand the clinical model, referral process, and what the experience is like for both me and my clients, so I can decide if it is the right fit for my practice.",
-
-      primaryGoal: "Evaluate whether Modern Health's clinical model and network structure align with their practice — and apply if so",
-      functionalJobs: [
-        "Understand how the Modern Health provider network works",
-        "Learn about the referral and matching process",
-        "Understand the technology platform and administrative burden",
-        "Find out about compensation and contract structure",
-        "Apply or express interest in joining the network"
-      ],
-      emotionalJobs: [
-        "Feel that Modern Health shares their clinical values",
-        "Feel respected as a clinician, not just a vendor resource",
-        "Feel confident that clients referred through the platform will receive quality care"
-      ],
-      painPoints: [
-        "Concern about administrative overhead from platform partnerships",
-        "Uncertainty about whether the clinical model aligns with their approach",
-        "Unclear how compensation and contracts compare to other networks",
-        "Worry about quality of client matching"
-      ],
-      successCriteria: [
-        "Finds a clear provider-specific entry point on the site",
-        "Understands the clinical model and referral process",
-        "Easy path to apply or get more information",
-        "Sees evidence of Modern Health's clinical credibility"
-      ],
-      navImplications: [
-        "Provider entry point should be discoverable — currently surfaced under 'Who We Serve'",
-        "Clinical Specialties and Global Care Network pages are relevant for this audience",
-        "CTA for providers should be separate from the employer demo request flow",
-        "Consider a dedicated provider FAQ or resource section"
-      ],
-
-      anxieties: ["Clinical model alignment", "Administrative burden", "Compensation", "Client matching quality"],
-      successOnSite: "Understands clinical model, reviews outcomes data, submits provider inquiry",
-      conversionAction: "Submit Provider Inquiry",
-      conversionType: "secondary",
-      entryPoints: ["Network recruitment", "Peer referral", "Direct navigation"],
-      decisionRole: "Clinical partner — decides whether to join the provider network"
-    },
-
-    // ── PERSONA 06 — THE PARTNER ────────────────────────────────────────────
-    {
-      id: "partner",
-      name: "Strategic Partner",
-      jtbdPersona: "The Partner — Persona 06",
-      role: "Strategic Partner",
-      shortName: "Partner",
-      color: "#ea580c",
-      colorLight: "#ffedd5",
-      icon: "🌐",
-
-      jobStatement: "When I am evaluating mental health platform partners to integrate into our health plan or enterprise offering, I want to understand Modern Health's clinical infrastructure, global scale, and partnership model, so I can assess whether they can meet our members' needs at scale.",
-
-      primaryGoal: "Evaluate Modern Health's clinical infrastructure, global coverage, and partnership model for enterprise or health plan integration",
-      functionalJobs: [
-        "Understand Modern Health's global care network and coverage",
-        "Evaluate clinical outcomes and quality standards",
-        "Learn about API and integration capabilities",
-        "Understand available partnership and co-branding models",
-        "Connect with a partnerships or business development contact"
-      ],
-      emotionalJobs: [
-        "Feel confident in Modern Health's enterprise credibility and stability",
-        "Feel assured that the clinical quality will reflect well on their brand",
-        "Feel like Modern Health can operate at their scale"
-      ],
-      painPoints: [
-        "Lack of clarity on what a health plan partnership actually looks like",
-        "Uncertainty about global clinical coverage and quality consistency",
-        "Integration complexity and API readiness concerns",
-        "Few reference points for how Modern Health operates at health plan scale"
-      ],
-      successCriteria: [
-        "Finds a dedicated Health Plans section with relevant partnership content",
-        "Global Care Network page demonstrates reach and quality",
-        "Clinical Outcomes data is accessible and compelling",
-        "Clear path to a business development or partnerships conversation"
-      ],
-      navImplications: [
-        "Who We Serve > Health Plans should be a substantive landing destination",
-        "Global Care Network and Clinical Outcomes pages serve this audience well",
-        "Channel Partners page is relevant and should be surfaced for this audience",
-        "Partnership CTA should feel different from the standard employer demo request"
-      ],
-
-      anxieties: ["Global coverage consistency", "Integration complexity", "Scale credibility", "Partnership clarity"],
-      successOnSite: "Reviews global capabilities and clinical outcomes, contacts business development",
-      conversionAction: "Connect with Partnerships Team",
-      conversionType: "secondary",
-      entryPoints: ["Conference / industry event", "Executive referral", "Direct outreach"],
-      decisionRole: "Strategic partner — evaluates Modern Health for enterprise or health plan integration"
-    },
-
-    // ── PERSONA 07 — THE CFO ────────────────────────────────────────────────
-    {
-      id: "cfo",
-      name: "CFO",
-      jtbdPersona: "The CFO — Persona 07",
-      role: "Executive Validator",
-      shortName: "CFO",
-      color: "#475569",
-      colorLight: "#f1f5f9",
-      icon: "📊",
-
-      jobStatement: "When I am asked to approve a significant mental health benefits investment, I want to quickly find credible ROI data, cost benchmarks, and risk justification, so I can sign off with confidence that this is a financially sound decision.",
-
-      primaryGoal: "Validate the financial case for Modern Health — quickly, without marketing fluff, and without needing a sales conversation",
-      functionalJobs: [
-        "Find ROI calculators and financial outcome data quickly",
-        "Understand total cost of ownership vs. current EAP spend",
-        "Assess risk — clinical, privacy, compliance, and reputational",
-        "See evidence of measurable business impact (productivity, retention, absenteeism)",
-        "Validate that peer companies of similar size and sector have adopted Modern Health"
-      ],
-      emotionalJobs: [
-        "Feel that this is a defensible, data-backed decision",
-        "Feel reassured that they are not taking on undue financial or reputational risk",
-        "Feel respected — not talked down to with wellness platitudes"
-      ],
-      painPoints: [
-        "Mental health benefits are hard to tie to financial outcomes",
-        "Previous benefits spend has been difficult to justify to the board",
-        "Concerned about vendor lock-in or opaque pricing models",
-        "Skeptical of ROI claims that feel anecdotal or unverifiable"
-      ],
-      successCriteria: [
-        "Finds clear, credible ROI data and a cost calculator within minutes",
-        "Sees recognizable enterprise clients and peer case studies",
-        "Understands pricing model without needing to talk to sales first",
-        "Language on site respects their intelligence — no wellness jargon"
-      ],
-      navImplications: [
-        "Outcomes section (ROI calculator, Clinical Outcomes) is the primary destination",
-        "Case studies with named enterprise clients and financial impact metrics are essential",
-        "Resources should include CFO-relevant research and business case content",
-        "Avoid burying financial content behind demo-request gates"
-      ],
-
-      anxieties: ["ROI verifiability", "Pricing transparency", "Vendor risk", "Board defensibility"],
-      successOnSite: "Finds ROI benchmarks and case studies, reviews pricing — without a forced demo request",
-      conversionAction: "Review ROI Data",
-      conversionType: "secondary",
-      entryPoints: ["CHRO direction", "Internal briefing", "Board preparation"],
-      decisionRole: "Executive validator — approves or rejects the investment late in the buying cycle"
+      entryPoints: ["Employer email/communication", "Direct navigation", "Word of mouth from colleague"],
+      decisionRole: "Drives utilization and ROI — their engagement validates the investment for HR buyers"
     }
 
+  ],
+
+  // Secondary audiences (referenced in site content but not buying group members)
+  secondaryAudiences: [
+    {
+      id: "provider",
+      name: "Provider / Clinician",
+      role: "Network Partner",
+      note: "Credentialed therapists, coaches, and counselors considering or active in the Modern Health provider network. Primary destination: Provider Network, Provider Opportunities."
+    },
+    {
+      id: "partner",
+      name: "Health Plan / Channel Partner",
+      role: "Strategic Partner",
+      note: "Health plan administrators and channel/co-sell partners evaluating Modern Health for their portfolio. Primary destinations: Health Plans, Channel Partners."
+    }
   ]
 };

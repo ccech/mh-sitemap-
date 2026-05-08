@@ -167,8 +167,8 @@ function main() {
 
     // Content gap detection
     const contentGaps = [];
-    if (personasReached.has('hr-buyer') && !linked.some(s => s.personaId === 'hr-buyer' && s.priority === 1)) {
-      contentGaps.push('HR buyer has no priority-1 story routed here — verify content relevance');
+    if (personasReached.has('hr-benefits-manager') && !linked.some(s => s.personaId === 'hr-benefits-manager' && s.priority === 1)) {
+      contentGaps.push('HR Benefits Manager has no priority-1 story routed here — verify content relevance');
     }
     if (heatLevel(score) === 'high' && page.navTier > 2) {
       contentGaps.push('High-heat page is 3+ levels deep in the nav — consider elevating or adding a cross-link from a tier-2 page');

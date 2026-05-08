@@ -1,7 +1,7 @@
 // Phase 2: User Story Development
-// Source: ModernHealth_JTBD.pdf — top 3 functional jobs per persona
-// 3 stories per persona × 7 personas = 21 stories total.
-// Content gaps noted inline where JTBD doc signals missing pages or weak paths.
+// Source: personas.js functional jobs, buying_group_journey_map.csv
+// 3 stories per persona × 10 personas (8 buying group + 2 secondary audiences) = 30 stories total
+// Updated 2026-05-07 — full rebuild to cover all 10 personas at 3 stories each
 window.USER_STORIES = {
   schema: {
     fields: ["id", "personaId", "jobToBeDone", "jobSource", "entryChannel", "priority", "successMetric", "pageIds", "contentGapNote"],
@@ -9,173 +9,322 @@ window.USER_STORIES = {
   },
   userStories: [
 
-    // ── HR / BENEFITS LEADER (BUYER) — TOP 3 ─────────────────────────────
-    // Source: Persona 01 "The Buyer" functional jobs + success criteria
+    // ── HR / BENEFITS MANAGER ─────────────────────────────────────────────────
+    // Source: Persona 01 — Champion & Day-to-Day Owner
+    // jobStatement: "Build the internal case, lead the evaluation, own implementation"
 
     {
-      id: "us-hr-01",
-      personaId: "hr-buyer",
-      jobToBeDone: "Validate outcomes and build a business case for leadership",
-      jobSource: "JTBD: 'Understand ROI and utilization data' + 'Find case studies from companies similar to mine'",
+      id: "hr-01",
+      personaId: "hr-benefits-manager",
+      jobToBeDone: "Build a defensible internal business case with ROI benchmarks and enterprise case studies",
+      jobSource: "JTBD: 'Find outcome data and ROI proof to justify the switch to leadership' + pain point: 'Pressure to show measurable mental health ROI to the CFO' + emotional job: 'Feel confident I can defend this recommendation to skeptical leadership'",
       entryChannel: "Paid search / Peer referral",
       priority: 1,
-      successMetric: "Finds credible ROI benchmarks and recognizable enterprise case studies within 2 clicks from the homepage",
+      successMetric: "Finds ROI benchmarks and recognizable enterprise case studies within 2 clicks — leaves with a defensible data point for leadership",
       pageIds: ["home", "outcomes", "economic-roi", "case-studies"],
       contentGapNote: null
     },
     {
-      id: "us-hr-02",
-      personaId: "hr-buyer",
-      jobToBeDone: "Understand how Modern Health differs from a traditional EAP and assess clinical credibility",
-      jobSource: "JTBD: 'Evaluate Modern Health against existing EAP or competitors' + emotional job: 'Feel confident I am choosing a best-in-class solution'",
-      entryChannel: "Conference follow-up / Direct navigation",
+      id: "hr-02",
+      personaId: "hr-benefits-manager",
+      jobToBeDone: "Understand what implementation support looks like and how employees will experience the benefit",
+      jobSource: "JTBD: 'Understand what employee communication and launch support is included' + 'Assess care modalities and member experience end-to-end' + pain point: 'Previous benefit launches had low awareness and poor rollout support'",
+      entryChannel: "CHRO direction / Direct navigation",
       priority: 1,
-      successMetric: "Finds clear EAP differentiation messaging and clinical outcomes data — leaves feeling this is enterprise-grade",
-      pageIds: ["home", "our-approach", "adaptive-care", "clinical-outcomes"],
+      successMetric: "Finds implementation support details and a jargon-free care modality overview within 2 clicks of Our Approach",
+      pageIds: ["home", "our-approach", "partnering-with-your-team", "solutions", "care-modalities"],
       contentGapNote: null
     },
     {
-      id: "us-hr-03",
-      personaId: "hr-buyer",
+      id: "hr-03",
+      personaId: "hr-benefits-manager",
       jobToBeDone: "Request a demo without friction from any point in the site",
-      jobSource: "JTBD: 'Request a demo or speak with sales' + success criteria: 'Clear path to requesting a demo without friction' + nav implication: 'CTA should be visible at all times in nav'",
+      jobSource: "JTBD: 'Request a demo or speak with sales when ready' + success criteria: 'Clear, frictionless path to requesting a demo' + nav implication: 'Demo request CTA must be visible in persistent nav at all times'",
       entryChannel: "Any — returning visitor post-research",
       priority: 1,
-      successMetric: "Reaches demo request form within 1 click from any page and submits",
+      successMetric: "Reaches demo request form within 1 click from any page and submits without confusion",
       pageIds: ["home", "employers", "nav-demo-request"],
       contentGapNote: null
     },
 
-    // ── BENEFITS MANAGER — TOP 3 ─────────────────────────────────────────
-    // Source: Persona 02 "The Benefits Manager" functional jobs + success criteria
+    // ── BENEFITS CONSULTANT ───────────────────────────────────────────────────
+    // Source: Persona 02 — Trusted Advisor & Deal Broker
 
     {
-      id: "us-bm-01",
-      personaId: "benefits-manager",
-      jobToBeDone: "Understand the member experience and all available care modalities",
-      jobSource: "JTBD: 'Understand the member experience end-to-end' + 'Evaluate care modalities (therapy, coaching, self-guided, community)'",
-      entryChannel: "Direct navigation / CHRO direction",
+      id: "co-01",
+      personaId: "benefits-consultant",
+      jobToBeDone: "Find clear, evidence-backed differentiation from legacy EAPs to recommend Modern Health with confidence",
+      jobSource: "JTBD: 'Find differentiated positioning vs. legacy EAPs and competing platforms' + emotional job: 'Feel confident recommending Modern Health over platforms I've placed before'",
+      entryChannel: "Partner referral / Direct navigation",
       priority: 1,
-      successMetric: "Finds a clear, jargon-free breakdown of all care modalities (therapy, coaching, self-guided, Circles) within 2 clicks from Our Approach",
-      pageIds: ["home", "our-approach", "adaptive-care", "care-modalities"],
-      contentGapNote: null
-    },
-    {
-      id: "us-bm-02",
-      personaId: "benefits-manager",
-      jobToBeDone: "Learn about implementation support and how Modern Health integrates with the existing benefits stack",
-      jobSource: "JTBD: 'Learn about implementation support and onboarding' + 'Understand how Modern Health fits with existing benefits stack' + nav implication: 'Modern Health by Your Side page directly serves this audience'",
-      entryChannel: "Email / CHRO direction",
-      priority: 1,
-      successMetric: "Finds implementation support details and client success model from the Employers or Our Approach section within 2 clicks",
-      pageIds: ["home", "who-we-serve", "employers", "our-approach", "mh-by-your-side"],
-      contentGapNote: null
-    },
-    {
-      id: "us-bm-03",
-      personaId: "benefits-manager",
-      jobToBeDone: "Access toolkits and resources to communicate the benefit to employees",
-      jobSource: "JTBD: 'Find resources to communicate the benefit to employees' + nav implication: 'Resources section should include employer-facing toolkits'",
-      entryChannel: "Direct navigation",
-      priority: 2,
-      successMetric: "Locates and downloads an employee communication toolkit or awareness resource within 3 clicks from the homepage",
-      pageIds: ["home", "insights", "resources", "res-mh-workplace"],
-      contentGapNote: null
-    },
-
-    // ── BENEFITS CONSULTANT (BROKER) — TOP 3 ─────────────────────────────
-    // Source: Persona 03 "The Benefits Consultant" functional jobs + success criteria
-
-    {
-      id: "us-br-01",
-      personaId: "broker",
-      jobToBeDone: "Find clear differentiation from legacy EAPs to recommend Modern Health with confidence",
-      jobSource: "JTBD: 'Find differentiated positioning vs. legacy EAPs and competitors' + emotional job: 'Feel credible and well-informed when recommending to clients'",
-      entryChannel: "Partner referral",
-      priority: 1,
-      successMetric: "Finds specific, evidence-backed differentiation vs. EAPs within 2 clicks — leaves with a clear answer to 'why Modern Health?'",
+      successMetric: "Finds EAP differentiation evidence and clinical credibility proof points within 2 clicks — leaves with a clear answer to 'why Modern Health?'",
       pageIds: ["home", "who-we-serve", "consultants", "our-approach", "adaptive-care"],
-      contentGapNote: "GAP: The Consultants page must carry substantive broker-specific content — clear EAP differentiation, clinical evidence, and shareable proof points. Cross-links to supporting pages exist, but if the page itself is thin or generic, brokers won't find the 'why Modern Health' answer they need before following any link."
+      contentGapNote: "GAP: The Consultants page must carry broker-specific content — clear EAP differentiation, clinical evidence, and shareable proof points. Without substantive content here, brokers won't find the 'why Modern Health' answer before following any link."
     },
     {
-      id: "us-br-02",
-      personaId: "broker",
-      jobToBeDone: "Access and download clinical outcomes data and ROI evidence to share with employer clients",
-      jobSource: "JTBD: 'Access ROI data and clinical outcomes to share with clients' + success criteria: 'Can access clinical outcomes data and third-party validation'",
+      id: "co-02",
+      personaId: "benefits-consultant",
+      jobToBeDone: "Access and download clinical outcomes data, ROI evidence, and case studies to share with employer clients",
+      jobSource: "JTBD: 'Access shareable case studies, outcome data, and client materials' + success criteria: 'Can download shareable case studies and outcome reports'",
       entryChannel: "Event follow-up / Direct navigation",
       priority: 1,
-      successMetric: "Downloads a clinical outcomes report, case study, or ROI data sheet from Resources hub or Outcomes section",
-      pageIds: ["home", "outcomes", "clinical-outcomes", "resources", "res-case-study"],
+      successMetric: "Downloads a clinical outcomes report, case study, or ROI data sheet from Outcomes or Gated Content",
+      pageIds: ["home", "outcomes", "clinical-outcomes", "case-studies", "gated-content"],
       contentGapNote: null
     },
     {
-      id: "us-br-03",
-      personaId: "broker",
+      id: "co-03",
+      personaId: "benefits-consultant",
       jobToBeDone: "Connect with a dedicated Modern Health consultant relations contact — not a generic demo request form",
-      jobSource: "JTBD: 'Connect with a Modern Health consultant relations contact' + nav implication: 'Direct CTA for consultant outreach (not just generic demo request)' + emotional job: 'Feel like Modern Health values the consultant relationship'",
+      jobSource: "JTBD: 'Establish a consultant relationship and contact with Modern Health' + emotional job: 'Feel that Modern Health respects and values the consultant relationship' + success criteria: 'Sees a dedicated consultant-facing CTA, not a generic demo request'",
       entryChannel: "Partner referral / Direct navigation",
       priority: 2,
-      successMetric: "Reaches a consultant-specific contact form or named consultant relations contact from the Consultants page",
+      successMetric: "Reaches a consultant-specific contact form or named consultant relations CTA from the Consultants page",
       pageIds: ["home", "who-we-serve", "consultants"],
-      contentGapNote: "GAP: No consultant-specific outreach CTA exists. The Consultants page currently routes brokers to the same generic demo request used by HR buyers — brokers expect a dedicated contact path that signals Modern Health values the consultant relationship, not a generic sales form."
+      contentGapNote: "GAP: No consultant-specific outreach CTA exists. The Consultants page routes brokers to the same generic demo request used by HR buyers — brokers expect a dedicated path that signals Modern Health values the consultant relationship."
     },
 
-    // ── MEMBER — TOP 3 ────────────────────────────────────────────────────
-    // Source: Persona 04 "The Member" functional jobs + success criteria
+    // ── BENEFITS BUYER / PROCUREMENT ─────────────────────────────────────────
+    // Source: Persona 03 — Process Owner & Contract Gatekeeper
 
     {
-      id: "us-mb-01",
-      personaId: "member",
-      jobToBeDone: "Understand what types of care are available without feeling overwhelmed by clinical language",
-      jobSource: "JTBD: 'Understand what types of care are available (therapy, coaching, self-guided, community)' + emotional job: 'Feel safe and not judged for seeking help' + success criteria: 'Can quickly understand care options without jargon'",
-      entryChannel: "Employer email / Benefits portal",
+      id: "bp-01",
+      personaId: "benefits-buyer-procurement",
+      jobToBeDone: "Find clear pricing and commercial terms information without a sales gate",
+      jobSource: "JTBD: 'Ensure pricing and commercial terms are transparent before committing' + pain point: 'Vendors that obscure pricing or contract terms until late in the process' + emotional job: 'Feel Modern Health is transparent about terms, not hiding gotchas'",
+      entryChannel: "Internal referral from HR team / RFP process initiation",
       priority: 1,
-      successMetric: "Finds a warm, jargon-free explanation of all care options within 3 clicks — leaves feeling there is something right for them",
-      pageIds: ["home", "who-we-serve", "members", "our-approach", "care-modalities"],
+      successMetric: "Finds pricing model and commercial terms orientation within 2 clicks — no demo-request wall before getting basic cost structure information",
+      pageIds: ["home", "outcomes", "economic-roi"],
+      contentGapNote: "NOTE: Procurement will abandon early if pricing requires a sales call. Even a high-level pricing model description (e.g. PEPM, per-utilization) on the Economic Value page significantly reduces friction for this persona."
+    },
+    {
+      id: "bp-02",
+      personaId: "benefits-buyer-procurement",
+      jobToBeDone: "Access security, compliance, and due diligence documentation to confirm Modern Health meets vendor risk standards",
+      jobSource: "JTBD: 'Confirm Modern Health meets vendor risk and due diligence standards' + pain point: 'Difficulty coordinating a multi-stakeholder evaluation (legal, IT, finance, HR)'",
+      entryChannel: "Vendor shortlist review / RFP process",
+      priority: 1,
+      successMetric: "Finds compliance and security documentation (HIPAA, SOC 2, DPA overview) accessible without requiring a sales call",
+      pageIds: ["home", "our-approach", "clinical-quality-standards", "responsible-ai"],
       contentGapNote: null
     },
     {
-      id: "us-mb-02",
+      id: "bp-03",
+      personaId: "benefits-buyer-procurement",
+      jobToBeDone: "Initiate a formal vendor evaluation process and engage the right Modern Health team",
+      jobSource: "JTBD: 'Manage the RFP/RFI process and ensure evaluation criteria are met' + success criteria: 'Sees a clear path to engaging the right Modern Health team for formal evaluation'",
+      entryChannel: "Internal referral from HR team",
+      priority: 2,
+      successMetric: "Reaches a demo or formal evaluation CTA framed as an enterprise evaluation engagement — not a generic sales form",
+      pageIds: ["home", "employers", "nav-demo-request"],
+      contentGapNote: null
+    },
+
+    // ── TOTAL REWARDS PROFESSIONAL ────────────────────────────────────────────
+    // Source: Persona 04 — Benefits Architect & Program Designer
+
+    {
+      id: "tr-01",
+      personaId: "total-rewards-professional",
+      jobToBeDone: "Map Modern Health's care coverage against the existing benefits stack to identify duplication, gaps, and consolidation opportunities",
+      jobSource: "JTBD: 'Map Modern Health's coverage against current benefits stack for duplication and gaps' + 'Identify what can be consolidated or retired when Modern Health is added' + pain point: 'Too many point solutions that overlap and confuse employees'",
+      entryChannel: "HR team direction / Annual benefits audit",
+      priority: 1,
+      successMetric: "Finds a clear breakdown of care modalities and challenge categories mappable against current vendors within 2 clicks of Solutions",
+      pageIds: ["home", "solutions", "care-modalities", "care-every-challenge"],
+      contentGapNote: null
+    },
+    {
+      id: "tr-02",
+      personaId: "total-rewards-professional",
+      jobToBeDone: "Understand how Modern Health is positioned versus the incumbent EAP to build the employee-facing benefits narrative",
+      jobSource: "JTBD: 'Build the employee-facing narrative positioning Modern Health in the benefits mix' + 'Evaluate care modalities and member experience for population fit' + emotional job: 'Feel like an architect, not just an administrator'",
+      entryChannel: "Annual renewal planning / Benefits audit",
+      priority: 1,
+      successMetric: "Finds EAP differentiation language and care modality content adaptable into employee-facing communications within 2 clicks of Our Approach",
+      pageIds: ["home", "our-approach", "adaptive-care", "solutions", "care-modalities", "partnering-with-your-team"],
+      contentGapNote: null
+    },
+    {
+      id: "tr-03",
+      personaId: "total-rewards-professional",
+      jobToBeDone: "Assess Modern Health's global capabilities and population-specific coverage for a distributed or diverse workforce",
+      jobSource: "JTBD: 'Assess global capabilities for a geographically distributed workforce' + nav implication: 'Global Capabilities is important for enterprise/distributed workforce architects'",
+      entryChannel: "Annual renewal planning / Benefits audit",
+      priority: 2,
+      successMetric: "Finds global capabilities scope and population-specific care categories within 2 clicks — confirms coverage for relevant workforce segments",
+      pageIds: ["home", "solutions", "care-every-challenge", "population-specific-needs", "our-approach", "global-capabilities"],
+      contentGapNote: null
+    },
+
+    // ── FINANCE LEADER ────────────────────────────────────────────────────────
+    // Source: Persona 05 — Budget Approver & ROI Validator
+
+    {
+      id: "fi-01",
+      personaId: "finance-leader",
+      jobToBeDone: "Find credible ROI data and financial outcome benchmarks quickly — without a sales conversation",
+      jobSource: "JTBD: 'Find ROI calculators and financial outcome data quickly' + nav implication: 'Avoid burying financial content behind demo-request gates' + emotional job: 'Feel the investment is financially defensible — not just a feel-good wellness spend'",
+      entryChannel: "CHRO direction / Internal briefing",
+      priority: 1,
+      successMetric: "Finds an ROI calculator or credible financial benchmark within 2 clicks — no demo-request wall encountered",
+      pageIds: ["home", "outcomes", "economic-roi"],
+      contentGapNote: null
+    },
+    {
+      id: "fi-02",
+      personaId: "finance-leader",
+      jobToBeDone: "See peer enterprise case studies with quantified business impact — productivity, retention, absenteeism reduction",
+      jobSource: "JTBD: 'Validate that peer companies of similar size and sector have adopted Modern Health' + 'Compare total cost vs. legacy EAP and the cost of inaction'",
+      entryChannel: "CHRO direction",
+      priority: 1,
+      successMetric: "Finds named enterprise client case studies with measurable financial outcomes within 2 clicks of Outcomes",
+      pageIds: ["home", "outcomes", "case-studies"],
+      contentGapNote: null
+    },
+    {
+      id: "fi-03",
+      personaId: "finance-leader",
+      jobToBeDone: "Understand the pricing model and multi-year cost trajectory without speaking to sales first",
+      jobSource: "JTBD: 'Understand total cost of ownership vs. current EAP spend' + 'Model the multi-year cost trajectory and pricing scalability' + pain point: 'Pricing models that obscure true cost at scale or at renewal'",
+      entryChannel: "CHRO direction / Board preparation",
+      priority: 1,
+      successMetric: "Finds clear pricing model or cost structure without being gated behind a demo request form",
+      pageIds: ["home", "outcomes", "economic-roi"],
+      contentGapNote: "NOTE: Pricing and ROI content must remain ungated — finance leaders should not hit a demo-request gate before accessing cost benchmarks or pricing structure information."
+    },
+
+    // ── LEGAL / COMPLIANCE ────────────────────────────────────────────────────
+    // Source: Persona 06 — Risk Assessor & Contract Reviewer
+
+    {
+      id: "lc-01",
+      personaId: "legal-compliance",
+      jobToBeDone: "Confirm HIPAA compliance, BAA availability, and data subject rights handling before approving the vendor",
+      jobSource: "JTBD: 'Confirm HIPAA compliance, BAA terms, and DPA language are sound' + 'Understand data subject rights handling across jurisdictions' + emotional job: 'Feel Modern Health's commitments are verifiable — not just marketing language'",
+      entryChannel: "Internal referral from HR or procurement / Due diligence process",
+      priority: 1,
+      successMetric: "Finds accessible documentation on HIPAA, GDPR, and data rights handling without requiring a sales call",
+      pageIds: ["home", "our-approach", "clinical-quality-standards"],
+      contentGapNote: "GAP: Compliance-level documentation (BAA availability, DPA terms, data subject rights by jurisdiction) is not currently surfaced on the site without a sales engagement. Legal reviewers will delay or block the deal if this requires a sales call to access."
+    },
+    {
+      id: "lc-02",
+      personaId: "legal-compliance",
+      jobToBeDone: "Assess Modern Health's AI governance and human oversight model for regulatory and liability risk",
+      jobSource: "JTBD: 'Assess AI use and governance for regulatory and liability risk' + pain point: 'Unclear AI governance and accountability frameworks'",
+      entryChannel: "Due diligence process / Contract review stage",
+      priority: 1,
+      successMetric: "Finds a clear AI governance framework — safety protocols, human oversight model, and accountability mechanisms — without requesting documentation through sales",
+      pageIds: ["home", "our-approach", "responsible-ai"],
+      contentGapNote: null
+    },
+    {
+      id: "lc-03",
+      personaId: "legal-compliance",
+      jobToBeDone: "Confirm that contract language and liability terms are consistent with what's represented on the site",
+      jobSource: "JTBD: 'Verify that liability language in the contract matches what's on the site' + 'Identify privacy law compliance gaps (GDPR, CCPA, global equivalents)' + success criteria: 'Can review BAA and DPA terms without waiting for a sales engagement'",
+      entryChannel: "Contract review stage",
+      priority: 2,
+      successMetric: "Has accessed HIPAA, AI governance, and clinical accountability documentation — enough to proceed to formal contract review with Modern Health legal",
+      pageIds: ["home", "our-approach", "responsible-ai", "clinical-quality-standards"],
+      contentGapNote: null
+    },
+
+    // ── IT / SECURITY ─────────────────────────────────────────────────────────
+    // Source: Persona 07 — Technical Validator & Integration Owner
+
+    {
+      id: "is-01",
+      personaId: "it-security",
+      jobToBeDone: "Assess Modern Health's security certifications, data encryption, and protection posture without a pre-sales engagement",
+      jobSource: "JTBD: 'Assess data security posture, certifications (SOC 2, ISO 27001), and encryption standards' + pain point: 'Vendors who can't provide security documentation without a lengthy sales engagement'",
+      entryChannel: "Internal referral from HR or procurement / Vendor security review process",
+      priority: 1,
+      successMetric: "Finds security certification summary (SOC 2, HIPAA, encryption standards) accessible without a demo request — enough to make an initial pass/fail determination",
+      pageIds: ["home", "our-approach", "clinical-quality-standards", "responsible-ai"],
+      contentGapNote: "GAP: Security documentation (SOC 2, data residency, breach notification SLA) is not currently surfaced on the site without a sales engagement. IT reviewers will block approval if they can't conduct initial due diligence independently."
+    },
+    {
+      id: "is-02",
+      personaId: "it-security",
+      jobToBeDone: "Confirm SSO, MFA, and authentication model compatibility before approving provisioning",
+      jobSource: "JTBD: 'Confirm SSO, MFA, and access control model compatibility' + 'Evaluate integration complexity with existing HRIS and identity systems' + pain point: 'SSO and MFA requirements not met — requires custom integration work'",
+      entryChannel: "Technical pre-sales request / Internal referral",
+      priority: 1,
+      successMetric: "Finds authentication model and integration complexity overview — enough to determine whether custom SSO work is required before IT will approve",
+      pageIds: ["home", "our-approach", "clinical-quality-standards"],
+      contentGapNote: "GAP: SSO, MFA, and integration architecture details are not currently accessible on the site. Without this, IT cannot make a provisioning recommendation before a lengthy technical sales engagement."
+    },
+    {
+      id: "is-03",
+      personaId: "it-security",
+      jobToBeDone: "Review breach notification obligations and data residency requirements, then engage technical sales for formal IT review",
+      jobSource: "JTBD: 'Understand breach notification process and SLA obligations' + 'Review API architecture and data residency requirements' + success criteria: 'Sees breach notification and incident response language clearly stated'",
+      entryChannel: "Vendor security review process",
+      priority: 2,
+      successMetric: "Has accessed enough security and architecture information to schedule a technical deep-dive with Modern Health's security team",
+      pageIds: ["home", "our-approach", "responsible-ai", "clinical-quality-standards", "global-capabilities"],
+      contentGapNote: null
+    },
+
+    // ── MEMBER / EMPLOYEE ─────────────────────────────────────────────────────
+    // Source: Persona 08 — End User & Utilization Driver
+
+    {
+      id: "mb-01",
       personaId: "member",
-      jobToBeDone: "Activate the benefit or log in to an existing account",
-      jobSource: "JTBD: 'Log in or activate their account' + success criteria: 'Easy path to log in or activate benefit' + nav implication: 'Login / member access CTA must be prominent and not buried'",
+      jobToBeDone: "Confirm that using Modern Health is confidential from my employer before deciding to engage",
+      jobSource: "JTBD: 'Confirm that usage is confidential from my employer' + emotional job: 'Feel safe and unafraid to ask for help — no judgment, no stigma' + pain point: 'Fear that seeking support could affect their job or reputation'",
       entryChannel: "Employer email / Benefits portal link",
       priority: 1,
-      successMetric: "Reaches a login or benefit activation CTA within 2 clicks from the homepage",
-      pageIds: ["home", "who-we-serve", "members", "nav-member-login"],
-      contentGapNote: "NOTE: The Members page should clearly distinguish between new member activation (first-time via employer benefit) and returning member login — these may route to different destinations and the CTA copy needs to reflect that."
+      successMetric: "Finds clear, prominent confidentiality assurance from the Members page within 1 click — no ambiguity about employer visibility",
+      pageIds: ["home", "who-we-serve", "members"],
+      contentGapNote: "NOTE: Confidentiality must be the leading message on the Members page — not buried. Employees will not engage with care options until this question is answered."
     },
     {
-      id: "us-mb-03",
+      id: "mb-02",
       personaId: "member",
-      jobToBeDone: "Find support for a specific personal challenge (stress, relationships, family, substance use)",
-      jobSource: "JTBD: 'Find support for a specific need' + emotional job: 'Feel hopeful that support is accessible and actually helpful'",
+      jobToBeDone: "Find support for a specific personal challenge without having to navigate clinical jargon",
+      jobSource: "JTBD: 'Find out if my specific challenge or concern is covered' + emotional job: 'Feel like the support available matches my actual situation, not just generic wellness'",
       entryChannel: "Search / Employer referral",
-      priority: 2,
-      successMetric: "Finds a relevant care challenge topic and feels confident that Modern Health addresses their specific situation",
-      pageIds: ["home", "our-approach", "adaptive-care", "care-every-challenge"],
+      priority: 1,
+      successMetric: "Finds their specific challenge category represented in plain language and feels confident Modern Health addresses their situation",
+      pageIds: ["home", "solutions", "care-every-challenge"],
       contentGapNote: null
     },
+    {
+      id: "mb-03",
+      personaId: "member",
+      jobToBeDone: "Activate my employer benefit or log in to an existing account",
+      jobSource: "JTBD: 'Activate my benefit or log in to access care' + success criteria: 'Has a clear, low-friction path to activating their benefit or logging in' + nav implication: 'Login / Activate Benefit CTA must be visible and frictionless at all times'",
+      entryChannel: "Employer email / Benefits portal link",
+      priority: 1,
+      successMetric: "Reaches a login or benefit activation CTA within 2 clicks and can clearly distinguish new activation from returning member login",
+      pageIds: ["home", "who-we-serve", "members", "nav-member-login"],
+      contentGapNote: "NOTE: The Members page should clearly distinguish between new member activation and returning member login — these may route to different destinations and CTA copy needs to reflect that."
+    },
 
-    // ── PROVIDER — TOP 3 ──────────────────────────────────────────────────
-    // Source: Persona 05 "The Provider" functional jobs + success criteria
+    // ── PROVIDER / CLINICIAN ──────────────────────────────────────────────────
+    // Source: Secondary Audience — Provider Network Partner
 
     {
-      id: "us-pv-01",
+      id: "pv-01",
       personaId: "provider",
       jobToBeDone: "Understand Modern Health's clinical model and how the provider network operates",
       jobSource: "JTBD: 'Understand how the Modern Health provider network works' + 'Learn about the referral and matching process' + emotional job: 'Feel that Modern Health shares their clinical values'",
       entryChannel: "Network recruitment / Peer referral",
       priority: 1,
       successMetric: "Finds a clear explanation of the clinical model, referral process, and network structure within 2 clicks from Our Approach",
-      pageIds: ["home", "our-approach", "adaptive-care", "global-care-network"],
+      pageIds: ["home", "our-approach", "adaptive-care", "provider-network"],
       contentGapNote: null
     },
     {
-      id: "us-pv-02",
+      id: "pv-02",
       personaId: "provider",
       jobToBeDone: "Review clinical outcomes evidence and assess Modern Health's research credibility",
-      jobSource: "JTBD: 'Understand the technology platform' + success criteria: 'Sees evidence of Modern Health's clinical credibility' + nav implication: 'Clinical Specialties and Global Care Network pages are relevant'",
+      jobSource: "JTBD: 'Understand the technology platform' + success criteria: 'Sees evidence of Modern Health's clinical credibility' + nav implication: 'Clinical outcomes and research pages are key'",
       entryChannel: "Direct navigation",
       priority: 2,
       successMetric: "Finds peer-reviewed research and published clinical outcomes data within 2 clicks from Outcomes",
@@ -183,36 +332,36 @@ window.USER_STORIES = {
       contentGapNote: null
     },
     {
-      id: "us-pv-03",
+      id: "pv-03",
       personaId: "provider",
       jobToBeDone: "Apply or express interest in joining the Modern Health provider network",
-      jobSource: "JTBD: 'Apply or express interest in joining the network' + success criteria: 'Easy path to apply or get more information' + nav implication: 'Provider entry point should be discoverable — currently surfaced under Who We Serve'",
+      jobSource: "JTBD: 'Apply or express interest in joining the network' + success criteria: 'Easy path to apply or get more information' + nav implication: 'Provider entry point should be discoverable under Who We Serve'",
       entryChannel: "Network recruitment / Direct navigation",
       priority: 1,
-      successMetric: "Reaches the provider inquiry form within 2 clicks of deciding to apply",
-      pageIds: ["home", "company", "work-with-us", "provider-inquiry"],
-      contentGapNote: "GAP: Provider inquiry is 3 tiers deep under Company > Work With Us. Cross-links from Adaptive Care, Global Care Network, and Clinical Outcomes now make this page discoverable from the clinical sections where providers naturally browse. Remaining gap: no provider-specific entry point under 'Who We Serve' — providers who navigate by audience type won't find a dedicated path in the main nav."
+      successMetric: "Reaches the provider opportunities form within 2 clicks of deciding to apply",
+      pageIds: ["home", "company", "work-with-us", "provider-opportunities"],
+      contentGapNote: null
     },
 
-    // ── STRATEGIC PARTNER — TOP 3 ─────────────────────────────────────────
-    // Source: Persona 06 "The Partner" functional jobs + success criteria
+    // ── HEALTH PLAN / CHANNEL PARTNER ─────────────────────────────────────────
+    // Source: Secondary Audience — Strategic Partner
 
     {
-      id: "us-pt-01",
+      id: "pt-01",
       personaId: "partner",
       jobToBeDone: "Understand Modern Health's global clinical infrastructure and care coverage at scale",
-      jobSource: "JTBD: 'Understand Modern Health's global care network and coverage' + success criteria: 'Global Care Network page demonstrates reach and quality'",
+      jobSource: "JTBD: 'Understand Modern Health's global care network and coverage' + success criteria: 'Global capabilities page demonstrates reach and quality'",
       entryChannel: "Conference / Executive referral",
       priority: 1,
-      successMetric: "Finds global care network scope and clinical quality standards from the Health Plans or Our Approach section within 2 clicks",
-      pageIds: ["home", "who-we-serve", "health-plans", "our-approach", "global-care-network"],
+      successMetric: "Finds global care network scope and clinical quality standards from Health Plans or Our Approach within 2 clicks",
+      pageIds: ["home", "who-we-serve", "health-plans", "our-approach", "global-capabilities"],
       contentGapNote: null
     },
     {
-      id: "us-pt-02",
+      id: "pt-02",
       personaId: "partner",
       jobToBeDone: "Evaluate clinical outcomes and quality standards before committing to a partnership conversation",
-      jobSource: "JTBD: 'Evaluate clinical outcomes and quality standards' + success criteria: 'Clinical Outcomes data is accessible and compelling'",
+      jobSource: "JTBD: 'Evaluate clinical outcomes and quality standards' + success criteria: 'Clinical outcomes data is accessible and compelling'",
       entryChannel: "Direct navigation",
       priority: 1,
       successMetric: "Finds accessible, compelling clinical outcomes data and research validation within 2 clicks from Outcomes",
@@ -220,52 +369,15 @@ window.USER_STORIES = {
       contentGapNote: null
     },
     {
-      id: "us-pt-03",
+      id: "pt-03",
       personaId: "partner",
-      jobToBeDone: "Connect with a business development or partnerships contact",
+      jobToBeDone: "Connect with a business development or partnerships contact — not a generic employer demo form",
       jobSource: "JTBD: 'Connect with a partnerships or business development contact' + nav implication: 'Partnership CTA should feel different from the standard employer demo request'",
       entryChannel: "Conference / Executive referral",
       priority: 2,
-      successMetric: "Reaches a partnership-specific contact form or business development CTA — not a generic employer demo request form",
+      successMetric: "Reaches a partnership-specific contact form or business development CTA — not a standard sales form",
       pageIds: ["home", "who-we-serve", "health-plans", "channel-partners"],
-      contentGapNote: "GAP: No dedicated partnerships or BD contact path exists. The Channel Partners page is present but routes to the same generic demo request used by HR buyers — strategic partners expect an outreach option that reflects the weight and nature of a partnership conversation, not a standard sales form."
-    },
-
-    // ── CFO — TOP 3 ───────────────────────────────────────────────────────
-    // Source: Persona 07 "The CFO" functional jobs + success criteria
-
-    {
-      id: "us-cf-01",
-      personaId: "cfo",
-      jobToBeDone: "Find credible ROI data and financial outcome benchmarks quickly — without a sales conversation",
-      jobSource: "JTBD: 'Find ROI calculators and financial outcome data quickly' + nav implication: 'Avoid burying financial content behind demo-request gates'",
-      entryChannel: "CHRO direction / Internal briefing",
-      priority: 1,
-      successMetric: "Finds an ROI calculator or credible financial benchmark within 2 clicks — no demo request wall encountered",
-      pageIds: ["home", "outcomes", "economic-roi"],
-      contentGapNote: null
-    },
-    {
-      id: "us-cf-02",
-      personaId: "cfo",
-      jobToBeDone: "See peer enterprise case studies with quantified business impact metrics",
-      jobSource: "JTBD: 'Validate that peer companies of similar size and sector have adopted Modern Health' + success criteria: 'Sees recognizable enterprise clients and peer case studies'",
-      entryChannel: "CHRO direction",
-      priority: 1,
-      successMetric: "Finds named enterprise client case studies with measurable business outcomes (productivity, retention, absenteeism) within 2 clicks",
-      pageIds: ["home", "outcomes", "case-studies"],
-      contentGapNote: null
-    },
-    {
-      id: "us-cf-03",
-      personaId: "cfo",
-      jobToBeDone: "Understand the pricing model without needing to speak to sales",
-      jobSource: "JTBD: 'Understand total cost of ownership vs. current EAP spend' + success criteria: 'Understands pricing model without needing to talk to sales first' + nav implication: 'Avoid burying financial content behind demo-request gates'",
-      entryChannel: "CHRO direction / Board preparation",
-      priority: 1,
-      successMetric: "Finds clear pricing model or cost structure without being gated behind a demo request form",
-      pageIds: ["home", "outcomes", "economic-roi", "our-approach", "sustainable-pricing"],
-      contentGapNote: "NOTE: Sustainable Pricing lives under Our Approach in the nav hierarchy — a CFO browsing the Outcomes dropdown will not see it listed there. The cross-link from Economic Value addresses discoverability. Design consideration: pricing and ROI content should feel co-located, and pricing must remain fully ungated."
+      contentGapNote: "GAP: No dedicated partnerships or BD contact path exists. The Channel Partners page routes strategic partners to the same generic demo request used by HR buyers — partners expect an outreach option that reflects the weight of a partnership conversation."
     }
 
   ]

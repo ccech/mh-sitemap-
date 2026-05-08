@@ -7,390 +7,77 @@
   <link rel="stylesheet" href="shared.css">
   <style>
 
-    /* ─── PERSONA SELECTOR ROW ────────────────────────────────────────────── */
-    .persona-selector {
-      display: flex;
-      gap: 8px;
-      padding: 16px 32px;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto;
-      flex-wrap: wrap;
-    }
-    .persona-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border-radius: 99px;
-      border: 2px solid var(--border);
-      background: var(--bg);
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      transition: all 0.15s;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .persona-pill:hover {
-      border-color: var(--pill-color, #94a3b8);
-      color: var(--pill-color, #94a3b8);
-      background: var(--surface);
-    }
-    .persona-pill.active {
-      border-color: var(--pill-color);
-      background: var(--pill-color);
-      color: white;
-    }
-    .persona-pill-icon { font-size: 16px; line-height: 1; }
-    .persona-pill-badge {
-      font-size: 12px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 99px;
-      opacity: 0.9;
-    }
-    .persona-pill.active .persona-pill-badge { background: rgba(255,255,255,0.25); color: white; }
-    .persona-pill:not(.active) .persona-pill-badge {
-      background: var(--bg);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-    }
-
-    /* ─── STORY SELECTOR (STACKED) ───────────────────────────────────────── */
-    .story-selector {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 8px 32px 12px;
-    }
-    .story-tab {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 10px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      border-left: 3px solid transparent;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      background: none;
-      color: var(--text-muted);
-      transition: all 0.15s;
-      text-align: left;
-      width: 100%;
-    }
-    .story-tab:hover { color: var(--tab-color, var(--text)); background: var(--surface); }
-    .story-tab.active {
-      color: var(--tab-color);
-      border-left-color: var(--tab-color);
-      background: var(--surface);
-    }
-    .story-tab-num {
-      width: 22px; height: 22px;
-      border-radius: 99px;
-      font-size: 11px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-      background: var(--tab-color);
-      color: white;
-    }
-    .story-tab:not(.active) .story-tab-num { opacity: 0.35; }
-    .story-tab-title {
-      flex: 1; min-width: 0;
-      line-height: 1.4;
-      white-space: normal;
-    }
-    .story-tab-gap {
-      width: 7px; height: 7px;
-      border-radius: 99px;
-      background: #f97316;
-      flex-shrink: 0;
-      margin-top: 5px;
-    }
-    .story-tab:not(.active) .story-tab-gap { opacity: 0.5; }
-    .story-tab-priority {
-      font-size: 11px; font-weight: 700;
-      padding: 2px 8px; border-radius: 99px;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .story-tab.active .p1-chip { background: #fef2f2; color: #dc2626; }
-    .story-tab.active .p2-chip { background: #fffbeb; color: #d97706; }
-    .story-tab:not(.active) .story-tab-priority { opacity: 0; }
-
-    /* ─── MAIN STORY LAYOUT ───────────────────────────────────────────────── */
-    .story-layout {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    @media (max-width: 900px) {
-      .persona-selector { padding: 12px 16px; }
-      .story-selector { padding: 8px 16px 12px; }
-      .path-legend { padding: 10px 16px; }
-    }
-    @media (max-width: 600px) {
-      .story-selector { padding: 6px 14px 10px; }
-      .story-tab { font-size: 12px; }
-      .story-tab-title { font-size: 12px; }
-    }
-
-    /* ─── FLOW DIAGRAM (LEFT) ─────────────────────────────────────────────── */
-    .flow-diagram {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .flow-diagram-header {
-      padding: 14px 18px;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .flow-diagram-label {
-      font-size: 12px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.8px;
-      color: var(--text-faint);
-    }
-    .flow-depth-badge {
-      font-size: 13px; font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 99px;
-      background: var(--node-color, var(--surface));
-      color: var(--node-text, var(--text-muted));
-      border: 1px solid var(--border);
-    }
-
-    .flow-diagram-body { padding: 20px 18px; }
-
-    .flow-step {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      position: relative;
-    }
-    .flow-step-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .flow-step-num {
-      width: 26px; height: 26px;
-      border-radius: 99px;
-      font-size: 12px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      border: 2px solid;
-    }
-    .flow-step-node {
-      flex: 1;
-      padding: 10px 14px;
-      border-radius: var(--radius);
-      border: 2px solid;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-    .flow-step-name {
-      font-size: 14px; font-weight: 700;
-      line-height: 1.2;
-    }
-    .flow-step-url {
-      font-size: 12px; opacity: 0.65; margin-top: 2px;
-      font-family: monospace;
-    }
-    .flow-step-purpose {
-      font-size: 12px; line-height: 1.4; margin-top: 3px;
-      opacity: 0.75; font-style: italic;
-    }
-    .flow-step-badge {
-      font-size: 11px; font-weight: 800;
-      padding: 3px 9px; border-radius: 99px;
-      flex-shrink: 0;
-      text-transform: uppercase; letter-spacing: 0.3px;
-    }
-
-    /* Step types */
-    .step-entry .flow-step-num   { background: var(--bg); border-color: var(--border); color: var(--text-faint); }
-    .step-entry .flow-step-node  { background: var(--bg); border-color: var(--border); border-style: dashed; }
-    .step-entry .flow-step-name  { color: var(--text-muted); font-style: italic; font-weight: 500; }
-    .step-entry .flow-step-badge { background: var(--border); color: var(--text-faint); }
-
-    .step-home .flow-step-num   { background: #dbeafe; border-color: #93c5fd; color: #1d4ed8; }
-    .step-home .flow-step-node  { background: #eff6ff; border-color: #93c5fd; }
-    .step-home .flow-step-name  { color: #1d4ed8; }
-    .step-home .flow-step-badge { background: #dbeafe; color: #1d4ed8; }
-
-    .step-high .flow-step-num   { background: var(--heat-high-bg); border-color: var(--heat-high-border); color: var(--heat-high); }
-    .step-high .flow-step-node  { background: var(--heat-high-bg); border-color: var(--heat-high-border); }
-    .step-high .flow-step-name  { color: var(--heat-high); }
-    .step-high .flow-step-badge { background: var(--heat-high); color: white; }
-
-    .step-medium .flow-step-num  { background: var(--heat-med-bg); border-color: var(--heat-med-border); color: var(--heat-med); }
-    .step-medium .flow-step-node { background: var(--heat-med-bg); border-color: var(--heat-med-border); }
-    .step-medium .flow-step-name { color: var(--heat-med); }
-    .step-medium .flow-step-badge { background: var(--heat-med); color: white; }
-
-    .step-low .flow-step-num   { background: var(--heat-low-bg); border-color: var(--heat-low-border); color: var(--heat-low); }
-    .step-low .flow-step-node  { background: var(--heat-low-bg); border-color: var(--heat-low-border); }
-    .step-low .flow-step-name  { color: var(--heat-low); }
-    .step-low .flow-step-badge { background: var(--heat-low); color: white; }
-
-    /* Conversion — inherits persona color via inline style */
-    .step-conversion .flow-step-name { font-weight: 800; }
-
-    /* Connector */
-    .flow-connector {
-      display: flex;
-      align-items: center;
-      padding: 4px 0 4px 11px; /* aligns with center of step-num */
-    }
-    .flow-connector-line {
-      width: 2px;
-      height: 24px;
+    /* ── PERSONA GRID ────────────────────────────────────────────────────────── */
+    .persona-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
       background: var(--border);
-      border-radius: 1px;
-      margin-left: 0;
-    }
-
-    /* ─── STORY DETAIL (RIGHT) ────────────────────────────────────────────── */
-    .story-detail { display: flex; flex-direction: column; gap: 16px; }
-
-    .persona-context {
-      border-radius: var(--radius-lg);
-      padding: 18px 20px;
-      border: 2px solid;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      position: relative;
-      overflow: hidden;
-    }
-    .persona-context::after {
-      content: '';
-      position: absolute; top: -25px; right: -25px;
-      width: 110px; height: 110px;
-      border-radius: 50%;
-      opacity: 0.07;
-      background: var(--ctx-color);
-    }
-    .persona-context-icon { font-size: 28px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
-    .persona-context-name { font-size: 15px; font-weight: 800; color: var(--ctx-color); margin-bottom: 1px; }
-    .persona-context-role { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
-    .persona-context-statement {
-      font-size: 13px; font-style: italic; line-height: 1.6;
-      color: var(--text-2); border-left: 3px solid var(--ctx-color);
-      padding-left: 10px;
-    }
-    .persona-context-conv {
-      flex-shrink: 0;
-      display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
-    }
-    .conv-action-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 7px 14px; border-radius: 99px;
-      font-size: 13px; font-weight: 700;
-      background: var(--ctx-color); color: white;
-      white-space: nowrap;
-    }
-
-    .story-meta {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .story-meta-header {
-      padding: 16px 20px 14px;
       border-bottom: 1px solid var(--border);
-      display: flex; gap: 12px; align-items: flex-start;
     }
-    .story-meta-num {
-      width: 32px; height: 32px; border-radius: 99px;
-      font-size: 13px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; color: white;
+    .persona-grid-section {
+      display: contents;
     }
-    .story-meta-title { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.4; }
-    .story-meta-source { font-size: 12px; color: var(--text-faint); font-style: italic; margin-top: 4px; line-height: 1.4; }
-    .priority-chip {
-      flex-shrink: 0; padding: 4px 12px; border-radius: 99px;
-      font-size: 12px; font-weight: 700;
-      text-transform: uppercase; margin-top: 2px;
+    .persona-card {
+      display: flex; flex-direction: column;
+      padding: 14px 16px 12px;
+      background: var(--surface);
+      cursor: pointer;
+      border-top: 3px solid transparent;
+      transition: background 0.12s, border-top-color 0.12s;
+      position: relative;
+      text-align: left;
+      border: none;
+      font-family: inherit;
     }
-    .p1 { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
-    .p2 { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
-
-    .story-meta-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
-
-    .meta-row { display: flex; align-items: center; gap: 8px; }
-    .meta-row-label {
-      font-size: 12px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.8px; color: var(--text-faint); flex-shrink: 0;
-      min-width: 60px;
-    }
-    .meta-row-val {
-      font-size: 13px; color: var(--text-2); font-weight: 500;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 99px; padding: 3px 12px;
-    }
-
-    .detail-block {
+    .persona-card:hover {
       background: var(--bg);
-      border-left: 3px solid;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 12px 14px;
+      border-top-color: var(--pc-color);
     }
-    .detail-block-label {
-      font-size: 12px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.8px; margin-bottom: 5px;
+    .persona-card.active {
+      background: color-mix(in srgb, var(--pc-color) 8%, white);
+      border-top: 3px solid var(--pc-color);
     }
-    .detail-block-text { font-size: 14px; line-height: 1.6; }
+    .pc-icon  { font-size: 20px; line-height: 1; margin-bottom: 8px; }
+    .pc-name  { font-size: 13px; font-weight: 700; line-height: 1.3; color: var(--text); }
+    .persona-card.active .pc-name { color: var(--pc-color); }
+    .pc-role  { font-size: 11px; color: var(--text-faint); margin-top: 2px; line-height: 1.3; }
+    .pc-meta  {
+      display: flex; align-items: center; gap: 5px;
+      margin-top: 8px;
+    }
+    .pc-stories {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; color: var(--text-faint);
+    }
+    .pc-gap-dot {
+      width: 6px; height: 6px; border-radius: 99px;
+      background: #f97316; flex-shrink: 0;
+    }
+    .pc-divider-label {
+      grid-column: 1 / -1;
+      background: var(--bg);
+      padding: 5px 16px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--text-faint);
+      border-top: 1px solid var(--border);
+    }
 
-    .gap-detail-block {
-      background: #fff7ed;
-      border-left: 3px solid #f97316;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 12px 14px;
-    }
-    .gap-detail-block .detail-block-label { color: #92400e; }
-    .gap-detail-block .detail-block-text { color: #78350f; }
-
-    /* ─── GAP SUMMARY BANNER ──────────────────────────────────────────────── */
+    /* ── GAP BANNER ──────────────────────────────────────────────────────────── */
     .gap-banner {
       background: #fff7ed; border: 1px solid #fed7aa;
-      border-radius: var(--radius); padding: 0;
-      margin-bottom: 20px;
-      overflow: hidden;
+      border-radius: var(--radius); padding: 0; margin-bottom: 20px; overflow: hidden;
     }
     .gap-banner-trigger {
       display: flex; align-items: center; gap: 10px;
       padding: 11px 16px; cursor: pointer;
-      background: none; border: none; width: 100%; text-align: left;
-      font-family: inherit;
+      background: none; border: none; width: 100%; text-align: left; font-family: inherit;
     }
     .gap-banner-trigger:hover { background: rgba(249,115,22,0.05); }
-    .gap-banner-icon { font-size: 15px; flex-shrink: 0; }
     .gap-banner-title { font-size: 14px; font-weight: 700; color: #92400e; flex: 1; }
-    .gap-banner-chevron {
-      font-size: 13px; color: #c2763b;
-      transition: transform 0.2s;
-    }
+    .gap-banner-chevron { font-size: 13px; color: #c2763b; transition: transform 0.2s; }
     .gap-banner.open .gap-banner-chevron { transform: rotate(180deg); }
-    .gap-banner-body {
-      display: none;
-      padding: 0 16px 12px 16px;
-    }
+    .gap-banner-body { display: none; padding: 0 16px 12px; }
     .gap-banner.open .gap-banner-body { display: block; }
     .gap-banner-item {
       font-size: 13px; color: #78350f; margin-bottom: 5px;
@@ -398,42 +85,318 @@
     }
     .gap-banner-item::before { content: '⚠'; position: absolute; left: 0; font-size: 11px; top: 1px; }
 
-    /* ─── STORY SELECTOR HEADER ───────────────────────────────────────────── */
-    .story-selector-header {
-      display: flex; align-items: center;
-      padding: 6px 32px 0;
-      background: var(--bg);
+    /* ── STORY CARDS ROW ─────────────────────────────────────────────────────── */
+    .story-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
-    .story-selector-label {
-      font-size: 12px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.8px;
-      color: var(--text-faint);
+    .story-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 20px 16px;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex; flex-direction: column; gap: 12px;
+      position: relative;
     }
+    .story-card:hover {
+      border-color: var(--card-color);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--card-color) 12%, transparent);
+    }
+    .story-card.active {
+      border-color: var(--card-color);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-color: var(--surface);
+      box-shadow: 2px 0 0 0 var(--card-color), -2px 0 0 0 var(--card-color);
+      z-index: 2;
+    }
+    .sc-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    }
+    .sc-num {
+      width: 28px; height: 28px; border-radius: 99px;
+      font-size: 13px; font-weight: 800; color: white;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .sc-chips { display: flex; gap: 5px; align-items: center; }
+    .sc-gap-dot {
+      width: 8px; height: 8px; border-radius: 99px;
+      background: #f97316; flex-shrink: 0; title: "Content gap";
+    }
+    .sc-jtbd {
+      font-size: 14px; font-weight: 600; line-height: 1.4;
+      color: var(--text); flex: 1;
+    }
+    .sc-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: auto; padding-top: 4px;
+    }
+    .sc-depth {
+      font-size: 12px; color: var(--text-muted);
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 99px; padding: 2px 10px;
+    }
+    .sc-caret {
+      font-size: 14px; color: var(--text-faint);
+      transition: transform 0.2s;
+    }
+    .story-card.active .sc-caret { transform: rotate(180deg); color: var(--card-color); }
 
-    /* ─── LEGEND ──────────────────────────────────────────────────────────── */
-    .path-legend {
-      display: flex; gap: 14px; flex-wrap: wrap;
-      padding: 10px 32px;
-      background: var(--bg);
+    /* ── EXPAND PANEL ────────────────────────────────────────────────────────── */
+    .story-expand-panel {
+      display: none;
+      background: var(--surface);
+      border: 2px solid var(--panel-color, var(--border));
+      border-top: none;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .story-expand-panel.open { display: block; }
+
+    /* Header row */
+    .expand-header {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 24px;
+      padding: 20px 24px;
       border-bottom: 1px solid var(--border);
-      align-items: center;
+      align-items: start;
     }
-    .legend-item { display: flex; align-items: center; gap: 5px; font-size: 13px; color: var(--text-muted); }
-    .legend-swatch {
-      width: 12px; height: 12px; border-radius: 3px; border: 2px solid;
+    .eh-jtbd {
+      font-size: 16px; font-weight: 700; color: var(--text);
+      line-height: 1.4; margin-bottom: 8px;
     }
-    .legend-swatch.entry  { background: var(--bg); border-color: var(--border); border-style: dashed; }
-    .legend-swatch.home   { background: #eff6ff; border-color: #93c5fd; }
-    .legend-swatch.high   { background: var(--heat-high-bg); border-color: var(--heat-high-border); }
-    .legend-swatch.medium { background: var(--heat-med-bg); border-color: var(--heat-med-border); }
-    .legend-swatch.low    { background: var(--heat-low-bg); border-color: var(--heat-low-border); }
-    .legend-swatch.conv   { background: #f3f4f6; border-color: #9ca3af; }
+    .eh-chips {
+      display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+    }
+    .eh-chip {
+      font-size: 12px; color: var(--text-muted);
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 99px; padding: 3px 10px; font-weight: 500;
+    }
+    .eh-source {
+      font-size: 12px; color: var(--text-faint); font-style: italic;
+      line-height: 1.5; margin-top: 10px;
+    }
+    .eh-right {
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .eh-persona-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .eh-persona-icon { font-size: 22px; flex-shrink: 0; }
+    .eh-persona-name { font-size: 13px; font-weight: 700; line-height: 1.2; }
+    .eh-persona-role { font-size: 11px; color: var(--text-muted); }
+    .eh-conv-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 12px; border-radius: 99px;
+      font-size: 12px; font-weight: 700; color: white;
+      margin-top: 8px; width: 100%; justify-content: center;
+    }
 
+    /* Metrics row */
+    .expand-metrics {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 16px;
+    }
+    .metric-block {
+      flex: 1; border-left: 3px solid var(--panel-color);
+      padding: 10px 14px;
+      background: var(--bg); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .metric-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; margin-bottom: 5px;
+    }
+    .metric-text { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+    .gap-block {
+      flex: 1; border-left: 3px solid #f97316;
+      padding: 10px 14px;
+      background: #fff7ed; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .gap-block .metric-label { color: #92400e; }
+    .gap-block .metric-text  { color: #78350f; }
+
+    /* ── HORIZONTAL FLOW ─────────────────────────────────────────────────────── */
+    .flow-area { padding: 20px 24px 28px; }
+    .flow-area-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--text-faint); margin-bottom: 16px;
+    }
+    .flow-h {
+      display: flex; align-items: flex-start; gap: 0;
+      overflow-x: auto; padding-bottom: 8px;
+    }
+    .flow-h-step {
+      display: flex; align-items: center; flex-shrink: 0;
+    }
+    .flow-h-node {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; width: 140px; flex-shrink: 0;
+    }
+    .flow-h-num {
+      width: 24px; height: 24px; border-radius: 99px;
+      font-size: 11px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 8px; border: 2px solid; flex-shrink: 0;
+    }
+    .flow-h-card {
+      width: 100%; border: 2px solid; border-radius: var(--radius);
+      padding: 10px 8px;
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+    }
+    .flow-h-name {
+      font-size: 12px; font-weight: 700; line-height: 1.3; text-align: center;
+    }
+    .flow-h-url {
+      font-size: 10px; font-family: monospace; opacity: 0.55;
+      margin-top: 3px; text-align: center; word-break: break-all;
+    }
+    .flow-h-badge {
+      font-size: 10px; font-weight: 800; padding: 2px 8px;
+      border-radius: 99px; margin-top: 7px;
+      text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .flow-h-arrow {
+      display: flex; align-items: flex-end;
+      padding: 0 4px; padding-bottom: 42px;
+      color: var(--text-faint); font-size: 18px; flex-shrink: 0;
+    }
+
+    /* Node type colour tokens */
+    .fhn-entry .flow-h-num  { background: var(--bg); border-color: var(--border); color: var(--text-faint); }
+    .fhn-entry .flow-h-card { background: var(--bg); border-color: var(--border); border-style: dashed; }
+    .fhn-entry .flow-h-name { color: var(--text-muted); font-weight: 500; font-style: italic; }
+    .fhn-entry .flow-h-badge { background: #f3f4f6; color: var(--text-faint); }
+
+    .fhn-home .flow-h-num  { background: #dbeafe; border-color: #93c5fd; color: #1d4ed8; }
+    .fhn-home .flow-h-card { background: #eff6ff; border-color: #93c5fd; }
+    .fhn-home .flow-h-name { color: #1d4ed8; }
+    .fhn-home .flow-h-badge { background: #dbeafe; color: #1d4ed8; }
+
+    .fhn-high .flow-h-num  { background: var(--heat-high-bg); border-color: var(--heat-high-border); color: var(--heat-high); }
+    .fhn-high .flow-h-card { background: var(--heat-high-bg); border-color: var(--heat-high-border); }
+    .fhn-high .flow-h-name { color: var(--heat-high); }
+    .fhn-high .flow-h-badge { background: var(--heat-high); color: white; }
+
+    .fhn-medium .flow-h-num  { background: var(--heat-med-bg); border-color: var(--heat-med-border); color: var(--heat-med); }
+    .fhn-medium .flow-h-card { background: var(--heat-med-bg); border-color: var(--heat-med-border); }
+    .fhn-medium .flow-h-name { color: var(--heat-med); }
+    .fhn-medium .flow-h-badge { background: var(--heat-med); color: white; }
+
+    .fhn-low .flow-h-num  { background: var(--heat-low-bg); border-color: var(--heat-low-border); color: var(--heat-low); }
+    .fhn-low .flow-h-card { background: var(--heat-low-bg); border-color: var(--heat-low-border); }
+    .fhn-low .flow-h-name { color: var(--heat-low); }
+    .fhn-low .flow-h-badge { background: var(--heat-low); color: white; }
+
+
+    /* ── FLOWS LAYOUT ────────────────────────────────────────────────────────── */
+    .flows-layout {
+      display: grid;
+      grid-template-columns: 256px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .flows-main { min-width: 0; }
+
+    /* ── PERSONA SIDEBAR ─────────────────────────────────────────────────────── */
+    .persona-sidebar {
+      position: sticky;
+      top: 72px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      font-size: 13px;
+    }
+    .psb-header {
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .psb-icon-row {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+    }
+    .psb-icon { font-size: 28px; line-height: 1; flex-shrink: 0; }
+    .psb-name { font-size: 15px; font-weight: 800; line-height: 1.2; }
+    .psb-role { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .psb-power {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      padding: 3px 10px; border-radius: 99px; margin-top: 4px;
+    }
+
+    .psb-section {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .psb-section:last-child { border-bottom: none; }
+    .psb-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--text-faint); margin-bottom: 7px;
+      display: block;
+    }
+
+    .psb-statement {
+      font-size: 12px; font-style: italic; line-height: 1.6;
+      color: var(--text-2); border-left: 3px solid;
+      padding-left: 9px;
+    }
+
+    .psb-conv {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 12px; border-radius: var(--radius);
+      font-size: 12px; font-weight: 700; color: white;
+    }
+
+    .psb-pain-item {
+      display: flex; align-items: flex-start; gap: 6px;
+      font-size: 12px; color: var(--text-2); line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .psb-pain-item:last-child { margin-bottom: 0; }
+    .psb-pain-dot {
+      width: 5px; height: 5px; border-radius: 99px;
+      background: var(--psb-color, var(--text-faint));
+      flex-shrink: 0; margin-top: 5px;
+    }
+
+    .psb-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .psb-chip {
+      font-size: 11px; font-weight: 500;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 99px; padding: 2px 8px; color: var(--text-muted);
+    }
+
+    .psb-empty {
+      padding: 32px 16px; text-align: center;
+      font-size: 13px; color: var(--text-faint); font-style: italic;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .flows-layout { grid-template-columns: 220px 1fr; }
+    }
     @media (max-width: 900px) {
-      .story-layout { grid-template-columns: 1fr; }
-      .persona-selector { padding: 12px 16px; }
-      .story-selector { padding: 0 16px; }
+      .persona-grid { grid-template-columns: repeat(3, 1fr); }
       .path-legend { padding: 10px 16px; }
+      .flows-layout { grid-template-columns: 1fr; }
+      .persona-sidebar { position: static; display: none; }
+      .story-cards-row { grid-template-columns: 1fr 1fr; }
+      .expand-header { grid-template-columns: 1fr; }
+      .eh-right { display: none; }
+      .expand-metrics { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .story-cards-row { grid-template-columns: 1fr; }
+      .story-card.active { border-bottom-left-radius: var(--radius-lg); border-bottom-right-radius: var(--radius-lg); border-bottom-color: var(--card-color); box-shadow: none; }
     }
   </style>
 </head>
@@ -450,6 +413,7 @@
     <span class="nav-brand-tag">Strategy Tool</span>
   </a>
   <nav class="nav-links">
+    <a href="exec-summary.html">Executive Summary</a>
     <a href="index.html">Heat Map</a>
     <a href="sitemap-visual.html">Site Architecture</a>
     <a href="flows.html" class="active">User Flows</a>
@@ -460,34 +424,26 @@
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <h1>User Stories</h1>
-  <p>Top 3 jobs to be done for all 7 JTBD personas. Each story traces the expected site path, heat level at each stop, and any content gaps blocking the conversion.</p>
+  <h1>User Flows</h1>
+  <p>3 jobs to be done per persona. Select a persona, then click a story card to trace its site path.</p>
 </div>
 
-<!-- PERSONA SELECTOR -->
-<div class="persona-selector" id="persona-selector"></div>
+<!-- PERSONA GRID -->
+<div class="persona-grid" id="persona-selector"></div>
 
-<!-- STORY SELECTOR -->
-<div class="story-selector-header">
-  <span class="story-selector-label">User Stories — Jobs to be Done</span>
-</div>
-<div class="story-selector" id="story-selector"></div>
 
-<!-- PATH LEGEND -->
-<div class="path-legend">
-  <span style="font-size:10px;font-weight:700;color:var(--text-faint);letter-spacing:.5px;text-transform:uppercase;">Path key</span>
-  <span class="legend-item"><span class="legend-swatch entry"></span> Entry channel</span>
-  <span class="legend-item"><span class="legend-swatch home"></span> Homepage</span>
-  <span class="legend-item"><span class="legend-swatch high"></span> High heat</span>
-  <span class="legend-item"><span class="legend-swatch medium"></span> Medium heat</span>
-  <span class="legend-item"><span class="legend-swatch low"></span> Low heat</span>
-  <span class="legend-item"><span class="legend-swatch conv"></span> Conversion</span>
-</div>
-
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div class="container">
   <div id="gap-banner-area"></div>
-  <div id="story-content"></div>
+  <div class="flows-layout">
+    <aside class="persona-sidebar" id="persona-sidebar">
+      <div class="psb-empty">Select a persona to see details</div>
+    </aside>
+    <div class="flows-main">
+      <div class="story-cards-row" id="story-cards-row"></div>
+      <div class="story-expand-panel" id="story-expand"></div>
+    </div>
+  </div>
 </div>
 
 <!-- DATA -->
@@ -501,224 +457,256 @@
   let activePersonaId = null;
   let activeStoryId   = null;
 
-  // ── data helpers ─────────────────────────────────────────────────────────
+  // ── helpers ───────────────────────────────────────────────────────────────
 
-  function getPersona(id)     { return PERSONAS.personas.find(p => p.id === id); }
-  function getHeatPage(pid)   { return (HEAT_MAP.pages || []).find(p => p.id === pid) || null; }
-  function getSitemapPage(pid){ return (SITEMAP.pages || []).find(p => p.id === pid) || null; }
+  function allPersonas() {
+    return [...(PERSONAS.personas || []), ...(PERSONAS.secondaryAudiences || [])];
+  }
+  function getPersona(id) {
+    return allPersonas().find(p => p.id === id);
+  }
+  function getHeatPage(pid)    { return (HEAT_MAP.pages || []).find(p => p.id === pid) || null; }
+  function getSitemapPage(pid) { return (SITEMAP.pages || []).find(p => p.id === pid) || null; }
   function getFlowPath(storyId, personaId) {
     const flow = (FLOWS.flows || []).find(f => f.personaId === personaId);
     return flow ? (flow.paths || []).find(p => p.storyId === storyId) : null;
   }
-  function storiesForPersona(personaId) {
-    return USER_STORIES.userStories.filter(s => s.personaId === personaId);
-  }
-  function storyIndexInPersona(story) {
-    return storiesForPersona(story.personaId).findIndex(s => s.id === story.id);
+  function storiesForPersona(pid) {
+    return USER_STORIES.userStories.filter(s => s.personaId === pid);
   }
   function priorityLabel(n) {
     return { 1: 'Must Have', 2: 'High', 3: 'Medium', 4: 'Low' }[n] || n;
   }
   function hex2rgba(hex, a) {
+    if (!hex || hex.length < 7) return `rgba(0,0,0,${a})`;
     const r = parseInt(hex.slice(1,3),16);
     const g = parseInt(hex.slice(3,5),16);
     const b = parseInt(hex.slice(5,7),16);
     return `rgba(${r},${g},${b},${a})`;
   }
 
-  // ── persona selector ──────────────────────────────────────────────────────
+  // ── persona selector ───────────────────────────────────────────────────────
 
   function buildPersonaSelector() {
-    const html = PERSONAS.personas.map(p => {
-      const stories = storiesForPersona(p.id);
-      const gaps = stories.filter(s => s.contentGapNote).length;
+    const buying    = PERSONAS.personas || [];
+    const secondary = PERSONAS.secondaryAudiences || [];
+
+    function card(p) {
+      const stories  = storiesForPersona(p.id);
+      if (!stories.length) return '';
+      const gaps     = stories.filter(s => s.contentGapNote).length;
       const isActive = p.id === activePersonaId;
+      const color    = p.color || '#6b7280';
       return `
-        <button class="persona-pill${isActive ? ' active' : ''}"
-          style="--pill-color:${p.color}"
+        <button class="persona-card${isActive ? ' active' : ''}"
+          style="--pc-color:${color}"
           onclick="selectPersona('${p.id}')">
-          <span class="persona-pill-icon">${p.icon}</span>
-          ${p.shortName}
-          <span class="persona-pill-badge">${stories.length} stories${gaps ? ' · ' + gaps + ' gap' + (gaps > 1 ? 's' : '') : ''}</span>
+          <div class="pc-icon">${p.icon || ''}</div>
+          <div class="pc-name">${p.shortName || p.name}</div>
+          <div class="pc-role">${p.role || ''}</div>
+          <div class="pc-meta">
+            <span class="pc-stories">${stories.length} stories</span>
+            ${gaps ? `<span class="pc-gap-dot" title="${gaps} gap${gaps > 1 ? 's' : ''}"></span>` : ''}
+          </div>
         </button>`;
-    }).join('');
-    document.getElementById('persona-selector').innerHTML = html;
-  }
-
-  // ── story selector ────────────────────────────────────────────────────────
-
-  function buildStorySelector() {
-    const persona = getPersona(activePersonaId);
-    if (!persona) { document.getElementById('story-selector').innerHTML = ''; return; }
-
-    const stories = storiesForPersona(activePersonaId);
-    const html = stories.map((s, i) => {
-      const isActive = s.id === activeStoryId;
-      const pCls = s.priority === 1 ? 'p1-chip' : 'p2-chip';
-      return `
-        <button class="story-tab${isActive ? ' active' : ''}"
-          style="--tab-color:${persona.color}"
-          onclick="selectStory('${s.id}')">
-          <span class="story-tab-num" style="background:${persona.color}">${i + 1}</span>
-          <span class="story-tab-title">${s.jobToBeDone}</span>
-          ${s.contentGapNote ? '<span class="story-tab-gap" title="Content gap"></span>' : ''}
-          <span class="story-tab-priority ${pCls}">P${s.priority}</span>
-        </button>`;
-    }).join('');
-    document.getElementById('story-selector').innerHTML = html;
-  }
-
-  // ── flow diagram ──────────────────────────────────────────────────────────
-
-  function renderFlowDiagram(story, persona) {
-    const flowPath = getFlowPath(story.id, persona.id);
-    const color = persona.color;
-
-    if (!flowPath || !flowPath.path || flowPath.path.length === 0) {
-      return `<div class="flow-diagram">
-        <div class="flow-diagram-header">
-          <span class="flow-diagram-label">Site path</span>
-        </div>
-        <div class="flow-diagram-body" style="font-size:12px;color:var(--text-faint);font-style:italic;">
-          Path not yet resolved.
-        </div>
-      </div>`;
     }
 
-    const depth = flowPath.clickDepth;
-    const steps = [];
+    const buyingHtml    = buying.map(card).join('');
+    const secondaryHtml = secondary.map(card).filter(Boolean).join('');
 
-    // Entry
-    steps.push({ type: 'entry', name: story.entryChannel.split('/')[0].trim(), url: '', badge: 'Entry', num: 0 });
+    document.getElementById('persona-selector').innerHTML =
+      buyingHtml +
+      (secondaryHtml ? `<div class="pc-divider-label">Secondary audiences</div>${secondaryHtml}` : '');
+  }
 
-    // Pages
-    flowPath.path.forEach((pg, i) => {
-      const isFirst = i === 0;
-      const isLast  = i === flowPath.path.length - 1;
-      const hp = getHeatPage(pg.id);
-      const level = hp ? hp.heatLevel : 'low';
-      const score = hp ? hp.heatScore.toFixed(1) : '–';
+  // ── story cards ────────────────────────────────────────────────────────────
 
-      let type, badge;
-      if (isFirst)       { type = 'home';       badge = 'Homepage'; }
-      else if (isLast)   { type = 'conversion';  badge = 'Conversion'; }
-      else               { type = level;          badge = score + ' heat'; }
+  function buildStoryCards() {
+    const persona = getPersona(activePersonaId);
+    if (!persona) { document.getElementById('story-cards-row').innerHTML = ''; return; }
+    const stories = storiesForPersona(activePersonaId);
+    const color = persona.color || '#6b7280';
 
-      steps.push({ type, name: pg.name, url: pg.url, badge, num: i + 1, isConversion: isLast, color, pageId: pg.id });
-    });
+    const html = stories.map((story, i) => {
+      const flowPath = getFlowPath(story.id, activePersonaId);
+      const depth = flowPath ? flowPath.clickDepth : '?';
+      const isActive = story.id === activeStoryId;
+      const pCls = story.priority === 1 ? 'p1' : 'p2';
+      const hasGap = !!story.contentGapNote;
 
-    const stepsHtml = steps.map((step, i) => {
-      const numStyle = step.type === 'conversion'
-        ? `style="background:${color};border-color:${color};color:white"`
-        : '';
-      const nodeStyle = step.type === 'conversion'
-        ? `style="background:${hex2rgba(color,0.08)};border-color:${color}"`
-        : '';
-      const nameStyle = step.type === 'conversion'
-        ? `style="color:${color}"`
-        : '';
-      const badgeStyle = step.type === 'conversion'
-        ? `style="background:${color};color:white"`
-        : '';
-
-      const connector = i < steps.length - 1
-        ? `<div class="flow-connector"><div class="flow-connector-line"></div></div>`
-        : '';
-
-      const sp = step.pageId ? getSitemapPage(step.pageId) : null;
-      const purposeText = sp && sp.pageContent && sp.pageContent.purpose && step.type !== 'entry'
-        ? `<div class="flow-step-purpose">${sp.pageContent.purpose}</div>` : '';
       return `
-        <div class="flow-step step-${step.type}">
-          <div class="flow-step-row">
-            <div class="flow-step-num" ${numStyle}>${step.num}</div>
-            <div class="flow-step-node" ${nodeStyle}>
-              <div style="flex:1;min-width:0">
-                <div class="flow-step-name" ${nameStyle}>${step.name}</div>
-                ${step.url ? `<div class="flow-step-url">${step.url}</div>` : ''}
-                ${purposeText}
-              </div>
-              <span class="flow-step-badge" ${badgeStyle}>${step.badge}</span>
+        <div class="story-card${isActive ? ' active' : ''}"
+          style="--card-color:${color}"
+          onclick="toggleStory('${story.id}')">
+          <div class="sc-top">
+            <span class="sc-num" style="background:${color}">${i + 1}</span>
+            <div class="sc-chips">
+              <span class="priority-chip ${pCls}">P${story.priority} · ${priorityLabel(story.priority)}</span>
+              ${hasGap ? '<span class="sc-gap-dot" title="Content gap flagged"></span>' : ''}
             </div>
           </div>
-          ${connector}
+          <div class="sc-jtbd">${story.jobToBeDone}</div>
+          <div class="sc-bottom">
+            <span class="sc-depth">⇢ ${depth} click${depth !== 1 ? 's' : ''} to conversion</span>
+            <span class="sc-caret">${isActive ? '▴' : '▾'}</span>
+          </div>
         </div>`;
     }).join('');
 
-    return `
-      <div class="flow-diagram">
-        <div class="flow-diagram-header">
-          <span class="flow-diagram-label">Site path</span>
-          <span class="flow-depth-badge" style="background:${hex2rgba(color,0.1)};color:${color};border-color:${hex2rgba(color,0.3)}">
-            ⇢ ${depth} click${depth !== 1 ? 's' : ''} to conversion
-          </span>
-        </div>
-        <div class="flow-diagram-body">${stepsHtml}</div>
-      </div>`;
+    document.getElementById('story-cards-row').innerHTML = html;
   }
 
-  // ── story detail ──────────────────────────────────────────────────────────
+  // ── horizontal flow diagram ────────────────────────────────────────────────
 
-  function renderStoryDetail(story, persona) {
-    const color = persona.color;
-    const colorLight = persona.colorLight;
-    const idx = storyIndexInPersona(story) + 1;
-    const pNum = story.priority;
-    const pCls = pNum === 1 ? 'p1' : 'p2';
+  function buildHorizontalFlow(story, persona) {
+    const flowPath = getFlowPath(story.id, persona.id);
+    const color = persona.color || '#6b7280';
 
-    return `
-      <div class="story-detail">
+    if (!flowPath || !flowPath.path || !flowPath.path.length) {
+      return `<div style="font-size:13px;color:var(--text-faint);font-style:italic;padding:12px 0">Path not yet resolved.</div>`;
+    }
 
-        <!-- Persona context -->
-        <div class="persona-context" style="border-color:${color}20;background:linear-gradient(135deg,${colorLight} 0%,white 100%);--ctx-color:${color}">
-          <div class="persona-context-icon">${persona.icon}</div>
-          <div style="flex:1;min-width:0">
-            <div class="persona-context-name">${persona.name}</div>
-            <div class="persona-context-role">${persona.jtbdPersona} · ${persona.decisionRole}</div>
-            <div class="persona-context-statement">"${persona.jobStatement}"</div>
-          </div>
-          <div class="persona-context-conv">
-            <div class="conv-action-pill" style="background:${color}">
-              <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              ${persona.conversionAction}
+    const steps = [];
+
+    // Entry node
+    steps.push({
+      type: 'entry',
+      name: story.entryChannel.split('/')[0].trim(),
+      url: '',
+      badge: 'Entry',
+      num: 0,
+      pageId: null
+    });
+
+    // Page nodes
+    flowPath.path.forEach((pg, i) => {
+      const isFirst = i === 0;
+      const isLast  = i === flowPath.path.length - 1;
+      const hp    = getHeatPage(pg.id);
+      const level = hp ? hp.heatLevel : 'low';
+      const score = hp ? hp.heatScore.toFixed(1) : '–';
+
+      let type, badge, nodeStyle = '', numStyle = '', nameStyle = '', badgeStyle = '';
+
+      if (isFirst) {
+        type = 'home'; badge = 'Homepage';
+      } else if (isLast) {
+        type = 'conversion'; badge = 'Conversion';
+        nodeStyle = `style="background:${hex2rgba(color,0.08)};border-color:${color}"`;
+        numStyle  = `style="background:${color};border-color:${color};color:white"`;
+        nameStyle = `style="color:${color}"`;
+        badgeStyle = `style="background:${color};color:white"`;
+      } else {
+        type = level; badge = score + ' heat';
+      }
+
+      steps.push({ type, name: pg.name, url: pg.url, badge, num: i + 1, nodeStyle, numStyle, nameStyle, badgeStyle, pageId: pg.id });
+    });
+
+    const nodesHtml = steps.map((step, i) => {
+      const sp = step.pageId ? getSitemapPage(step.pageId) : null;
+
+      const numHtml = step.type === 'conversion'
+        ? `<div class="flow-h-num" ${step.numStyle}>${step.num}</div>`
+        : `<div class="flow-h-num">${step.num}</div>`;
+
+      const arrow = i < steps.length - 1
+        ? `<div class="flow-h-arrow">→</div>` : '';
+
+      return `
+        <div class="flow-h-step">
+          <div class="flow-h-node fhn-${step.type}">
+            ${numHtml}
+            <div class="flow-h-card" ${step.nodeStyle || ''}>
+              <div class="flow-h-name" ${step.nameStyle || ''}>${step.name}</div>
+              ${step.url ? `<div class="flow-h-url">${step.url}</div>` : ''}
+              <div class="flow-h-badge" ${step.badgeStyle || ''}>${step.badge}</div>
             </div>
           </div>
-        </div>
+          ${arrow}
+        </div>`;
+    }).join('');
 
-        <!-- Story metadata -->
-        <div class="story-meta">
-          <div class="story-meta-header">
-            <div class="story-meta-num" style="background:${color}">${idx}</div>
-            <div style="flex:1;min-width:0">
-              <div class="story-meta-title">${story.jobToBeDone}</div>
-              <div class="story-meta-source">${story.jobSource}</div>
-            </div>
-            <span class="priority-chip ${pCls}">P${pNum} · ${priorityLabel(pNum)}</span>
-          </div>
-          <div class="story-meta-body">
-            <div class="meta-row">
-              <span class="meta-row-label">Entry</span>
-              <span class="meta-row-val">${story.entryChannel}</span>
-            </div>
-            <div class="detail-block" style="border-left-color:${color}">
-              <div class="detail-block-label" style="color:${color}">Success metric</div>
-              <div class="detail-block-text" style="color:var(--text-2)">${story.successMetric}</div>
-            </div>
-            ${story.contentGapNote ? `
-            <div class="gap-detail-block">
-              <div class="detail-block-label">⚠ Content Gap</div>
-              <div class="detail-block-text">${story.contentGapNote}</div>
-            </div>` : ''}
-          </div>
-        </div>
-
-      </div>`;
+    return `<div class="flow-h">${nodesHtml}</div>`;
   }
 
-  // ── gap banner ────────────────────────────────────────────────────────────
+  // ── expand panel ───────────────────────────────────────────────────────────
+
+  function buildExpandPanel() {
+    const story   = USER_STORIES.userStories.find(s => s.id === activeStoryId);
+    const persona = story ? getPersona(story.personaId) : null;
+    const panel   = document.getElementById('story-expand');
+
+    if (!story || !persona) {
+      panel.innerHTML = '';
+      panel.classList.remove('open');
+      panel.style.removeProperty('--panel-color');
+      return;
+    }
+
+    const color = persona.color || '#6b7280';
+    const colorLight = persona.colorLight || '#f3f4f6';
+    const pCls  = story.priority === 1 ? 'p1' : 'p2';
+    const flowPath = getFlowPath(story.id, persona.id);
+    const depth = flowPath ? flowPath.clickDepth : '?';
+
+    const gapBlock = story.contentGapNote ? `
+      <div class="gap-block">
+        <div class="metric-label">⚠ Content gap</div>
+        <div class="metric-text">${story.contentGapNote}</div>
+      </div>` : '';
+
+    panel.style.setProperty('--panel-color', color);
+    panel.innerHTML = `
+
+      <!-- Header -->
+      <div class="expand-header">
+        <div>
+          <div class="eh-jtbd">${story.jobToBeDone}</div>
+          <div class="eh-chips">
+            <span class="eh-chip">Entry: ${story.entryChannel}</span>
+            <span class="priority-chip ${pCls}">P${story.priority} · ${priorityLabel(story.priority)}</span>
+            <span class="eh-chip">⇢ ${depth} click${depth !== 1 ? 's' : ''} to conversion</span>
+          </div>
+          <div class="eh-source">${story.jobSource}</div>
+        </div>
+        <div class="eh-right">
+          <div class="eh-persona-row" style="border-color:${color}30">
+            <span class="eh-persona-icon">${persona.icon || ''}</span>
+            <div>
+              <div class="eh-persona-name" style="color:${color}">${persona.name}</div>
+              <div class="eh-persona-role">${persona.role || ''}</div>
+            </div>
+          </div>
+          <div class="eh-conv-pill" style="background:${color}">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+              <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            ${persona.conversionAction || ''}
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="expand-metrics">
+        <div class="metric-block" style="border-left-color:${color}">
+          <div class="metric-label" style="color:${color}">Success metric</div>
+          <div class="metric-text">${story.successMetric}</div>
+        </div>
+        ${gapBlock}
+      </div>
+
+      <!-- Horizontal flow -->
+      <div class="flow-area">
+        <div class="flow-area-label">Site path</div>
+        ${buildHorizontalFlow(story, persona)}
+      </div>`;
+
+    panel.classList.add('open');
+  }
+
+  // ── gap banner ─────────────────────────────────────────────────────────────
 
   function toggleGapBanner() {
     document.getElementById('gap-banner').classList.toggle('open');
@@ -729,14 +717,14 @@
     if (!gapStories.length) { document.getElementById('gap-banner-area').innerHTML = ''; return; }
     const items = gapStories.map(s => {
       const p = getPersona(s.personaId);
-      const idx = storyIndexInPersona(s) + 1;
+      const idx = storiesForPersona(s.personaId).findIndex(st => st.id === s.id) + 1;
       const note = s.contentGapNote.replace(/^(GAP|NOTE): /, '');
-      return `<div class="gap-banner-item"><strong>${p ? p.shortName : s.personaId} · Story ${idx}:</strong> ${note}</div>`;
+      return `<div class="gap-banner-item"><strong>${p ? p.shortName || p.name : s.personaId} · Story ${idx}:</strong> ${note}</div>`;
     }).join('');
     document.getElementById('gap-banner-area').innerHTML = `
       <div class="gap-banner" id="gap-banner">
         <button class="gap-banner-trigger" onclick="toggleGapBanner()">
-          <span class="gap-banner-icon">⚠️</span>
+          <span style="font-size:15px">⚠️</span>
           <span class="gap-banner-title">${gapStories.length} Content Gaps Across User Stories</span>
           <span class="gap-banner-chevron">▾</span>
         </button>
@@ -744,41 +732,148 @@
       </div>`;
   }
 
-  // ── render ────────────────────────────────────────────────────────────────
+  // ── persona sidebar ────────────────────────────────────────────────────────
 
-  function renderStory() {
-    const story   = USER_STORIES.userStories.find(s => s.id === activeStoryId);
-    const persona = story ? getPersona(story.personaId) : null;
-    if (!story || !persona) { document.getElementById('story-content').innerHTML = ''; return; }
+  function buildPersonaSidebar() {
+    const persona  = getPersona(activePersonaId);
+    const sidebar  = document.getElementById('persona-sidebar');
+    if (!persona) {
+      sidebar.innerHTML = '<div class="psb-empty">Select a persona to see details</div>';
+      return;
+    }
 
-    document.getElementById('story-content').innerHTML = `
-      <div class="story-layout">
-        ${renderStoryDetail(story, persona)}
-        ${renderFlowDiagram(story, persona)}
-      </div>`;
+    const color      = persona.color || '#6b7280';
+    const colorLight = persona.colorLight || '#f3f4f6';
+
+    // Pain points — up to 3
+    const pains = (persona.painPoints || []).slice(0, 3).map(p =>
+      `<div class="psb-pain-item">
+        <span class="psb-pain-dot" style="background:${color}"></span>
+        <span>${p}</span>
+      </div>`
+    ).join('');
+
+    // Entry points as chips
+    const entryChips = (persona.entryPoints || []).map(e =>
+      `<span class="psb-chip">${e}</span>`
+    ).join('');
+
+    // Anxieties as chips
+    const anxietyChips = (persona.anxieties || []).map(a =>
+      `<span class="psb-chip">${a}</span>`
+    ).join('');
+
+    // Success criteria — up to 3
+    const successItems = (persona.successCriteria || []).slice(0, 3).map(s =>
+      `<div class="psb-pain-item">
+        <span class="psb-pain-dot" style="background:#16a34a"></span>
+        <span>${s}</span>
+      </div>`
+    ).join('');
+
+    sidebar.style.setProperty('--psb-color', color);
+    sidebar.innerHTML = `
+
+      <!-- Header -->
+      <div class="psb-header" style="border-top:4px solid ${color}">
+        <div class="psb-icon-row">
+          <span class="psb-icon">${persona.icon || ''}</span>
+          <div>
+            <div class="psb-name" style="color:${color}">${persona.name}</div>
+            <div class="psb-role">${persona.jtbdPersona || persona.role || ''}</div>
+          </div>
+        </div>
+        <span class="psb-power" style="background:${colorLight};color:${color};border:1px solid ${color}40">
+          ${persona.decisionPower || ''}
+        </span>
+      </div>
+
+      <!-- Job statement -->
+      ${persona.jobStatement ? `
+      <div class="psb-section">
+        <span class="psb-label">Job to be done</span>
+        <div class="psb-statement" style="border-left-color:${color}">"${persona.jobStatement}"</div>
+      </div>` : ''}
+
+      <!-- Conversion goal -->
+      ${persona.conversionAction ? `
+      <div class="psb-section">
+        <span class="psb-label">Conversion goal</span>
+        <div class="psb-conv" style="background:${color}">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+            <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 6l1.5 1.5L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          ${persona.conversionAction}
+        </div>
+      </div>` : ''}
+
+      <!-- Pain points -->
+      ${pains ? `
+      <div class="psb-section">
+        <span class="psb-label">Pain points</span>
+        ${pains}
+      </div>` : ''}
+
+      <!-- Success on site -->
+      ${successItems ? `
+      <div class="psb-section">
+        <span class="psb-label">Success criteria</span>
+        ${successItems}
+      </div>` : ''}
+
+      <!-- Entry points -->
+      ${entryChips ? `
+      <div class="psb-section">
+        <span class="psb-label">Entry channels</span>
+        <div class="psb-chips">${entryChips}</div>
+      </div>` : ''}
+
+      <!-- Anxieties -->
+      ${anxietyChips ? `
+      <div class="psb-section">
+        <span class="psb-label">Anxieties</span>
+        <div class="psb-chips">${anxietyChips}</div>
+      </div>` : ''}`;
   }
 
-  // ── select handlers ───────────────────────────────────────────────────────
+  // ── interactions ───────────────────────────────────────────────────────────
 
   function selectPersona(personaId) {
     activePersonaId = personaId;
-    const stories = storiesForPersona(personaId);
-    activeStoryId  = stories.length ? stories[0].id : null;
+    activeStoryId   = null;
     buildPersonaSelector();
-    buildStorySelector();
-    renderStory();
+    buildPersonaSidebar();
+    buildStoryCards();
+    const panel = document.getElementById('story-expand');
+    panel.innerHTML = '';
+    panel.classList.remove('open');
+    panel.style.removeProperty('--panel-color');
   }
 
-  function selectStory(storyId) {
-    activeStoryId = storyId;
-    buildStorySelector();
-    renderStory();
+  function toggleStory(storyId) {
+    if (activeStoryId === storyId) {
+      activeStoryId = null;
+      buildStoryCards();
+      const panel = document.getElementById('story-expand');
+      panel.innerHTML = '';
+      panel.classList.remove('open');
+      panel.style.removeProperty('--panel-color');
+    } else {
+      activeStoryId = storyId;
+      buildStoryCards();
+      buildExpandPanel();
+      // Scroll panel into view smoothly
+      setTimeout(() => {
+        document.getElementById('story-expand').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 50);
+    }
   }
 
-  // ── init ──────────────────────────────────────────────────────────────────
+  // ── init ───────────────────────────────────────────────────────────────────
 
   renderGapBanner();
-  const firstPersona = PERSONAS.personas[0];
+  const firstPersona = allPersonas().find(p => storiesForPersona(p.id).length > 0);
   if (firstPersona) selectPersona(firstPersona.id);
 </script>
 </body>

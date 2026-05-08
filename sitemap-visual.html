@@ -75,7 +75,7 @@
     /* ── SECTION COLUMNS ── */
     .sections-row {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 12px;
       align-items: flex-start;
     }
@@ -572,6 +572,7 @@
     <span class="nav-brand-tag">Strategy Tool</span>
   </a>
   <nav class="nav-links">
+    <a href="exec-summary.html">Executive Summary</a>
     <a href="index.html">Heat Map</a>
     <a href="sitemap-visual.html" class="active">Site Architecture</a>
     <a href="flows.html">User Flows</a>
@@ -583,7 +584,7 @@
 <!-- PAGE HEADER -->
 <div class="page-header">
   <h1>Site Architecture</h1>
-  <p>45 pages across 5 nav sections, plus 4 persistent nav CTAs and a global footer Contact Us CTA. Click any node to expand its content summary. Left-border color indicates strategic heat.</p>
+  <p>74 pages across 6 nav sections, plus 4 persistent nav CTAs and a global footer Contact Us CTA. Click any node to expand its content summary. Left-border color indicates strategic heat.</p>
 </div>
 
 <!-- TOOLBAR -->
@@ -866,7 +867,7 @@
       </div>`;
 
     // Section columns in nav order
-    const sectionOrder = ['who-we-serve', 'our-approach', 'outcomes', 'insights', 'company'];
+    const sectionOrder = ['who-we-serve', 'our-approach', 'solutions', 'outcomes', 'insights', 'company'];
     const sectionsHtml = sectionOrder.map(sid => {
       const node = map[sid];
       if (!node) return '<div class="section-col"></div>';
