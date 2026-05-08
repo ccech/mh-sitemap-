@@ -42,14 +42,23 @@
         "Outcomes section must surface ROI and case study data prominently",
         "Demo request CTA must be visible in persistent nav at all times"
       ],
-      "anxieties": ["ROI justification", "Utilization rates", "Implementation complexity", "Vendor support quality"],
+      "anxieties": [
+        "ROI justification",
+        "Utilization rates",
+        "Implementation complexity",
+        "Vendor support quality"
+      ],
       "successOnSite": "Finds outcome data and case studies, explores implementation support, requests a demo",
       "conversionAction": "Request a Demo",
       "conversionType": "primary",
-      "entryPoints": ["Paid search", "Peer referral", "Conference follow-up", "CHRO direction"],
+      "entryPoints": [
+        "Paid search",
+        "Peer referral",
+        "Conference follow-up",
+        "CHRO direction"
+      ],
       "decisionRole": "Recommends and drives — runs the evaluation and owns the rollout"
     },
-
     {
       "id": "benefits-consultant",
       "name": "Benefits Consultant",
@@ -60,11 +69,11 @@
       "colorLight": "#ede9fe",
       "icon": "🤝",
       "decisionPower": "Influences strongly",
-      "jobStatement": "When I am advising employer clients on their mental health benefits strategy, I want to evaluate Modern Health's clinical credibility, understand how I'm compensated for a referral, and find differentiated proof points — so I can confidently recommend Modern Health over competing platforms I may have placed before.",
-      "primaryGoal": "Vet clinical credibility and differentiation, understand the commercial model, and gather shareable materials for client recommendations",
+      "jobStatement": "When I am advising employer clients on their mental health benefits strategy, I want to quickly understand how Modern Health fits within the current landscape of mental health and EAP solutions, evaluate its clinical credibility, and find clear differentiated proof points — so I can confidently position Modern Health alongside or instead of competing platforms my clients are already familiar with.",
+      "primaryGoal": "Quickly and broadly understand Modern Health's place in the mental health benefits landscape, vet clinical credibility and differentiation, and gather shareable materials for client recommendations",
       "functionalJobs": [
+        "Understand how Modern Health fits within the mental health and EAP benefits landscape",
         "Evaluate Modern Health's clinical approach and evidence base for client conversations",
-        "Understand the commercial referral and compensation model",
         "Find differentiated positioning vs. legacy EAPs and competing platforms",
         "Access shareable case studies, outcome data, and client materials",
         "Establish a consultant relationship and contact with Modern Health"
@@ -75,16 +84,16 @@
         "Feel that Modern Health respects and values the consultant relationship"
       ],
       "painPoints": [
-        "Lack of clear differentiation evidence vs. competing platforms they already know",
+        "Difficulty quickly understanding what makes Modern Health different from the EAPs and platforms their clients already know",
         "No dedicated consultant relations contact — treated like a generic demo prospect",
         "Difficulty finding shareable client-ready materials (PDFs, data sheets)",
-        "Unclear how referrals are credited or compensated"
+        "Lack of clear positioning against the competitive landscape they navigate daily"
       ],
       "successCriteria": [
+        "Can quickly articulate how Modern Health fits in the landscape relative to EAPs and competing platforms",
         "Finds differentiated clinical evidence they can use in client conversations",
         "Sees a dedicated consultant-facing CTA, not a generic demo request",
-        "Can download shareable case studies and outcome reports",
-        "Understands the commercial model and referral process"
+        "Can download shareable case studies and outcome reports"
       ],
       "navImplications": [
         "Who We Serve > Consultants must be a real content destination, not a dead end",
@@ -92,14 +101,22 @@
         "Consultant-specific CTA must differ from the employer demo request",
         "Gated content must include client-shareable PDFs and data sheets"
       ],
-      "anxieties": ["Clinical credibility vs. competitors", "Referral compensation clarity", "Client satisfaction risk", "Differentiation evidence"],
+      "anxieties": [
+        "Clinical credibility vs. competitors",
+        "Speed of understanding the differentiation story",
+        "Client satisfaction risk",
+        "Competitive positioning clarity"
+      ],
       "successOnSite": "Downloads clinical outcomes data and case study PDFs, then contacts consultant relations",
       "conversionAction": "Connect with Consultant Relations",
       "conversionType": "primary",
-      "entryPoints": ["Direct navigation", "Conference relationship", "Peer referral from another consultant"],
+      "entryPoints": [
+        "Direct navigation",
+        "Conference relationship",
+        "Peer referral from another consultant"
+      ],
       "decisionRole": "Influences strongly — recommends to employer clients who trust their guidance"
     },
-
     {
       "id": "benefits-buyer-procurement",
       "name": "Benefits Buyer / Procurement",
@@ -142,14 +159,22 @@
         "Our Approach > Responsible AI page addresses governance and accountability concerns",
         "Demo request should be positioned as 'formal evaluation' not just a sales call"
       ],
-      "anxieties": ["Contract lock-in", "Hidden pricing escalators", "Vendor risk", "Multi-stakeholder alignment"],
+      "anxieties": [
+        "Contract lock-in",
+        "Hidden pricing escalators",
+        "Vendor risk",
+        "Multi-stakeholder alignment"
+      ],
       "successOnSite": "Finds compliance documentation and pricing transparency content, then initiates formal evaluation",
       "conversionAction": "Request a Demo (formal evaluation)",
       "conversionType": "secondary",
-      "entryPoints": ["Internal referral from HR team", "RFP process initiation", "Vendor shortlist review"],
+      "entryPoints": [
+        "Internal referral from HR team",
+        "RFP process initiation",
+        "Vendor shortlist review"
+      ],
       "decisionRole": "Approves vendor selection — can hold or block if process or contract terms aren't satisfied"
     },
-
     {
       "id": "total-rewards-professional",
       "name": "Total Rewards Professional",
@@ -192,14 +217,22 @@
         "Global Capabilities is important for enterprise/distributed workforce architects",
         "Content should help them build the internal narrative, not just sell to them"
       ],
-      "anxieties": ["Benefits stack overlap", "Employee confusion", "Portfolio coherence", "Integration complexity"],
+      "anxieties": [
+        "Benefits stack overlap",
+        "Employee confusion",
+        "Portfolio coherence",
+        "Integration complexity"
+      ],
       "successOnSite": "Maps care modalities and challenge coverage to their portfolio, finds positioning content",
       "conversionAction": "Explore Solutions / Request a Demo",
       "conversionType": "secondary",
-      "entryPoints": ["HR team direction", "Benefits audit process", "Annual renewal planning"],
+      "entryPoints": [
+        "HR team direction",
+        "Benefits audit process",
+        "Annual renewal planning"
+      ],
       "decisionRole": "Shapes requirements — defines what the benefit must cover and how it fits the portfolio"
     },
-
     {
       "id": "finance-leader",
       "name": "Finance Leader",
@@ -242,14 +275,22 @@
         "No wellness language on financial pages — data-first, respect their expertise",
         "CTA should be framed around 'model the ROI' or 'talk to our finance team'"
       ],
-      "anxieties": ["ROI justifiability", "Pricing escalation", "Board-level scrutiny", "Liability exposure"],
+      "anxieties": [
+        "ROI justifiability",
+        "Pricing escalation",
+        "Board-level scrutiny",
+        "Liability exposure"
+      ],
       "successOnSite": "Reviews ROI calculator and financial case studies, then approves budget or requests demo",
       "conversionAction": "Request a Demo (financial review)",
       "conversionType": "secondary",
-      "entryPoints": ["HR leadership direction", "Budget cycle review", "CFO-level peer referral"],
+      "entryPoints": [
+        "HR leadership direction",
+        "Budget cycle review",
+        "CFO-level peer referral"
+      ],
       "decisionRole": "Final budget approval — signs off or vetoes based on financial justification"
     },
-
     {
       "id": "legal-compliance",
       "name": "Legal / Compliance Officer",
@@ -292,14 +333,22 @@
         "Security and compliance documentation should be findable without a demo call",
         "Trust and governance content must speak to legal/compliance skeptics directly"
       ],
-      "anxieties": ["HIPAA liability", "GDPR and global privacy compliance", "AI governance risk", "Contract language gaps"],
+      "anxieties": [
+        "HIPAA liability",
+        "GDPR and global privacy compliance",
+        "AI governance risk",
+        "Contract language gaps"
+      ],
       "successOnSite": "Reviews AI governance and compliance documentation, then escalates to contract review with Modern Health legal",
       "conversionAction": "Access Compliance Documentation",
       "conversionType": "secondary",
-      "entryPoints": ["Internal referral from HR or procurement", "Due diligence process", "Contract review stage"],
+      "entryPoints": [
+        "Internal referral from HR or procurement",
+        "Due diligence process",
+        "Contract review stage"
+      ],
       "decisionRole": "Can veto or delay — a compliance gap or contract concern stops the deal"
     },
-
     {
       "id": "it-security",
       "name": "IT / Security Team",
@@ -342,14 +391,22 @@
         "Global Capabilities should address data residency for multinational deployments",
         "A dedicated security/trust page (or section) reduces friction for IT approval"
       ],
-      "anxieties": ["Security certification gaps", "SSO/MFA compatibility", "Data breach liability", "Integration complexity"],
+      "anxieties": [
+        "Security certification gaps",
+        "SSO/MFA compatibility",
+        "Data breach liability",
+        "Integration complexity"
+      ],
       "successOnSite": "Reviews security documentation and architecture overview, then engages technical sales team",
       "conversionAction": "Access Security Documentation / Technical Review",
       "conversionType": "secondary",
-      "entryPoints": ["Internal referral from HR or procurement", "Vendor security review process", "Technical pre-sales request"],
+      "entryPoints": [
+        "Internal referral from HR or procurement",
+        "Vendor security review process",
+        "Technical pre-sales request"
+      ],
       "decisionRole": "Can veto or delay — a security gap or integration incompatibility stops provisioning approval"
     },
-
     {
       "id": "member",
       "name": "Member / Employee",
@@ -392,15 +449,23 @@
         "Care Modalities must explain options in plain language, not clinical terminology",
         "Login / Activate Benefit CTA must be visible and frictionless at all times"
       ],
-      "anxieties": ["Employer visibility", "Privacy and confidentiality", "Stigma", "Finding the right type of support"],
+      "anxieties": [
+        "Employer visibility",
+        "Privacy and confidentiality",
+        "Stigma",
+        "Finding the right type of support"
+      ],
       "successOnSite": "Confirms confidentiality, finds their challenge represented, activates benefit or logs in",
       "conversionAction": "Activate Benefit / Log In",
       "conversionType": "primary",
-      "entryPoints": ["Employer email/communication", "Direct navigation", "Word of mouth from colleague"],
+      "entryPoints": [
+        "Employer email/communication",
+        "Direct navigation",
+        "Word of mouth from colleague"
+      ],
       "decisionRole": "Drives utilization and ROI — their engagement validates the investment for HR buyers"
     }
   ],
-
   "secondaryAudiences": [
     {
       "id": "provider",

@@ -72,12 +72,12 @@ window.PERSONAS = {
       icon: "🤝",
       decisionPower: "Influences strongly",
 
-      jobStatement: "When I am advising employer clients on their mental health benefits strategy, I want to evaluate Modern Health's clinical credibility, understand how I'm compensated for a referral, and find differentiated proof points — so I can confidently recommend Modern Health over competing platforms I may have placed before.",
+      jobStatement: "When I am advising employer clients on their mental health benefits strategy, I want to quickly understand how Modern Health fits within the current landscape of mental health and EAP solutions, evaluate its clinical credibility, and find clear differentiated proof points — so I can confidently position Modern Health alongside or instead of competing platforms my clients are already familiar with.",
 
-      primaryGoal: "Vet clinical credibility and differentiation, understand the commercial model, and gather shareable materials for client recommendations",
+      primaryGoal: "Quickly and broadly understand Modern Health's place in the mental health benefits landscape, vet clinical credibility and differentiation, and gather shareable materials for client recommendations",
       functionalJobs: [
+        "Understand how Modern Health fits within the mental health and EAP benefits landscape",
         "Evaluate Modern Health's clinical approach and evidence base for client conversations",
-        "Understand the commercial referral and compensation model",
         "Find differentiated positioning vs. legacy EAPs and competing platforms",
         "Access shareable case studies, outcome data, and client materials",
         "Establish a consultant relationship and contact with Modern Health"
@@ -88,16 +88,16 @@ window.PERSONAS = {
         "Feel that Modern Health respects and values the consultant relationship"
       ],
       painPoints: [
-        "Lack of clear differentiation evidence vs. competing platforms they already know",
+        "Difficulty quickly understanding what makes Modern Health different from the EAPs and platforms their clients already know",
         "No dedicated consultant relations contact — treated like a generic demo prospect",
         "Difficulty finding shareable client-ready materials (PDFs, data sheets)",
-        "Unclear how referrals are credited or compensated"
+        "Lack of clear positioning against the competitive landscape they navigate daily"
       ],
       successCriteria: [
+        "Can quickly articulate how Modern Health fits in the landscape relative to EAPs and competing platforms",
         "Finds differentiated clinical evidence they can use in client conversations",
         "Sees a dedicated consultant-facing CTA, not a generic demo request",
-        "Can download shareable case studies and outcome reports",
-        "Understands the commercial model and referral process"
+        "Can download shareable case studies and outcome reports"
       ],
       navImplications: [
         "Who We Serve > Consultants must be a real content destination, not a dead end",
@@ -106,7 +106,7 @@ window.PERSONAS = {
         "Gated content must include client-shareable PDFs and data sheets"
       ],
 
-      anxieties: ["Clinical credibility vs. competitors", "Referral compensation clarity", "Client satisfaction risk", "Differentiation evidence"],
+      anxieties: ["Clinical credibility vs. competitors", "Speed of understanding the differentiation story", "Client satisfaction risk", "Competitive positioning clarity"],
       successOnSite: "Downloads clinical outcomes data and case study PDFs, then contacts consultant relations",
       conversionAction: "Connect with Consultant Relations",
       conversionType: "primary",
