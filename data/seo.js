@@ -132,7 +132,7 @@ window.SEO_DATA = {
       id: 'employers',
       name: 'Employers',
       pillarPageId: 'employers',
-      primaryKeyword: 'workplace mental health solution',
+      primaryKeyword: 'adaptive mental health benefits',
       clusterPageIds: [
         'burnout-workplace-stress',
         'workforce-performance',
@@ -154,7 +154,7 @@ window.SEO_DATA = {
       id: 'consultants',
       name: 'Consultants',
       pillarPageId: 'consultants',
-      primaryKeyword: 'mental health benefit platform',
+      primaryKeyword: 'mental health benefits for consultants',
       clusterPageIds: [
         'channel-partners',
         'health-plans',
@@ -169,7 +169,7 @@ window.SEO_DATA = {
       id: 'clinical',
       name: 'Clinical',
       pillarPageId: 'clinical-outcomes',
-      primaryKeyword: 'evidence-based mental health platform',
+      primaryKeyword: 'clinical outcomes mental health',
       clusterPageIds: [
         'clinical-research',
         'depression-anxiety',
@@ -187,7 +187,7 @@ window.SEO_DATA = {
       id: 'economic-value',
       name: 'Economic Value',
       pillarPageId: 'economic-roi',
-      primaryKeyword: 'mental health ROI for employers',
+      primaryKeyword: 'mental health ROI',
       clusterPageIds: [
         'case-studies',
         'workforce-performance',
@@ -248,92 +248,123 @@ window.SEO_DATA = {
     'employers': {
       seoType: 'pillar',
       seoCluster: 'employers',
-      primaryKeyword: 'workplace mental health solution',
-      secondaryKeywords: ['employee burnout', 'workplace wellbeing programs', 'absenteeism'],
-      searchIntent: 'HR and benefits leaders evaluating enterprise mental health platforms to replace or supplement their EAP.',
-      recommendedH1: 'The Mental Health Solution Built for Your Workforce',
-      titleTag: 'Workplace Mental Health Solution | Modern Health',
-      metaDescription: 'Modern Health is the enterprise mental health solution for HR teams — proven ROI, EAP replacement, and 24/7 global support. Request a demo.',
+      primaryKeyword: 'adaptive mental health benefits',
+      secondaryKeywords: [
+        'EAP replacement',
+        'enterprise mental health',
+        'employee mental health solution',
+        'corporate mental health solution',
+        'mental health solution for employers',
+        'scalable mental health program',
+        'workplace wellbeing platform',
+        'employee burnout',
+        'absenteeism',
+      ],
+      searchIntent: 'HR and benefits leaders evaluating enterprise mental health platforms to replace or supplement an EAP — want clinical proof, measurable ROI, and a solution that scales globally.',
+      recommendedH1: 'Adaptive Mental Health Benefits Built for the Modern Workforce',
+      titleTag: 'Adaptive Mental Health Benefits for Employers | Modern Health',
+      metaDescription: 'Modern Health delivers adaptive mental health benefits that go beyond EAPs — $2.39 ROI per $1 invested, 200+ countries, one platform for every employee need. Request a demo.',
       keyQuestions: [
-        'How is Modern Health different from an EAP?',
-        'What outcomes have enterprise clients seen?',
-        'How does deployment work for a global workforce?',
-        'What does ROI look like in year one?',
+        'How is Modern Health different from an EAP — and can it replace one?',
+        'What ROI have enterprise clients seen in year one?',
+        'What does the Adaptive Care Model mean in practice for HR teams?',
+        'How does Modern Health deploy across a global, multilingual workforce?',
+        'What does utilization and engagement actually look like vs. a traditional EAP?',
       ],
       linksIn: ['home', 'economic-roi', 'case-studies', 'blog-pages'],
       linksOut: ['adaptive-care', 'case-studies', 'economic-roi', 'clinical-outcomes', 'nav-demo-request'],
       brief: {
-        notes: 'Pillar page for the Employers cluster. All EAP blog posts with 1,000+ clicks should link here contextually on the phrase "employee mental health program" or "mental health solution for employers."',
-        contentGaps: 'No primary keyword currently targeting commercial terms. Title likely branded only. Homepage receives 96K clicks but this page receives ~30/mo — routing gap.',
+        notes: 'Pillar page for the Employers cluster — the primary commercial destination for HR buyers. Needs to do three things: position against EAPs, prove ROI, and route to demo. Lead with the Adaptive Care Model as the differentiator ("not another EAP — an adaptive benefits platform"). Proof points to anchor with: $2.39 ROI per $1 invested, 20% workforce engagement (vs. 2-4% for EAPs), 200+ countries, <1 day to first provider, 70 member NPS. Client references: Atlassian (Alice Vichaita), Nextdoor (Beth Steinberg), Lyft (Tanner Brunsdale). Blog assets not yet linking here: /post/what-is-employee-assistance-program (399K impressions, 1,774 clicks) and /post/disadvantages-of-employee-assistance-programs (66K impressions) — highest-priority unlinked assets on the site.',
+        contentGaps: 'Live /employers page leads with "Backed by Rigorous Science" — clinical credibility is secondary to buyer routing at this pillar level. Needs: (1) explicit EAP replacement frame above the fold, (2) $2.39 ROI stat with sourcing, (3) engagement rate vs. EAP baseline (20% vs 2-4%), (4) demo CTA early — not just at the footer. Homepage receives 96K clicks/mo but /employers receives ~30 commercial visits — routing gap between home and this pillar must be closed in both nav and homepage copy.',
       },
     },
 
     'consultants': {
       seoType: 'pillar',
       seoCluster: 'consultants',
-      primaryKeyword: 'mental health benefit platform',
-      secondaryKeywords: ['mental health platforms', 'questions employers should ask mental health vendor', 'international eap providers'],
-      searchIntent: 'Benefits consultants and brokers vetting mental health vendors for client portfolios, looking for differentiation from EAPs and competing platforms.',
-      recommendedH1: 'The Mental Health Benefit Platform Consultants Recommend',
-      titleTag: 'Mental Health Benefit Platform | Modern Health',
-      metaDescription: 'Give clients the mental health benefit platform that goes beyond EAPs — ROI data, global coverage, and clinical proof. Resources for benefits consultants.',
+      primaryKeyword: 'mental health benefits for consultants',
+      secondaryKeywords: [
+        'mental health benefit platform',
+        'mental health vendor comparison',
+        'questions employers should ask mental health vendor',
+        'international eap providers',
+        'mental health platforms',
+      ],
+      searchIntent: 'Benefits consultants and brokers vetting mental health vendors for client portfolios — need RFP-defensible differentiation, competitive comparison data, and ROI proof they can share with clients.',
+      recommendedH1: 'The Mental Health Benefit Consultants Recommend to Clients',
+      titleTag: 'Mental Health Benefits for Consultants | Modern Health',
+      metaDescription: 'Give clients a mental health benefit that stands up to RFP scrutiny — $2.39 ROI per $1, 100+ peer-reviewed studies, global coverage. Resources for benefits advisors.',
       keyQuestions: [
-        'How does Modern Health fit alongside or replace an EAP?',
-        'What differentiates Modern Health from Lyra, Spring Health, or Headspace?',
-        'What data and case studies can I share with clients?',
-        'How does the commercial model work for consultants?',
+        'How does Modern Health compare to Lyra, Spring Health, or Headspace Health for RFP purposes?',
+        'What ROI data and outcome metrics can I share with clients?',
+        'How does Modern Health fit alongside or replace an existing EAP?',
+        'What does the contracting and implementation process look like?',
+        'What resources does Modern Health provide to support consultant recommendations?',
       ],
       linksIn: ['home', 'case-studies', 'blog-pages', 'economic-roi'],
       linksOut: ['clinical-outcomes', 'economic-roi', 'case-studies', 'adaptive-care', 'nav-demo-request'],
       brief: {
-        notes: 'Pillar page for the Consultants cluster. The blog post /post/how-consultants-evaluate-mental-health-benefits has 2,871 impressions but only 3 clicks — it needs to link here and the page needs to rank for "mental health benefit platform."',
-        contentGaps: 'Currently no content addressing competitive differentiation or vendor evaluation criteria — the top question a consultant asks.',
+        notes: 'Pillar page for the Consultants cluster. Consultant buyers don\'t buy for themselves — they buy defensibility for client recommendations. Page needs to arm consultants with proof they can use in client conversations: $2.39 ROI, 100+ peer-reviewed publications, named client outcomes (Autodesk 3x engagement, CEBT 89% improved well-being across 37K members). WTW\'s Joe Deba is already a named reference — use as a credibility anchor. Competitive framing vs Lyra and Spring Health is the top unmet need. Blog post /post/how-consultants-evaluate-mental-health-benefits has 2,871 impressions and 3 clicks — it needs a prominent link to this page on anchor "mental health benefits for consultants."',
+        contentGaps: 'No page on live site currently targets consultant-specific search intent. Missing: competitive comparison vs Lyra/Spring Health/EAP, RFP toolkit or consultant resource download, client outcome summaries formatted for sharing. The live /consultants equivalent does not appear to exist — this is a net-new page and a significant gap given that consultants influence most enterprise purchase decisions.',
       },
     },
 
     'clinical-outcomes': {
       seoType: 'pillar',
       seoCluster: 'clinical',
-      primaryKeyword: 'evidence-based mental health platform',
-      secondaryKeywords: ['mental health technology', 'mental health solutions'],
-      searchIntent: 'Clinical leads, legal/compliance, and HR leaders looking for peer-reviewed proof of clinical effectiveness before signing off on a mental health platform purchase.',
-      recommendedH1: 'Evidence-Based Mental Health Care, Measured at Scale',
-      titleTag: 'Evidence-Based Mental Health Platform | Modern Health',
-      metaDescription: 'Modern Health clinical outcomes: peer-reviewed research, depression and anxiety results, and real-world evidence from enterprise deployments worldwide.',
+      primaryKeyword: 'clinical outcomes mental health',
+      secondaryKeywords: [
+        'evidence-based mental health platform',
+        'mental health technology',
+        'mental health solutions',
+        'clinical mental health benefits',
+      ],
+      searchIntent: 'Clinical leads, legal/compliance officers, and HR buyers validating evidence-based mental health care before approving a purchase — need peer-reviewed proof, outcome metrics, and clinical model transparency.',
+      recommendedH1: 'Clinical Outcomes That Hold Up to Scrutiny',
+      titleTag: 'Clinical Outcomes | Modern Health',
+      metaDescription: 'Modern Health publishes its clinical outcomes — 100+ peer-reviewed studies, 80% of members improve or maintain well-being, PHQ-9 and GAD-7 validated. See the evidence.',
       keyQuestions: [
-        'What clinical evidence supports Modern Health\'s approach?',
-        'How are outcomes measured and reported?',
-        'What conditions does the platform address?',
-        'How does Modern Health\'s clinical model differ from EAP models?',
+        'What peer-reviewed evidence supports Modern Health\'s clinical model?',
+        'What outcome measures does Modern Health use and how are they reported to employers?',
+        'What clinical results have enterprise clients seen across depression, anxiety, and burnout?',
+        'How does the Adaptive Care Model drive better outcomes than a standard EAP?',
+        'How does Modern Health demonstrate clinical ROI back to HR and finance?',
       ],
       linksIn: ['employers', 'consultants', 'depression-anxiety', 'substance-use', 'blog-pages'],
       linksOut: ['clinical-research', 'adaptive-care', 'case-studies'],
       brief: {
-        notes: 'Pillar page for the Clinical cluster. Blog post /post/signs-an-employee-is-depressed (56K impressions) should link here on phrase "clinical mental health support."',
-        contentGaps: 'Page title and meta currently not targeting any clinical category terms. Site has zero impressions for "evidence-based mental health platform."',
+        notes: 'Pillar page for the Clinical cluster — the proof layer for skeptical buyers (clinical officers, legal, procurement). Anchor with specific, auditable numbers: 100+ peer-reviewed publications, 80% of members improve or maintain well-being, PHQ-9 and GAD-7 as validated outcome measures, <1 day to first provider. The Adaptive Care Model is the clinical differentiator — not just "we have therapists" but a clinically validated triage and matching system. Named case study outcomes: CEBT (89% improved well-being across 37K members), Atlassian (94% improved well-being, 52% registration). Blog post /post/signs-an-employee-is-depressed (56K impressions) should link here on "clinical mental health support."',
+        contentGaps: 'Live /clinical page leads with "A new standard of care" — strong framing but needs specific outcome numbers above the fold. Missing: PHQ-9/GAD-7 improvement percentages, publication count as prominent stat, methodology transparency (how is "improvement" defined and by whom?), employer-facing outcomes reporting description. Zero impressions currently on "clinical outcomes mental health" — this page has no organic visibility on clinical terms despite being MH\'s core differentiator.',
       },
     },
 
     'economic-roi': {
       seoType: 'pillar',
       seoCluster: 'economic-value',
-      primaryKeyword: 'mental health ROI for employers',
-      secondaryKeywords: ['roi wellness programs', 'presenteeism', 'absenteeism'],
-      searchIntent: 'CFOs and HR leaders building a business case for mental health investment, looking for ROI data, productivity metrics, and cost-of-inaction analysis.',
-      recommendedH1: 'The Business Case for Workforce Mental Health',
-      titleTag: 'Mental Health ROI for Employers | Modern Health',
-      metaDescription: 'Quantify the ROI of mental health benefits — Modern Health delivers data on reduced absenteeism, lower claims costs, and improved workforce productivity.',
+      primaryKeyword: 'mental health ROI',
+      secondaryKeywords: [
+        'mental health return on investment',
+        'roi wellness programs',
+        'presenteeism',
+        'absenteeism',
+        'employee mental health programs',
+      ],
+      searchIntent: 'CFOs, CHROs, and HR leaders building a financial business case for mental health investment — need a defensible ROI number, actuarial validation, and proof that mental health benefits pay back.',
+      recommendedH1: 'The Mental Health Investment That Pays for Itself',
+      titleTag: 'Mental Health ROI | Modern Health',
+      metaDescription: 'Modern Health delivers $2.39 in value for every $1 invested — actuarially validated, with 60% of savings driven by moderate-need employees. See the full ROI picture.',
       keyQuestions: [
-        'What ROI have clients seen from Modern Health?',
-        'How does poor mental health affect absenteeism and presenteeism?',
-        'How do I build a business case for mental health investment?',
-        'What does Modern Health cost vs. what it saves?',
+        'What is the ROI of investing in Modern Health — and how is it calculated?',
+        'Why do 60% of savings come from moderate-need employees, not high-acuity cases?',
+        'How does poor mental health affect absenteeism, presenteeism, and productivity costs?',
+        'How do I build a business case for mental health investment for my CFO?',
+        'What specific client outcomes prove the ROI model works at enterprise scale?',
       ],
       linksIn: ['employers', 'case-studies', 'blog-pages', 'consultants'],
       linksOut: ['case-studies', 'clinical-outcomes', 'employers'],
       brief: {
-        notes: 'Pillar page for the Economic Value cluster. Three blog posts with combined 758K impressions reference cost and wellbeing data — none currently link here.',
-        contentGaps: '"Mental health return on investment" and "EAP replacement" return zero impressions — no page targets these commercial terms.',
+        notes: 'Pillar page for the Economic Value cluster. The $2.39 ROI per $1 invested is the anchor — actuarially validated and highly specific, which makes it defensible in CFO conversations. The counterintuitive insight (60% of savings from moderate-need employees, not the most severe cases) is the strategic differentiator — it reframes the ROI story from crisis intervention toward population-wide prevention. Strongest case study anchors: Midland States Bank ($110K cost reduction), CEBT (89% improved well-being across 37K members). Three blog posts with 758K combined impressions on wellbeing and retention currently do not link here — /post/importance-of-employee-wellbeing (318K), /post/benefits-of-employee-retention (360K), /post/cost-of-poor-mental-health-in-workplace (79K). Fixing this link gap is the single highest-ROI technical SEO action available.',
+        contentGaps: '"Mental health return on investment" returns zero impressions — no page targets this exact commercial term. Page needs: (1) the $2.39 number prominently with sourcing, (2) the 60% moderate-need insight explained and visualized (this is the counterintuitive hook that earns backlinks), (3) cost-of-inaction calculator for absenteeism/presenteeism, (4) downloadable ROI model or CFO business case template. Blog posts with 758K combined impressions are not routing to this page — this is the most urgent link gap in the entire site.',
       },
     },
 
@@ -424,27 +455,6 @@ window.SEO_DATA = {
       },
     },
 
-    'global-capabilities': {
-      seoType: 'cluster',
-      seoCluster: 'employers',
-      primaryKeyword: 'global mental health solution',
-      secondaryKeywords: ['global mental health', 'international eap providers'],
-      searchIntent: 'HR leaders at multinational companies looking for a mental health platform that can deploy across multiple countries and languages.',
-      recommendedH1: 'Global Mental Health Support for Multinational Workforces',
-      titleTag: 'Global Mental Health Solution | Modern Health',
-      metaDescription: 'Modern Health delivers mental health support in 75+ languages across 200+ countries — the global mental health solution for enterprise HR teams.',
-      keyQuestions: [
-        'Which countries and languages does Modern Health support?',
-        'How does global deployment work?',
-        'How does Modern Health compare to international EAP providers?',
-      ],
-      linksIn: ['employers', 'consultants'],
-      linksOut: ['employers', 'adaptive-care', 'nav-demo-request'],
-      brief: {
-        notes: '"Global mental health solution" is an absent term — zero impressions. "International eap providers" has 40 searches/mo. This page needs to rank for the global category.',
-      },
-    },
-
     'depression-anxiety': {
       seoType: 'cluster',
       seoCluster: 'clinical',
@@ -484,24 +494,32 @@ window.SEO_DATA = {
       ],
       linksIn: ['solutions', 'employers', 'clinical-outcomes'],
       linksOut: ['mh-circles', 'mh-pathways', 'adaptive-care', 'clinical-outcomes'],
+      brief: {
+        notes: 'Solutions subpage that establishes vocabulary for the four modalities (coaching, therapy, Circles, Pathways). The Adaptive Care Model is the reason each modality exists — routing by individual need, not by default. This page should answer "what types of care are available?" before directing users to specific modality pages. Link to clinical-outcomes to validate that modality selection is evidence-based, not marketing-driven.',
+      },
     },
 
     'adaptive-care': {
       seoType: 'cluster',
       seoCluster: 'solutions',
-      primaryKeyword: 'personalized mental health care',
-      secondaryKeywords: ['mental health coaching', 'mental health solutions'],
-      searchIntent: 'HR leaders and employees researching how a platform matches individuals to the right level of mental health care.',
-      recommendedH1: 'Care That Adapts to Every Individual',
-      titleTag: 'Adaptive Mental Health Care | Modern Health',
-      metaDescription: 'Modern Health\'s adaptive care model matches every employee to the right support — coaching, therapy, or digital tools — based on their individual needs.',
+      primaryKeyword: 'adaptive mental health care',
+      secondaryKeywords: ['mental health coaching', 'mental health solutions', 'personalized mental health care'],
+      searchIntent: 'HR leaders and clinical evaluators researching how a platform matches each individual employee to the right level and type of mental health care — and adjusts over time.',
+      recommendedH1: 'The Adaptive Care Model: Right Care, Right Time, Right Person',
+      titleTag: 'Adaptive Care | Modern Health',
+      metaDescription: 'Modern Health\'s Adaptive Care Model matches every employee to coaching, therapy, peer support, or digital tools — and adjusts as their needs change.',
       keyQuestions: [
-        'How does Modern Health determine the right level of care?',
-        'What is adaptive care and how does it work?',
-        'Can employees move between care types as needs change?',
+        'What is the Adaptive Care Model and how is it different from an EAP?',
+        'How does Modern Health determine the right level of care for each employee?',
+        'Can employees move between care types as their needs change?',
+        'What clinical evidence supports the adaptive care approach?',
       ],
       linksIn: ['employers', 'clinical-outcomes', 'care-modalities'],
       linksOut: ['clinical-outcomes', 'mh-pathways', 'mh-circles'],
+      brief: {
+        notes: 'The Adaptive Care Model is MH\'s core proprietary differentiator — this page needs to explain it clearly and credibly. The model routes members across four modalities (coaching, therapy, peer groups via Circles, self-guided via Pathways) based on need, and re-evaluates as needs change. This is what makes MH categorically different from an EAP (fixed sessions) or a point solution (one modality). Proof that it works: 80% of members improve or maintain well-being, 20% engagement rate vs 2-4% for EAPs. Clinical buyers need to understand the triage logic; HR buyers need to understand what their employees will actually experience.',
+        contentGaps: 'Needs a visual model of the four modalities and how members move between them. Clinical validation for the triage approach. Comparison to EAP model (fixed sessions, no routing). The live site references "Adaptive Care" but there is no dedicated /adaptive-care URL — this is a net-new page for the redesign and a critical one for establishing brand vocabulary.',
+      },
     },
 
     'everyday-mental-health': {
@@ -520,6 +538,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'employers', 'adaptive-care'],
       linksOut: ['adaptive-care', 'mh-pathways', 'clinical-outcomes'],
+      brief: {
+        notes: 'Targets the large population of employees who are not in crisis but benefit from proactive wellbeing support — the majority of a workforce. Coaching and Pathways are the primary modalities here. This page counters the common EAP misconception that mental health benefits are only for people in crisis. The 20% engagement rate (vs 2-4% for EAPs) is partly driven by this population — it should be referenced as proof that the benefit actually gets used at scale.',
+      },
     },
 
     'financial-stress-wellbeing': {
@@ -538,6 +559,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'employers', 'economic-roi'],
       linksOut: ['adaptive-care', 'economic-roi', 'clinical-outcomes'],
+      brief: {
+        notes: 'Financial stress is a primary trigger for mental health challenges — and an area EAPs rarely address substantively. Position Modern Health as the platform that recognizes the financial-mental health connection. The link to economic-roi is critical: financial stress drives absenteeism and presenteeism, both of which appear in the $2.39 ROI calculation. This page broadens the "what does mental health cover?" question beyond clinical diagnoses.',
+      },
     },
 
     'preventative-early-support': {
@@ -556,6 +580,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'employers', 'adaptive-care'],
       linksOut: ['adaptive-care', 'clinical-outcomes', 'economic-roi'],
+      brief: {
+        notes: 'This page carries the ROI story — the $2.39 return per $1 invested is driven by catching moderate-need employees early, not by treating high-acuity cases after crisis. Make that argument explicitly here. PHQ-9 and GAD-7 initial assessments are the clinical mechanism for early identification. Link strongly to economic-roi. The preventative care frame is also the counter to "we already have an EAP for crisis" — MH catches what EAPs miss.',
+      },
     },
 
     'mh-circles': {
@@ -574,6 +601,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-modalities', 'adaptive-care', 'everyday-mental-health'],
       linksOut: ['care-modalities', 'adaptive-care', 'mh-pathways'],
+      brief: {
+        notes: 'Circles is a proprietary product name — establish it clearly and with specificity about what distinguishes it from 1:1 therapy or self-guided tools. Facilitator-led peer groups address isolation and stigma dimensions that individual care often misses. Particularly valuable for multicultural workforce and first-responder populations where group identity and peer trust matter more than clinical hierarchy. This modality is also the most scalable for large organizations — groups serve many employees simultaneously.',
+      },
     },
 
     'mh-pathways': {
@@ -592,6 +622,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-modalities', 'adaptive-care', 'everyday-mental-health'],
       linksOut: ['care-modalities', 'adaptive-care', 'mh-circles'],
+      brief: {
+        notes: 'Pathways is the scalable self-guided modality — always available, no appointment needed, accessible to every employee at any time. This is partly why MH achieves 20% engagement vs 2-4% for EAPs: meeting employees when and where they want support. For HR: Pathways is how you provide population-wide mental health support without proportional cost increase per user. Clinical validation should appear — Pathways are evidence-based structured programs, not just content libraries.',
+      },
     },
 
     'workforce-org-needs': {
@@ -610,6 +643,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'employers', 'leadership-manager-support'],
       linksOut: ['leadership-manager-support', 'burnout-workplace-stress', 'employers'],
+      brief: {
+        notes: 'Targets organizational-level mental health challenges — layoffs, restructuring, leadership transitions, DEIB initiatives. This is where MH differentiates from individual-focused EAPs: the platform can respond to workforce-level mental health events, not just individual crises. Link to crisis-preparedness for acute organizational incidents and leadership-manager-support for manager enablement. Buyers in this segment are often CHROs or OD leaders, not just benefits managers.',
+      },
     },
 
     'substance-use': {
@@ -628,6 +664,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['clinical-complex-needs', 'clinical-outcomes', 'care-every-challenge'],
       linksOut: ['clinical-outcomes', 'adaptive-care', 'clinical-research'],
+      brief: {
+        notes: 'Position as clinically rigorous care for a topic EAPs handle superficially. Confidentiality is paramount — employees fear career or insurance consequences of substance use disclosure. The Adaptive Care Model ensures clinical intensity is matched to each individual case: not all substance use is addiction, and early-stage support before crisis or job-impact is where the biggest clinical and ROI impact is achieved. Clarity on what "confidential" means specifically (employer cannot see individual usage data) is essential on this page.',
+      },
     },
 
     'disordered-eating': {
@@ -646,6 +685,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['clinical-complex-needs', 'clinical-outcomes', 'care-every-challenge'],
       linksOut: ['clinical-outcomes', 'adaptive-care', 'clinical-research'],
+      brief: {
+        notes: 'Specialized clinical support that most EAPs cannot provide and most standard therapy networks lack depth in. This page is proof that MH goes beyond "general mental health." Credential the clinical approach carefully — disordered eating is a sensitive area where platform credibility is table stakes and vague claims will lose trust. The clinical-outcomes pillar is the primary proof source to link here. Buyers for this page are often clinical officers or DEI leaders advocating for inclusive benefits.',
+      },
     },
 
     'clinical-complex-needs': {
@@ -664,6 +706,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['clinical-outcomes', 'clinical-research', 'care-every-challenge'],
       linksOut: ['clinical-outcomes', 'adaptive-care', 'crisis-acute-mental-health'],
+      brief: {
+        notes: 'High-acuity care that bridges the gap between outpatient and inpatient — precisely where EAPs fail most visibly by exhausting sessions before care is resolved. The Adaptive Care Model\'s escalation pathway is the key differentiator: a member can move from coaching to therapy to complex clinical support without leaving the platform or losing continuity. Link to crisis-acute-mental-health for the most severe cases. Clinical buyers evaluating this page need specifics on the escalation model and provider credentialing depth.',
+      },
     },
 
     'crisis-acute-mental-health': {
@@ -682,6 +727,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['clinical-complex-needs', 'clinical-outcomes', 'employers'],
       linksOut: ['clinical-outcomes', 'adaptive-care', 'clinical-complex-needs'],
+      brief: {
+        notes: '24/7 crisis support is a hard requirement for enterprise HR — they cannot offer a benefit that goes dark when an employee needs help most. Lead with availability and response speed. From the crawl: live site confirms crisis support is included but specific response times and protocols are not visible — these details need to be specified in the redesign to satisfy HR and legal reviewers. This page needs a CTA that isn\'t just "request a demo" — it should route to crisis support documentation or a dedicated consultation pathway.',
+      },
     },
 
     'partnering-with-your-team': {
@@ -700,6 +748,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['employers', 'consultants'],
       linksOut: ['employers', 'adaptive-care', 'case-studies'],
+      brief: {
+        notes: 'Implementation anxiety is a common buying objection — HR leaders fear the lift of launching a new platform while managing everything else. This page needs to demystify the process and make clear that MH does the heavy lifting. Named proof: Atlassian (52% registration rate) and Rubrik (63% registration) — these outcomes only happen with strong implementation support, and citing them here turns a cost/friction concern into a proof of partnership value. From the crawl: MH\'s live site describes a "strategic partnership" model, not just platform access. Manager training and communications support are key differentiators.',
+      },
     },
 
     'frontline-workforce': {
@@ -718,6 +769,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['population-specific-needs', 'employers', 'care-every-challenge'],
       linksOut: ['employers', 'adaptive-care', 'global-capabilities'],
+      brief: {
+        notes: 'Mobile-first, multilingual, and accessible without a work email — these are the three functional requirements for frontline workers that most mental health platforms fail on. Industries: healthcare, retail, logistics, manufacturing, hospitality. The 80+ language support and 200+ country reach are the global-capabilities proof points that apply here too. Achieving 20% engagement with frontline populations requires meeting them where they are (mobile, SMS, multilingual) — explain how the Adaptive Care Model serves non-desk workers.',
+      },
     },
 
     'crisis-preparedness': {
@@ -736,6 +790,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['workforce-org-needs', 'employers', 'crisis-acute-mental-health'],
       linksOut: ['crisis-acute-mental-health', 'employers', 'partnering-with-your-team'],
+      brief: {
+        notes: 'HR buyers for this page are planning ahead, not reacting. Critical incidents (layoffs, workplace violence, natural disaster, executive departure) are moments when HR needs a mental health partner on call, not a portal. Explain the rapid-response model specifically: how quickly can MH deploy, what does the employer-facing coordination look like, who is the point of contact? The Adaptive Care Model\'s escalation from coaching through crisis support is the operational backbone of the response.',
+      },
     },
 
     'channel-partners': {
@@ -754,6 +811,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['consultants', 'employers'],
       linksOut: ['consultants', 'case-studies', 'nav-demo-request'],
+      brief: {
+        notes: 'Partners are commercial multipliers — they extend MH\'s reach to more employers without direct sales effort. Page needs to answer: what partner types does MH work with (PEOs, brokers, benefits platforms, resellers), what is the commercial model, and what resources do partners receive to sell and support MH? Link to the consultants pillar for the adjacent RFP-support use case. The channel-partners page is likely a late-funnel destination for buyers who arrive from a partner referral.',
+      },
     },
 
     'health-plans': {
@@ -772,6 +832,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['consultants', 'clinical-outcomes', 'economic-roi'],
       linksOut: ['consultants', 'clinical-outcomes', 'case-studies'],
+      brief: {
+        notes: 'Health plan buyers prioritize claims reduction and clinical outcomes data, not just utilization counts. The argument: MH reduces behavioral health claims by catching employees early via the Adaptive Care Model — the 60% of savings from moderate-need employees is directly relevant here. From the crawl: the live /healthplans URL exists and is active, confirming this is a real buyer segment. Link to clinical-outcomes for the evidence base and to case-studies for claims reduction proof points. Equity metrics (46% BIPOC providers, language access) are also relevant for health plan DEI requirements.',
+      },
     },
 
     'case-studies': {
@@ -782,14 +845,19 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders and consultants looking for real-world proof of mental health benefit ROI before making a purchase decision.',
       recommendedH1: 'Client Outcomes: Mental Health Benefits That Deliver ROI',
       titleTag: 'Mental Health Benefits Case Studies | Modern Health',
-      metaDescription: 'Real-world outcomes from Modern Health clients — reduced claims, improved retention, and measurable ROI from enterprise mental health benefits.',
+      metaDescription: 'Real outcomes from Modern Health clients: Autodesk (3x engagement), Midland States Bank ($110K savings), CEBT (89% improved well-being, 37K members). See the proof.',
       keyQuestions: [
-        'What ROI have specific clients achieved?',
+        'What ROI have specific clients achieved with Modern Health?',
         'Which industries are represented in case studies?',
-        'What metrics are reported?',
+        'What metrics are tracked and reported?',
+        'How do these outcomes compare to EAP benchmarks?',
       ],
       linksIn: ['employers', 'consultants', 'economic-roi', 'clinical-outcomes'],
       linksOut: ['economic-roi', 'clinical-outcomes', 'employers'],
+      brief: {
+        notes: 'Bottom-of-funnel page that closes skeptics. Named client outcomes available to use: Autodesk (3x engagement vs prior solution), Rubrik (63% registration rate), Midland States Bank ($110K reduced mental health-related costs, per Shonna Kracinski), CEBT 37K members (89% improved well-being), Atlassian (52% registration, 94% improved well-being). WTW (Joe Deba) is a consultant reference. Each case study should anchor on a specific, countable outcome — not a general satisfaction quote. Industries to represent: tech (Atlassian, Autodesk, Rubrik), financial services (Midland States Bank), insurance/benefits (WTW), large public-sector (CEBT).',
+        contentGaps: 'Filterable case study grid by industry, company size, and outcome type. Each case study needs: specific before/after metric, named client contact, program scope, and key insight. Current live case study content is present but may not be indexed properly for commercial search terms. Page needs an outcome-first summary stat (e.g., "Clients see an average of $2.39 return per $1 invested") before the case study grid.',
+      },
     },
 
     'clinical-research': {
@@ -808,6 +876,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['clinical-outcomes', 'depression-anxiety'],
       linksOut: ['clinical-outcomes', 'adaptive-care'],
+      brief: {
+        notes: 'The peer-reviewed evidence library that validates the clinical-outcomes pillar. The 100+ publication count is the headline stat for clinical officers and procurement teams. Research should be surfaced with: journal name, year, key finding, and a link to abstract/full text where available. Secondary audiences: academic partners, investors, press. The Adaptive Care Model should be referenced as the subject of multiple studies — this page makes the clinical model auditable, not just claimed.',
+      },
     },
 
     // ── Missing commercial pages ─────────────────────────────────────────────
@@ -816,11 +887,17 @@ window.SEO_DATA = {
       seoType: 'cluster',
       seoCluster: 'employers',
       primaryKeyword: 'mental health benefits platform',
-      secondaryKeywords: ['employee mental health benefits', 'workplace mental health solution', 'mental health benefits for employers'],
-      searchIntent: 'HR and benefits leaders landing on the Modern Health homepage — orienting to the brand and deciding whether to explore further.',
+      secondaryKeywords: [
+        'employee mental health benefits',
+        'workplace mental health solution',
+        'mental health benefits for employers',
+        'mental health technology platform',
+        'mental health benefits',
+      ],
+      searchIntent: 'HR and benefits leaders landing on the Modern Health homepage — orienting to the brand and deciding whether to explore further or request a demo.',
       recommendedH1: 'The Mental Health Benefits Platform Built for the Modern Workforce',
       titleTag: 'Mental Health Benefits Platform | Modern Health',
-      metaDescription: 'Modern Health delivers evidence-based mental health benefits to employees worldwide — coaching, therapy, and crisis support in one integrated platform.',
+      metaDescription: 'Modern Health delivers adaptive mental health benefits to employees in 200+ countries — coaching, therapy, peer support, and 24/7 crisis access in one platform.',
       keyQuestions: [
         'What does Modern Health do and who is it for?',
         'How is Modern Health different from an EAP?',
@@ -830,8 +907,8 @@ window.SEO_DATA = {
       linksIn: [],
       linksOut: ['employers', 'members', 'clinical-outcomes', 'economic-roi', 'nav-demo-request'],
       brief: {
-        notes: 'Homepage functions as a routing layer — primary job is to move HR leaders toward employers page and members toward the members page. Brand impression secondary to conversion routing.',
-        contentGaps: 'Clear persona split above the fold. Social proof / client logos. A single, prominent demo CTA.',
+        notes: 'Homepage is a routing layer — primary job is to move HR/benefits leaders to the employers pillar and employees to the members page. Brand impression is secondary to routing. Proof points for homepage: $2.39 ROI per $1, 200+ countries, 20% engagement rate, 70 member NPS, client logos (Atlassian, Nextdoor, Lyft). Live homepage leads with "Global mental health for your entire workforce" and "Backed by Rigorous Science" — strong openings but persona routing above the fold needs to be explicit. Search Console shows homepage captures 96K clicks/mo but <300 route to commercial pages — the routing gap is the redesign\'s central problem to solve.',
+        contentGaps: 'Explicit persona fork (employer vs employee) above the fold. Social proof / client logos in first viewport. Single prominent demo CTA. Stat trio: ROI + countries + engagement rate. Clear nav path to the employers pillar — current site does not surface this destination prominently.',
       },
     },
 
@@ -839,22 +916,28 @@ window.SEO_DATA = {
       seoType: 'cluster',
       seoCluster: 'employers',
       primaryKeyword: 'employee mental health app',
-      secondaryKeywords: ['mental health app for employees', 'employee wellbeing platform', 'workplace mental health app'],
-      searchIntent: 'Employees who received a Modern Health benefit and are researching how to use it — or HR leaders checking the employee-facing experience before recommending.',
+      secondaryKeywords: [
+        'mental health app for employees',
+        'employee wellbeing platform',
+        'workplace mental health app',
+        'best mental health benefit for employees',
+      ],
+      searchIntent: 'Employees who received a Modern Health benefit and are researching how to use it — or HR leaders reviewing the employee experience before recommending to their workforce.',
       recommendedH1: 'Your Mental Health Benefit — Personalized, Private, and Always Available',
       titleTag: 'Employee Mental Health App | Modern Health',
-      metaDescription: 'Modern Health gives every employee personalized mental health support — coaching, therapy, self-guided programs, and 24/7 crisis access in one app.',
+      metaDescription: 'Modern Health gives every employee personalized mental health support — coaching, therapy, self-guided programs, and 24/7 crisis access in one app. 80+ languages.',
       keyQuestions: [
         'What does the Modern Health app offer employees?',
         'Is my usage private from my employer?',
         'How do I get matched to a coach or therapist?',
         'Is the app available in multiple languages?',
+        'What if I need crisis support right now?',
       ],
       linksIn: ['home', 'employers', 'adaptive-care'],
       linksOut: ['adaptive-care', 'global-capabilities', 'nav-demo-request'],
       brief: {
-        notes: 'Dual audience — employees reassured about privacy and simplicity; HR leaders see the employee experience. Confidentiality message critical.',
-        contentGaps: 'App screenshots / walkthrough. Privacy/confidentiality FAQ. Language and accessibility details.',
+        notes: 'Dual audience page — employees need reassurance about privacy and simplicity; HR leaders are evaluating the employee-facing experience. Confidentiality is the #1 employee concern and must be addressed early. Key stats for employees: <1 day to first provider, 4.9/5 provider rating, 80+ languages, 200+ countries, 70 NPS. Live /member page highlights coaching, therapy, self-guided programs, and on-demand resources — use these as the four content pillars. The 20% engagement rate (vs 2-4% for EAPs) is proof the app actually gets used — include for HR audiences.',
+        contentGaps: 'App screenshots or product walkthrough in the page. Explicit privacy/confidentiality statement. Language and accessibility details. Matching process explanation (how the Adaptive Care Model works for the member). 24/7 crisis access call-out.',
       },
     },
 
@@ -862,22 +945,30 @@ window.SEO_DATA = {
       seoType: 'cluster',
       seoCluster: 'employers',
       primaryKeyword: 'global mental health solution',
-      secondaryKeywords: ['global employee mental health benefits', 'international mental health platform', 'multinational employee wellbeing'],
-      searchIntent: 'HR leaders at multinational companies evaluating whether Modern Health can support employees across geographies and languages.',
+      secondaryKeywords: [
+        'global mental health solution',
+        'global employee mental health benefits',
+        'international mental health platform',
+        'multinational employee wellbeing',
+        'international eap providers',
+        'global mental health',
+      ],
+      searchIntent: 'HR leaders at multinational companies evaluating whether Modern Health can support employees across geographies and languages — replacing or supplementing a global EAP.',
       recommendedH1: 'Global Mental Health Benefits for a Multinational Workforce',
       titleTag: 'Global Mental Health Solution | Modern Health',
-      metaDescription: 'Modern Health delivers mental health benefits in 70+ countries and 50+ languages — localized care, global coverage, one integrated platform.',
+      metaDescription: 'Modern Health delivers mental health benefits in 200+ countries and 80+ languages — localized care, one integrated platform, one global contract.',
       keyQuestions: [
         'Which countries and languages does Modern Health support?',
         'How is care localized for different regions and cultures?',
         'How does the platform handle privacy regulations like GDPR?',
         'Can we deploy Modern Health globally from a single contract?',
+        'How does Modern Health compare to global EAP providers?',
       ],
       linksIn: ['home', 'employers', 'multicultural-workforce'],
       linksOut: ['employers', 'adaptive-care', 'multicultural-workforce', 'nav-demo-request'],
       brief: {
-        notes: 'Key differentiator for enterprise deals — lead with geography + language count. Compliance (GDPR, etc.) is table stakes for global buyers.',
-        contentGaps: 'Map or list of supported countries. Language count. Compliance certifications. Regional case study.',
+        notes: 'Key differentiator for enterprise multinational deals. Lead with the geography and language counts (200+ countries, 80+ languages) as the authority stat — these numbers are larger than most EAP competitors. GDPR and data residency compliance are table stakes for EU-headquartered buyers and must be addressed. The culturally competent provider network (46% BIPOC providers, language-matched matching) is the quality dimension that geography alone does not prove. From crawl: live /global page leads with "Mental health support that spans the globe" — good framing, needs the 200+ country stat and a regional proof point (e.g., a non-US case study).',
+        contentGaps: 'Interactive map or country/language count. Compliance certifications (GDPR, SOC 2, etc.) listed explicitly. Non-US client reference or case study. Localization model explained (how is care adapted, not just translated). Single-contract global deployment details.',
       },
     },
 
@@ -889,7 +980,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders and clinical evaluators assessing the size, quality, and diversity of Modern Health\'s provider network before purchase.',
       recommendedH1: 'A Provider Network Built for Quality, Access, and Diversity',
       titleTag: 'Mental Health Provider Network | Modern Health',
-      metaDescription: 'Modern Health\'s vetted provider network spans thousands of therapists, coaches, and specialists — matched to each employee by need, language, and background.',
+      metaDescription: 'Modern Health\'s vetted provider network: 4.9/5 provider rating, 46% BIPOC providers, 80+ languages, <1 day to first appointment. Quality at global scale.',
       keyQuestions: [
         'How large is the Modern Health provider network?',
         'How are providers vetted and credentialed?',
@@ -899,8 +990,8 @@ window.SEO_DATA = {
       linksIn: ['clinical-outcomes', 'adaptive-care', 'clinical-quality-standards'],
       linksOut: ['clinical-outcomes', 'clinical-quality-standards', 'adaptive-care'],
       brief: {
-        notes: 'Trust page — clinical buyers need hard numbers and credential process details. Diversity of network (language, specialty, background) is a key differentiator.',
-        contentGaps: 'Network size stat. Credentialing process. Diversity breakdown (languages, specialties). Average time-to-first-appointment.',
+        notes: 'Trust page for clinical buyers — needs hard, auditable numbers. Anchor stats from crawl: 4.9/5 provider rating, 46% BIPOC providers, 80+ languages, <1 day to first provider. The 46% BIPOC provider stat is a genuine differentiator for DEI-conscious buyers — highlight prominently. Credentialing process and quality monitoring should be explained specifically, not as a general claim. The live site confirms providers are "carefully vetted" but specific credentialing steps are not visible — this gap needs to be filled for enterprise procurement.',
+        contentGaps: 'Specific credentialing criteria. Quality monitoring / provider performance process. Specialty breakdown (therapists vs coaches vs psychiatrists). BIPOC provider percentage and cultural match feature. Time-to-first-appointment guarantee. Language directory or at least a count.',
       },
     },
 
@@ -954,21 +1045,28 @@ window.SEO_DATA = {
       seoType: 'standalone',
       seoCluster: 'solutions',
       primaryKeyword: 'workplace mental health challenges',
-      secondaryKeywords: ['mental health support for every employee', 'employee mental health needs', 'comprehensive mental health benefits'],
-      searchIntent: 'HR leaders looking for a benefits platform that covers the full spectrum of employee mental health needs — not just one condition or use case.',
+      secondaryKeywords: [
+        'EAP alternative',
+        'mental health support for every employee',
+        'employee mental health needs',
+        'comprehensive mental health benefits',
+        'employee mental health programs',
+      ],
+      searchIntent: 'HR leaders looking for a benefits platform that covers the full spectrum of employee mental health needs — not just one condition or use case — as an alternative or supplement to an EAP.',
       recommendedH1: 'Mental Health Support for Every Challenge Your Employees Face',
-      titleTag: 'Workplace Mental Health Challenges | Modern Health',
-      metaDescription: 'From everyday stress to complex clinical needs — Modern Health provides mental health support for every challenge employees encounter at work and in life.',
+      titleTag: 'Mental Health for Every Challenge | Modern Health',
+      metaDescription: 'From everyday stress to complex clinical needs, Modern Health covers the full spectrum — the EAP alternative built for the whole workforce, not just crisis cases.',
       keyQuestions: [
         'Does Modern Health support employees across the full spectrum of mental health needs?',
         'How does the platform handle both mild and severe mental health challenges?',
+        'Why is Modern Health a better alternative to an EAP for full-spectrum coverage?',
         'Can employees access support for non-clinical challenges like stress or life transitions?',
       ],
       linksIn: ['home', 'employers', 'members'],
       linksOut: ['burnout-workplace-stress', 'depression-anxiety', 'substance-use', 'grief', 'life-transitions', 'population-specific-needs'],
       brief: {
-        notes: 'This is the Solutions hub page — links out to every challenge-specific page. Should function as a navigational anchor with enough context to orient buyers.',
-        contentGaps: 'Grid or card layout of all challenge types. Brief description of each. Clear links to detail pages.',
+        notes: 'Solutions hub page — the navigational anchor for the full spectrum of challenge-specific pages. This page captures EAP alternative intent: buyers who\'ve searched "EAP alternative" or "what replaces an EAP" are looking for exactly what this page describes. Lead with the breadth of coverage (everyday stress → complex clinical needs → crisis) as proof that this isn\'t just another point solution. The Adaptive Care Model is the connective tissue — show how one platform routes across all challenge types.',
+        contentGaps: 'Grid or card layout of all challenge types with one-line descriptions. Clear links to each detail page. EAP comparison framing — what EAPs cover vs what Modern Health covers. A challenge spectrum visual (low-acuity to high-acuity) showing how the Adaptive Care Model addresses each level.',
       },
     },
 
@@ -988,6 +1086,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'employers', 'members'],
       linksOut: ['caregiving', 'parenting-dependents', 'grief', 'life-transitions', 'care-every-challenge'],
+      brief: {
+        notes: 'Hub page for life-stage-specific support — links to caregiving, parenting-dependents, grief, life-transitions, womens-health. The mental health dimension of life events is often completely missing from HR benefits. Position as: "the benefit that recognizes employees have lives outside work." From the brand context: MH specifically covers life stages as a named category. The Adaptive Care Model means support type adapts to the life stage — coaching for transitions, therapy for grief, Circles for shared experiences.',
+      },
     },
 
     'caregiving': {
@@ -1006,6 +1107,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['life-stages', 'care-every-challenge', 'employers'],
       linksOut: ['burnout-workplace-stress', 'life-stages', 'parenting-dependents'],
+      brief: {
+        notes: 'Caregiver burnout is a high-growth segment of workforce mental health — as the population ages, more employees are simultaneously managing aging parents, children, and careers. EAPs rarely provide substantive caregiver-specific support beyond a few referral sessions. Position MH as specialized where EAPs are generic. Link to burnout-workplace-stress as the clinical outcome of unsupported caregiving. Coaching and Circles are both relevant modalities here — individual support and shared community.',
+      },
     },
 
     'parenting-dependents': {
@@ -1024,6 +1128,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['life-stages', 'care-every-challenge', 'womens-health'],
       linksOut: ['life-stages', 'caregiving', 'burnout-workplace-stress'],
+      brief: {
+        notes: 'Postpartum mental health, parenting burnout, and support for parents of children with mental health needs are high-demand, under-served benefit categories. The "family-extending" benefit frame — supporting the member and acknowledging their family context — is distinctive vs standard EAPs. Postpartum support is clinically important (PPD affects 10-15% of new mothers) and under-offered. Link to womens-health for the reproductive-specific angle. Circles could be particularly effective here (peer parent groups).',
+      },
     },
 
     'serious-chronic-illness': {
@@ -1042,6 +1149,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'clinical-complex-needs', 'life-stages'],
       linksOut: ['clinical-complex-needs', 'adaptive-care', 'clinical-outcomes'],
+      brief: {
+        notes: 'The mental health burden of chronic illness (cancer, diabetes, MS, autoimmune conditions) is well-documented but almost never addressed in HR benefits. Position as the integration layer between physical and mental health — for HR and health plan buyers this is a claims reduction story. PHQ-9 for chronic illness populations often shows elevated depression scores. Link to clinical-outcomes for the evidence base and clinical-complex-needs for the care pathway.',
+      },
     },
 
     'grief': {
@@ -1060,6 +1170,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['life-stages', 'care-every-challenge', 'employers'],
       linksOut: ['life-stages', 'life-transitions', 'crisis-acute-mental-health'],
+      brief: {
+        notes: 'Grief is one of the most common life events that disrupts work performance, and one of the most neglected by traditional benefits. Standard EAP bereavement support is typically 3-6 sessions. Modern Health provides a continuum (therapy, Circles, Pathways) that can support a grieving employee for as long as needed. Circles are specifically valuable here — shared peer experience of loss is clinically and emotionally meaningful. A quiet, compassionate page tone; this isn\'t the place for ROI claims.',
+      },
     },
 
     'life-transitions': {
@@ -1078,6 +1191,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['life-stages', 'care-every-challenge', 'grief'],
       linksOut: ['life-stages', 'grief', 'adaptive-care'],
+      brief: {
+        notes: 'Divorce, relocation, retirement, job loss, school transitions — major non-crisis transitions that cause real psychological strain but don\'t rise to a clinical diagnosis. This is where the coaching modality excels and EAPs fall short (EAPs route to therapy, even when coaching is the right fit). Position as: "support before you hit rock bottom." The Adaptive Care Model triage function — identifying right modality for the moment — is the functional differentiator on this page.',
+      },
     },
 
     'womens-health': {
@@ -1096,6 +1212,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'life-stages', 'parenting-dependents'],
       linksOut: ['parenting-dependents', 'caregiving', 'life-stages', 'adaptive-care'],
+      brief: {
+        notes: 'Women-specific mental health: reproductive health, postpartum, perimenopause, menopause, caregiver stress, workplace gender equity — each is a distinct clinical area with its own evidence base. From the crawl: MH\'s 46% BIPOC provider stat extends to gender-diverse provider matching — employees can find providers who share their background and lived experience. This is simultaneously a DEI benefit and a retention benefit. Postpartum depression, menopause-related mental health, and reproductive loss are all high-demand, under-addressed benefit categories.',
+      },
     },
 
     'neurodivergent-support': {
@@ -1114,6 +1233,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'population-specific-needs', 'leave-absence-accommodations'],
       linksOut: ['adaptive-care', 'leave-absence-accommodations', 'population-specific-needs'],
+      brief: {
+        notes: 'ADHD, autism, sensory processing, dyslexia — neurodivergent employees are an underserved workforce population with specific support needs that standard EAP therapists are often not trained to address. Neurodivergent-aware providers and accommodation guidance are genuine differentiators. This page is also an ADA accommodation signal for HR — link to leave-absence-accommodations for the workflow connection. DEI and HR operations teams are the primary readers alongside employees themselves.',
+      },
     },
 
     'career-growth': {
@@ -1132,6 +1254,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'life-transitions', 'workforce-org-needs'],
       linksOut: ['adaptive-care', 'burnout-workplace-stress', 'life-transitions'],
+      brief: {
+        notes: 'Career challenges and mental health are deeply intertwined — imposter syndrome, career dissatisfaction, leadership pressure, layoff anxiety. The coaching modality is the natural fit here, and this is a place where MH stands apart from pure clinical platforms. Position as: mental health support that helps people perform, not just cope. L&D and HR operations teams are secondary audiences alongside employees. "Mental health coaching" has 2,901 Search Console impressions at position 67 — a significant opportunity to capture.',
+      },
     },
 
     'leave-absence-accommodations': {
@@ -1150,6 +1275,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'neurodivergent-support', 'clinical-complex-needs'],
       linksOut: ['clinical-complex-needs', 'adaptive-care', 'workforce-org-needs'],
+      brief: {
+        notes: 'HR workflow + clinical care intersection — care continuity during leave and a structured return-to-work pathway are genuinely valuable and often absent from EAPs. ADA and FMLA context matters for HR readers (not legal advice, but demonstrating that MH understands the compliance context). The Adaptive Care Model ensures members stay connected to care during leave rather than losing progress. Return-to-work planning with manager support is a differentiator — link to partnering-with-your-team for the HR partnership angle.',
+      },
     },
 
     'multicultural-workforce': {
@@ -1168,6 +1296,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'global-capabilities', 'population-specific-needs'],
       linksOut: ['global-capabilities', 'provider-network', 'population-specific-needs'],
+      brief: {
+        notes: 'Language-matched and culturally matched provider assignment is a headline differentiator for diverse workforces. Anchor with the 46% BIPOC provider stat and the 80+ language network. Mental health stigma varies significantly by cultural context — MH\'s culturally competent approach is the specific response to this. DEI teams are a secondary audience for this page alongside HR benefits leaders. Circles are particularly valuable here — cultural community groups can reduce isolation for minority employees in majority-culture workplaces.',
+      },
     },
 
     'first-responders': {
@@ -1186,6 +1317,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['frontline-workforce', 'population-specific-needs', 'care-every-challenge'],
       linksOut: ['frontline-workforce', 'crisis-preparedness', 'clinical-complex-needs'],
+      brief: {
+        notes: 'PTSD, moral injury, cumulative trauma, substance use, and suicide are the five acute mental health risks for first responders — each requires clinical depth that standard EAPs cannot provide. EAPs in public safety organizations are often under-resourced and stigmatized. MH\'s clinical complex-needs pathway combined with Circles peer support addresses this population specifically — peer-to-peer and group modalities often have higher acceptance rates in first-responder culture where help-seeking carries stigma. Crisis preparedness is a natural link.',
+      },
     },
 
     'population-specific-needs': {
@@ -1204,6 +1338,9 @@ window.SEO_DATA = {
       ],
       linksIn: ['care-every-challenge', 'employers', 'frontline-workforce'],
       linksOut: ['frontline-workforce', 'multicultural-workforce', 'neurodivergent-support', 'first-responders'],
+      brief: {
+        notes: 'Hub page for population-specific support — the argument: Modern Health can be configured for distinct employee populations, not just deployed uniformly across a workforce. Links to frontline, multicultural, neurodivergent, and first-responder pages. For large enterprise buyers with complex workforce compositions, this page demonstrates that MH isn\'t a one-size-fits-all solution. The Adaptive Care Model\'s individual-level routing is what makes population-level configuration possible.',
+      },
     },
 
     // ── Supporting pages ─────────────────────────────────────────────────────
