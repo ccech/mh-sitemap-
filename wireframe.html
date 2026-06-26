@@ -396,6 +396,8 @@
     <a href="flows.html">User Flows</a>
     <a href="homepage-brief.html">Homepage Brief</a>
     <a href="wireframe.html" class="active">Wireframe</a>
+    <a href="seo.html">SEO Strategy</a>
+    <a href="seo-briefs.html">Content Briefs</a>
   </div>
 </nav>
 
@@ -447,6 +449,7 @@
 <script src="data/user-stories.js"></script>
 <script src="data/flows.js"></script>
 <script src="data/heat-map.js"></script>
+<script src="data/seo.js"></script>
 
 <script>
 // ── LOOKUP MAPS ──────────────────────────────────────────────────────────────
@@ -1059,7 +1062,80 @@ function renderMetaPanel(page) {
     ${storiesHtml}
     ${crossLinksHtml}
     ${clusterHtml}
+    ${renderSeoMeta(page)}
   `;
+}
+
+function renderSeoMeta(page) {
+  const seo = (window.SEO_DATA && SEO_DATA.pages) ? SEO_DATA.pages[page.id] : null;
+
+  if (!seo || seo.seoType === 'uncovered') {
+    const note = seo && seo.note ? seo.note : null;
+    return `<div class="wf-meta-section">
+      <div class="wf-meta-label">SEO</div>
+      <div style="font-size:12px;color:var(--heat-high);font-weight:600;padding:4px 0">No keyword assigned</div>
+      ${note ? `<div style="font-size:11px;color:var(--text-muted);margin-top:4px;line-height:1.5">${note}</div>` : ''}
+    </div>`;
+  }
+
+  const titleLen = (seo.titleTag || '').length;
+  const descLen  = (seo.metaDescription || '').length;
+
+  function charFlag(len, max) {
+    if (!len) return '';
+    const over = len > max;
+    return `<span style="font-size:10px;font-weight:700;color:${over ? 'var(--heat-high)' : 'var(--heat-low)'}">${over ? '⚠ ' : '✓ '}${len}/${max}</span>`;
+  }
+
+  const linksInHtml = (seo.linksIn || []).map(id => {
+    const p = pageMap[id];
+    return p ? `<button class="wf-meta-crosslink" onclick="navigateTo('${id}')">${p.name}</button>` : '';
+  }).filter(Boolean).join('');
+
+  const linksOutHtml = (seo.linksOut || []).map(id => {
+    const p = pageMap[id];
+    return p ? `<button class="wf-meta-crosslink" onclick="navigateTo('${id}')">${p.name}</button>` : '';
+  }).filter(Boolean).join('');
+
+  const keyQHtml = (seo.keyQuestions || []).map(q =>
+    `<div style="font-size:11px;color:var(--text-2);padding:4px 0;border-bottom:1px solid var(--border);line-height:1.4">${q}</div>`
+  ).join('');
+
+  const briefHtml = seo.brief ? `
+    <details style="margin-top:8px">
+      <summary style="font-size:11px;color:var(--brand);cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:4px">
+        <span>▶</span> Content Brief
+      </summary>
+      <div style="margin-top:8px;font-size:11px;color:var(--text-muted);line-height:1.5">
+        ${seo.brief.notes ? `<p>${seo.brief.notes}</p>` : ''}
+        ${seo.brief.contentGaps ? `<p style="color:var(--heat-high);margin-top:6px;font-weight:600">⚠ ${seo.brief.contentGaps}</p>` : ''}
+      </div>
+    </details>` : '';
+
+  return `<div class="wf-meta-section">
+    <div class="wf-meta-label">SEO</div>
+
+    <div style="font-size:12px;font-weight:700;color:var(--brand-dark);margin-bottom:10px">${seo.primaryKeyword || '—'}</div>
+
+    ${seo.titleTag ? `<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-faint);margin-bottom:3px">Title Tag</div>
+    <div style="font-size:12px;color:var(--text-2);line-height:1.4;margin-bottom:3px">${seo.titleTag}</div>
+    ${charFlag(titleLen, 60)}` : ''}
+
+    ${seo.metaDescription ? `<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-faint);margin-top:10px;margin-bottom:3px">Meta Description</div>
+    <div style="font-size:11px;color:var(--text-2);line-height:1.5;margin-bottom:3px">${seo.metaDescription}</div>
+    ${charFlag(descLen, 155)}` : ''}
+
+    ${seo.searchIntent ? `<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-faint);margin-top:10px;margin-bottom:3px">Search Intent</div>
+    <div style="font-size:11px;color:var(--text-muted);font-style:italic;line-height:1.5">${seo.searchIntent}</div>` : ''}
+
+    ${linksInHtml ? `<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-faint);margin-top:10px;margin-bottom:5px">SEO Links In</div>${linksInHtml}` : ''}
+
+    ${linksOutHtml ? `<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-faint);margin-top:10px;margin-bottom:5px">SEO Links Out</div>${linksOutHtml}` : ''}
+
+    ${keyQHtml ? `<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-faint);margin-top:10px;margin-bottom:4px">Key Questions</div>${keyQHtml}` : ''}
+
+    ${briefHtml}
+  </div>`;
 }
 
 function renderJourneyInMeta(page) {

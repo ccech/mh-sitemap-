@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Briefs — MH Sitemap</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+
+    /* ── LAYOUT ────────────────────────────────────────────────────────────────── */
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+
+    .briefs-shell {
+      display: flex;
+      flex: 1;
+      gap: 0;
+      height: calc(100vh - 56px - 72px); /* nav + page-header */
+      overflow: hidden;
+    }
+
+    /* ── SIDEBAR ───────────────────────────────────────────────────────────────── */
+    .briefs-sidebar {
+      width: 272px;
+      min-width: 272px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .briefs-sidebar-top {
+      padding: 14px 14px 10px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .briefs-search {
+      width: 100%;
+      padding: 7px 10px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      background: var(--bg);
+      color: var(--text);
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .briefs-search:focus { border-color: var(--brand); }
+    .briefs-search::placeholder { color: var(--text-faint); }
+
+    .briefs-filter-group { margin-top: 10px; }
+    .briefs-filter-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--text-faint); margin-bottom: 5px;
+    }
+    .briefs-filter-chips {
+      display: flex; flex-wrap: wrap; gap: 4px;
+    }
+    .briefs-chip {
+      padding: 3px 9px;
+      border: 1.5px solid var(--border);
+      border-radius: 99px;
+      font-size: 11px; font-weight: 600;
+      color: var(--text-2);
+      background: var(--bg);
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .briefs-chip:hover { border-color: var(--brand); color: var(--brand); }
+    .briefs-chip.active {
+      background: var(--brand); border-color: var(--brand);
+      color: white;
+    }
+
+    .briefs-page-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 6px 0;
+    }
+
+    .briefs-page-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: background 0.1s;
+      border-bottom: 1px solid transparent;
+    }
+    .briefs-page-row:hover { background: var(--bg); }
+    .briefs-page-row.active {
+      background: var(--brand-light);
+      border-left: 3px solid var(--brand);
+      padding-left: 11px;
+    }
+
+    .briefs-page-name {
+      flex: 1;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.3;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .status-badge {
+      flex-shrink: 0;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .status-badge.full    { background: #d1fae5; color: #065f46; }
+    .status-badge.keyword { background: #dbeafe; color: #1e40af; }
+    .status-badge.missing { background: #fee2e2; color: #991b1b; }
+    .status-badge.support { background: #f3f4f6; color: #4b5563; }
+
+    /* ── MAIN PANEL ────────────────────────────────────────────────────────────── */
+    .briefs-main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 28px 32px;
+      min-width: 0;
+    }
+
+    /* ── SUMMARY TABLE (default state) ─────────────────────────────────────────── */
+    .summary-intro {
+      background: var(--brand-dark); color: white;
+      border-radius: var(--radius-lg); padding: 22px 28px; margin-bottom: 24px;
+    }
+    .summary-intro h2 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .summary-intro p  { font-size: 12.5px; opacity: 0.75; line-height: 1.6; max-width: 640px; }
+
+    .summary-stats { display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+    .summary-stat {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 20px;
+    }
+    .summary-stat-num  { font-size: 22px; font-weight: 800; color: var(--text); line-height: 1; }
+    .summary-stat-num.green { color: #059669; }
+    .summary-stat-num.blue  { color: #1d4ed8; }
+    .summary-stat-num.red   { color: #dc2626; }
+    .summary-stat-label { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+    .summary-table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .summary-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .summary-table th {
+      text-align: left; padding: 10px 14px;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.6px; color: var(--text-muted);
+    }
+    .summary-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .summary-table tr:last-child td { border-bottom: none; }
+    .summary-table tr:hover td { background: var(--bg); }
+    .summary-table .page-link {
+      color: var(--brand); font-weight: 600; cursor: pointer; text-decoration: none;
+    }
+    .summary-table .page-link:hover { text-decoration: underline; }
+    .summary-table .url-cell { font-family: 'Menlo', monospace; color: var(--text-faint); font-size: 11.5px; }
+    .summary-table .keyword-cell { color: var(--text-2); max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .summary-table .cluster-cell { color: var(--text-muted); font-size: 11.5px; }
+
+    /* ── DETAIL PANEL ──────────────────────────────────────────────────────────── */
+    .detail-header {
+      display: flex; align-items: flex-start; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .detail-header-left { flex: 1; min-width: 0; }
+    .detail-back-btn {
+      background: none; border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 6px 14px;
+      font-size: 12.5px; font-weight: 600; color: var(--text-2);
+      cursor: pointer; transition: all 0.15s; margin-bottom: 12px;
+    }
+    .detail-back-btn:hover { background: var(--bg); color: var(--brand); border-color: var(--brand); }
+    .detail-page-name { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .detail-url { font-family: 'Menlo', monospace; font-size: 12px; color: var(--text-faint); }
+
+    .copy-btn {
+      flex-shrink: 0;
+      padding: 9px 16px;
+      background: var(--brand); color: white;
+      border: none; border-radius: var(--radius-sm);
+      font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .copy-btn:hover   { background: var(--brand-dark); }
+    .copy-btn.copied  { background: #059669; }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .detail-grid.full { grid-template-columns: 1fr; }
+
+    .detail-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+
+    .detail-card-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--text-faint); margin-bottom: 6px;
+    }
+    .detail-card-value {
+      font-size: 13.5px; color: var(--text); line-height: 1.5;
+    }
+    .detail-card-value.keyword {
+      font-size: 15px; font-weight: 700; color: var(--brand-dark);
+    }
+    .detail-card-value.mono {
+      font-family: 'Menlo', monospace; font-size: 12px; color: var(--text-2);
+    }
+    .detail-card-value.muted { color: var(--text-muted); font-style: italic; }
+    .detail-card-value.missing { color: var(--text-faint); font-style: italic; }
+
+    .char-count {
+      font-size: 11px; margin-top: 4px;
+    }
+    .char-count.ok   { color: #059669; }
+    .char-count.warn { color: #dc2626; }
+
+    .detail-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .detail-pill {
+      padding: 3px 10px; border-radius: 99px;
+      font-size: 11.5px; font-weight: 500;
+      background: var(--bg); border: 1px solid var(--border); color: var(--text-2);
+    }
+    .detail-pill.link-in  { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+    .detail-pill.link-out { background: #f0fdf4; border-color: #bbf7d0; color: #065f46; }
+
+    .detail-questions { padding-left: 16px; margin: 4px 0 0; }
+    .detail-questions li { font-size: 13px; color: var(--text-2); line-height: 1.7; }
+
+    .detail-secondary { display: flex; flex-wrap: wrap; gap: 6px; }
+    .detail-secondary-kw {
+      padding: 3px 10px; border-radius: 4px;
+      background: var(--brand-light); color: var(--brand);
+      font-size: 11.5px; font-weight: 600;
+    }
+
+    details.brief-details {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    details.brief-details summary {
+      padding: 12px 16px; cursor: pointer;
+      font-size: 13px; font-weight: 600; color: var(--text-2);
+      list-style: none; user-select: none;
+    }
+    details.brief-details summary::-webkit-details-marker { display: none; }
+    details.brief-details summary::before { content: '▶ '; font-size: 10px; }
+    details.brief-details[open] summary::before { content: '▼ '; }
+    details.brief-details .brief-body { padding: 0 16px 14px; font-size: 13px; color: var(--text-2); line-height: 1.7; }
+
+    .no-data { color: var(--text-faint); font-style: italic; font-size: 13px; }
+
+    /* ── EMPTY STATE ───────────────────────────────────────────────────────────── */
+    .empty-state {
+      text-align: center; padding: 60px 20px; color: var(--text-muted);
+    }
+    .empty-state svg { opacity: 0.2; margin-bottom: 12px; }
+    .empty-state p { font-size: 13px; }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <rect width="20" height="20" rx="4" fill="#1d4ed8"/>
+      <path d="M4 14 L4 8 L8 12 L12 6 L16 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    MH Sitemap
+    <span class="nav-brand-tag">Strategy Tool</span>
+  </a>
+  <nav class="nav-links">
+    <a href="exec-summary.html">Executive Summary</a>
+    <a href="index.html">Heat Map</a>
+    <a href="sitemap-visual.html">Site Architecture</a>
+    <a href="flows.html">User Flows</a>
+    <a href="homepage-brief.html">Homepage Brief</a>
+    <a href="wireframe.html">Wireframe</a>
+    <a href="seo.html">SEO Strategy</a>
+    <a href="seo-briefs.html" class="active">Content Briefs</a>
+  </nav>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Content Briefs</h1>
+  <p>SEO briefs for every page — primary keyword, title, meta, intent, key questions, and link structure. Click any page to view the full brief and copy a structured prompt for Claude.</p>
+</div>
+
+<!-- SHELL -->
+<div class="briefs-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="briefs-sidebar">
+    <div class="briefs-sidebar-top">
+      <input class="briefs-search" type="search" placeholder="Search pages or keywords…" id="briefs-search">
+
+      <div class="briefs-filter-group">
+        <div class="briefs-filter-label">Cluster</div>
+        <div class="briefs-filter-chips" id="cluster-chips">
+          <button class="briefs-chip active" data-cluster="all">All</button>
+          <button class="briefs-chip" data-cluster="employers">Employers</button>
+          <button class="briefs-chip" data-cluster="consultants">Consultants</button>
+          <button class="briefs-chip" data-cluster="clinical">Clinical</button>
+          <button class="briefs-chip" data-cluster="economic-value">Econ. Value</button>
+          <button class="briefs-chip" data-cluster="solutions">Solutions</button>
+          <button class="briefs-chip" data-cluster="other">Other</button>
+        </div>
+      </div>
+
+      <div class="briefs-filter-group" style="margin-top:8px">
+        <div class="briefs-filter-label">Status</div>
+        <div class="briefs-filter-chips" id="status-chips">
+          <button class="briefs-chip active" data-status="all">All</button>
+          <button class="briefs-chip" data-status="full">Full Brief</button>
+          <button class="briefs-chip" data-status="keyword">Keyword Only</button>
+          <button class="briefs-chip" data-status="missing">Missing</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="briefs-page-list" id="briefs-page-list">
+      <!-- populated by JS -->
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="briefs-main" id="briefs-main">
+    <!-- populated by JS -->
+  </main>
+
+</div>
+
+<script src="data/sitemap.js"></script>
+<script src="data/seo.js"></script>
+<script>
+
+// ── Data setup ─────────────────────────────────────────────────────────────────
+
+const seoPages = window.SEO_DATA.pages;
+
+// Build sitemap lookup: id → { name, url }
+const sitemapById = {};
+(window.SITEMAP.pages || []).forEach(p => { sitemapById[p.id] = p; });
+
+const CLUSTER_LABELS = {
+  'employers':      'Employers',
+  'consultants':    'Consultants',
+  'clinical':       'Clinical',
+  'economic-value': 'Economic Value',
+  'solutions':      'Solutions',
+};
+
+// Build merged page list
+const allPages = Object.keys(seoPages).map(id => {
+  const seo = seoPages[id];
+  const sm  = sitemapById[id] || {};
+  return {
+    id,
+    name:    sm.name || titleCase(id),
+    url:     sm.url  || null,
+    seo,
+    cluster: seo.seoCluster || null,
+    status:  getStatus(seo),
+  };
+}).sort((a, b) => a.name.localeCompare(b.name));
+
+function getStatus(seo) {
+  if (!seo.primaryKeyword) return 'missing';
+  if (seo.seoType === 'supporting') return 'keyword';
+  if (seo.keyQuestions && seo.keyQuestions.length > 0 &&
+      seo.titleTag && seo.metaDescription) return 'full';
+  return 'keyword';
+}
+
+function titleCase(str) {
+  return str.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+// ── State ──────────────────────────────────────────────────────────────────────
+
+let activeCluster = 'all';
+let activeStatus  = 'all';
+let searchQuery   = '';
+let selectedId    = null;
+
+// ── Sidebar rendering ──────────────────────────────────────────────────────────
+
+function filteredPages() {
+  return allPages.filter(p => {
+    if (activeCluster !== 'all') {
+      const c = p.cluster || 'other';
+      if (activeCluster === 'other') {
+        if (c && c !== 'other' && CLUSTER_LABELS[c]) return false;
+      } else {
+        if (c !== activeCluster) return false;
+      }
+    }
+    if (activeStatus !== 'all' && p.status !== activeStatus) return false;
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      const kw = (p.seo.primaryKeyword || '').toLowerCase();
+      if (!p.name.toLowerCase().includes(q) && !kw.includes(q) && !p.id.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderSidebar() {
+  const list = document.getElementById('briefs-page-list');
+  const pages = filteredPages();
+  if (pages.length === 0) {
+    list.innerHTML = '<div style="padding:20px 14px;font-size:12.5px;color:var(--text-faint)">No pages match your filters.</div>';
+    return;
+  }
+  list.innerHTML = pages.map(p => {
+    const badge = statusBadge(p.status);
+    const active = p.id === selectedId ? ' active' : '';
+    return `<div class="briefs-page-row${active}" data-id="${p.id}" onclick="selectPage('${p.id}')">
+      <span class="briefs-page-name">${p.name}</span>
+      ${badge}
+    </div>`;
+  }).join('');
+}
+
+function statusBadge(status) {
+  if (status === 'full')    return '<span class="status-badge full">Full</span>';
+  if (status === 'keyword') return '<span class="status-badge keyword">KW</span>';
+  if (status === 'missing') return '<span class="status-badge missing">—</span>';
+  return '<span class="status-badge support">—</span>';
+}
+
+function statusLabel(status) {
+  if (status === 'full')    return '<span class="status-badge full">Full Brief</span>';
+  if (status === 'keyword') return '<span class="status-badge keyword">Keyword Only</span>';
+  if (status === 'missing') return '<span class="status-badge missing">Missing</span>';
+  return '<span class="status-badge support">Supporting</span>';
+}
+
+// ── Summary table (default state) ─────────────────────────────────────────────
+
+function renderSummary() {
+  const pages = filteredPages();
+  const counts = { full: 0, keyword: 0, missing: 0 };
+  pages.forEach(p => {
+    if (counts[p.status] !== undefined) counts[p.status]++;
+  });
+
+  const rows = pages.map(p => {
+    const clusterName = p.cluster ? (CLUSTER_LABELS[p.cluster] || p.cluster) : '—';
+    const kw = p.seo.primaryKeyword || '<span class="no-data">—</span>';
+    const url = p.url ? `<span class="url-cell">${p.url}</span>` : '<span class="no-data">—</span>';
+    return `<tr>
+      <td><a class="page-link" onclick="selectPage('${p.id}')">${p.name}</a></td>
+      <td>${url}</td>
+      <td class="keyword-cell">${kw}</td>
+      <td class="cluster-cell">${clusterName}</td>
+      <td>${statusLabel(p.status)}</td>
+    </tr>`;
+  }).join('');
+
+  return `
+    <div class="summary-intro">
+      <h2>Keyword Coverage — All Pages</h2>
+      <p>Every page in the sitemap mapped to its primary keyword, cluster, and brief status. Click any page name to view the full brief. Use the sidebar to filter by cluster or brief completeness.</p>
+    </div>
+    <div class="summary-stats">
+      <div class="summary-stat">
+        <div class="summary-stat-num">${pages.length}</div>
+        <div class="summary-stat-label">Pages shown</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-num green">${counts.full}</div>
+        <div class="summary-stat-label">Full brief</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-num blue">${counts.keyword}</div>
+        <div class="summary-stat-label">Keyword only</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-num red">${counts.missing}</div>
+        <div class="summary-stat-label">Missing keyword</div>
+      </div>
+    </div>
+    <div class="summary-table-wrap">
+      <table class="summary-table">
+        <thead><tr>
+          <th>Page</th><th>URL</th><th>Primary Keyword</th><th>Cluster</th><th>Status</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+// ── Detail panel ───────────────────────────────────────────────────────────────
+
+function renderDetail(id) {
+  const page = allPages.find(p => p.id === id);
+  if (!page) return '';
+  const seo = page.seo;
+
+  const titleLen  = (seo.titleTag || '').length;
+  const metaLen   = (seo.metaDescription || '').length;
+  const titleOk   = titleLen > 0 && titleLen <= 60;
+  const metaOk    = metaLen  > 0 && metaLen  <= 155;
+
+  const kw  = seo.primaryKeyword  || null;
+  const h1  = seo.recommendedH1   || null;
+  const tt  = seo.titleTag        || null;
+  const md  = seo.metaDescription || null;
+  const si  = seo.searchIntent    || null;
+
+  const secondary = (seo.secondaryKeywords || []).map(k =>
+    `<span class="detail-secondary-kw">${k}</span>`).join('');
+
+  const questions = (seo.keyQuestions || []).map(q =>
+    `<li>${q}</li>`).join('');
+
+  const linksIn  = (seo.linksIn  || []).map(l => `<span class="detail-pill link-in">${l}</span>`).join('');
+  const linksOut = (seo.linksOut || []).map(l => `<span class="detail-pill link-out">${l}</span>`).join('');
+
+  const clusterName = page.cluster ? (CLUSTER_LABELS[page.cluster] || page.cluster) : '—';
+
+  const briefNotes = seo.brief && seo.brief.notes     ? seo.brief.notes     : null;
+  const briefGaps  = seo.brief && seo.brief.contentGaps ? seo.brief.contentGaps : null;
+
+  return `
+    <div class="detail-header">
+      <div class="detail-header-left">
+        <button class="detail-back-btn" onclick="clearSelection()">← Back to summary</button>
+        <div class="detail-page-name">${page.name}</div>
+        <div class="detail-url">${page.url || '—'}</div>
+        <div style="margin-top:6px;display:flex;gap:8px;align-items:center">
+          ${statusLabel(page.status)}
+          <span style="font-size:11.5px;color:var(--text-faint)">${clusterName} · ${titleCase(seo.seoType || '—')}</span>
+        </div>
+      </div>
+      <button class="copy-btn" id="copy-btn" onclick="copyBrief('${id}')">Copy for Claude</button>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-card" style="grid-column:1/-1">
+        <div class="detail-card-label">Primary Keyword</div>
+        <div class="detail-card-value keyword">${kw || '<span class="missing">No keyword assigned</span>'}</div>
+        ${secondary ? `<div class="detail-pills" style="margin-top:8px">${secondary}</div>` : ''}
+      </div>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-card">
+        <div class="detail-card-label">Title Tag</div>
+        <div class="detail-card-value mono">${tt || '<span class="missing">—</span>'}</div>
+        ${tt ? `<div class="char-count ${titleOk ? 'ok' : 'warn'}">${titleOk ? '✓' : '⚠'} ${titleLen}/60 chars</div>` : ''}
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-label">Meta Description</div>
+        <div class="detail-card-value">${md || '<span class="missing">—</span>'}</div>
+        ${md ? `<div class="char-count ${metaOk ? 'ok' : 'warn'}">${metaOk ? '✓' : '⚠'} ${metaLen}/155 chars</div>` : ''}
+      </div>
+    </div>
+
+    ${si ? `<div class="detail-grid full">
+      <div class="detail-card">
+        <div class="detail-card-label">Search Intent</div>
+        <div class="detail-card-value muted">${si}</div>
+      </div>
+    </div>` : ''}
+
+    ${h1 ? `<div class="detail-grid full">
+      <div class="detail-card">
+        <div class="detail-card-label">Recommended H1</div>
+        <div class="detail-card-value" style="font-weight:600">${h1}</div>
+      </div>
+    </div>` : ''}
+
+    ${questions ? `<div class="detail-grid full">
+      <div class="detail-card">
+        <div class="detail-card-label">Key Questions This Page Must Answer</div>
+        <ul class="detail-questions">${questions}</ul>
+      </div>
+    </div>` : ''}
+
+    ${(seo.linksIn && seo.linksIn.length) || (seo.linksOut && seo.linksOut.length) ? `
+    <div class="detail-grid">
+      ${seo.linksIn && seo.linksIn.length ? `<div class="detail-card">
+        <div class="detail-card-label">SEO Links In</div>
+        <div class="detail-pills">${linksIn}</div>
+      </div>` : '<div></div>'}
+      ${seo.linksOut && seo.linksOut.length ? `<div class="detail-card">
+        <div class="detail-card-label">SEO Links Out</div>
+        <div class="detail-pills">${linksOut}</div>
+      </div>` : '<div></div>'}
+    </div>` : ''}
+
+    ${(briefNotes || briefGaps) ? `<div class="detail-grid full"><details class="brief-details">
+      <summary>Content Brief Notes</summary>
+      <div class="brief-body">
+        ${briefNotes ? `<p><strong>Notes:</strong> ${briefNotes}</p>` : ''}
+        ${briefGaps  ? `<p><strong>Content Gaps:</strong> ${briefGaps}</p>` : ''}
+      </div>
+    </details></div>` : ''}
+  `;
+}
+
+// ── "Copy for Claude" ──────────────────────────────────────────────────────────
+
+function copyBrief(id) {
+  const page = allPages.find(p => p.id === id);
+  if (!page) return;
+  const seo = page.seo;
+  const clusterName = page.cluster ? (CLUSTER_LABELS[page.cluster] || page.cluster) : '—';
+
+  const titleLen = (seo.titleTag || '').length;
+  const metaLen  = (seo.metaDescription || '').length;
+
+  const secondary = (seo.secondaryKeywords || []).join(', ') || '—';
+  const questions = (seo.keyQuestions || []).map(q => `• ${q}`).join('\n') || '—';
+  const linksIn   = (seo.linksIn  || []).join(', ') || '—';
+  const linksOut  = (seo.linksOut || []).join(', ') || '—';
+  const briefNotes = (seo.brief && seo.brief.notes)       || '—';
+  const briefGaps  = (seo.brief && seo.brief.contentGaps) || '—';
+
+  const text = `=== CONTENT BRIEF: ${page.name} ===
+URL: ${page.url || '—'}
+CLUSTER: ${clusterName}
+PRIMARY KEYWORD: ${seo.primaryKeyword || '—'}
+SECONDARY KEYWORDS: ${secondary}
+
+SEARCH INTENT: ${seo.searchIntent || '—'}
+RECOMMENDED H1: ${seo.recommendedH1 || '—'}
+TITLE TAG (${titleLen}/60 chars): ${seo.titleTag || '—'}
+META DESCRIPTION (${metaLen}/155 chars): ${seo.metaDescription || '—'}
+
+KEY QUESTIONS THIS PAGE MUST ANSWER:
+${questions}
+
+SEO LINKS IN (pages that should link to this page):
+${linksIn}
+
+SEO LINKS OUT (pages this page should link to):
+${linksOut}
+
+BRIEF NOTES:
+${briefNotes}
+
+CONTENT GAPS:
+${briefGaps}
+---
+BRAND CONTEXT: Modern Health is an enterprise mental health benefits platform. Primary audience: HR and benefits leaders evaluating mental health vendors. Tone: clear, confident, evidence-based. Not clinical or jargon-heavy. Every page should route toward a demo request or deeper engagement.`;
+
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copy-btn');
+    if (btn) {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy for Claude';
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+  }).catch(() => {
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  });
+}
+
+// ── Navigation ─────────────────────────────────────────────────────────────────
+
+function selectPage(id) {
+  selectedId = id;
+  renderSidebar();
+  document.getElementById('briefs-main').innerHTML = renderDetail(id);
+}
+
+function clearSelection() {
+  selectedId = null;
+  renderSidebar();
+  document.getElementById('briefs-main').innerHTML = renderSummary();
+}
+
+// ── Filter wiring ──────────────────────────────────────────────────────────────
+
+document.getElementById('cluster-chips').addEventListener('click', e => {
+  const btn = e.target.closest('[data-cluster]');
+  if (!btn) return;
+  activeCluster = btn.dataset.cluster;
+  document.querySelectorAll('[data-cluster]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedId = null;
+  renderSidebar();
+  document.getElementById('briefs-main').innerHTML = renderSummary();
+});
+
+document.getElementById('status-chips').addEventListener('click', e => {
+  const btn = e.target.closest('[data-status]');
+  if (!btn) return;
+  activeStatus = btn.dataset.status;
+  document.querySelectorAll('[data-status]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedId = null;
+  renderSidebar();
+  document.getElementById('briefs-main').innerHTML = renderSummary();
+});
+
+document.getElementById('briefs-search').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  selectedId = null;
+  renderSidebar();
+  document.getElementById('briefs-main').innerHTML = renderSummary();
+});
+
+// ── Init ───────────────────────────────────────────────────────────────────────
+
+renderSidebar();
+document.getElementById('briefs-main').innerHTML = renderSummary();
+
+</script>
+</body>
+</html>
