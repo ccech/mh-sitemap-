@@ -135,12 +135,13 @@ window.SEO_DATA = {
       primaryKeyword: 'adaptive mental health benefits',
       clusterPageIds: [
         'burnout-workplace-stress',
-        'workforce-performance',
-        'employee-retention',
         'leadership-manager-support',
         'partnering-with-your-team',
-        'frontline-workforce',
+        'workforce-org-needs',
         'crisis-preparedness',
+        'frontline-workforce',
+        'first-responders',
+        'global-capabilities',
       ],
       blogAssetUrls: [
         '/post/what-is-employee-assistance-program',
@@ -158,11 +159,66 @@ window.SEO_DATA = {
       clusterPageIds: [
         'channel-partners',
         'health-plans',
-        'economic-roi',
         'case-studies',
       ],
       blogAssetUrls: [
         '/post/how-consultants-evaluate-mental-health-benefits',
+      ],
+    },
+    {
+      id: 'members',
+      name: 'Members',
+      pillarPageId: 'members',
+      primaryKeyword: 'employee mental health app',
+      clusterPageIds: [
+        'everyday-mental-health',
+        'financial-stress-wellbeing',
+        'preventative-early-support',
+        'life-stages',
+        'caregiving',
+        'parenting-dependents',
+        'serious-chronic-illness',
+        'grief',
+        'life-transitions',
+        'womens-health',
+        'neurodivergent-support',
+        'career-growth',
+        'leave-absence-accommodations',
+        'multicultural-workforce',
+        'population-specific-needs',
+      ],
+      blogAssetUrls: [],
+    },
+    {
+      id: 'adaptive-care',
+      name: 'Adaptive Care',
+      pillarPageId: 'adaptive-care',
+      primaryKeyword: 'adaptive mental health care',
+      clusterPageIds: [
+        'care-every-challenge',
+        'care-modalities',
+        'mh-circles',
+        'mh-pathways',
+        'provider-network',
+        'clinical-quality-standards',
+        'responsible-ai',
+      ],
+      blogAssetUrls: [],
+    },
+    {
+      id: 'economic-value',
+      name: 'Economic Value',
+      pillarPageId: 'economic-roi',
+      primaryKeyword: 'mental health ROI',
+      clusterPageIds: [
+        'workforce-performance',
+        'employee-retention',
+        'case-studies',
+      ],
+      blogAssetUrls: [
+        '/post/importance-of-employee-wellbeing',
+        '/post/benefits-of-employee-retention',
+        '/post/cost-of-poor-mental-health-in-workplace',
       ],
     },
     {
@@ -177,66 +233,10 @@ window.SEO_DATA = {
         'disordered-eating',
         'clinical-complex-needs',
         'crisis-acute-mental-health',
-        'adaptive-care',
       ],
       blogAssetUrls: [
         '/post/signs-an-employee-is-depressed',
       ],
-    },
-    {
-      id: 'economic-value',
-      name: 'Economic Value',
-      pillarPageId: 'economic-roi',
-      primaryKeyword: 'mental health ROI',
-      clusterPageIds: [
-        'case-studies',
-        'workforce-performance',
-        'employee-retention',
-      ],
-      blogAssetUrls: [
-        '/post/importance-of-employee-wellbeing',
-        '/post/benefits-of-employee-retention',
-        '/post/cost-of-poor-mental-health-in-workplace',
-      ],
-    },
-    {
-      id: 'solutions',
-      name: 'Solutions',
-      pillarPageId: null,
-      clusterType: 'standalone',
-      note: 'No pillar page — Solutions is a nav section with no URL. Each page under this section targets its own care modality or challenge keyword independently.',
-      primaryKeyword: null,
-      clusterPageIds: [
-        'care-modalities',
-        'mh-circles',
-        'mh-pathways',
-        'care-every-challenge',
-        'everyday-mental-health',
-        'burnout-workplace-stress',
-        'financial-stress-wellbeing',
-        'preventative-early-support',
-        'life-stages',
-        'caregiving',
-        'parenting-dependents',
-        'serious-chronic-illness',
-        'grief',
-        'life-transitions',
-        'womens-health',
-        'neurodivergent-support',
-        'workforce-org-needs',
-        'leadership-manager-support',
-        'career-growth',
-        'leave-absence-accommodations',
-        'multicultural-workforce',
-        'first-responders',
-        'population-specific-needs',
-        'depression-anxiety',
-        'substance-use',
-        'disordered-eating',
-        'clinical-complex-needs',
-        'crisis-acute-mental-health',
-      ],
-      blogAssetUrls: [],
     },
   ],
 
@@ -394,7 +394,7 @@ window.SEO_DATA = {
 
     'workforce-performance': {
       seoType: 'cluster',
-      seoCluster: 'employers',
+      seoCluster: 'economic-value',
       primaryKeyword: 'presenteeism',
       secondaryKeywords: ['mental health in the workplace', 'workplace wellbeing programs'],
       searchIntent: 'HR and finance leaders researching the productivity cost of poor mental health and looking for solutions to reduce presenteeism.',
@@ -415,7 +415,7 @@ window.SEO_DATA = {
 
     'employee-retention': {
       seoType: 'cluster',
-      seoCluster: 'employers',
+      seoCluster: 'economic-value',
       primaryKeyword: 'employee retention mental health',
       secondaryKeywords: ['mental health and benefits', 'team morale'],
       searchIntent: 'HR leaders looking to improve retention by strengthening mental health benefits and demonstrating care for employee wellbeing.',
@@ -480,7 +480,7 @@ window.SEO_DATA = {
 
     'care-modalities': {
       seoType: 'cluster',
-      seoCluster: 'solutions',
+      seoCluster: 'adaptive-care',
       primaryKeyword: 'mental health care modalities',
       secondaryKeywords: ['mental health solutions', 'mental health technology'],
       searchIntent: 'HR leaders researching the types of mental health support available through a modern benefits platform.',
@@ -500,8 +500,8 @@ window.SEO_DATA = {
     },
 
     'adaptive-care': {
-      seoType: 'cluster',
-      seoCluster: 'solutions',
+      seoType: 'pillar',
+      seoCluster: 'adaptive-care',
       primaryKeyword: 'adaptive mental health care',
       secondaryKeywords: ['mental health coaching', 'mental health solutions', 'personalized mental health care'],
       searchIntent: 'HR leaders and clinical evaluators researching how a platform matches each individual employee to the right level and type of mental health care — and adjusts over time.',
@@ -523,8 +523,8 @@ window.SEO_DATA = {
     },
 
     'everyday-mental-health': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'mental wellness',
       secondaryKeywords: ['mental health and benefits', 'mental health in the workplace'],
       searchIntent: 'Employees and HR leaders exploring everyday wellbeing tools and resources available through a mental health benefits platform.',
@@ -544,8 +544,8 @@ window.SEO_DATA = {
     },
 
     'financial-stress-wellbeing': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'financial stress in the workplace',
       secondaryKeywords: ['employee financial wellness', 'financial wellbeing benefits'],
       searchIntent: 'HR leaders looking to address financial stress as a driver of poor mental health and reduced workforce productivity.',
@@ -565,8 +565,8 @@ window.SEO_DATA = {
     },
 
     'preventative-early-support': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'mental health prevention programs',
       secondaryKeywords: ['early mental health intervention', 'preventative mental health care'],
       searchIntent: 'HR leaders who want to address mental health proactively before employees reach crisis — reducing claims, absenteeism, and long-term costs.',
@@ -586,8 +586,8 @@ window.SEO_DATA = {
     },
 
     'mh-circles': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'adaptive-care',
       primaryKeyword: 'group mental health support at work',
       secondaryKeywords: ['peer support mental health program', 'workplace mental health groups'],
       searchIntent: 'HR leaders exploring community and peer-based mental health support as part of a comprehensive benefits offering.',
@@ -607,8 +607,8 @@ window.SEO_DATA = {
     },
 
     'mh-pathways': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'adaptive-care',
       primaryKeyword: 'digital mental health coaching',
       secondaryKeywords: ['self-guided mental health program', 'mental health coaching app'],
       searchIntent: 'Employees and HR leaders exploring structured, self-paced digital mental health programs for workforce-wide access.',
@@ -628,8 +628,8 @@ window.SEO_DATA = {
     },
 
     'workforce-org-needs': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'employers',
       primaryKeyword: 'workplace mental health programs',
       secondaryKeywords: ['organizational mental health support', 'workplace wellbeing programs'],
       searchIntent: 'HR leaders and CHROs looking for mental health programs designed for organizational-level challenges — not just individual employee support.',
@@ -649,7 +649,7 @@ window.SEO_DATA = {
     },
 
     'substance-use': {
-      seoType: 'standalone',
+      seoType: 'cluster',
       seoCluster: 'clinical',
       primaryKeyword: 'substance use support at work',
       secondaryKeywords: ['employee substance use program', 'workplace addiction support'],
@@ -670,7 +670,7 @@ window.SEO_DATA = {
     },
 
     'disordered-eating': {
-      seoType: 'standalone',
+      seoType: 'cluster',
       seoCluster: 'clinical',
       primaryKeyword: 'disordered eating support at work',
       secondaryKeywords: ['eating disorder employee benefits', 'disordered eating mental health'],
@@ -691,7 +691,7 @@ window.SEO_DATA = {
     },
 
     'clinical-complex-needs': {
-      seoType: 'standalone',
+      seoType: 'cluster',
       seoCluster: 'clinical',
       primaryKeyword: 'complex clinical mental health support',
       secondaryKeywords: ['clinical mental health benefits', 'high-acuity mental health care'],
@@ -712,7 +712,7 @@ window.SEO_DATA = {
     },
 
     'crisis-acute-mental-health': {
-      seoType: 'standalone',
+      seoType: 'cluster',
       seoCluster: 'clinical',
       primaryKeyword: 'mental health crisis support at work',
       secondaryKeywords: ['acute mental health benefits', 'workplace mental health crisis'],
@@ -754,8 +754,8 @@ window.SEO_DATA = {
     },
 
     'frontline-workforce': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'employers',
       primaryKeyword: 'mental health support for frontline workers',
       secondaryKeywords: ['deskless workforce mental health', 'frontline employee mental health benefits'],
       searchIntent: 'HR leaders in retail, healthcare, logistics, and manufacturing looking for mental health benefits accessible to non-desk employees.',
@@ -775,8 +775,8 @@ window.SEO_DATA = {
     },
 
     'crisis-preparedness': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'employers',
       primaryKeyword: 'workplace crisis response',
       secondaryKeywords: ['employee crisis support program', 'organizational crisis mental health'],
       searchIntent: 'HR leaders building crisis preparedness plans who need a mental health partner with proven crisis response capabilities.',
@@ -913,8 +913,8 @@ window.SEO_DATA = {
     },
 
     'members': {
-      seoType: 'cluster',
-      seoCluster: 'employers',
+      seoType: 'pillar',
+      seoCluster: 'members',
       primaryKeyword: 'employee mental health app',
       secondaryKeywords: [
         'mental health app for employees',
@@ -974,7 +974,7 @@ window.SEO_DATA = {
 
     'provider-network': {
       seoType: 'cluster',
-      seoCluster: 'clinical',
+      seoCluster: 'adaptive-care',
       primaryKeyword: 'mental health provider network',
       secondaryKeywords: ['therapist network employee benefits', 'mental health clinician network', 'mental health provider access'],
       searchIntent: 'HR leaders and clinical evaluators assessing the size, quality, and diversity of Modern Health\'s provider network before purchase.',
@@ -997,7 +997,7 @@ window.SEO_DATA = {
 
     'clinical-quality-standards': {
       seoType: 'cluster',
-      seoCluster: 'clinical',
+      seoCluster: 'adaptive-care',
       primaryKeyword: 'clinical quality mental health care',
       secondaryKeywords: ['mental health care quality standards', 'evidence-based mental health benefits', 'clinical outcomes standards'],
       searchIntent: 'Clinical leads and procurement teams validating that Modern Health meets clinical quality standards and evidence-based practice requirements.',
@@ -1020,7 +1020,7 @@ window.SEO_DATA = {
 
     'responsible-ai': {
       seoType: 'cluster',
-      seoCluster: 'clinical',
+      seoCluster: 'adaptive-care',
       primaryKeyword: 'responsible AI in mental health',
       secondaryKeywords: ['AI mental health safety', 'ethical AI mental health', 'AI mental health benefits'],
       searchIntent: 'Clinical evaluators, legal, and procurement teams assessing how Modern Health uses AI responsibly and what safeguards are in place.',
@@ -1042,8 +1042,8 @@ window.SEO_DATA = {
     },
 
     'care-every-challenge': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'adaptive-care',
       primaryKeyword: 'workplace mental health challenges',
       secondaryKeywords: [
         'EAP alternative',
@@ -1071,8 +1071,8 @@ window.SEO_DATA = {
     },
 
     'life-stages': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'life stages mental health support',
       secondaryKeywords: ['mental health benefits for life events', 'employee life events support', 'life stage wellbeing benefits'],
       searchIntent: 'HR leaders looking for mental health benefits that support employees through major life milestones — not just workplace stress.',
@@ -1092,8 +1092,8 @@ window.SEO_DATA = {
     },
 
     'caregiving': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'caregiver support in the workplace',
       secondaryKeywords: ['employee caregiver mental health', 'caregiver burnout benefits', 'working caregiver support'],
       searchIntent: 'HR leaders building benefits that address caregiver burnout and the mental health toll of caring for aging parents or dependents while working.',
@@ -1113,8 +1113,8 @@ window.SEO_DATA = {
     },
 
     'parenting-dependents': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'parenting support employee benefits',
       secondaryKeywords: ['working parent mental health', 'new parent employee support', 'parenting mental health benefits'],
       searchIntent: 'HR leaders designing benefits that support working parents — from new parenthood stress to parenting children with mental health needs.',
@@ -1134,8 +1134,8 @@ window.SEO_DATA = {
     },
 
     'serious-chronic-illness': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'chronic illness mental health support',
       secondaryKeywords: ['mental health for chronic disease', 'employee chronic illness support', 'chronic condition wellbeing benefits'],
       searchIntent: 'HR leaders and benefits managers looking for mental health benefits that address the psychological burden of chronic illness in employees.',
@@ -1155,8 +1155,8 @@ window.SEO_DATA = {
     },
 
     'grief': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'grief support in the workplace',
       secondaryKeywords: ['employee bereavement support', 'workplace grief counseling', 'loss and bereavement mental health'],
       searchIntent: 'HR leaders looking for a mental health benefit that specifically addresses employee grief, loss, and bereavement — beyond standard EAP sessions.',
@@ -1176,8 +1176,8 @@ window.SEO_DATA = {
     },
 
     'life-transitions': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'life transition mental health support',
       secondaryKeywords: ['major life changes mental health', 'employee life transition support', 'change and adjustment mental health benefits'],
       searchIntent: 'HR leaders seeking mental health benefits that help employees navigate major personal or professional life transitions with resilience.',
@@ -1197,8 +1197,8 @@ window.SEO_DATA = {
     },
 
     'womens-health': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'womens mental health at work',
       secondaryKeywords: ['women employee mental health benefits', 'menopause mental health support', 'postpartum mental health benefits'],
       searchIntent: 'HR leaders building inclusive benefits that specifically address the mental health needs of women employees across life stages.',
@@ -1218,8 +1218,8 @@ window.SEO_DATA = {
     },
 
     'neurodivergent-support': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'neurodivergent employee support',
       secondaryKeywords: ['ADHD employee mental health', 'autism workplace support', 'neurodiversity mental health benefits'],
       searchIntent: 'HR leaders and DEI teams looking for mental health benefits that include specialized support for neurodivergent employees.',
@@ -1239,8 +1239,8 @@ window.SEO_DATA = {
     },
 
     'career-growth': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'career development mental health',
       secondaryKeywords: ['career coaching employee benefits', 'professional development wellbeing', 'career stress mental health support'],
       searchIntent: 'HR leaders and L&D teams looking for mental health benefits that support employees through career challenges, burnout, and professional growth.',
@@ -1260,8 +1260,8 @@ window.SEO_DATA = {
     },
 
     'leave-absence-accommodations': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'mental health leave of absence',
       secondaryKeywords: ['employee mental health leave', 'mental health accommodation at work', 'FMLA mental health support'],
       searchIntent: 'HR leaders and people ops teams looking for mental health benefits that support employees on leave and facilitate return-to-work processes.',
@@ -1281,8 +1281,8 @@ window.SEO_DATA = {
     },
 
     'multicultural-workforce': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'multicultural workforce mental health',
       secondaryKeywords: ['culturally competent mental health benefits', 'diverse workforce mental health', 'BIPOC employee mental health support'],
       searchIntent: 'HR leaders and DEI teams evaluating whether a mental health platform can serve a culturally diverse workforce with appropriate, stigma-informed care.',
@@ -1302,8 +1302,8 @@ window.SEO_DATA = {
     },
 
     'first-responders': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'employers',
       primaryKeyword: 'first responder mental health benefits',
       secondaryKeywords: ['police mental health benefits', 'firefighter mental health support', 'emergency services wellbeing'],
       searchIntent: 'HR leaders and benefits managers at public safety organizations, fire departments, and emergency services seeking specialized mental health support for first responders.',
@@ -1323,8 +1323,8 @@ window.SEO_DATA = {
     },
 
     'population-specific-needs': {
-      seoType: 'standalone',
-      seoCluster: 'solutions',
+      seoType: 'cluster',
+      seoCluster: 'members',
       primaryKeyword: 'population-specific mental health support',
       secondaryKeywords: ['targeted mental health benefits', 'employee population mental health', 'diverse mental health needs benefits'],
       searchIntent: 'HR leaders at large or complex organizations looking for a mental health platform that can be tailored to distinct employee populations.',
