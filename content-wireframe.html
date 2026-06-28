@@ -247,14 +247,39 @@
     return { name: p ? p.name : toId, url: p ? (p.url || '') : '' };
   }
 
-  // ── populate page picker ──
+  // ── populate page picker — grouped by nav section ──
+  const NAV_GROUPS = [
+    { label: 'Who We Serve',  ids: ['employers', 'consultants', 'members', 'health-plans', 'channel-partners', 'global-capabilities'] },
+    { label: 'Our Approach',  ids: ['adaptive-care', 'economic-roi', 'clinical-outcomes'] },
+  ];
+
   function initPicker() {
     const sel = document.getElementById('page-select');
-    const ids = Object.keys(window.PAGE_CONTENT || {});
-    sel.innerHTML = ids.map(id => {
-      const sm = sitemapById[id];
-      return `<option value="${id}">${esc(sm ? sm.name : id)}</option>`;
-    }).join('');
+    const drafted = new Set(Object.keys(window.PAGE_CONTENT || {}));
+    const grouped = new Set();
+    let html = '';
+
+    NAV_GROUPS.forEach(group => {
+      const opts = group.ids
+        .filter(id => drafted.has(id))
+        .map(id => {
+          grouped.add(id);
+          const sm = sitemapById[id];
+          return `<option value="${id}">${esc(sm ? sm.name : id)}</option>`;
+        }).join('');
+      if (opts) html += `<optgroup label="${esc(group.label)}">${opts}</optgroup>`;
+    });
+
+    // catch any drafted pages not yet assigned to a group
+    const ungrouped = [...drafted].filter(id => !grouped.has(id));
+    if (ungrouped.length) {
+      html += `<optgroup label="Other">${ungrouped.map(id => {
+        const sm = sitemapById[id];
+        return `<option value="${id}">${esc(sm ? sm.name : id)}</option>`;
+      }).join('')}</optgroup>`;
+    }
+
+    sel.innerHTML = html;
   }
 
   function setMode(m) {
