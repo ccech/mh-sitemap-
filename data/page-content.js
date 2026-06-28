@@ -462,6 +462,151 @@ window.PAGE_CONTENT = {
     ],
   },
 
+  'responsible-ai': {
+    pageId: 'responsible-ai',
+    status: 'draft',
+    blocks: [
+
+      {
+        type: 'hero',
+        eyebrow: 'Our Approach · Responsible AI',
+        h1: 'Responsible AI in Mental Health: Our Principles and Safeguards',
+        subhead: 'Modern Health uses AI to support care — not replace it. Every AI feature is optional, member-controlled, and subject to clinician review. Here\'s exactly how it works.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See our clinical quality framework', toId: 'clinical-quality-standards' },
+        annotation: 'H1 = brief recommendedH1. Per brief: "Lead with human oversight, not AI capability." The subhead is structured as three commitments (optional, member-controlled, clinician-reviewed) before promising full explanation — frames the page as a disclosure, not a pitch.',
+      },
+
+      {
+        type: 'stats',
+        items: [
+          { value: '0', label: 'clinical decisions made by AI without human review — AI flags, humans decide' },
+          { value: '100+', label: 'peer-reviewed publications informing the clinical evidence base Skye draws from' },
+          { value: 'Always optional', label: 'Skye AI can be declined at any point without affecting access to care' },
+          { value: 'SOC 2', label: 'Type II certified — AI operates within the same data security framework as the full platform' },
+        ],
+        annotation: 'Four procurement-facing facts: human oversight (0 autonomous decisions), evidence grounding (100+), member control (always optional), and compliance (SOC 2). "0 clinical decisions without human review" is the anchor stat — it names the most important safeguard in the most direct possible way.',
+      },
+
+      {
+        type: 'split',
+        eyebrow: 'What Skye Does',
+        heading: 'Four specific uses — each with a human check',
+        body: [
+          'Skye is Modern Health\'s AI assistant. It serves four defined functions, and only those four. No autonomous action — every output is a recommendation, a draft, or a flag that a human then reviews.',
+          'Adaptive care plan creation: when a member completes the intake assessment, Skye proposes a starting point — coaching, therapy, a Pathway, or a combination. The member decides. Care plan monitoring: Skye monitors engagement patterns and assessment scores over time, and surfaces updates to the care team when a member\'s needs appear to have shifted — no re-routing without clinician review. Content recommendations: between sessions, Skye surfaces relevant Pathways modules and self-guided exercises based on care history. Members can dismiss any suggestion. Provider documentation: Skye drafts session summaries and care notes for providers. Providers review, edit, and approve all AI-drafted content before it becomes part of the care record.',
+        ],
+        mediaSide: 'right',
+        media: { kind: 'diagram', label: 'Skye AI: four functions, each with human review gate' },
+        link: { label: 'The clinical quality standards AI operates within', toId: 'clinical-quality-standards' },
+        annotation: 'Closes the primary content gap from the brief: "specific AI use cases explained plainly." Four functions named with their human check — this is what enterprise procurement needs to evaluate. "Four defined functions, and only those four" limits scope explicitly, which is the trust-building move.',
+      },
+
+      {
+        type: 'feature-grid',
+        eyebrow: 'Four Governance Principles',
+        heading: 'The design constraints that govern every AI feature we build',
+        lead: 'Responsible AI isn\'t a policy document — it\'s a set of design constraints applied before a feature ships and audited after.',
+        features: [
+          { icon: '👤', title: 'Human in the loop', text: 'Every AI action that affects clinical care requires human review before it takes effect. AI flags and drafts; clinicians and members decide. No clinical recommendation, care escalation, or crisis response is automated.' },
+          { icon: '🔘', title: 'Member control', text: 'Skye is always optional. Members can decline any AI feature — care plan suggestions, content recommendations, matching support — at any point, without losing access to human care.' },
+          { icon: '🔒', title: 'Privacy-first training', text: 'Skye\'s models are trained exclusively on de-identified clinical outcomes data — never on identifiable member information. HIPAA compliance is maintained across all AI operations, with no identifiable data used in model training.' },
+          { icon: '⚖️', title: 'Bias mitigation', text: 'Matching factors are audited for demographic bias on an ongoing basis. The 46% BIPOC provider network and 80+ language coverage are the structural foundation — the matching algorithm can only recommend what the network contains, and the network is built to reflect real workforce diversity.' },
+        ],
+        link: { label: 'The provider network the matching AI draws from', toId: 'provider-network' },
+        annotation: 'Closes three content gaps from the brief: human oversight model (feature 1), data privacy in AI context (feature 3), bias audit process (feature 4). "Design constraints applied before a feature ships" is more credible than a policy statement — it says this is structural, not aspirational.',
+      },
+
+      {
+        type: 'comparison',
+        eyebrow: 'Governance Models',
+        heading: 'AI as decision-support — not decision-maker',
+        lead: 'Enterprise procurement increasingly distinguishes between platforms where AI decides and platforms where AI informs. Here\'s where Modern Health sits.',
+        columns: { left: 'AI-Decides Model', right: 'Modern Health\'s Model' },
+        rows: [
+          { dimension: 'Clinical decisions', eap: 'AI generates and implements recommendations autonomously', mh: 'AI generates; clinician reviews and approves before any action' },
+          { dimension: 'Crisis response', eap: 'Automated escalation — no human in the loop', mh: 'Care team notified; human follow-up required before any escalation' },
+          { dimension: 'Provider matching', eap: 'Algorithm selects provider', mh: 'Algorithm proposes; member chooses from presented options' },
+          { dimension: 'Model training data', eap: 'User data — often identifiable', mh: 'De-identified clinical outcomes only — no identifiable member data' },
+          { dimension: 'Member opt-out', eap: 'Opt-out available, but affects features', mh: 'Always optional — declining AI never affects access to human care' },
+        ],
+        link: { label: 'Clinical outcomes this governance model produces', toId: 'clinical-outcomes' },
+        annotation: 'Answers key question #2 (safeguards against AI making clinical decisions alone). Frames the AI governance spectrum without naming specific competitors. Each row is a procurement evaluation criterion — the five most common AI due diligence questions.',
+      },
+
+      {
+        type: 'callout',
+        eyebrow: 'The Non-Negotiable',
+        heading: 'Skye is always optional — and never the decision-maker',
+        bigStat: { value: '0', label: 'clinical decisions executed by AI without human review' },
+        body: 'No matter how confident Skye\'s recommendation is, the member decides whether to follow it, and the clinician decides whether to act on it. This isn\'t a feature toggle — it\'s a design constraint that governs every AI function Modern Health builds. If a function can\'t be built within that constraint, it doesn\'t ship.',
+        link: { label: 'The clinical standards this constraint enforces', toId: 'clinical-quality-standards' },
+        annotation: '"It doesn\'t ship" is a stronger commitment than "we have safeguards" — it names the consequence of violating the constraint, making the governance real. The 0 stat repeated here gives it visual weight as the most important claim on the page.',
+      },
+
+      {
+        type: 'social-proof',
+        heading: 'Enterprise clients who evaluated — and approved — the full governance model',
+        logos: ['Atlassian', 'CEBT', 'WTW', 'Rubrik'],
+        outcomes: [
+          { client: 'CEBT', stat: '37,000 members', detail: 'Full AI governance and data privacy review completed during procurement' },
+          { client: 'Atlassian', stat: '52% registration rate', detail: 'Global AI governance reviewed by international privacy and legal teams' },
+          { client: 'WTW', stat: 'Named advisory reference', detail: 'Joe Deba — recommending Modern Health to enterprise clients through rigorous AI evaluation' },
+        ],
+        testimonial: {
+          quote: 'PLACEHOLDER — No AI-governance-specific testimonial sourced. A quote from an enterprise HR leader, clinical officer, or legal/procurement reviewer about Modern Health\'s AI transparency during evaluation would be the strongest possible anchor for this page. Needed before final.',
+          attribution: 'AI governance / procurement testimonial — PLACEHOLDER',
+        },
+        link: { label: 'See all enterprise client outcomes', toId: 'case-studies' },
+        annotation: 'Trust signals framed around enterprise evaluation — the proof isn\'t "clients love Skye," it\'s "clients with rigorous procurement ran the AI governance gauntlet and approved." This is the right frame for a page read by legal/compliance teams.',
+      },
+
+      {
+        type: 'faq',
+        heading: 'What clinical evaluators and legal teams ask about AI',
+        items: [
+          {
+            q: 'How does Modern Health use AI in its platform?',
+            a: 'Modern Health\'s AI assistant, Skye, serves four defined functions: creating an adaptive care plan recommendation based on member intake data; surfacing personalized content and Pathways recommendations between sessions; drafting administrative documentation (session summaries, care notes) for provider review; and monitoring engagement patterns to flag members who may need additional support for care team follow-up. Every function is optional for members and subject to clinician review — Skye informs decisions, it does not make them.',
+          },
+          {
+            q: 'What safeguards prevent AI from making clinical decisions alone?',
+            a: 'Every AI action that affects clinical care requires human review before it takes effect. Skye drafts; clinicians approve. Skye flags; the care team follows up. Crisis escalation is never automated — a human care team member reviews all escalation signals before any outreach. This is a design constraint, not a policy: Modern Health does not ship AI features that execute clinical actions without a human review gate.',
+          },
+          {
+            q: 'How does Modern Health address bias in AI-driven matching?',
+            a: 'Matching factors are audited for demographic bias on an ongoing basis — including language, cultural background, specialty preference, and access patterns by population segment. The structural foundation for bias mitigation is the provider network itself: 46% of providers identify as BIPOC and the network supports 80+ languages, which means the matching algorithm has genuinely diverse options to recommend. AI-driven matching cannot overcome a homogeneous provider network — which is why the network diversity is built first.',
+          },
+          {
+            q: 'What is the role of human clinicians alongside AI?',
+            a: 'Human clinicians are the final authority on all clinical decisions. Skye operates in a support and documentation role — it prepares information for the clinician, not from the clinician. Providers use Skye primarily to reduce administrative burden (session documentation, care plan drafting), freeing more time for the clinical relationship itself. The 4.9/5 average provider rating reflects the outcome of that human relationship. AI handles paperwork; clinicians handle care.',
+          },
+        ],
+        annotation: 'All four SEO brief keyQuestions answered verbatim. Q3 explicitly connects bias mitigation to the provider network\'s structural diversity — per brief contentGap: "bias audit process." Q2 uses "design constraint, not a policy" to make the safeguard feel structural rather than aspirational.',
+      },
+
+      {
+        type: 'content-ctas',
+        heading: 'Go deeper on governance and evidence',
+        items: [
+          { kind: 'Research library', label: 'Our clinical evidence and governance standards', toId: 'clinical-research' },
+          { kind: 'Case studies', label: 'How enterprise clients evaluated and trust our platform', toId: 'case-studies' },
+        ],
+        annotation: 'PROCESS — two CTAs matching sitemap contentClusterCTAs for responsible-ai (clinical-research + case-studies). Framed for a procurement evaluator going deeper on evidence and peer references.',
+      },
+
+      {
+        type: 'cta',
+        heading: 'AI governance you can show to your legal team — and your clinical officers',
+        body: 'Request a walkthrough of Modern Health\'s AI governance model — the human oversight protocols, the privacy architecture, the bias audit process, and what SOC 2 Type II certification means for your data in practice.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See clinical outcomes under this model', toId: 'clinical-outcomes' },
+        annotation: 'Body frames the demo as a governance walkthrough — three specific review items (oversight protocols, privacy, bias audit) reduce the commitment threshold for a legal/compliance buyer. Secondary CTA routes to clinical-outcomes — shows what the governance model produces.',
+      },
+
+    ],
+  },
+
   'partnering-with-your-team': {
     pageId: 'partnering-with-your-team',
     status: 'draft',
