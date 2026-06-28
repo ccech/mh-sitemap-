@@ -462,6 +462,156 @@ window.PAGE_CONTENT = {
     ],
   },
 
+  'global-capabilities': {
+    pageId: 'global-capabilities',
+    status: 'draft',
+    blocks: [
+
+      {
+        type: 'hero',
+        eyebrow: 'Global Capabilities',
+        h1: 'Global Mental Health Benefits for a Multinational Workforce',
+        subhead: 'Modern Health reaches employees in 200+ countries and 80+ languages — one platform, one contract, care that\'s localized to culture and region, not just translated.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See global client outcomes', toId: 'case-studies' },
+        annotation: 'H1 = brief recommendedH1; primary keyword "global mental health solution" in subhead. Opens with the authority stat pair (200+ countries, 80+ languages) and the localization-not-translation differentiator — both called out in brief notes as essential above the fold.',
+      },
+
+      {
+        type: 'stats',
+        items: [
+          { value: '200+', label: 'countries with credentialed provider access' },
+          { value: '80+', label: 'languages — platform UI and session delivery' },
+          { value: '46%', label: 'of providers identify as BIPOC — cultural match, not just language' },
+          { value: '<1 day', label: 'to an employee\'s first session, anywhere in the world' },
+        ],
+        annotation: 'Four stats that define global quality: scale (200+), language depth (80+), cultural fit (46% BIPOC), and access speed (<1 day). Geography + quality — per brief, the cultural dimension is what differentiates from competitors listing countries on a spec sheet.',
+      },
+
+      {
+        type: 'split',
+        eyebrow: 'The Global EAP Problem',
+        heading: 'Global headcount, local gaps',
+        body: [
+          'Most mental health benefits are built for one region and bolted on everywhere else. A global EAP might list 200 countries in a spec sheet — but what it actually delivers across those markets varies widely: different providers, different quality standards, different member experiences, and often no native-language care at all.',
+          'Modern Health is built for the multinational workforce from the ground up. Every employee gets the same consistent experience — a vetted provider, care in their language, and support that understands their cultural context — whether they\'re in Austin, Amsterdam, or Accra.',
+        ],
+        mediaSide: 'right',
+        media: { kind: 'map', label: 'Coverage across 200+ countries' },
+        link: { label: 'How Modern Health serves global employers', toId: 'employers' },
+        annotation: 'Frames the global EAP problem without naming competitors. Establishes that "200 countries" is a hollow claim without cultural quality — sets up the comparison table and callout sections. Answers the implicit version of key question #5.',
+      },
+
+      {
+        type: 'comparison',
+        eyebrow: 'Global Deployment Reality',
+        heading: 'What "global" actually means',
+        lead: 'Global coverage is easy to claim. Here\'s what it looks like at the level of detail your employees actually experience.',
+        columns: { left: 'Typical Global EAP', right: 'Modern Health' },
+        rows: [
+          { dimension: 'Country coverage', eap: '100–200 countries (varies)', mh: '200+ countries, consistent quality standards' },
+          { dimension: 'Language support', eap: 'Major languages; local content rare', mh: '80+ languages — platform, sessions, and Pathways' },
+          { dimension: 'Provider quality', eap: 'Varies by region, no unified vetting', mh: 'Globally consistent credentialing; 4.9/5 member rating' },
+          { dimension: 'Cultural match', eap: 'English-first content, translated', mh: '46% BIPOC providers; language- and culture-matched care' },
+          { dimension: 'Contract structure', eap: 'Often separate regional contracts', mh: 'One global contract, one billing relationship' },
+        ],
+        link: { label: 'Clinical outcomes across populations', toId: 'clinical-outcomes' },
+        annotation: 'Answers key question #5 (how MH compares to global EAPs) without naming specific competitors. Frames evaluation on MH\'s differentiators. Adjacent to split (different pattern ✓).',
+      },
+
+      {
+        type: 'callout',
+        eyebrow: 'Beyond Translation',
+        heading: 'Global reach is a spec sheet. Cultural fit is what employees actually feel.',
+        bigStat: { value: '46%', label: 'of Modern Health providers identify as BIPOC' },
+        body: 'Language access matters — but matching an employee to a provider who understands their cultural background, family context, and lived experience is what determines whether they actually open up. Modern Health doesn\'t just translate care. It matches each employee to a provider whose background aligns with theirs — which is a significant reason why engagement reaches 20% even in markets where traditional benefits see near-zero utilization.',
+        link: { label: 'Supporting multicultural workforces', toId: 'multicultural-workforce' },
+        annotation: 'Answers key question #2 (how care is localized — cultural fit, not just translation). The 46% BIPOC stat is the quality dimension that geography alone can\'t prove. Natural extension to multicultural-workforce cluster page.',
+      },
+
+      {
+        type: 'feature-grid',
+        eyebrow: 'What Global Deployment Looks Like',
+        heading: 'One platform. Every market. No exceptions.',
+        lead: 'Modern Health is built to deploy at global enterprise scale — with the compliance architecture, localization depth, and implementation infrastructure to make it real in every market.',
+        features: [
+          { icon: '🔒', title: 'GDPR and regional compliance', text: 'Data residency options for EU markets. SOC 2 Type II certified. GDPR-aligned privacy architecture with country-specific data handling where required. Compliance documentation available for legal and procurement review.' },
+          { icon: '🌐', title: 'Localized, not just translated', text: 'Platform UI, 1:1 session delivery, and self-guided Pathways available in 80+ languages. Content is culturally adapted — not English content with a language toggle applied at the end.' },
+          { icon: '📝', title: 'One global contract', text: 'A single agreement covers all markets — no separate regional contracts, no billing fragmentation, no per-country setup fees. One vendor relationship, one renewal.' },
+          { icon: '🤝', title: 'Multi-region implementation support', text: 'Modern Health\'s partner team coordinates launches across markets — communications, manager training, and member activation adapted for each region.' },
+        ],
+        footnote: 'Compliance documentation and regional data handling details available on request.',
+        link: { label: 'How we partner on implementation', toId: 'partnering-with-your-team' },
+        annotation: 'Answers key questions #3 (GDPR), #4 (single contract), and the "localization model" content gap from the brief. The four features map directly to the contentGaps: compliance certs, localization model, single contract, implementation support.',
+      },
+
+      {
+        type: 'social-proof',
+        heading: 'Global enterprises. Real outcomes.',
+        logos: ['Atlassian', 'CEBT', 'Autodesk', 'Lyft'],
+        outcomes: [
+          { client: 'Atlassian', stat: '52% registration rate', detail: 'Global workforce, multi-region launch' },
+          { client: 'CEBT', stat: '89% improved well-being', detail: 'Across 37,000 members' },
+          { client: 'Autodesk', stat: '3x engagement', detail: 'vs. prior mental health solution' },
+        ],
+        testimonial: {
+          quote: 'PLACEHOLDER — No named global-deployment testimonial sourced yet. Alice Vichaita (Atlassian) is a named Modern Health reference and Atlassian is a global enterprise — real quote needed before final.',
+          attribution: 'Global enterprise testimonial — PLACEHOLDER',
+        },
+        link: { label: 'See all client outcomes', toId: 'case-studies' },
+        annotation: 'Social proof framed for a global deployment evaluator. Atlassian is the best anchor — a global tech company with a named MH reference (Alice Vichaita). Per brief, a non-US or specifically global-context case study would strengthen this section. Testimonial is PLACEHOLDER.',
+      },
+
+      {
+        type: 'faq',
+        heading: 'What global HR teams ask before deploying',
+        items: [
+          {
+            q: 'Which countries and languages does Modern Health support?',
+            a: 'Modern Health provides mental health benefits in 200+ countries through a credentialed provider network, with the platform and session delivery available in 80+ languages. Coverage includes major markets across North America, Europe, Asia-Pacific, Latin America, and the Middle East.',
+          },
+          {
+            q: 'How is care localized for different regions and cultures?',
+            a: 'Localization goes beyond translation. Provider matching considers language, cultural background, and lived experience — not just geography. 46% of Modern Health\'s provider network identifies as BIPOC. Self-guided Pathways are culturally adapted, not just translated. Care that an employee in São Paulo receives is built for their context, not repurposed from an English-language model.',
+          },
+          {
+            q: 'How does the platform handle privacy regulations like GDPR?',
+            a: 'Modern Health is SOC 2 Type II certified and operates a GDPR-aligned privacy architecture with data residency options for EU markets. Individual member data is never shared with employers — only anonymous, aggregate insights. Country-specific data handling is available where regional regulations require it. Compliance documentation is available for legal and procurement review.',
+          },
+          {
+            q: 'Can we deploy Modern Health globally from a single contract?',
+            a: 'Yes — one global agreement covers all markets. No separate regional contracts, no per-country setup, no billing fragmentation. Modern Health\'s implementation team coordinates multi-region rollouts, including communications and activation support adapted for each market.',
+          },
+          {
+            q: 'How does Modern Health compare to global EAP providers?',
+            a: 'Global EAPs typically list country coverage but deliver inconsistent quality across markets — different providers, different vetting standards, and English-first content in most regions. Modern Health applies the same credentialing standards globally, delivers care in 80+ languages with cultural matching, and achieves 20% workforce engagement in markets where traditional EAPs see near-zero utilization.',
+          },
+        ],
+        annotation: 'All five SEO brief keyQuestions answered verbatim. Addresses GDPR, single contract, and the global EAP comparison — the three highest-stakes content gaps for a multinational HR buyer.',
+      },
+
+      {
+        type: 'content-ctas',
+        heading: 'For your global evaluation',
+        items: [
+          { kind: 'Case studies', label: 'How global enterprises use Modern Health', toId: 'case-studies' },
+          { kind: 'Research library', label: 'Global outcomes data — 100+ published studies', toId: 'clinical-research' },
+        ],
+        annotation: 'PROCESS — two supporting-content CTAs matching sitemap contentClusterCTAs for global-capabilities (case-studies + clinical-research). Framed for a global HR buyer in evaluation mode.',
+      },
+
+      {
+        type: 'cta',
+        heading: 'One platform for your entire global workforce',
+        body: 'Request a demo to walk through global deployment — coverage, compliance, localization, and implementation support for your specific markets.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See the Adaptive Care Model', toId: 'adaptive-care' },
+        annotation: 'Final conversion. Body copy names the four evaluation dimensions (coverage, compliance, localization, implementation) as an implicit checklist for the buyer. Secondary CTA routes to the clinical/model depth for evaluators still assessing.',
+      },
+
+    ],
+  },
+
   'health-plans': {
     pageId: 'health-plans',
     status: 'draft',
