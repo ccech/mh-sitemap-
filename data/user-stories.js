@@ -32,7 +32,7 @@ window.USER_STORIES = {
       entryChannel: "CHRO direction / Direct navigation",
       priority: 1,
       successMetric: "Finds implementation support details and a jargon-free care modality overview within 2 clicks of Our Approach",
-      pageIds: ["home", "our-approach", "partnering-with-your-team", "solutions", "care-modalities"],
+      pageIds: ["home", "our-approach", "partnering-with-your-team", "care-modalities"],
       contentGapNote: null
     },
     {
@@ -132,7 +132,7 @@ window.USER_STORIES = {
       entryChannel: "HR team direction / Annual benefits audit",
       priority: 1,
       successMetric: "Finds a clear breakdown of care modalities and challenge categories mappable against current vendors within 2 clicks of Solutions",
-      pageIds: ["home", "solutions", "care-modalities", "care-every-challenge"],
+      pageIds: ["home", "our-approach", "care-modalities", "care-every-challenge"],
       contentGapNote: null
     },
     {
@@ -143,7 +143,7 @@ window.USER_STORIES = {
       entryChannel: "Annual renewal planning / Benefits audit",
       priority: 1,
       successMetric: "Finds EAP differentiation language and care modality content adaptable into employee-facing communications within 2 clicks of Our Approach",
-      pageIds: ["home", "our-approach", "adaptive-care", "solutions", "care-modalities", "partnering-with-your-team"],
+      pageIds: ["home", "our-approach", "adaptive-care", "care-modalities", "partnering-with-your-team"],
       contentGapNote: null
     },
     {
@@ -154,7 +154,7 @@ window.USER_STORIES = {
       entryChannel: "Annual renewal planning / Benefits audit",
       priority: 2,
       successMetric: "Finds global capabilities scope and population-specific care categories within 2 clicks — confirms coverage for relevant workforce segments",
-      pageIds: ["home", "solutions", "care-every-challenge", "population-specific-needs", "our-approach", "global-capabilities"],
+      pageIds: ["home", "our-approach", "care-every-challenge", "population-specific-needs", "who-we-serve", "global-capabilities"],
       contentGapNote: null
     },
 
@@ -291,7 +291,7 @@ window.USER_STORIES = {
       entryChannel: "Search / Employer referral",
       priority: 1,
       successMetric: "Finds their specific challenge category represented in plain language and feels confident Modern Health addresses their situation",
-      pageIds: ["home", "solutions", "care-every-challenge"],
+      pageIds: ["home", "our-approach", "care-every-challenge"],
       contentGapNote: null
     },
     {

@@ -1,6 +1,6 @@
 {
   "status": "generated",
-  "generated": "2026-05-08T17:08:27.974Z",
+  "generated": "2026-06-27T21:15:15.115Z",
   "weights": {
     "storyCoverage": 0.3,
     "conversionProximity": 0.25,
@@ -140,7 +140,7 @@
     {
       "id": "care-modalities",
       "name": "Care Modalities",
-      "url": "/solutions/care-modalities",
+      "url": "/our-approach/care-modalities",
       "navTier": 2,
       "heatScore": 8,
       "heatLevel": "high",
@@ -194,7 +194,7 @@
         "storyCoverage": 10,
         "conversionProximity": 10,
         "entryFrequency": 4,
-        "dropOffRisk": 3.6,
+        "dropOffRisk": 3.2,
         "audienceOverlap": 10
       },
       "contentGaps": []
@@ -287,7 +287,7 @@
     {
       "id": "care-every-challenge",
       "name": "Care for Every Challenge",
-      "url": "/solutions/care-for-every-challenge",
+      "url": "/our-approach/care-for-every-challenge",
       "navTier": 2,
       "heatScore": 7.5,
       "heatLevel": "high",
@@ -308,7 +308,7 @@
     {
       "id": "global-capabilities",
       "name": "Global Capabilities",
-      "url": "/our-approach/global-capabilities",
+      "url": "/who-we-serve/global-capabilities",
       "navTier": 2,
       "heatScore": 7.4,
       "heatLevel": "high",
@@ -473,7 +473,7 @@
     {
       "id": "population-specific-needs",
       "name": "Population-Specific Needs",
-      "url": "/solutions/care-for-every-challenge/population-specific-needs",
+      "url": "/our-approach/care-for-every-challenge/population-specific-needs",
       "navTier": 3,
       "heatScore": 3.7,
       "heatLevel": "low",
@@ -583,7 +583,7 @@
     {
       "id": "mh-circles",
       "name": "Modern Health Circles",
-      "url": "/solutions/care-modalities/circles",
+      "url": "/our-approach/care-modalities/circles",
       "navTier": 3,
       "heatScore": 0.4,
       "heatLevel": "low",
@@ -601,7 +601,7 @@
     {
       "id": "mh-pathways",
       "name": "Modern Health Pathways",
-      "url": "/solutions/care-modalities/pathways",
+      "url": "/our-approach/care-modalities/pathways",
       "navTier": 3,
       "heatScore": 0.4,
       "heatLevel": "low",
@@ -619,7 +619,7 @@
     {
       "id": "everyday-mental-health",
       "name": "Everyday Mental Health & Well-being",
-      "url": "/solutions/care-for-every-challenge/everyday-mental-health",
+      "url": "/our-approach/care-for-every-challenge/everyday-mental-health",
       "navTier": 3,
       "heatScore": 0.4,
       "heatLevel": "low",
@@ -637,7 +637,7 @@
     {
       "id": "life-stages",
       "name": "Life Stages & Personal Challenges",
-      "url": "/solutions/care-for-every-challenge/life-stages",
+      "url": "/our-approach/care-for-every-challenge/life-stages",
       "navTier": 3,
       "heatScore": 0.4,
       "heatLevel": "low",
@@ -655,7 +655,7 @@
     {
       "id": "workforce-org-needs",
       "name": "Workforce & Organizational Needs",
-      "url": "/solutions/care-for-every-challenge/workforce-organizational",
+      "url": "/our-approach/care-for-every-challenge/workforce-organizational",
       "navTier": 3,
       "heatScore": 0.4,
       "heatLevel": "low",
@@ -673,7 +673,7 @@
     {
       "id": "clinical-complex-needs",
       "name": "Clinical & Complex Needs",
-      "url": "/solutions/care-for-every-challenge/clinical-complex",
+      "url": "/our-approach/care-for-every-challenge/clinical-complex",
       "navTier": 3,
       "heatScore": 0.4,
       "heatLevel": "low",
@@ -799,7 +799,7 @@
     {
       "id": "burnout-workplace-stress",
       "name": "Burnout & Workplace Stress",
-      "url": "/solutions/care-for-every-challenge/burnout-workplace-stress",
+      "url": "/our-approach/care-for-every-challenge/burnout-workplace-stress",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -817,7 +817,7 @@
     {
       "id": "financial-stress-wellbeing",
       "name": "Financial Stress & Well-Being",
-      "url": "/solutions/care-for-every-challenge/financial-stress-wellbeing",
+      "url": "/our-approach/care-for-every-challenge/financial-stress-wellbeing",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -835,7 +835,7 @@
     {
       "id": "preventative-early-support",
       "name": "Preventative & Early Support",
-      "url": "/solutions/care-for-every-challenge/preventative-early-support",
+      "url": "/our-approach/care-for-every-challenge/preventative-early-support",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -853,7 +853,7 @@
     {
       "id": "caregiving",
       "name": "Caregiving",
-      "url": "/solutions/care-for-every-challenge/caregiving",
+      "url": "/our-approach/care-for-every-challenge/caregiving",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -871,7 +871,7 @@
     {
       "id": "parenting-dependents",
       "name": "Parenting & Dependents",
-      "url": "/solutions/care-for-every-challenge/parenting-dependents",
+      "url": "/our-approach/care-for-every-challenge/parenting-dependents",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -889,7 +889,7 @@
     {
       "id": "serious-chronic-illness",
       "name": "Serious or Chronic Illness",
-      "url": "/solutions/care-for-every-challenge/serious-chronic-illness",
+      "url": "/our-approach/care-for-every-challenge/serious-chronic-illness",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -907,7 +907,7 @@
     {
       "id": "grief",
       "name": "Grief",
-      "url": "/solutions/care-for-every-challenge/grief",
+      "url": "/our-approach/care-for-every-challenge/grief",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -925,7 +925,7 @@
     {
       "id": "life-transitions",
       "name": "Life Transitions & Major Changes",
-      "url": "/solutions/care-for-every-challenge/life-transitions",
+      "url": "/our-approach/care-for-every-challenge/life-transitions",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -943,7 +943,7 @@
     {
       "id": "womens-health",
       "name": "Women's Health",
-      "url": "/solutions/care-for-every-challenge/womens-health",
+      "url": "/our-approach/care-for-every-challenge/womens-health",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -961,7 +961,7 @@
     {
       "id": "neurodivergent-support",
       "name": "Neurodivergent Employee Support",
-      "url": "/solutions/care-for-every-challenge/neurodivergent-support",
+      "url": "/our-approach/care-for-every-challenge/neurodivergent-support",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -979,7 +979,7 @@
     {
       "id": "leadership-manager-support",
       "name": "Leadership & Manager Support",
-      "url": "/solutions/care-for-every-challenge/leadership-manager-support",
+      "url": "/our-approach/care-for-every-challenge/leadership-manager-support",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -997,7 +997,7 @@
     {
       "id": "workforce-performance",
       "name": "Workforce Performance & Presenteeism",
-      "url": "/solutions/care-for-every-challenge/workforce-performance-presenteeism",
+      "url": "/our-approach/care-for-every-challenge/workforce-performance-presenteeism",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1015,7 +1015,7 @@
     {
       "id": "employee-retention",
       "name": "Employee Retention & Engagement",
-      "url": "/solutions/care-for-every-challenge/employee-retention-engagement",
+      "url": "/our-approach/care-for-every-challenge/employee-retention-engagement",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1033,7 +1033,7 @@
     {
       "id": "crisis-preparedness",
       "name": "Crisis Preparedness & Response",
-      "url": "/solutions/care-for-every-challenge/crisis-preparedness-response",
+      "url": "/our-approach/care-for-every-challenge/crisis-preparedness-response",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1051,7 +1051,7 @@
     {
       "id": "career-growth",
       "name": "Career Growth & Development",
-      "url": "/solutions/care-for-every-challenge/career-growth-development",
+      "url": "/our-approach/care-for-every-challenge/career-growth-development",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1069,7 +1069,7 @@
     {
       "id": "leave-absence-accommodations",
       "name": "Leave of Absence & Accommodations",
-      "url": "/solutions/care-for-every-challenge/leave-absence-accommodations",
+      "url": "/our-approach/care-for-every-challenge/leave-absence-accommodations",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1087,7 +1087,7 @@
     {
       "id": "frontline-workforce",
       "name": "Frontline & Deskless Workforce Support",
-      "url": "/solutions/care-for-every-challenge/frontline-deskless-workforce",
+      "url": "/our-approach/care-for-every-challenge/frontline-deskless-workforce",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1105,7 +1105,7 @@
     {
       "id": "multicultural-workforce",
       "name": "Multicultural Workforce Support",
-      "url": "/solutions/care-for-every-challenge/multicultural-workforce",
+      "url": "/our-approach/care-for-every-challenge/multicultural-workforce",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1123,7 +1123,7 @@
     {
       "id": "first-responders",
       "name": "First Responders & Healthcare Workforce",
-      "url": "/solutions/care-for-every-challenge/first-responders-healthcare-workforce",
+      "url": "/our-approach/care-for-every-challenge/first-responders-healthcare-workforce",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1141,7 +1141,7 @@
     {
       "id": "substance-use",
       "name": "Substance Use",
-      "url": "/solutions/care-for-every-challenge/substance-use",
+      "url": "/our-approach/care-for-every-challenge/substance-use",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1159,7 +1159,7 @@
     {
       "id": "disordered-eating",
       "name": "Disordered Eating",
-      "url": "/solutions/care-for-every-challenge/disordered-eating",
+      "url": "/our-approach/care-for-every-challenge/disordered-eating",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1177,7 +1177,7 @@
     {
       "id": "depression-anxiety",
       "name": "Depression & Anxiety Support",
-      "url": "/solutions/care-for-every-challenge/depression-anxiety",
+      "url": "/our-approach/care-for-every-challenge/depression-anxiety",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",
@@ -1195,7 +1195,7 @@
     {
       "id": "crisis-acute-mental-health",
       "name": "Crisis & Acute Mental Health Support",
-      "url": "/solutions/care-for-every-challenge/crisis-acute-mental-health",
+      "url": "/our-approach/care-for-every-challenge/crisis-acute-mental-health",
       "navTier": 4,
       "heatScore": 0.2,
       "heatLevel": "low",

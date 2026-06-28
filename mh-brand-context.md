@@ -711,3 +711,37 @@ Burned-out employees take 63% more sick days and are 3x likelier to job-hunt. Fi
 **49. How C-Level Leaders Are Tackling Rising Health Care Costs by Expanding Mental Health Support** — CFO and CEO perspective on mental health as cost containment; expanding access reduces downstream medical spend.
 
 **50. Trends to Shape Your 2025 Mental Health Strategy** — Annual trends piece: AI adoption, manager burnout, Gen Z workforce needs, global benefits equity, and financial wellness as adjacent mental health driver.
+
+---
+
+## Competitive Landscape
+
+The two primary enterprise competitors are **Spring Health** and **Lyra Health**. Both are well-funded, sell to the same HR/benefits buyer, and lead with clinical recovery speed and ROI. Sourced from their public marketing sites (2026) — public claims, not independently verified.
+
+### Spring Health
+- **Positioning / tagline:** "Life gets overwhelming. Support should be simple." Frames itself around *ease, speed, and affordability* — "mental health care that meets you in the middle of the mess."
+- **Care model:** "Precision Mental Healthcare." Fast, AI-driven matching ("provider appointments in less than a day"), a "Continuous Care" model for ongoing support, a member-facing AI called **Guide**, and a proprietary mental-health EHR for providers called **Compass**.
+- **Target market:** Enterprise employers (HR + CFO), plus health plans, consultants/brokers, channel partners, and a direct-to-consumer path. Claims "over 20 million covered lives globally."
+- **Headline proof claims:** "<1 day to first appointment," "92% improve clinically," "95% continue with their recommended provider," "15x increase in utilization over traditional EAP" (Hearst case study), Validation Institute 2025 ROI study, CARF accreditation, JAMA Network Open citations. Named clients: Target, Coca-Cola, Microsoft, Pfizer, BlackRock.
+- **Commercial model:** No public pricing; enterprise per-covered-life SaaS; leans on "guaranteed ROI / pays for itself."
+- **Emphasis / edges:** Speed to first appointment; a tightly integrated tech ecosystem (Guide + Compass); explicitly ties clinical improvement to lower medical claims cost; "industry's most expansive data."
+
+### Lyra Health
+- **Positioning / tagline:** "Mental health care for all of life's moments." Promise = *fast access to world-class care* — "Therapy, coaching, psychiatry, and specialty care for all people, everywhere."
+- **Care model:** Human-first, AI-enhanced **blended care** (therapy, coaching, psychiatry, family/medication). 30K+ providers, 100K+ hours of annual clinical oversight, in-house **Centers of Excellence** for pediatric mental health and neurodiversity (so specialty care isn't referred out). "Clinically-rigorous AI" for triage/matching.
+- **Target market:** Enterprise employers across industries; also individuals, health plans, health systems, consultants, providers. Global — "20 million people globally."
+- **Headline proof claims:** "2x faster recoveries vs. traditional care," "9 out of 10 Lyra members get better," "81% maintained gains at 12-month follow-up," "≈4 hours of productivity regained per week → $4,800 annual savings per employee," "26% reduction in overall health care claims costs," peer-reviewed research, "97% of members stick with their first provider." Named clients: Salesforce, Lululemon, Morgan Stanley, Genentech, Starbucks, School District of Philadelphia.
+- **Commercial model:** Customized/tailored pricing, no public rates; contact-to-demo enterprise sales; positions above traditional EAP cost.
+- **Emphasis / edges:** Premium, outcomes-driven; in-house specialty care (pediatric, neurodiversity); clinical rigor + vetted AI; provider quality and oversight at scale.
+
+### How Modern Health differentiates
+Both rivals lead with **clinical recovery speed** ("get better, faster"). Modern Health's defensible angles:
+
+1. **The Adaptive Care Model is the category frame, not a feature.** Spring has "Continuous Care," Lyra has "blended care" — but neither names a routing model that matches each person to the right modality (coaching, therapy, **Circles** peer groups, **Pathways** self-guided) *and re-evaluates as needs change, without re-enrollment.* MH owns the "adaptive" vocabulary.
+2. **Proactive, whole-population — not just recovery for the acutely unwell.** Competitors anchor on "9 out of 10 get better" / "92% improve clinically" (i.e., people already in treatment). MH's wedge: **20% engagement vs. 2–4% for EAPs**, and the actuarial finding that **60% of ROI savings come from moderate-need employees caught early** — value across the whole workforce and the whole journey, not only high-acuity cases. This is also the basis of the Members "culture of wellbeing" positioning.
+3. **Equity is a named, quantified strength.** **46% BIPOC providers** and language-matched care — neither competitor leads with a comparable equity stat. Strong for DEI-conscious and multinational buyers.
+4. **Global breadth stated concretely.** **200+ countries, 80+ languages.** Both rivals say "global / 20M people"; MH's country/language counts are more specific and larger-sounding.
+5. **A distinct, defensible ROI number.** **$2.39 per $1 invested, actuarially validated** — comparable in spirit to Lyra's $4,800/employee and Spring's Validation-Institute ROI, but MH's preventative-population framing (savings from moderate-need, caught early) is a different and credible story.
+6. **Community and self-guided modalities as first-class care.** Circles (facilitated peer groups) and Pathways (structured self-guided programs) are core to MH's spectrum and engagement story; competitors emphasize 1:1 clinical care. Useful against the "therapy alone won't drive uptake" argument.
+
+**Copy implications:** when differentiating, contrast against the *category* ("not another EAP") first, then against the rivals' implicit frame — speed-to-therapy and recovery-for-the-sick — with MH's adaptive, preventative, whole-population, equitable, global story. Avoid naming competitors directly in customer-facing copy; compete on frame, not call-outs.

@@ -1,6 +1,6 @@
 {
   "status": "generated",
-  "generated": "2026-05-08T17:08:27.930Z",
+  "generated": "2026-06-27T21:15:14.883Z",
   "flows": [
     {
       "personaId": "hr-benefits-manager",
@@ -65,21 +65,16 @@
               "url": "/our-approach/partnering-with-your-team"
             },
             {
-              "id": "solutions",
-              "name": "Solutions",
-              "url": null
-            },
-            {
               "id": "care-modalities",
               "name": "Care Modalities",
-              "url": "/solutions/care-modalities"
+              "url": "/our-approach/care-modalities"
             }
           ],
-          "clickDepth": 4,
+          "clickDepth": 3,
           "conversionPage": {
             "id": "care-modalities",
             "name": "Care Modalities",
-            "url": "/solutions/care-modalities"
+            "url": "/our-approach/care-modalities"
           }
         },
         {
@@ -351,26 +346,26 @@
               "url": "/"
             },
             {
-              "id": "solutions",
-              "name": "Solutions",
+              "id": "our-approach",
+              "name": "Our Approach",
               "url": null
             },
             {
               "id": "care-modalities",
               "name": "Care Modalities",
-              "url": "/solutions/care-modalities"
+              "url": "/our-approach/care-modalities"
             },
             {
               "id": "care-every-challenge",
               "name": "Care for Every Challenge",
-              "url": "/solutions/care-for-every-challenge"
+              "url": "/our-approach/care-for-every-challenge"
             }
           ],
           "clickDepth": 3,
           "conversionPage": {
             "id": "care-every-challenge",
             "name": "Care for Every Challenge",
-            "url": "/solutions/care-for-every-challenge"
+            "url": "/our-approach/care-for-every-challenge"
           }
         },
         {
@@ -396,14 +391,9 @@
               "url": "/our-approach/adaptive-care"
             },
             {
-              "id": "solutions",
-              "name": "Solutions",
-              "url": null
-            },
-            {
               "id": "care-modalities",
               "name": "Care Modalities",
-              "url": "/solutions/care-modalities"
+              "url": "/our-approach/care-modalities"
             },
             {
               "id": "partnering-with-your-team",
@@ -411,7 +401,7 @@
               "url": "/our-approach/partnering-with-your-team"
             }
           ],
-          "clickDepth": 5,
+          "clickDepth": 4,
           "conversionPage": {
             "id": "partnering-with-your-team",
             "name": "Partnering with Your Team",
@@ -431,36 +421,36 @@
               "url": "/"
             },
             {
-              "id": "solutions",
-              "name": "Solutions",
-              "url": null
-            },
-            {
-              "id": "care-every-challenge",
-              "name": "Care for Every Challenge",
-              "url": "/solutions/care-for-every-challenge"
-            },
-            {
-              "id": "population-specific-needs",
-              "name": "Population-Specific Needs",
-              "url": "/solutions/care-for-every-challenge/population-specific-needs"
-            },
-            {
               "id": "our-approach",
               "name": "Our Approach",
               "url": null
             },
             {
+              "id": "care-every-challenge",
+              "name": "Care for Every Challenge",
+              "url": "/our-approach/care-for-every-challenge"
+            },
+            {
+              "id": "population-specific-needs",
+              "name": "Population-Specific Needs",
+              "url": "/our-approach/care-for-every-challenge/population-specific-needs"
+            },
+            {
+              "id": "who-we-serve",
+              "name": "Who We Serve",
+              "url": null
+            },
+            {
               "id": "global-capabilities",
               "name": "Global Capabilities",
-              "url": "/our-approach/global-capabilities"
+              "url": "/who-we-serve/global-capabilities"
             }
           ],
           "clickDepth": 5,
           "conversionPage": {
             "id": "global-capabilities",
             "name": "Global Capabilities",
-            "url": "/our-approach/global-capabilities"
+            "url": "/who-we-serve/global-capabilities"
           }
         }
       ]
@@ -764,14 +754,14 @@
             {
               "id": "global-capabilities",
               "name": "Global Capabilities",
-              "url": "/our-approach/global-capabilities"
+              "url": "/who-we-serve/global-capabilities"
             }
           ],
           "clickDepth": 4,
           "conversionPage": {
             "id": "global-capabilities",
             "name": "Global Capabilities",
-            "url": "/our-approach/global-capabilities"
+            "url": "/who-we-serve/global-capabilities"
           }
         }
       ]
@@ -824,21 +814,21 @@
               "url": "/"
             },
             {
-              "id": "solutions",
-              "name": "Solutions",
+              "id": "our-approach",
+              "name": "Our Approach",
               "url": null
             },
             {
               "id": "care-every-challenge",
               "name": "Care for Every Challenge",
-              "url": "/solutions/care-for-every-challenge"
+              "url": "/our-approach/care-for-every-challenge"
             }
           ],
           "clickDepth": 2,
           "conversionPage": {
             "id": "care-every-challenge",
             "name": "Care for Every Challenge",
-            "url": "/solutions/care-for-every-challenge"
+            "url": "/our-approach/care-for-every-challenge"
           }
         },
         {
@@ -1025,14 +1015,14 @@
             {
               "id": "global-capabilities",
               "name": "Global Capabilities",
-              "url": "/our-approach/global-capabilities"
+              "url": "/who-we-serve/global-capabilities"
             }
           ],
           "clickDepth": 4,
           "conversionPage": {
             "id": "global-capabilities",
             "name": "Global Capabilities",
-            "url": "/our-approach/global-capabilities"
+            "url": "/who-we-serve/global-capabilities"
           }
         },
         {

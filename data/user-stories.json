@@ -47,7 +47,6 @@
         "home",
         "our-approach",
         "partnering-with-your-team",
-        "solutions",
         "care-modalities"
       ],
       "contentGapNote": null
@@ -172,7 +171,7 @@
       "successMetric": "Finds a clear breakdown of care modalities and challenge categories mappable against current vendors within 2 clicks of Solutions",
       "pageIds": [
         "home",
-        "solutions",
+        "our-approach",
         "care-modalities",
         "care-every-challenge"
       ],
@@ -190,7 +189,6 @@
         "home",
         "our-approach",
         "adaptive-care",
-        "solutions",
         "care-modalities",
         "partnering-with-your-team"
       ],
@@ -206,10 +204,10 @@
       "successMetric": "Finds global capabilities scope and population-specific care categories within 2 clicks — confirms coverage for relevant workforce segments",
       "pageIds": [
         "home",
-        "solutions",
+        "our-approach",
         "care-every-challenge",
         "population-specific-needs",
-        "our-approach",
+        "who-we-serve",
         "global-capabilities"
       ],
       "contentGapNote": null
@@ -378,7 +376,7 @@
       "successMetric": "Finds their specific challenge category represented in plain language and feels confident Modern Health addresses their situation",
       "pageIds": [
         "home",
-        "solutions",
+        "our-approach",
         "care-every-challenge"
       ],
       "contentGapNote": null

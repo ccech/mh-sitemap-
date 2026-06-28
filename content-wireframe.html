@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Wireframe — MH Sitemap</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ── CONTROLS BAR ── */
+    .cw-controls {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      padding: 16px 32px; background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .cw-control-group { display: flex; align-items: center; gap: 8px; }
+    .cw-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text-faint); }
+    .cw-select {
+      font-family: inherit; font-size: 14px; font-weight: 600; color: var(--text);
+      padding: 7px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+      background: var(--bg); cursor: pointer;
+    }
+    .cw-toggle { display: flex; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+    .cw-toggle button {
+      border: none; background: var(--surface); padding: 7px 16px; font-family: inherit;
+      font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer;
+    }
+    .cw-toggle button.active { background: var(--brand); color: #fff; }
+    .cw-status-badge {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 3px 10px; border-radius: 99px; background: var(--heat-med-bg);
+      color: var(--heat-med); border: 1px solid var(--heat-med-border);
+    }
+    .cw-copy-btn {
+      margin-left: auto; font-family: inherit; font-size: 13px; font-weight: 600;
+      padding: 7px 16px; border: 1px solid var(--brand); border-radius: var(--radius-sm);
+      background: var(--brand-light); color: var(--brand); cursor: pointer;
+    }
+    .cw-copy-btn:hover { background: var(--brand); color: #fff; }
+
+    .cw-stage { padding: 32px 20px 80px; }
+
+    /* ── WIREFRAME MODE — simple page mockup ── */
+    .wf-page {
+      max-width: 760px; margin: 0 auto; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .wf-block { padding: 38px 48px; border-bottom: 1px solid var(--border); }
+    .wf-block:last-child { border-bottom: none; }
+    .wf-eyebrow {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
+      color: var(--brand); margin-bottom: 10px;
+    }
+
+    /* hero */
+    .wf-hero { background: linear-gradient(180deg, var(--brand-light) 0%, var(--surface) 100%); text-align: center; padding: 52px 48px; }
+    .wf-hero h1 { font-size: 32px; line-height: 1.15; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+    .wf-hero .wf-subhead { font-size: 16px; line-height: 1.55; color: var(--text-2); max-width: 560px; margin: 0 auto 24px; }
+    .wf-cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .wf-btn {
+      font-size: 14px; font-weight: 600; padding: 11px 22px; border-radius: var(--radius-sm);
+      text-decoration: none; display: inline-block; cursor: default;
+    }
+    .wf-btn.primary { background: var(--brand); color: #fff; }
+    .wf-btn.secondary { background: var(--surface); color: var(--brand); border: 1px solid var(--brand); }
+
+    /* stats */
+    .wf-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; background: var(--brand-dark); }
+    .wf-stats .wf-block-inner { padding: 30px 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; width: 100%; }
+    .wf-stat { text-align: center; color: #fff; }
+    .wf-stat-val { font-size: 28px; font-weight: 700; line-height: 1; }
+    .wf-stat-label { font-size: 12px; opacity: 0.82; margin-top: 6px; line-height: 1.35; }
+
+    /* section */
+    .wf-block h2 { font-size: 23px; line-height: 1.25; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+    .wf-block p { font-size: 15px; line-height: 1.65; color: var(--text-2); margin-bottom: 12px; }
+    .wf-related {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 6px;
+      font-size: 13px; font-weight: 600; color: var(--brand);
+    }
+    .wf-related .wf-url { font-size: 11px; color: var(--text-faint); font-family: 'Menlo', monospace; font-weight: 400; }
+
+    /* social proof */
+    .wf-logos { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+    .wf-logo-chip {
+      font-size: 13px; font-weight: 700; color: var(--text-muted);
+      background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 16px;
+    }
+    .wf-outcomes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 22px; }
+    .wf-outcome { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+    .wf-outcome-stat { font-size: 24px; font-weight: 700; color: var(--brand); line-height: 1; }
+    .wf-outcome-client { font-size: 13px; font-weight: 700; color: var(--text); margin-top: 8px; }
+    .wf-outcome-detail { font-size: 12px; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
+    .wf-testimonial { border-left: 3px solid var(--brand); padding: 6px 0 6px 18px; }
+    .wf-testimonial .wf-quote { font-size: 16px; font-style: italic; color: var(--text); line-height: 1.5; }
+    .wf-testimonial .wf-attr { font-size: 13px; color: var(--text-muted); margin-top: 8px; font-weight: 600; }
+
+    /* comparison table (us vs them) */
+    .wf-compare { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 10px; }
+    .wf-compare-row { display: grid; grid-template-columns: 1.1fr 1fr 1.3fr; }
+    .wf-compare-row + .wf-compare-row { border-top: 1px solid var(--border); }
+    .wf-compare-row > div { padding: 13px 16px; font-size: 13px; line-height: 1.45; }
+    .wf-compare-head > div { background: var(--bg); }
+    .wf-compare-col-h { font-weight: 700; font-size: 11px !important; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); }
+    .wf-compare-col-h.mh { color: var(--brand); }
+    .wf-compare-dim { font-weight: 600; color: var(--text); background: var(--bg); }
+    .wf-compare-eap { color: var(--text-muted); }
+    .wf-compare-mh { color: var(--text); background: var(--brand-light); font-weight: 500; }
+
+    /* cards / feature-grid */
+    .wf-cardgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 12px 0 8px; }
+    .wf-feature-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .wf-feature-icon { font-size: 24px; line-height: 1; margin-bottom: 8px; }
+    .wf-feature-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .wf-feature-text { font-size: 12.5px; color: var(--text-muted); line-height: 1.45; }
+    .wf-footnote { font-size: 13px; color: var(--text-muted); font-style: italic; margin-top: 6px; }
+
+    /* callout band (giant stat) */
+    .wf-callout { background: var(--brand-dark); text-align: center; }
+    .wf-callout h2 { color: #fff; }
+    .wf-callout .wf-eyebrow { color: rgba(255,255,255,0.75); }
+    .wf-callout-val { display: block; font-size: 56px; font-weight: 800; color: #fff; line-height: 1; margin-top: 18px; }
+    .wf-callout-lbl { display: block; font-size: 14px; color: rgba(255,255,255,0.85); margin: 10px auto 16px; max-width: 460px; }
+    .wf-callout p { color: rgba(255,255,255,0.88); max-width: 600px; margin: 0 auto; }
+
+    /* split / zigzag */
+    .wf-split { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
+    .wf-split-text h2 { margin-top: 0; }
+    .wf-split-media {
+      min-height: 190px; border-radius: var(--radius); padding: 24px; text-align: center;
+      background: linear-gradient(135deg, var(--brand-light), #eef2ff);
+      border: 1px dashed #bfdbfe; display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 600; color: var(--brand);
+    }
+
+    /* login callout (returning members) */
+    .wf-login { display: flex; align-items: center; gap: 20px; background: var(--brand-light); border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 18px 24px; }
+    .wf-login-text { flex: 1; }
+    .wf-login-heading { font-size: 15px; font-weight: 700; color: var(--brand-dark); }
+    .wf-login-body { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+
+    /* content-ctas (supporting clusters) */
+    .wf-ctas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .wf-cta-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+    .wf-cta-kind {
+      display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px;
+      color: var(--brand); background: var(--brand-light); border-radius: 99px; padding: 3px 10px; margin-bottom: 10px;
+    }
+    .wf-cta-label { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
+
+    /* faq */
+    .wf-faq-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .wf-faq-item:last-child { border-bottom: none; }
+    .wf-faq-q { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .wf-faq-a { font-size: 14px; line-height: 1.6; color: var(--text-2); }
+
+    /* final cta */
+    .wf-finalcta { background: var(--brand-dark); color: #fff; text-align: center; padding: 46px 48px; }
+    .wf-finalcta h2 { color: #fff; font-size: 25px; margin-bottom: 12px; }
+    .wf-finalcta p { color: rgba(255,255,255,0.85); max-width: 520px; margin: 0 auto 22px; }
+    .wf-finalcta .wf-btn.secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); }
+
+    /* ── DOCUMENT MODE ── */
+    .doc-wrap { max-width: 800px; margin: 0 auto; }
+    .doc-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 34px; margin-bottom: 18px;
+    }
+    .doc-brief { border-left: 4px solid var(--brand); }
+    .doc-h { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--brand); margin-bottom: 14px; }
+    .doc-field { margin-bottom: 12px; }
+    .doc-field-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-faint); margin-bottom: 3px; }
+    .doc-field-val { font-size: 14px; color: var(--text-2); line-height: 1.55; }
+    .doc-kw { display: inline-block; font-size: 12px; background: var(--brand-light); color: var(--brand); border-radius: 99px; padding: 2px 10px; margin: 0 5px 5px 0; font-weight: 600; }
+    .doc-q { font-size: 13px; color: var(--text-2); padding: 4px 0 4px 16px; border-left: 2px solid var(--border); margin-bottom: 4px; }
+
+    .doc-block { margin-bottom: 26px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
+    .doc-block:last-child { border-bottom: none; }
+    .doc-block-type { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-faint); margin-bottom: 8px; }
+    .doc-block h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .doc-block .doc-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--brand); margin-bottom: 4px; }
+    .doc-block p { font-size: 14px; line-height: 1.65; color: var(--text-2); margin-bottom: 10px; }
+    .doc-anno {
+      font-size: 12px; line-height: 1.55; color: var(--text-muted);
+      background: var(--heat-med-bg); border: 1px solid var(--heat-med-border);
+      border-radius: var(--radius-sm); padding: 8px 12px; margin-top: 8px;
+    }
+    .doc-anno-label { font-weight: 700; color: var(--heat-med); text-transform: uppercase; font-size: 10px; letter-spacing: 0.6px; margin-right: 6px; }
+    .doc-empty { max-width: 760px; margin: 60px auto; text-align: center; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <rect width="20" height="20" rx="4" fill="#1d4ed8"/>
+      <path d="M4 14 L4 8 L8 12 L12 6 L16 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    MH Sitemap
+    <span class="nav-brand-tag">Strategy Tool</span>
+  </a>
+  <nav class="nav-links">
+    <a href="exec-summary.html">Executive Summary</a>
+    <a href="index.html">Heat Map</a>
+    <a href="sitemap-visual.html">Site Architecture</a>
+    <a href="flows.html">User Flows</a>
+    <a href="homepage-brief.html">Homepage Brief</a>
+    <a href="wireframe.html">Wireframe</a>
+    <a href="seo.html">SEO Strategy</a>
+    <a href="seo-briefs.html">Content Briefs</a>
+    <a href="content-wireframe.html" class="active">Page Content</a>
+  </nav>
+</nav>
+
+<div class="cw-controls">
+  <div class="cw-control-group">
+    <span class="cw-label">Page</span>
+    <select class="cw-select" id="page-select" onchange="render()"></select>
+  </div>
+  <div class="cw-control-group">
+    <span class="cw-label">View</span>
+    <div class="cw-toggle">
+      <button id="mode-wireframe" class="active" onclick="setMode('wireframe')">Wireframe</button>
+      <button id="mode-document" onclick="setMode('document')">Document</button>
+    </div>
+  </div>
+  <span class="cw-status-badge" id="status-badge">draft</span>
+  <button class="cw-copy-btn" id="copy-btn" onclick="copyDoc()">Copy doc (Markdown)</button>
+</div>
+
+<div class="cw-stage" id="stage"></div>
+
+<script src="data/sitemap.js"></script>
+<script src="data/seo.js"></script>
+<script src="data/page-content.js"></script>
+<script>
+  let mode = 'wireframe';
+
+  const sitemapById = {};
+  (window.SITEMAP && SITEMAP.pages || []).forEach(p => { sitemapById[p.id] = p; });
+
+  function esc(s) { return (s == null ? '' : String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function linkInfo(toId) {
+    const p = sitemapById[toId];
+    return { name: p ? p.name : toId, url: p ? (p.url || '') : '' };
+  }
+
+  // ── populate page picker ──
+  function initPicker() {
+    const sel = document.getElementById('page-select');
+    const ids = Object.keys(window.PAGE_CONTENT || {});
+    sel.innerHTML = ids.map(id => {
+      const sm = sitemapById[id];
+      return `<option value="${id}">${esc(sm ? sm.name : id)}</option>`;
+    }).join('');
+  }
+
+  function setMode(m) {
+    mode = m;
+    document.getElementById('mode-wireframe').classList.toggle('active', m === 'wireframe');
+    document.getElementById('mode-document').classList.toggle('active', m === 'document');
+    document.getElementById('copy-btn').style.display = (m === 'document') ? '' : 'none';
+    render();
+  }
+
+  // ── WIREFRAME MODE ──
+  function renderWireframe(page) {
+    const html = page.blocks.map(b => {
+      if (b.type === 'hero') {
+        return `<div class="wf-block wf-hero">
+          ${b.eyebrow ? `<div class="wf-eyebrow">${esc(b.eyebrow)}</div>` : ''}
+          <h1>${esc(b.h1)}</h1>
+          <div class="wf-subhead">${esc(b.subhead)}</div>
+          <div class="wf-cta-row">
+            ${b.primaryCta ? `<span class="wf-btn primary">${esc(b.primaryCta.label)}</span>` : ''}
+            ${b.secondaryCta ? `<span class="wf-btn secondary">${esc(b.secondaryCta.label)}</span>` : ''}
+          </div>
+        </div>`;
+      }
+      if (b.type === 'stats') {
+        return `<div class="wf-block" style="padding:0">
+          <div class="wf-stats"><div class="wf-block-inner">
+            ${b.items.map(s => `<div class="wf-stat"><div class="wf-stat-val">${esc(s.value)}</div><div class="wf-stat-label">${esc(s.label)}</div></div>`).join('')}
+          </div></div>
+        </div>`;
+      }
+      if (b.type === 'section') {
+        const li = b.link ? linkInfo(b.link.toId) : null;
+        return `<div class="wf-block">
+          ${b.eyebrow ? `<div class="wf-eyebrow">${esc(b.eyebrow)}</div>` : ''}
+          <h2>${esc(b.heading)}</h2>
+          ${b.body.map(p => `<p>${esc(p)}</p>`).join('')}
+          ${b.link ? `<div class="wf-related">→ ${esc(b.link.label)} <span class="wf-url">${esc(li.url)}</span></div>` : ''}
+        </div>`;
+      }
+      if (b.type === 'comparison') {
+        const li = b.link ? linkInfo(b.link.toId) : null;
+        return `<div class="wf-block">
+          ${b.eyebrow ? `<div class="wf-eyebrow">${esc(b.eyebrow)}</div>` : ''}
+          <h2>${esc(b.heading)}</h2>
+          ${b.lead ? `<p>${esc(b.lead)}</p>` : ''}
+          <div class="wf-compare">
+            <div class="wf-compare-row wf-compare-head">
+              <div></div>
+              <div class="wf-compare-col-h">${esc(b.columns.left)}</div>
+              <div class="wf-compare-col-h mh">${esc(b.columns.right)}</div>
+            </div>
+            ${b.rows.map(r => `<div class="wf-compare-row">
+              <div class="wf-compare-dim">${esc(r.dimension)}</div>
+              <div class="wf-compare-eap">${esc(r.eap)}</div>
+              <div class="wf-compare-mh">${esc(r.mh)}</div>
+            </div>`).join('')}
+          </div>
+          ${b.link ? `<div class="wf-related" style="margin-top:18px">→ ${esc(b.link.label)} <span class="wf-url">${esc(li.url)}</span></div>` : ''}
+        </div>`;
+      }
+      if (b.type === 'cards' || b.type === 'feature-grid') {
+        const li = b.link ? linkInfo(b.link.toId) : null;
+        const items = b.cards || b.features || [];
+        return `<div class="wf-block">
+          ${b.eyebrow ? `<div class="wf-eyebrow">${esc(b.eyebrow)}</div>` : ''}
+          <h2>${esc(b.heading)}</h2>
+          ${b.lead ? `<p>${esc(b.lead)}</p>` : ''}
+          <div class="wf-cardgrid">
+            ${items.map(c => `<div class="wf-feature-card"><div class="wf-feature-icon">${esc(c.icon)}</div><div class="wf-feature-title">${esc(c.title)}</div><div class="wf-feature-text">${esc(c.text)}</div></div>`).join('')}
+          </div>
+          ${b.footnote ? `<p class="wf-footnote">${esc(b.footnote)}</p>` : ''}
+          ${b.link ? `<div class="wf-related">→ ${esc(b.link.label)} <span class="wf-url">${esc(li.url)}</span></div>` : ''}
+        </div>`;
+      }
+      if (b.type === 'callout') {
+        const li = b.link ? linkInfo(b.link.toId) : null;
+        return `<div class="wf-block wf-callout">
+          ${b.eyebrow ? `<div class="wf-eyebrow">${esc(b.eyebrow)}</div>` : ''}
+          <h2>${esc(b.heading)}</h2>
+          <span class="wf-callout-val">${esc(b.bigStat.value)}</span>
+          <span class="wf-callout-lbl">${esc(b.bigStat.label)}</span>
+          <p>${esc(b.body)}</p>
+          ${b.link ? `<div class="wf-related" style="margin-top:18px;color:#fff">→ ${esc(b.link.label)} <span class="wf-url" style="color:rgba(255,255,255,0.6)">${esc(li.url)}</span></div>` : ''}
+        </div>`;
+      }
+      if (b.type === 'split') {
+        const li = b.link ? linkInfo(b.link.toId) : null;
+        const media = `<div class="wf-split-media">${esc(b.media ? b.media.label : '')}</div>`;
+        const text = `<div class="wf-split-text">
+          ${b.eyebrow ? `<div class="wf-eyebrow">${esc(b.eyebrow)}</div>` : ''}
+          <h2>${esc(b.heading)}</h2>
+          ${b.body.map(p => `<p>${esc(p)}</p>`).join('')}
+          ${b.link ? `<div class="wf-related">→ ${esc(b.link.label)} <span class="wf-url">${esc(li.url)}</span></div>` : ''}
+        </div>`;
+        return `<div class="wf-block"><div class="wf-split">${(b.mediaSide === 'left') ? media + text : text + media}</div></div>`;
+      }
+      if (b.type === 'login-callout') {
+        const li = linkInfo(b.cta.toId);
+        return `<div class="wf-block"><div class="wf-login">
+          <div class="wf-login-text">
+            <div class="wf-login-heading">${esc(b.heading)}</div>
+            <div class="wf-login-body">${esc(b.body)} <span class="wf-url">${esc(li.url)}</span></div>
+          </div>
+          <span class="wf-btn primary">${esc(b.cta.label)}</span>
+        </div></div>`;
+      }
+      if (b.type === 'social-proof') {
+        return `<div class="wf-block">
+          <h2>${esc(b.heading)}</h2>
+          <div class="wf-logos">${(b.logos||[]).map(l => `<span class="wf-logo-chip">${esc(l)}</span>`).join('')}</div>
+          <div class="wf-outcomes">
+            ${(b.outcomes||[]).map(o => `<div class="wf-outcome"><div class="wf-outcome-stat">${esc(o.stat)}</div><div class="wf-outcome-client">${esc(o.client)}</div><div class="wf-outcome-detail">${esc(o.detail)}</div></div>`).join('')}
+          </div>
+          ${b.testimonial ? `<div class="wf-testimonial"><div class="wf-quote">“${esc(b.testimonial.quote)}”</div><div class="wf-attr">— ${esc(b.testimonial.attribution)}</div></div>` : ''}
+          ${b.link ? `<div class="wf-related" style="margin-top:18px">→ ${esc(b.link.label)} <span class="wf-url">${esc(linkInfo(b.link.toId).url)}</span></div>` : ''}
+        </div>`;
+      }
+      if (b.type === 'content-ctas') {
+        return `<div class="wf-block">
+          <h2>${esc(b.heading)}</h2>
+          <div class="wf-ctas-grid">
+            ${b.items.map(it => { const li = linkInfo(it.toId); return `<div class="wf-cta-card">
+              <div class="wf-cta-kind">${esc(it.kind)}</div>
+              <div class="wf-cta-label">${esc(it.label)}</div>
+              <div class="wf-related">→ ${esc(li.name)} <span class="wf-url">${esc(li.url)}</span></div>
+            </div>`; }).join('')}
+          </div>
+        </div>`;
+      }
+      if (b.type === 'faq') {
+        return `<div class="wf-block">
+          <h2>${esc(b.heading)}</h2>
+          ${b.items.map(it => `<div class="wf-faq-item"><div class="wf-faq-q">${esc(it.q)}</div><div class="wf-faq-a">${esc(it.a)}</div></div>`).join('')}
+        </div>`;
+      }
+      if (b.type === 'cta') {
+        return `<div class="wf-block wf-finalcta">
+          <h2>${esc(b.heading)}</h2>
+          <p>${esc(b.body)}</p>
+          <div class="wf-cta-row">
+            ${b.primaryCta ? `<span class="wf-btn primary">${esc(b.primaryCta.label)}</span>` : ''}
+            ${b.secondaryCta ? `<span class="wf-btn secondary">${esc(b.secondaryCta.label)}</span>` : ''}
+          </div>
+        </div>`;
+      }
+      return '';
+    }).join('');
+    return `<div class="wf-page">${html}</div>`;
+  }
+
+  // ── DOCUMENT MODE ──
+  function briefCardHtml(pageId) {
+    const seo = (window.SEO_DATA && SEO_DATA.pages[pageId]) || null;
+    if (!seo) return '';
+    const kws = (kw) => `<span class="doc-kw">${esc(kw)}</span>`;
+    return `<div class="doc-card doc-brief">
+      <div class="doc-h">SEO Brief — the content follows this</div>
+      <div class="doc-field"><div class="doc-field-label">Primary Keyword</div><div class="doc-field-val">${kws(seo.primaryKeyword)}</div></div>
+      <div class="doc-field"><div class="doc-field-label">Secondary Keywords</div><div class="doc-field-val">${(seo.secondaryKeywords||[]).map(kws).join('')}</div></div>
+      <div class="doc-field"><div class="doc-field-label">Title Tag (${(seo.titleTag||'').length}/60)</div><div class="doc-field-val">${esc(seo.titleTag)}</div></div>
+      <div class="doc-field"><div class="doc-field-label">Meta Description (${(seo.metaDescription||'').length}/155)</div><div class="doc-field-val">${esc(seo.metaDescription)}</div></div>
+      <div class="doc-field"><div class="doc-field-label">Recommended H1</div><div class="doc-field-val">${esc(seo.recommendedH1)}</div></div>
+      <div class="doc-field"><div class="doc-field-label">Search Intent</div><div class="doc-field-val">${esc(seo.searchIntent)}</div></div>
+      <div class="doc-field"><div class="doc-field-label">Key Questions the page answers</div><div class="doc-field-val">${(seo.keyQuestions||[]).map(q => `<div class="doc-q">${esc(q)}</div>`).join('')}</div></div>
+    </div>`;
+  }
+
+  function blockToDoc(b) {
+    let inner = `<div class="doc-block-type">${esc(b.type)}</div>`;
+    if (b.eyebrow) inner += `<div class="doc-eyebrow">${esc(b.eyebrow)}</div>`;
+    if (b.type === 'hero') {
+      inner += `<h3>${esc(b.h1)}</h3><p>${esc(b.subhead)}</p>`;
+      inner += `<p><strong>CTAs:</strong> ${esc(b.primaryCta ? b.primaryCta.label : '')}${b.secondaryCta ? ' · ' + esc(b.secondaryCta.label) : ''}</p>`;
+    } else if (b.type === 'stats') {
+      inner += `<p>${b.items.map(s => `<strong>${esc(s.value)}</strong> — ${esc(s.label)}`).join(' &nbsp;·&nbsp; ')}</p>`;
+    } else if (b.type === 'section') {
+      inner += `<h3>${esc(b.heading)}</h3>${b.body.map(p => `<p>${esc(p)}</p>`).join('')}`;
+      if (b.link) inner += `<p><em>Cross-link:</em> → ${esc(b.link.label)} (${esc(linkInfo(b.link.toId).url)})</p>`;
+    } else if (b.type === 'comparison') {
+      inner += `<h3>${esc(b.heading)}</h3>`;
+      if (b.lead) inner += `<p>${esc(b.lead)}</p>`;
+      inner += `<p><strong>${esc(b.columns.left)} → ${esc(b.columns.right)}</strong></p>`;
+      inner += b.rows.map(r => `<p>• <strong>${esc(r.dimension)}:</strong> ${esc(r.eap)} → ${esc(r.mh)}</p>`).join('');
+      if (b.link) inner += `<p><em>Cross-link:</em> → ${esc(b.link.label)} (${esc(linkInfo(b.link.toId).url)})</p>`;
+    } else if (b.type === 'cards' || b.type === 'feature-grid') {
+      inner += `<h3>${esc(b.heading)}</h3>`;
+      if (b.lead) inner += `<p>${esc(b.lead)}</p>`;
+      (b.cards || b.features || []).forEach(c => inner += `<p><strong>${esc(c.icon)} ${esc(c.title)}:</strong> ${esc(c.text)}</p>`);
+      if (b.footnote) inner += `<p><em>${esc(b.footnote)}</em></p>`;
+      if (b.link) inner += `<p><em>Cross-link:</em> → ${esc(b.link.label)} (${esc(linkInfo(b.link.toId).url)})</p>`;
+    } else if (b.type === 'callout') {
+      inner += `<h3>${esc(b.heading)}</h3><p><strong style="font-size:22px">${esc(b.bigStat.value)}</strong> — ${esc(b.bigStat.label)}</p><p>${esc(b.body)}</p>`;
+      if (b.link) inner += `<p><em>Cross-link:</em> → ${esc(b.link.label)} (${esc(linkInfo(b.link.toId).url)})</p>`;
+    } else if (b.type === 'split') {
+      inner += `<h3>${esc(b.heading)}</h3>${b.body.map(p => `<p>${esc(p)}</p>`).join('')}`;
+      if (b.media) inner += `<p><em>Visual:</em> ${esc(b.media.label)} (${esc(b.media.kind)} · ${esc(b.mediaSide)})</p>`;
+      if (b.link) inner += `<p><em>Cross-link:</em> → ${esc(b.link.label)} (${esc(linkInfo(b.link.toId).url)})</p>`;
+    } else if (b.type === 'login-callout') {
+      inner += `<h3>${esc(b.heading)}</h3><p>${esc(b.body)}</p><p><strong>CTA:</strong> ${esc(b.cta.label)} → ${esc(linkInfo(b.cta.toId).name)} (${esc(linkInfo(b.cta.toId).url)})</p>`;
+    } else if (b.type === 'social-proof') {
+      inner += `<h3>${esc(b.heading)}</h3>`;
+      inner += `<p><strong>Logos:</strong> ${(b.logos||[]).map(esc).join(' · ')}</p>`;
+      inner += b.outcomes.map(o => `<p><strong>${esc(o.stat)} — ${esc(o.client)}:</strong> ${esc(o.detail)}</p>`).join('');
+      if (b.testimonial) inner += `<p><em>“${esc(b.testimonial.quote)}”</em> — ${esc(b.testimonial.attribution)}</p>`;
+      if (b.link) inner += `<p><em>Cross-link:</em> → ${esc(b.link.label)} (${esc(linkInfo(b.link.toId).url)})</p>`;
+    } else if (b.type === 'content-ctas') {
+      inner += `<h3>${esc(b.heading)}</h3>` + b.items.map(it => `<p><strong>${esc(it.kind)}:</strong> ${esc(it.label)} <em>→ ${esc(linkInfo(it.toId).name)} (${esc(linkInfo(it.toId).url)})</em></p>`).join('');
+    } else if (b.type === 'faq') {
+      inner += `<h3>${esc(b.heading)}</h3>` + b.items.map(it => `<p><strong>${esc(it.q)}</strong><br>${esc(it.a)}</p>`).join('');
+    } else if (b.type === 'cta') {
+      inner += `<h3>${esc(b.heading)}</h3><p>${esc(b.body)}</p><p><strong>CTAs:</strong> ${esc(b.primaryCta ? b.primaryCta.label : '')}${b.secondaryCta ? ' · ' + esc(b.secondaryCta.label) : ''}</p>`;
+    }
+    if (b.annotation) inner += `<div class="doc-anno"><span class="doc-anno-label">Why</span>${esc(b.annotation)}</div>`;
+    return `<div class="doc-block">${inner}</div>`;
+  }
+
+  function renderDocument(page, pageId) {
+    return `<div class="doc-wrap">
+      ${briefCardHtml(pageId)}
+      <div class="doc-card">
+        <div class="doc-h">Page Copy</div>
+        ${page.blocks.map(blockToDoc).join('')}
+      </div>
+    </div>`;
+  }
+
+  // ── Markdown export (for Copy button) ──
+  function toMarkdown(page, pageId) {
+    const seo = (window.SEO_DATA && SEO_DATA.pages[pageId]) || {};
+    const sm = sitemapById[pageId] || {};
+    let md = `# ${sm.name || pageId} — Page Content\n\n`;
+    md += `## SEO Brief (the content follows this)\n\n`;
+    md += `- **Primary keyword:** ${seo.primaryKeyword || ''}\n`;
+    md += `- **Secondary keywords:** ${(seo.secondaryKeywords||[]).join(', ')}\n`;
+    md += `- **Title tag (${(seo.titleTag||'').length}/60):** ${seo.titleTag || ''}\n`;
+    md += `- **Meta description (${(seo.metaDescription||'').length}/155):** ${seo.metaDescription || ''}\n`;
+    md += `- **Recommended H1:** ${seo.recommendedH1 || ''}\n`;
+    md += `- **Search intent:** ${seo.searchIntent || ''}\n`;
+    md += `- **Key questions:**\n${(seo.keyQuestions||[]).map(q => `  - ${q}`).join('\n')}\n\n`;
+    md += `---\n\n## Page Copy\n\n`;
+    page.blocks.forEach(b => {
+      md += `### [${b.type}]${b.eyebrow ? ' ' + b.eyebrow : ''}\n\n`;
+      if (b.type === 'hero') { md += `**H1:** ${b.h1}\n\n${b.subhead}\n\n**CTAs:** ${b.primaryCta?b.primaryCta.label:''}${b.secondaryCta?' · '+b.secondaryCta.label:''}\n\n`; }
+      else if (b.type === 'stats') { md += b.items.map(s => `- **${s.value}** — ${s.label}`).join('\n') + '\n\n'; }
+      else if (b.type === 'section') { md += `**${b.heading}**\n\n` + b.body.join('\n\n') + '\n\n' + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
+      else if (b.type === 'comparison') { md += `**${b.heading}**\n\n` + (b.lead ? b.lead + '\n\n' : '') + `| | ${b.columns.left} | ${b.columns.right} |\n|---|---|---|\n` + b.rows.map(r => `| ${r.dimension} | ${r.eap} | ${r.mh} |`).join('\n') + '\n\n' + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
+      else if (b.type === 'cards' || b.type === 'feature-grid') { md += `**${b.heading}**\n\n` + (b.lead ? b.lead + '\n\n' : '') + (b.cards || b.features || []).map(c => `- **${c.icon} ${c.title}:** ${c.text}`).join('\n') + '\n\n' + (b.footnote ? `_${b.footnote}_\n\n` : '') + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
+      else if (b.type === 'callout') { md += `**${b.heading}**\n\n## ${b.bigStat.value} — ${b.bigStat.label}\n\n${b.body}\n\n` + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
+      else if (b.type === 'split') { md += `**${b.heading}**\n\n` + b.body.join('\n\n') + '\n\n' + (b.media ? `_Visual:_ ${b.media.label} (${b.media.kind} · ${b.mediaSide})\n\n` : '') + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
+      else if (b.type === 'login-callout') { md += `**${b.heading}**\n\n${b.body}\n\n**CTA:** ${b.cta.label} → ${linkInfo(b.cta.toId).name} (${linkInfo(b.cta.toId).url})\n\n`; }
+      else if (b.type === 'social-proof') { md += `**${b.heading}**\n\nLogos: ${(b.logos||[]).join(' · ')}\n\n` + b.outcomes.map(o => `- **${o.stat} — ${o.client}:** ${o.detail}`).join('\n') + '\n\n' + (b.testimonial ? `> “${b.testimonial.quote}” — ${b.testimonial.attribution}\n\n` : '') + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
+      else if (b.type === 'content-ctas') { md += `**${b.heading}**\n\n` + b.items.map(it => `- **${it.kind}:** ${it.label} → ${linkInfo(it.toId).name} (${linkInfo(it.toId).url})`).join('\n') + '\n\n'; }
+      else if (b.type === 'faq') { md += `**${b.heading}**\n\n` + b.items.map(it => `**Q: ${it.q}**\n\n${it.a}`).join('\n\n') + '\n\n'; }
+      else if (b.type === 'cta') { md += `**${b.heading}**\n\n${b.body}\n\n**CTAs:** ${b.primaryCta?b.primaryCta.label:''}${b.secondaryCta?' · '+b.secondaryCta.label:''}\n\n`; }
+      if (b.annotation) md += `_Why:_ ${b.annotation}\n\n`;
+    });
+    return md;
+  }
+
+  function copyDoc() {
+    const pageId = document.getElementById('page-select').value;
+    const page = window.PAGE_CONTENT[pageId];
+    const md = toMarkdown(page, pageId);
+    navigator.clipboard.writeText(md).then(() => {
+      const btn = document.getElementById('copy-btn');
+      const t = btn.textContent; btn.textContent = 'Copied ✓';
+      setTimeout(() => btn.textContent = t, 1500);
+    });
+  }
+
+  // ── main ──
+  function render() {
+    const pageId = document.getElementById('page-select').value;
+    const page = window.PAGE_CONTENT[pageId];
+    const stage = document.getElementById('stage');
+    document.getElementById('status-badge').textContent = page && page.status ? page.status : '';
+    if (!page) { stage.innerHTML = `<div class="doc-empty">No content drafted for this page yet.</div>`; return; }
+    stage.innerHTML = (mode === 'wireframe') ? renderWireframe(page) : renderDocument(page, pageId);
+  }
+
+  initPicker();
+  document.getElementById('copy-btn').style.display = 'none';
+  render();
+</script>
+</body>
+</html>

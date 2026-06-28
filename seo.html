@@ -288,6 +288,7 @@
     <a href="wireframe.html">Wireframe</a>
     <a href="seo.html" class="active">SEO Strategy</a>
     <a href="seo-briefs.html">Content Briefs</a>
+    <a href="content-wireframe.html">Page Content</a>
   </nav>
 </nav>
 
@@ -330,9 +331,10 @@
   <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">Overview</button>
   <button class="filter-btn" data-filter="employers" onclick="setFilter('employers', this)">Employers</button>
   <button class="filter-btn" data-filter="consultants" onclick="setFilter('consultants', this)">Consultants</button>
-  <button class="filter-btn" data-filter="clinical" onclick="setFilter('clinical', this)">Clinical</button>
+  <button class="filter-btn" data-filter="members" onclick="setFilter('members', this)">Members</button>
+  <button class="filter-btn" data-filter="adaptive-care" onclick="setFilter('adaptive-care', this)">Adaptive Care</button>
   <button class="filter-btn" data-filter="economic-value" onclick="setFilter('economic-value', this)">Economic Value</button>
-  <button class="filter-btn" data-filter="solutions" onclick="setFilter('solutions', this)">Solutions</button>
+  <button class="filter-btn" data-filter="clinical" onclick="setFilter('clinical', this)">Clinical</button>
   <button class="filter-btn" data-filter="opportunities" onclick="setFilter('opportunities', this)">Opportunities</button>
   <button class="filter-btn" data-filter="gaps" onclick="setFilter('gaps', this)">Gaps</button>
 </div>
@@ -422,7 +424,7 @@
     }).join('');
 
     return `<div class="seo-overview-intro">
-        <h2>Five topic clusters. One problem: the site ranks for almost none of them.</h2>
+        <h2>Six topic clusters. One problem: the site ranks for almost none of them.</h2>
         <p>Each cluster is built around a pillar page targeting a primary commercial keyword. Supporting pages and blog assets orbit the pillar and pass it authority. Select a cluster below to see the keyword brief, supporting pages, and which blog posts need to link back.</p>
       </div>
       <div class="seo-cluster-cards-grid">${cards}</div>`;

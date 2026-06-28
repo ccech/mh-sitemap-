@@ -293,9 +293,9 @@ window.SITEMAP = {
     {
       "id": "global-capabilities",
       "name": "Global Capabilities",
-      "url": "/our-approach/global-capabilities",
+      "url": "/who-we-serve/global-capabilities",
       "navTier": 2,
-      "parent": "our-approach",
+      "parent": "who-we-serve",
       "pageContent": {
         "purpose": "Details international deployment capabilities for HR buyers with distributed workforces and partner evaluators assessing global scale.",
         "primaryAudiences": ["hr-benefits-manager", "partner"],
@@ -448,24 +448,17 @@ window.SITEMAP = {
     },
 
     // ─────────────────────────────────────────────
-    // SOLUTIONS (new top-level nav)
+    // OUR APPROACH (continued) — Care Modalities & Care for Every Challenge
+    // (moved here from the former Solutions section)
     // ─────────────────────────────────────────────
-    {
-      "id": "solutions",
-      "name": "Solutions",
-      "url": null,
-      "navTier": 1,
-      "parent": "home",
-      "type": "nav-dropdown"
-    },
 
     // — Care Modalities —
     {
       "id": "care-modalities",
       "name": "Care Modalities",
-      "url": "/solutions/care-modalities",
+      "url": "/our-approach/care-modalities",
       "navTier": 2,
-      "parent": "solutions",
+      "parent": "our-approach",
       "pageContent": {
         "purpose": "Explains all care delivery formats in plain language — for members deciding how to engage and benefits managers explaining the benefit to employees.",
         "primaryAudiences": ["member", "hr-benefits-manager"],
@@ -487,7 +480,7 @@ window.SITEMAP = {
     {
       "id": "mh-circles",
       "name": "Modern Health Circles",
-      "url": "/solutions/care-modalities/circles",
+      "url": "/our-approach/care-modalities/circles",
       "navTier": 3,
       "parent": "care-modalities",
       "pageContent": {
@@ -510,7 +503,7 @@ window.SITEMAP = {
     {
       "id": "mh-pathways",
       "name": "Modern Health Pathways",
-      "url": "/solutions/care-modalities/pathways",
+      "url": "/our-approach/care-modalities/pathways",
       "navTier": 3,
       "parent": "care-modalities",
       "pageContent": {
@@ -534,9 +527,9 @@ window.SITEMAP = {
     {
       "id": "care-every-challenge",
       "name": "Care for Every Challenge",
-      "url": "/solutions/care-for-every-challenge",
+      "url": "/our-approach/care-for-every-challenge",
       "navTier": 2,
-      "parent": "solutions",
+      "parent": "our-approach",
       "pageContent": {
         "purpose": "Care category index — shows members and HR buyers the full breadth of support topics available on the platform.",
         "primaryAudiences": ["member", "hr-benefits-manager"],
@@ -562,7 +555,7 @@ window.SITEMAP = {
     {
       "id": "everyday-mental-health",
       "name": "Everyday Mental Health & Well-being",
-      "url": "/solutions/care-for-every-challenge/everyday-mental-health",
+      "url": "/our-approach/care-for-every-challenge/everyday-mental-health",
       "navTier": 3,
       "parent": "care-every-challenge",
       "type": "challenge-category",
@@ -583,7 +576,7 @@ window.SITEMAP = {
     {
       "id": "burnout-workplace-stress",
       "name": "Burnout & Workplace Stress",
-      "url": "/solutions/care-for-every-challenge/burnout-workplace-stress",
+      "url": "/our-approach/care-for-every-challenge/burnout-workplace-stress",
       "navTier": 4,
       "parent": "everyday-mental-health",
       "pageContent": {
@@ -619,7 +612,7 @@ window.SITEMAP = {
     {
       "id": "financial-stress-wellbeing",
       "name": "Financial Stress & Well-Being",
-      "url": "/solutions/care-for-every-challenge/financial-stress-wellbeing",
+      "url": "/our-approach/care-for-every-challenge/financial-stress-wellbeing",
       "navTier": 4,
       "parent": "everyday-mental-health",
       "pageContent": {
@@ -656,7 +649,7 @@ window.SITEMAP = {
     {
       "id": "preventative-early-support",
       "name": "Preventative & Early Support",
-      "url": "/solutions/care-for-every-challenge/preventative-early-support",
+      "url": "/our-approach/care-for-every-challenge/preventative-early-support",
       "navTier": 4,
       "parent": "everyday-mental-health",
       "pageContent": {
@@ -694,7 +687,7 @@ window.SITEMAP = {
     {
       "id": "life-stages",
       "name": "Life Stages & Personal Challenges",
-      "url": "/solutions/care-for-every-challenge/life-stages",
+      "url": "/our-approach/care-for-every-challenge/life-stages",
       "navTier": 3,
       "parent": "care-every-challenge",
       "type": "challenge-category",
@@ -715,7 +708,7 @@ window.SITEMAP = {
     {
       "id": "caregiving",
       "name": "Caregiving",
-      "url": "/solutions/care-for-every-challenge/caregiving",
+      "url": "/our-approach/care-for-every-challenge/caregiving",
       "navTier": 4,
       "parent": "life-stages",
       "pageContent": {
@@ -751,7 +744,7 @@ window.SITEMAP = {
     {
       "id": "parenting-dependents",
       "name": "Parenting & Dependents",
-      "url": "/solutions/care-for-every-challenge/parenting-dependents",
+      "url": "/our-approach/care-for-every-challenge/parenting-dependents",
       "navTier": 4,
       "parent": "life-stages",
       "pageContent": {
@@ -787,7 +780,7 @@ window.SITEMAP = {
     {
       "id": "serious-chronic-illness",
       "name": "Serious or Chronic Illness",
-      "url": "/solutions/care-for-every-challenge/serious-chronic-illness",
+      "url": "/our-approach/care-for-every-challenge/serious-chronic-illness",
       "navTier": 4,
       "parent": "life-stages",
       "pageContent": {
@@ -823,7 +816,7 @@ window.SITEMAP = {
     {
       "id": "grief",
       "name": "Grief",
-      "url": "/solutions/care-for-every-challenge/grief",
+      "url": "/our-approach/care-for-every-challenge/grief",
       "navTier": 4,
       "parent": "life-stages",
       "pageContent": {
@@ -860,7 +853,7 @@ window.SITEMAP = {
     {
       "id": "life-transitions",
       "name": "Life Transitions & Major Changes",
-      "url": "/solutions/care-for-every-challenge/life-transitions",
+      "url": "/our-approach/care-for-every-challenge/life-transitions",
       "navTier": 4,
       "parent": "life-stages",
       "pageContent": {
@@ -896,7 +889,7 @@ window.SITEMAP = {
     {
       "id": "womens-health",
       "name": "Women's Health",
-      "url": "/solutions/care-for-every-challenge/womens-health",
+      "url": "/our-approach/care-for-every-challenge/womens-health",
       "navTier": 4,
       "parent": "life-stages",
       "pageContent": {
@@ -932,7 +925,7 @@ window.SITEMAP = {
     {
       "id": "neurodivergent-support",
       "name": "Neurodivergent Employee Support",
-      "url": "/solutions/care-for-every-challenge/neurodivergent-support",
+      "url": "/our-approach/care-for-every-challenge/neurodivergent-support",
       "navTier": 4,
       "parent": "population-specific-needs",
       "pageContent": {
@@ -968,7 +961,7 @@ window.SITEMAP = {
     {
       "id": "workforce-org-needs",
       "name": "Workforce & Organizational Needs",
-      "url": "/solutions/care-for-every-challenge/workforce-organizational",
+      "url": "/our-approach/care-for-every-challenge/workforce-organizational",
       "navTier": 3,
       "parent": "care-every-challenge",
       "type": "challenge-category",
@@ -989,7 +982,7 @@ window.SITEMAP = {
     {
       "id": "leadership-manager-support",
       "name": "Leadership & Manager Support",
-      "url": "/solutions/care-for-every-challenge/leadership-manager-support",
+      "url": "/our-approach/care-for-every-challenge/leadership-manager-support",
       "navTier": 4,
       "parent": "workforce-org-needs",
       "pageContent": {
@@ -1026,7 +1019,7 @@ window.SITEMAP = {
     {
       "id": "workforce-performance",
       "name": "Workforce Performance & Presenteeism",
-      "url": "/solutions/care-for-every-challenge/workforce-performance-presenteeism",
+      "url": "/our-approach/care-for-every-challenge/workforce-performance-presenteeism",
       "navTier": 4,
       "parent": "workforce-org-needs",
       "pageContent": {
@@ -1061,7 +1054,7 @@ window.SITEMAP = {
     {
       "id": "employee-retention",
       "name": "Employee Retention & Engagement",
-      "url": "/solutions/care-for-every-challenge/employee-retention-engagement",
+      "url": "/our-approach/care-for-every-challenge/employee-retention-engagement",
       "navTier": 4,
       "parent": "workforce-org-needs",
       "pageContent": {
@@ -1097,7 +1090,7 @@ window.SITEMAP = {
     {
       "id": "crisis-preparedness",
       "name": "Crisis Preparedness & Response",
-      "url": "/solutions/care-for-every-challenge/crisis-preparedness-response",
+      "url": "/our-approach/care-for-every-challenge/crisis-preparedness-response",
       "navTier": 4,
       "parent": "workforce-org-needs",
       "pageContent": {
@@ -1132,7 +1125,7 @@ window.SITEMAP = {
     {
       "id": "career-growth",
       "name": "Career Growth & Development",
-      "url": "/solutions/care-for-every-challenge/career-growth-development",
+      "url": "/our-approach/care-for-every-challenge/career-growth-development",
       "navTier": 4,
       "parent": "workforce-org-needs",
       "pageContent": {
@@ -1168,7 +1161,7 @@ window.SITEMAP = {
     {
       "id": "leave-absence-accommodations",
       "name": "Leave of Absence & Accommodations",
-      "url": "/solutions/care-for-every-challenge/leave-absence-accommodations",
+      "url": "/our-approach/care-for-every-challenge/leave-absence-accommodations",
       "navTier": 4,
       "parent": "workforce-org-needs",
       "pageContent": {
@@ -1203,7 +1196,7 @@ window.SITEMAP = {
     {
       "id": "frontline-workforce",
       "name": "Frontline & Deskless Workforce Support",
-      "url": "/solutions/care-for-every-challenge/frontline-deskless-workforce",
+      "url": "/our-approach/care-for-every-challenge/frontline-deskless-workforce",
       "navTier": 4,
       "parent": "population-specific-needs",
       "pageContent": {
@@ -1237,7 +1230,7 @@ window.SITEMAP = {
     {
       "id": "multicultural-workforce",
       "name": "Multicultural Workforce Support",
-      "url": "/solutions/care-for-every-challenge/multicultural-workforce",
+      "url": "/our-approach/care-for-every-challenge/multicultural-workforce",
       "navTier": 4,
       "parent": "population-specific-needs",
       "pageContent": {
@@ -1279,7 +1272,7 @@ window.SITEMAP = {
     {
       "id": "first-responders",
       "name": "First Responders & Healthcare Workforce",
-      "url": "/solutions/care-for-every-challenge/first-responders-healthcare-workforce",
+      "url": "/our-approach/care-for-every-challenge/first-responders-healthcare-workforce",
       "navTier": 4,
       "parent": "population-specific-needs",
       "pageContent": {
@@ -1312,7 +1305,7 @@ window.SITEMAP = {
     {
       "id": "population-specific-needs",
       "name": "Population-Specific Needs",
-      "url": "/solutions/care-for-every-challenge/population-specific-needs",
+      "url": "/our-approach/care-for-every-challenge/population-specific-needs",
       "navTier": 3,
       "parent": "care-every-challenge",
       "type": "challenge-category",
@@ -1345,7 +1338,7 @@ window.SITEMAP = {
     {
       "id": "clinical-complex-needs",
       "name": "Clinical & Complex Needs",
-      "url": "/solutions/care-for-every-challenge/clinical-complex",
+      "url": "/our-approach/care-for-every-challenge/clinical-complex",
       "navTier": 3,
       "parent": "care-every-challenge",
       "type": "challenge-category",
@@ -1367,7 +1360,7 @@ window.SITEMAP = {
     {
       "id": "substance-use",
       "name": "Substance Use",
-      "url": "/solutions/care-for-every-challenge/substance-use",
+      "url": "/our-approach/care-for-every-challenge/substance-use",
       "navTier": 4,
       "parent": "clinical-complex-needs",
       "pageContent": {
@@ -1403,7 +1396,7 @@ window.SITEMAP = {
     {
       "id": "disordered-eating",
       "name": "Disordered Eating",
-      "url": "/solutions/care-for-every-challenge/disordered-eating",
+      "url": "/our-approach/care-for-every-challenge/disordered-eating",
       "navTier": 4,
       "parent": "clinical-complex-needs",
       "pageContent": {
@@ -1437,7 +1430,7 @@ window.SITEMAP = {
     {
       "id": "depression-anxiety",
       "name": "Depression & Anxiety Support",
-      "url": "/solutions/care-for-every-challenge/depression-anxiety",
+      "url": "/our-approach/care-for-every-challenge/depression-anxiety",
       "navTier": 4,
       "parent": "clinical-complex-needs",
       "pageContent": {
@@ -1472,7 +1465,7 @@ window.SITEMAP = {
     {
       "id": "crisis-acute-mental-health",
       "name": "Crisis & Acute Mental Health Support",
-      "url": "/solutions/care-for-every-challenge/crisis-acute-mental-health",
+      "url": "/our-approach/care-for-every-challenge/crisis-acute-mental-health",
       "navTier": 4,
       "parent": "clinical-complex-needs",
       "pageContent": {

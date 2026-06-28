@@ -132,7 +132,7 @@ window.SEO_DATA = {
       id: 'employers',
       name: 'Employers',
       pillarPageId: 'employers',
-      primaryKeyword: 'adaptive mental health benefits',
+      primaryKeyword: 'employee mental health benefits',
       clusterPageIds: [
         'burnout-workplace-stress',
         'leadership-manager-support',
@@ -155,7 +155,7 @@ window.SEO_DATA = {
       id: 'consultants',
       name: 'Consultants',
       pillarPageId: 'consultants',
-      primaryKeyword: 'mental health benefits for consultants',
+      primaryKeyword: 'mental health benefits platform',
       clusterPageIds: [
         'channel-partners',
         'health-plans',
@@ -169,7 +169,7 @@ window.SEO_DATA = {
       id: 'members',
       name: 'Members',
       pillarPageId: 'members',
-      primaryKeyword: 'employee mental health app',
+      primaryKeyword: 'employee mental wellbeing',
       clusterPageIds: [
         'everyday-mental-health',
         'financial-stress-wellbeing',
@@ -193,7 +193,7 @@ window.SEO_DATA = {
       id: 'adaptive-care',
       name: 'Adaptive Care',
       pillarPageId: 'adaptive-care',
-      primaryKeyword: 'adaptive mental health care',
+      primaryKeyword: 'personalized mental health care',
       clusterPageIds: [
         'care-every-challenge',
         'care-modalities',
@@ -248,7 +248,7 @@ window.SEO_DATA = {
     'employers': {
       seoType: 'pillar',
       seoCluster: 'employers',
-      primaryKeyword: 'adaptive mental health benefits',
+      primaryKeyword: 'employee mental health benefits',
       secondaryKeywords: [
         'EAP replacement',
         'enterprise mental health',
@@ -261,9 +261,9 @@ window.SEO_DATA = {
         'absenteeism',
       ],
       searchIntent: 'HR and benefits leaders evaluating enterprise mental health platforms to replace or supplement an EAP — want clinical proof, measurable ROI, and a solution that scales globally.',
-      recommendedH1: 'Adaptive Mental Health Benefits Built for the Modern Workforce',
-      titleTag: 'Adaptive Mental Health Benefits for Employers | Modern Health',
-      metaDescription: 'Modern Health delivers adaptive mental health benefits that go beyond EAPs — $2.39 ROI per $1 invested, 200+ countries, one platform for every employee need. Request a demo.',
+      recommendedH1: 'Employee Mental Health Benefits for Your Entire Workforce',
+      titleTag: 'Employee Mental Health Benefits | Modern Health',
+      metaDescription: 'Employee mental health benefits that go beyond the EAP — $2.39 ROI per $1, 200+ countries, 20% engagement vs. 2-4% for EAPs. Request a demo.',
       keyQuestions: [
         'How is Modern Health different from an EAP — and can it replace one?',
         'What ROI have enterprise clients seen in year one?',
@@ -282,18 +282,18 @@ window.SEO_DATA = {
     'consultants': {
       seoType: 'pillar',
       seoCluster: 'consultants',
-      primaryKeyword: 'mental health benefits for consultants',
+      primaryKeyword: 'mental health benefits platform',
       secondaryKeywords: [
-        'mental health benefit platform',
+        'mental health benefits for employees',
         'mental health vendor comparison',
         'questions employers should ask mental health vendor',
         'international eap providers',
         'mental health platforms',
       ],
       searchIntent: 'Benefits consultants and brokers vetting mental health vendors for client portfolios — need RFP-defensible differentiation, competitive comparison data, and ROI proof they can share with clients.',
-      recommendedH1: 'The Mental Health Benefit Consultants Recommend to Clients',
-      titleTag: 'Mental Health Benefits for Consultants | Modern Health',
-      metaDescription: 'Give clients a mental health benefit that stands up to RFP scrutiny — $2.39 ROI per $1, 100+ peer-reviewed studies, global coverage. Resources for benefits advisors.',
+      recommendedH1: 'The Mental Health Benefits Platform You Can Recommend with Confidence',
+      titleTag: 'Mental Health Benefits Platform | Modern Health',
+      metaDescription: 'The mental health benefits platform that stands up to RFP scrutiny — $2.39 ROI per $1, 100+ peer-reviewed studies, global coverage. Built for advisors.',
       keyQuestions: [
         'How does Modern Health compare to Lyra, Spring Health, or Headspace Health for RFP purposes?',
         'What ROI data and outcome metrics can I share with clients?',
@@ -320,9 +320,9 @@ window.SEO_DATA = {
         'clinical mental health benefits',
       ],
       searchIntent: 'Clinical leads, legal/compliance officers, and HR buyers validating evidence-based mental health care before approving a purchase — need peer-reviewed proof, outcome metrics, and clinical model transparency.',
-      recommendedH1: 'Clinical Outcomes That Hold Up to Scrutiny',
+      recommendedH1: 'Mental Health Outcomes Employees Feel — and Employers Can Measure',
       titleTag: 'Clinical Outcomes | Modern Health',
-      metaDescription: 'Modern Health publishes its clinical outcomes — 100+ peer-reviewed studies, 80% of members improve or maintain well-being, PHQ-9 and GAD-7 validated. See the evidence.',
+      metaDescription: 'Modern Health publishes its clinical outcomes — 100+ peer-reviewed studies, 80% of members improve or maintain well-being, PHQ-9 and GAD-7 validated.',
       keyQuestions: [
         'What peer-reviewed evidence supports Modern Health\'s clinical model?',
         'What outcome measures does Modern Health use and how are they reported to employers?',
@@ -350,9 +350,9 @@ window.SEO_DATA = {
         'employee mental health programs',
       ],
       searchIntent: 'CFOs, CHROs, and HR leaders building a financial business case for mental health investment — need a defensible ROI number, actuarial validation, and proof that mental health benefits pay back.',
-      recommendedH1: 'The Mental Health Investment That Pays for Itself',
+      recommendedH1: 'The Business Case for Mental Health, Measured in Dollars',
       titleTag: 'Mental Health ROI | Modern Health',
-      metaDescription: 'Modern Health delivers $2.39 in value for every $1 invested — actuarially validated, with 60% of savings driven by moderate-need employees. See the full ROI picture.',
+      metaDescription: 'Modern Health delivers $2.39 in value for every $1 invested — actuarially validated, with 60% of savings driven by moderate-need employees.',
       keyQuestions: [
         'What is the ROI of investing in Modern Health — and how is it calculated?',
         'Why do 60% of savings come from moderate-need employees, not high-acuity cases?',
@@ -400,7 +400,7 @@ window.SEO_DATA = {
       searchIntent: 'HR and finance leaders researching the productivity cost of poor mental health and looking for solutions to reduce presenteeism.',
       recommendedH1: 'Addressing Presenteeism Through Workforce Mental Health',
       titleTag: 'Workforce Performance & Presenteeism | Modern Health',
-      metaDescription: 'Address the hidden cost of presenteeism — Modern Health\'s workplace mental health programs improve focus, engagement, and performance across your workforce.',
+      metaDescription: 'Address the hidden cost of presenteeism — Modern Health\'s mental health programs improve focus, engagement, and performance across your workforce.',
       keyQuestions: [
         'What is presenteeism and how does it affect productivity?',
         'How does mental health support reduce presenteeism?',
@@ -492,22 +492,22 @@ window.SEO_DATA = {
         'How are employees matched to the right type of support?',
         'What is the difference between coaching and therapy?',
       ],
-      linksIn: ['solutions', 'employers', 'clinical-outcomes'],
+      linksIn: ['adaptive-care', 'employers', 'clinical-outcomes'],
       linksOut: ['mh-circles', 'mh-pathways', 'adaptive-care', 'clinical-outcomes'],
       brief: {
-        notes: 'Solutions subpage that establishes vocabulary for the four modalities (coaching, therapy, Circles, Pathways). The Adaptive Care Model is the reason each modality exists — routing by individual need, not by default. This page should answer "what types of care are available?" before directing users to specific modality pages. Link to clinical-outcomes to validate that modality selection is evidence-based, not marketing-driven.',
+        notes: 'Adaptive Care cluster page that establishes vocabulary for the four modalities (coaching, therapy, Circles, Pathways). The Adaptive Care Model is the reason each modality exists — routing by individual need, not by default. This page should answer "what types of care are available?" before directing users to specific modality pages. Link to clinical-outcomes to validate that modality selection is evidence-based, not marketing-driven.',
       },
     },
 
     'adaptive-care': {
       seoType: 'pillar',
       seoCluster: 'adaptive-care',
-      primaryKeyword: 'adaptive mental health care',
-      secondaryKeywords: ['mental health coaching', 'mental health solutions', 'personalized mental health care'],
+      primaryKeyword: 'personalized mental health care',
+      secondaryKeywords: ['mental health coaching', 'mental health solutions', 'adaptive mental health', 'adaptive care model'],
       searchIntent: 'HR leaders and clinical evaluators researching how a platform matches each individual employee to the right level and type of mental health care — and adjusts over time.',
-      recommendedH1: 'The Adaptive Care Model: Right Care, Right Time, Right Person',
-      titleTag: 'Adaptive Care | Modern Health',
-      metaDescription: 'Modern Health\'s Adaptive Care Model matches every employee to coaching, therapy, peer support, or digital tools — and adjusts as their needs change.',
+      recommendedH1: 'The Adaptive Care Model: Personalized Mental Health Care That Adapts to Every Need',
+      titleTag: 'Personalized Mental Health Care | Modern Health',
+      metaDescription: 'Modern Health\'s Adaptive Care Model delivers personalized mental health care — routing each employee to coaching, therapy, peer support, or digital tools.',
       keyQuestions: [
         'What is the Adaptive Care Model and how is it different from an EAP?',
         'How does Modern Health determine the right level of care for each employee?',
@@ -698,7 +698,7 @@ window.SEO_DATA = {
       searchIntent: 'HR and clinical leads evaluating a platform\'s ability to support employees with complex or high-acuity mental health needs beyond standard EAP coverage.',
       recommendedH1: 'Clinical Support for Complex Mental Health Needs',
       titleTag: 'Complex Clinical Mental Health Support | Modern Health',
-      metaDescription: 'Modern Health connects employees with complex mental health needs to the right clinical care — from specialized therapy to crisis support at every acuity level.',
+      metaDescription: 'Modern Health connects employees with complex mental health needs to the right care — from specialized therapy to crisis support at every acuity level.',
       keyQuestions: [
         'How does Modern Health handle high-acuity mental health needs?',
         'What clinical pathways exist for employees with complex diagnoses?',
@@ -761,7 +761,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders in retail, healthcare, logistics, and manufacturing looking for mental health benefits accessible to non-desk employees.',
       recommendedH1: 'Mental Health Support Built for Frontline and Deskless Workers',
       titleTag: 'Mental Health for Frontline Workers | Modern Health',
-      metaDescription: 'Modern Health reaches every employee — including frontline and deskless workers — with mobile-first, multilingual mental health support accessible anywhere.',
+      metaDescription: 'Modern Health reaches every employee — including frontline and deskless workers — with mobile-first, multilingual mental health support.',
       keyQuestions: [
         'How does Modern Health reach employees without desk access?',
         'What mobile and offline-friendly options are available?',
@@ -782,7 +782,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders building crisis preparedness plans who need a mental health partner with proven crisis response capabilities.',
       recommendedH1: 'Crisis Preparedness and Response for Employers',
       titleTag: 'Workplace Crisis Response | Modern Health',
-      metaDescription: 'Modern Health supports employers through critical incidents — providing rapid response resources, manager guidance, and employee mental health support when it matters most.',
+      metaDescription: 'Modern Health supports employers through critical incidents — rapid response resources, manager guidance, and mental health support when it matters most.',
       keyQuestions: [
         'How does Modern Health support employers during a critical incident?',
         'What resources are available for managers during a team crisis?',
@@ -845,7 +845,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders and consultants looking for real-world proof of mental health benefit ROI before making a purchase decision.',
       recommendedH1: 'Client Outcomes: Mental Health Benefits That Deliver ROI',
       titleTag: 'Mental Health Benefits Case Studies | Modern Health',
-      metaDescription: 'Real outcomes from Modern Health clients: Autodesk (3x engagement), Midland States Bank ($110K savings), CEBT (89% improved well-being, 37K members). See the proof.',
+      metaDescription: 'Real outcomes from Modern Health clients: Autodesk (3x engagement), Midland States Bank ($110K savings), CEBT (89% improved well-being). See the proof.',
       keyQuestions: [
         'What ROI have specific clients achieved with Modern Health?',
         'Which industries are represented in case studies?',
@@ -886,18 +886,18 @@ window.SEO_DATA = {
     'home': {
       seoType: 'cluster',
       seoCluster: 'employers',
-      primaryKeyword: 'mental health benefits platform',
+      primaryKeyword: 'workplace mental health platform',
       secondaryKeywords: [
+        'mental health benefits platform',
         'employee mental health benefits',
-        'workplace mental health solution',
         'mental health benefits for employers',
         'mental health technology platform',
         'mental health benefits',
       ],
       searchIntent: 'HR and benefits leaders landing on the Modern Health homepage — orienting to the brand and deciding whether to explore further or request a demo.',
-      recommendedH1: 'The Mental Health Benefits Platform Built for the Modern Workforce',
-      titleTag: 'Mental Health Benefits Platform | Modern Health',
-      metaDescription: 'Modern Health delivers adaptive mental health benefits to employees in 200+ countries — coaching, therapy, peer support, and 24/7 crisis access in one platform.',
+      recommendedH1: 'The Workplace Mental Health Platform Built for the Modern Workforce',
+      titleTag: 'Workplace Mental Health Platform | Modern Health',
+      metaDescription: 'The workplace mental health platform for the modern workforce — coaching, therapy, peer support, and 24/7 crisis access in 200+ countries. Request a demo.',
       keyQuestions: [
         'What does Modern Health do and who is it for?',
         'How is Modern Health different from an EAP?',
@@ -915,29 +915,30 @@ window.SEO_DATA = {
     'members': {
       seoType: 'pillar',
       seoCluster: 'members',
-      primaryKeyword: 'employee mental health app',
+      primaryKeyword: 'employee mental wellbeing',
       secondaryKeywords: [
-        'mental health app for employees',
+        'employee wellbeing',
+        'mental wellness',
         'employee wellbeing platform',
-        'workplace mental health app',
-        'best mental health benefit for employees',
+        'workplace mental wellbeing',
+        'mental health app for employees',
       ],
-      searchIntent: 'Employees who received a Modern Health benefit and are researching how to use it — or HR leaders reviewing the employee experience before recommending to their workforce.',
-      recommendedH1: 'Your Mental Health Benefit — Personalized, Private, and Always Available',
-      titleTag: 'Employee Mental Health App | Modern Health',
-      metaDescription: 'Modern Health gives every employee personalized mental health support — coaching, therapy, self-guided programs, and 24/7 crisis access in one app. 80+ languages.',
+      searchIntent: 'HR and benefits leaders evaluating the member experience and the value Modern Health delivers to their people — what employees get, whether they will actually use it, and how it supports wellbeing across the whole employee journey. Members who land here should also find clear value and a path to log in.',
+      recommendedH1: 'Employee Mental Wellbeing, at Every Stage of the Journey',
+      titleTag: 'Employee Mental Wellbeing | Modern Health',
+      metaDescription: 'Modern Health supports employee mental wellbeing across the whole journey — coaching, therapy, peer communities, and self-guided tools. 80+ languages.',
       keyQuestions: [
-        'What does the Modern Health app offer employees?',
-        'Is my usage private from my employer?',
-        'How do I get matched to a coach or therapist?',
-        'Is the app available in multiple languages?',
-        'What if I need crisis support right now?',
+        'What experience do employees actually get with Modern Health?',
+        'What kinds of support can your people access — coaching, therapy, community, self-guided tools?',
+        'Will employees actually use it — and is it private enough that they trust it?',
+        'How quickly and easily can employees get started, and in what languages?',
+        'How does support adapt to each employee\'s needs over time?',
       ],
       linksIn: ['home', 'employers', 'adaptive-care'],
       linksOut: ['adaptive-care', 'global-capabilities', 'nav-demo-request'],
       brief: {
-        notes: 'Dual audience page — employees need reassurance about privacy and simplicity; HR leaders are evaluating the employee-facing experience. Confidentiality is the #1 employee concern and must be addressed early. Key stats for employees: <1 day to first provider, 4.9/5 provider rating, 80+ languages, 200+ countries, 70 NPS. Live /member page highlights coaching, therapy, self-guided programs, and on-demand resources — use these as the four content pillars. The 20% engagement rate (vs 2-4% for EAPs) is proof the app actually gets used — include for HR audiences.',
-        contentGaps: 'App screenshots or product walkthrough in the page. Explicit privacy/confidentiality statement. Language and accessibility details. Matching process explanation (how the Adaptive Care Model works for the member). 24/7 crisis access call-out.',
+        notes: 'PRIMARY AUDIENCE is the employer / HR buyer learning how Modern Health serves members and the value delivered to their people; the member is a SECONDARY audience (give them value + a clear login path, but don\'t make them the main thrust). Voice is employer-facing ("your people"), describing the member experience and why employees actually use it. Positioning: a culture of mental wellbeing across the whole employee journey. Modern Health adds value in many ways — coaching, therapy, Circles peer communities, Pathways self-guided programs, and everyday wellbeing tools — not just clinical care for acute problems. Lead with breadth of value and ongoing support, not "an app" or "therapy." Confidentiality remains the #1 employee concern and must be addressed early. Proof for employees: <1 day to first provider, 4.9/5 provider rating, 80+ languages, 200+ countries, 70 NPS. The 20% engagement rate (vs 2-4% for EAPs) proves the benefit actually gets used across the workforce — include for HR audiences.',
+        contentGaps: 'A whole-journey view of how support shows up over time — not a feature list. The breadth of value beyond clinical care (everyday wellbeing, life stages, community). Explicit privacy/confidentiality statement. Language and accessibility details. How the Adaptive Care Model personalizes the experience as each member\'s needs change.',
       },
     },
 
@@ -946,7 +947,6 @@ window.SEO_DATA = {
       seoCluster: 'employers',
       primaryKeyword: 'global mental health solution',
       secondaryKeywords: [
-        'global mental health solution',
         'global employee mental health benefits',
         'international mental health platform',
         'multinational employee wellbeing',
@@ -1055,7 +1055,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders looking for a benefits platform that covers the full spectrum of employee mental health needs — not just one condition or use case — as an alternative or supplement to an EAP.',
       recommendedH1: 'Mental Health Support for Every Challenge Your Employees Face',
       titleTag: 'Mental Health for Every Challenge | Modern Health',
-      metaDescription: 'From everyday stress to complex clinical needs, Modern Health covers the full spectrum — the EAP alternative built for the whole workforce, not just crisis cases.',
+      metaDescription: 'From everyday stress to complex needs, Modern Health covers the full spectrum — the EAP alternative built for the whole workforce, not just crisis cases.',
       keyQuestions: [
         'Does Modern Health support employees across the full spectrum of mental health needs?',
         'How does the platform handle both mild and severe mental health challenges?',
@@ -1065,7 +1065,7 @@ window.SEO_DATA = {
       linksIn: ['home', 'employers', 'members'],
       linksOut: ['burnout-workplace-stress', 'depression-anxiety', 'substance-use', 'grief', 'life-transitions', 'population-specific-needs'],
       brief: {
-        notes: 'Solutions hub page — the navigational anchor for the full spectrum of challenge-specific pages. This page captures EAP alternative intent: buyers who\'ve searched "EAP alternative" or "what replaces an EAP" are looking for exactly what this page describes. Lead with the breadth of coverage (everyday stress → complex clinical needs → crisis) as proof that this isn\'t just another point solution. The Adaptive Care Model is the connective tissue — show how one platform routes across all challenge types.',
+        notes: 'Our Approach hub page — the navigational anchor for the full spectrum of challenge-specific pages. This page captures EAP alternative intent: buyers who\'ve searched "EAP alternative" or "what replaces an EAP" are looking for exactly what this page describes. Lead with the breadth of coverage (everyday stress → complex clinical needs → crisis) as proof that this isn\'t just another point solution. The Adaptive Care Model is the connective tissue — show how one platform routes across all challenge types.',
         contentGaps: 'Grid or card layout of all challenge types with one-line descriptions. Clear links to each detail page. EAP comparison framing — what EAPs cover vs what Modern Health covers. A challenge spectrum visual (low-acuity to high-acuity) showing how the Adaptive Care Model addresses each level.',
       },
     },
@@ -1078,7 +1078,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders looking for mental health benefits that support employees through major life milestones — not just workplace stress.',
       recommendedH1: 'Mental Health Support Across Every Stage of Life',
       titleTag: 'Life Stages Mental Health Support | Modern Health',
-      metaDescription: 'Modern Health supports employees through the mental health dimensions of every life stage — from new parenthood to retirement transitions and everything in between.',
+      metaDescription: 'Modern Health supports the mental health dimensions of every life stage — from new parenthood to retirement and everything in between.',
       keyQuestions: [
         'What life stage challenges does Modern Health cover?',
         'How does support differ based on life stage?',
@@ -1099,7 +1099,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders building benefits that address caregiver burnout and the mental health toll of caring for aging parents or dependents while working.',
       recommendedH1: 'Mental Health Support for Employee Caregivers',
       titleTag: 'Caregiver Support in the Workplace | Modern Health',
-      metaDescription: 'Modern Health helps working caregivers manage stress, prevent burnout, and access support — so caregiving responsibilities don\'t derail their wellbeing or performance.',
+      metaDescription: 'Modern Health helps working caregivers manage stress, prevent burnout, and access support — so caregiving doesn\'t derail their wellbeing or performance.',
       keyQuestions: [
         'How does Modern Health support employees who are also caregivers?',
         'What resources are available for caregiver burnout?',
@@ -1120,7 +1120,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders designing benefits that support working parents — from new parenthood stress to parenting children with mental health needs.',
       recommendedH1: 'Parenting and Dependent Care Support for Working Parents',
       titleTag: 'Parenting Support Employee Benefits | Modern Health',
-      metaDescription: 'Modern Health supports working parents at every stage — prenatal stress, postpartum mental health, parenting burnout, and support for dependents with mental health needs.',
+      metaDescription: 'Modern Health supports working parents — prenatal stress, postpartum mental health, parenting burnout, and dependents with mental health needs.',
       keyQuestions: [
         'How does Modern Health support employees who are new or expecting parents?',
         'Is postpartum mental health support included?',
@@ -1141,7 +1141,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders and benefits managers looking for mental health benefits that address the psychological burden of chronic illness in employees.',
       recommendedH1: 'Mental Health Support for Employees Living with Chronic Illness',
       titleTag: 'Chronic Illness Mental Health Support | Modern Health',
-      metaDescription: 'Modern Health supports employees managing chronic conditions — addressing the anxiety, depression, and isolation that often accompany serious or long-term illness.',
+      metaDescription: 'Modern Health supports employees managing chronic conditions — addressing the anxiety, depression, and isolation that accompany long-term illness.',
       keyQuestions: [
         'How does Modern Health support employees with chronic illness?',
         'What specialized care is available for the mental health impact of serious illness?',
@@ -1162,7 +1162,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders looking for a mental health benefit that specifically addresses employee grief, loss, and bereavement — beyond standard EAP sessions.',
       recommendedH1: 'Grief and Bereavement Support for Employees',
       titleTag: 'Grief Support in the Workplace | Modern Health',
-      metaDescription: 'Modern Health provides compassionate grief and bereavement support for employees — therapist-led care, self-guided resources, and peer community for those experiencing loss.',
+      metaDescription: 'Modern Health provides compassionate grief and bereavement support — therapist-led care, self-guided resources, and peer community for those facing loss.',
       keyQuestions: [
         'What grief support does Modern Health offer employees?',
         'Is grief counseling included in standard benefits or a separate offering?',
@@ -1183,7 +1183,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders seeking mental health benefits that help employees navigate major personal or professional life transitions with resilience.',
       recommendedH1: 'Mental Health Support Through Life\'s Major Transitions',
       titleTag: 'Life Transition Mental Health Support | Modern Health',
-      metaDescription: 'Modern Health helps employees navigate major life transitions — divorce, relocation, career change, retirement — with personalized mental health support at every turn.',
+      metaDescription: 'Modern Health helps employees navigate major life transitions — divorce, relocation, career change, retirement — with mental health support at every turn.',
       keyQuestions: [
         'What life transitions does Modern Health support employees through?',
         'How does coaching differ from therapy for life transition support?',
@@ -1204,7 +1204,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders building inclusive benefits that specifically address the mental health needs of women employees across life stages.',
       recommendedH1: 'Mental Health Benefits Designed for Women at Every Life Stage',
       titleTag: 'Women\'s Mental Health at Work | Modern Health',
-      metaDescription: 'Modern Health supports women\'s mental health across every stage — reproductive health, postpartum, menopause, caregiver stress, and workplace equity challenges.',
+      metaDescription: 'Modern Health supports women\'s mental health at every stage — reproductive health, postpartum, menopause, caregiver stress, and workplace equity.',
       keyQuestions: [
         'How does Modern Health address mental health needs specific to women?',
         'Is reproductive and postpartum mental health support included?',
@@ -1246,7 +1246,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders and L&D teams looking for mental health benefits that support employees through career challenges, burnout, and professional growth.',
       recommendedH1: 'Supporting Employee Mental Health Through Career Growth and Change',
       titleTag: 'Career Development Mental Health | Modern Health',
-      metaDescription: 'Modern Health supports employees navigating career transitions, workplace stress, and professional growth — coaching and mental health care aligned with their trajectory.',
+      metaDescription: 'Modern Health supports employees navigating career transitions, workplace stress, and professional growth — with mental health coaching.',
       keyQuestions: [
         'How does Modern Health support employees through career challenges?',
         'Is career coaching different from mental health coaching?',
@@ -1267,7 +1267,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders and people ops teams looking for mental health benefits that support employees on leave and facilitate return-to-work processes.',
       recommendedH1: 'Mental Health Support Through Leave, Return, and Accommodation',
       titleTag: 'Mental Health Leave of Absence Support | Modern Health',
-      metaDescription: 'Modern Health supports employees through mental health leave — before, during, and after — with care continuity, return-to-work planning, and accommodation guidance.',
+      metaDescription: 'Modern Health supports employees through mental health leave — with care continuity, return-to-work planning, and accommodation guidance.',
       keyQuestions: [
         'How does Modern Health support employees on mental health leave?',
         'What does care continuity look like during a leave of absence?',
@@ -1288,7 +1288,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders and DEI teams evaluating whether a mental health platform can serve a culturally diverse workforce with appropriate, stigma-informed care.',
       recommendedH1: 'Mental Health Benefits for a Multicultural and Diverse Workforce',
       titleTag: 'Multicultural Workforce Mental Health | Modern Health',
-      metaDescription: 'Modern Health provides culturally responsive mental health care — matching employees to providers who share their background, language, and lived experience.',
+      metaDescription: 'Modern Health provides culturally responsive mental health care — matching employees to providers who share their background, language, and experience.',
       keyQuestions: [
         'How does Modern Health serve employees from diverse cultural backgrounds?',
         'Can employees be matched to providers who share their identity or language?',
@@ -1309,7 +1309,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders and benefits managers at public safety organizations, fire departments, and emergency services seeking specialized mental health support for first responders.',
       recommendedH1: 'Mental Health Benefits Designed for First Responders',
       titleTag: 'First Responder Mental Health Benefits | Modern Health',
-      metaDescription: 'Modern Health supports first responders with trauma-informed mental health care — PTSD, burnout, shift work stress, and peer support designed for high-stress roles.',
+      metaDescription: 'Modern Health supports first responders with trauma-informed mental health care — PTSD, burnout, shift stress, and peer support for high-stress roles.',
       keyQuestions: [
         'What specialized mental health support does Modern Health offer first responders?',
         'How does the platform handle trauma and PTSD in first responder populations?',
@@ -1330,7 +1330,7 @@ window.SEO_DATA = {
       searchIntent: 'HR leaders at large or complex organizations looking for a mental health platform that can be tailored to distinct employee populations.',
       recommendedH1: 'Mental Health Benefits Tailored to Your Unique Workforce Populations',
       titleTag: 'Population-Specific Mental Health Support | Modern Health',
-      metaDescription: 'Modern Health adapts to the mental health needs of every employee population — frontline, executive, multicultural, neurodivergent, and more — within one platform.',
+      metaDescription: 'Modern Health adapts to the mental health needs of every employee population — frontline, multicultural, neurodivergent, and more — in one platform.',
       keyQuestions: [
         'How does Modern Health support different employee populations differently?',
         'Can we configure the platform for specific divisions or locations?',
@@ -1349,7 +1349,7 @@ window.SEO_DATA = {
       seoType: 'supporting',
       seoCluster: null,
       primaryKeyword: 'mental health at work',
-      titleTag: 'Mental Health at Work — Resources and Insights | Modern Health',
+      titleTag: 'Mental Health at Work — Resources & Insights | Modern Health',
       metaDescription: 'Modern Health\'s blog — research, guides, and expert perspectives on mental health at work, employee wellbeing, and building healthier organizations.',
     },
 
@@ -1398,7 +1398,7 @@ window.SEO_DATA = {
       seoCluster: null,
       primaryKeyword: 'become a mental health provider',
       titleTag: 'Provider Opportunities | Join Modern Health\'s Network',
-      metaDescription: 'Modern Health partners with therapists, coaches, and clinical specialists to deliver quality mental health care to employees worldwide. Apply to join our network.',
+      metaDescription: 'Modern Health partners with therapists, coaches, and clinical specialists to deliver quality mental health care worldwide. Apply to join our network.',
     },
   },
 
@@ -1428,10 +1428,10 @@ window.SEO_DATA = {
     { pattern: 'pillar-to-cluster', fromPageId: 'economic-roi', toPageId: 'case-studies', anchorText: 'client ROI case studies', reason: 'ROI pillar links to proof point cluster' },
     { pattern: 'pillar-to-cluster', fromPageId: 'economic-roi', toPageId: 'workforce-performance', anchorText: 'reduce presenteeism costs', reason: 'ROI pillar links to productivity data cluster' },
 
-    // Solutions-to-outcomes
-    { pattern: 'solutions-to-outcomes', fromPageId: 'care-modalities', toPageId: 'clinical-outcomes', anchorText: 'evidence-based mental health care', reason: 'Solutions pages validate clinical credibility via outcomes' },
-    { pattern: 'solutions-to-outcomes', fromPageId: 'depression-anxiety', toPageId: 'clinical-outcomes', anchorText: 'clinical outcomes data', reason: 'Condition page needs to reference clinical evidence' },
-    { pattern: 'solutions-to-outcomes', fromPageId: 'depression-anxiety', toPageId: 'clinical-research', anchorText: 'peer-reviewed research on depression', reason: 'Condition page validates via research cluster' },
-    { pattern: 'solutions-to-outcomes', fromPageId: 'burnout-workplace-stress', toPageId: 'clinical-outcomes', anchorText: 'burnout clinical outcomes', reason: 'Burnout page links to clinical authority' },
+    // Cluster-to-outcomes
+    { pattern: 'cluster-to-outcomes', fromPageId: 'care-modalities', toPageId: 'clinical-outcomes', anchorText: 'evidence-based mental health care', reason: 'Cluster pages validate clinical credibility via outcomes' },
+    { pattern: 'cluster-to-outcomes', fromPageId: 'depression-anxiety', toPageId: 'clinical-outcomes', anchorText: 'clinical outcomes data', reason: 'Condition page needs to reference clinical evidence' },
+    { pattern: 'cluster-to-outcomes', fromPageId: 'depression-anxiety', toPageId: 'clinical-research', anchorText: 'peer-reviewed research on depression', reason: 'Condition page validates via research cluster' },
+    { pattern: 'cluster-to-outcomes', fromPageId: 'burnout-workplace-stress', toPageId: 'clinical-outcomes', anchorText: 'burnout clinical outcomes', reason: 'Burnout page links to clinical authority' },
   ],
 };
