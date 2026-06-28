@@ -454,7 +454,8 @@
     if (b.eyebrow) inner += `<div class="doc-eyebrow">${esc(b.eyebrow)}</div>`;
     if (b.type === 'hero') {
       inner += `<h3>${esc(b.h1)}</h3><p>${esc(b.subhead)}</p>`;
-      inner += `<p><strong>CTAs:</strong> ${esc(b.primaryCta ? b.primaryCta.label : '')}${b.secondaryCta ? ' · ' + esc(b.secondaryCta.label) : ''}</p>`;
+      if (b.primaryCta) { const li = linkInfo(b.primaryCta.toId); inner += `<p><strong>Primary CTA:</strong> ${esc(b.primaryCta.label)} <em>→ ${esc(li.name)} (${esc(li.url)})</em></p>`; }
+      if (b.secondaryCta) { const li = linkInfo(b.secondaryCta.toId); inner += `<p><strong>Secondary CTA:</strong> ${esc(b.secondaryCta.label)} <em>→ ${esc(li.name)} (${esc(li.url)})</em></p>`; }
     } else if (b.type === 'stats') {
       inner += `<p>${b.items.map(s => `<strong>${esc(s.value)}</strong> — ${esc(s.label)}`).join(' &nbsp;·&nbsp; ')}</p>`;
     } else if (b.type === 'section') {
@@ -492,7 +493,9 @@
     } else if (b.type === 'faq') {
       inner += `<h3>${esc(b.heading)}</h3>` + b.items.map(it => `<p><strong>${esc(it.q)}</strong><br>${esc(it.a)}</p>`).join('');
     } else if (b.type === 'cta') {
-      inner += `<h3>${esc(b.heading)}</h3><p>${esc(b.body)}</p><p><strong>CTAs:</strong> ${esc(b.primaryCta ? b.primaryCta.label : '')}${b.secondaryCta ? ' · ' + esc(b.secondaryCta.label) : ''}</p>`;
+      inner += `<h3>${esc(b.heading)}</h3><p>${esc(b.body)}</p>`;
+      if (b.primaryCta) { const li = linkInfo(b.primaryCta.toId); inner += `<p><strong>Primary CTA:</strong> ${esc(b.primaryCta.label)} <em>→ ${esc(li.name)} (${esc(li.url)})</em></p>`; }
+      if (b.secondaryCta) { const li = linkInfo(b.secondaryCta.toId); inner += `<p><strong>Secondary CTA:</strong> ${esc(b.secondaryCta.label)} <em>→ ${esc(li.name)} (${esc(li.url)})</em></p>`; }
     }
     if (b.annotation) inner += `<div class="doc-anno"><span class="doc-anno-label">Why</span>${esc(b.annotation)}</div>`;
     return `<div class="doc-block">${inner}</div>`;
@@ -524,7 +527,7 @@
     md += `---\n\n## Page Copy\n\n`;
     page.blocks.forEach(b => {
       md += `### [${b.type}]${b.eyebrow ? ' ' + b.eyebrow : ''}\n\n`;
-      if (b.type === 'hero') { md += `**H1:** ${b.h1}\n\n${b.subhead}\n\n**CTAs:** ${b.primaryCta?b.primaryCta.label:''}${b.secondaryCta?' · '+b.secondaryCta.label:''}\n\n`; }
+      if (b.type === 'hero') { md += `**H1:** ${b.h1}\n\n${b.subhead}\n\n`; if (b.primaryCta) { const li=linkInfo(b.primaryCta.toId); md += `**Primary CTA:** ${b.primaryCta.label} → ${li.name} (${li.url})\n\n`; } if (b.secondaryCta) { const li=linkInfo(b.secondaryCta.toId); md += `**Secondary CTA:** ${b.secondaryCta.label} → ${li.name} (${li.url})\n\n`; } }
       else if (b.type === 'stats') { md += b.items.map(s => `- **${s.value}** — ${s.label}`).join('\n') + '\n\n'; }
       else if (b.type === 'section') { md += `**${b.heading}**\n\n` + b.body.join('\n\n') + '\n\n' + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
       else if (b.type === 'comparison') { md += `**${b.heading}**\n\n` + (b.lead ? b.lead + '\n\n' : '') + `| | ${b.columns.left} | ${b.columns.right} |\n|---|---|---|\n` + b.rows.map(r => `| ${r.dimension} | ${r.eap} | ${r.mh} |`).join('\n') + '\n\n' + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
@@ -535,7 +538,7 @@
       else if (b.type === 'social-proof') { md += `**${b.heading}**\n\nLogos: ${(b.logos||[]).join(' · ')}\n\n` + b.outcomes.map(o => `- **${o.stat} — ${o.client}:** ${o.detail}`).join('\n') + '\n\n' + (b.testimonial ? `> “${b.testimonial.quote}” — ${b.testimonial.attribution}\n\n` : '') + (b.link ? `_Cross-link:_ → ${b.link.label} (${linkInfo(b.link.toId).url})\n\n` : ''); }
       else if (b.type === 'content-ctas') { md += `**${b.heading}**\n\n` + b.items.map(it => `- **${it.kind}:** ${it.label} → ${linkInfo(it.toId).name} (${linkInfo(it.toId).url})`).join('\n') + '\n\n'; }
       else if (b.type === 'faq') { md += `**${b.heading}**\n\n` + b.items.map(it => `**Q: ${it.q}**\n\n${it.a}`).join('\n\n') + '\n\n'; }
-      else if (b.type === 'cta') { md += `**${b.heading}**\n\n${b.body}\n\n**CTAs:** ${b.primaryCta?b.primaryCta.label:''}${b.secondaryCta?' · '+b.secondaryCta.label:''}\n\n`; }
+      else if (b.type === 'cta') { md += `**${b.heading}**\n\n${b.body}\n\n`; if (b.primaryCta) { const li=linkInfo(b.primaryCta.toId); md += `**Primary CTA:** ${b.primaryCta.label} → ${li.name} (${li.url})\n\n`; } if (b.secondaryCta) { const li=linkInfo(b.secondaryCta.toId); md += `**Secondary CTA:** ${b.secondaryCta.label} → ${li.name} (${li.url})\n\n`; } }
       if (b.annotation) md += `_Why:_ ${b.annotation}\n\n`;
     });
     return md;
