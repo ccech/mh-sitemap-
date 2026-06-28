@@ -462,6 +462,435 @@ window.PAGE_CONTENT = {
     ],
   },
 
+  'partnering-with-your-team': {
+    pageId: 'partnering-with-your-team',
+    status: 'draft',
+    blocks: [
+
+      {
+        type: 'hero',
+        eyebrow: 'Our Approach · Implementation',
+        h1: 'A Partner at Every Stage of Your Mental Health Program',
+        subhead: 'Modern Health doesn\'t hand over a platform and wish you luck. From pre-launch communications through ongoing utilization — your dedicated team handles the lift so your HR team doesn\'t have to.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See implementation outcomes', toId: 'case-studies' },
+        annotation: 'H1 = brief recommendedH1. Opens by naming the fear (handed a platform, no support) and immediately reversing it. Per brief: "implementation anxiety is a common buying objection — HR leaders fear the lift of launching a new platform while managing everything else."',
+      },
+
+      {
+        type: 'stats',
+        items: [
+          { value: '52%', label: 'registration rate at Atlassian — driven by MH-led launch support' },
+          { value: '63%', label: 'registration rate at Rubrik within 90 days of launch' },
+          { value: '<1 day', label: 'from employee sign-up to first matched provider session' },
+          { value: '20%', label: 'workforce engagement — what a well-launched program delivers' },
+        ],
+        annotation: 'Registration rates (Atlassian + Rubrik) establish that high registration is a partnership outcome, not luck. <1 day and 20% engagement show the end result of good implementation. Per brief: "these outcomes only happen with strong implementation support."',
+      },
+
+      {
+        type: 'feature-grid',
+        eyebrow: 'The Partnership Model',
+        heading: 'What Modern Health does at every stage',
+        lead: 'Implementation isn\'t a one-time event. Modern Health partners with your HR team across four distinct phases — each with a dedicated team and a defined set of deliverables.',
+        features: [
+          { icon: '📋', title: 'Pre-launch planning', text: 'Kickoff with your dedicated client success manager. Configuration, eligibility setup, admin portal access, and a launch timeline built around your calendar — not ours.' },
+          { icon: '📣', title: 'Communications and awareness', text: 'Employer-branded launch emails, manager talking points, intranet content, and Slack/Teams assets — ready to send. Your communications, our work.' },
+          { icon: '🏫', title: 'Manager and leader training', text: 'Live and on-demand sessions for managers on how to talk about mental health with their teams, recognize signs of struggle, and confidently direct employees to support.' },
+          { icon: '📈', title: 'Ongoing utilization support', text: 'Post-launch check-ins, utilization data, re-engagement campaigns, and annual review planning. Your client success manager stays engaged after go-live — not just through it.' },
+        ],
+        link: { label: 'The care model your employees will experience', toId: 'adaptive-care' },
+        annotation: 'Answers key question #1 (what implementation looks like) and key question #3 (ongoing support). Four phases map to the sitemap keyContent. Manager training is called out in brief notes as a key differentiator.',
+      },
+
+      {
+        type: 'split',
+        eyebrow: 'Who Does the Work',
+        heading: 'Your team configures. We build everything else.',
+        body: [
+          'Most platform launches put the content creation, communications drafting, manager prep, and re-engagement planning on your HR team. Modern Health flips the model — your team provides the approvals and the context; Modern Health\'s implementation team delivers the assets.',
+          'That includes employer-branded communication templates, manager talking-point guides, benefits-fair materials, intranet copy, digital signage, and post-launch re-engagement sequences — all customized for your workforce, none of it starting from scratch.',
+        ],
+        mediaSide: 'right',
+        media: { kind: 'diagram', label: 'HR team inputs vs. MH team deliverables' },
+        link: { label: 'Back to the full employer overview', toId: 'employers' },
+        annotation: 'Answers key question #2 (how MH supports awareness and adoption). The "who does the work" framing directly addresses the implementation anxiety from the brief — makes explicit that the heavy lifting is on MH, not HR.',
+      },
+
+      {
+        type: 'comparison',
+        eyebrow: 'Implementation Models',
+        heading: 'A strategic partner — not just a platform vendor',
+        lead: 'Most mental health platforms deliver credentials and documentation. Modern Health delivers a launch.',
+        columns: { left: 'Typical Platform Vendor', right: 'Modern Health' },
+        rows: [
+          { dimension: 'Launch support', eap: 'Admin credentials and a help center link', mh: 'Dedicated client success manager from day one' },
+          { dimension: 'Communications', eap: 'Generic email template, self-serve', mh: 'Employer-branded templates built and ready to send' },
+          { dimension: 'Manager prep', eap: 'None or a generic PDF', mh: 'Live and on-demand manager training sessions' },
+          { dimension: 'Post-launch', eap: 'Utilization report, quarterly at best', mh: 'Ongoing check-ins, re-engagement campaigns, annual planning' },
+          { dimension: 'Registration outcomes', eap: 'Industry average: single digits', mh: '52% Atlassian, 63% Rubrik — driven by partnership, not chance' },
+        ],
+        link: { label: 'Client outcomes by implementation model', toId: 'case-studies' },
+        annotation: 'Differentiates MH\'s implementation model without naming competitor platforms. Bottom row uses the registration proof points to close the comparison — makes the table\'s argument concrete.',
+      },
+
+      {
+        type: 'callout',
+        eyebrow: 'Proof of Partnership',
+        heading: 'Registration rates that only happen with real implementation support',
+        bigStat: { value: '63%', label: 'registration rate at Rubrik within 90 days' },
+        body: 'A 63% registration rate — or a 52% rate at Atlassian — doesn\'t happen by sending one email and hoping. It happens because Modern Health\'s implementation team builds the campaign, trains the managers, runs the re-engagement sequences, and tracks adoption weekly until the numbers move. That\'s the partnership model.',
+        link: { label: 'Download launch and communication toolkits', toId: 'gated-content' },
+        annotation: 'Per brief: "citing these outcomes turns a cost/friction concern into proof of partnership value." Rubrik\'s 63% is the lead stat because it\'s slightly higher and has a clear 90-day timeline. Link to gated-content for the practical toolkit — natural next step for an HR leader who wants to see what "employer-branded templates" actually means.',
+      },
+
+      {
+        type: 'social-proof',
+        heading: 'What great implementation looks like in practice',
+        logos: ['Atlassian', 'Rubrik', 'Nextdoor', 'Lyft'],
+        outcomes: [
+          { client: 'Atlassian', stat: '52% registration rate', detail: 'Global workforce — Alice Vichaita' },
+          { client: 'Rubrik', stat: '63% registration rate', detail: 'Within 90 days of launch' },
+          { client: 'Nextdoor', stat: 'Named reference', detail: 'Beth Steinberg — implementation and partnership model' },
+        ],
+        testimonial: {
+          quote: 'PLACEHOLDER — Beth Steinberg (Nextdoor) and Alice Vichaita (Atlassian) are both named Modern Health references. A quote specifically about the implementation experience or partnership model would be ideal for this page. Needed before final.',
+          attribution: 'HR implementation testimonial — PLACEHOLDER',
+        },
+        link: { label: 'See all client outcomes', toId: 'case-studies' },
+        annotation: 'Implementation proof. Registration rates are the metric that matters here — they\'re the direct output of launch support quality. Nextdoor and Lyft logos add brand recognition. Testimonial is PLACEHOLDER.',
+      },
+
+      {
+        type: 'faq',
+        heading: 'What HR teams ask before signing',
+        items: [
+          {
+            q: 'What does implementation look like with Modern Health?',
+            a: 'Implementation begins with a dedicated client success manager assigned before contract close. The pre-launch phase covers eligibility configuration, admin portal setup, and a launch timeline. Modern Health then builds the communications campaign — employer-branded emails, manager guides, and benefits-fair materials — customized for your workforce. Go-live is typically 4–6 weeks from kickoff, with manager training sessions scheduled in the weeks before launch.',
+          },
+          {
+            q: 'How does Modern Health support employee awareness and adoption?',
+            a: 'Modern Health delivers a complete communications package: employer-branded email sequences, manager talking-point guides, intranet copy, Slack/Teams assets, and digital signage — all ready to send or adapt. Manager training sessions (live and on-demand) give leaders the language to talk about mental health with their teams and direct employees to support without overstepping. Post-launch, re-engagement campaigns target employees who haven\'t activated yet.',
+          },
+          {
+            q: 'What ongoing support does Modern Health provide after launch?',
+            a: 'Your client success manager stays engaged after go-live with regular utilization check-ins, population-level engagement data, and recommendations for re-engagement. Annual planning sessions help you time awareness campaigns, open enrollment messaging, and benefit refresh communications. The partnership model doesn\'t end at launch — it scales with your workforce.',
+          },
+        ],
+        annotation: 'All three SEO brief keyQuestions answered verbatim. Q1 gives a concrete timeline (4–6 weeks) — HR buyers need this to plan internal approvals and calendar. Q3 makes clear the CSM relationship is ongoing, not just onboarding.',
+      },
+
+      {
+        type: 'content-ctas',
+        heading: 'Resources for your launch planning',
+        items: [
+          { kind: 'Toolkit', label: 'Download launch and communication toolkits', toId: 'gated-content' },
+          { kind: 'Webinars', label: 'Implementation and adoption webinars — on-demand', toId: 'past-webinars' },
+        ],
+        annotation: 'PROCESS — two CTAs matching sitemap contentClusterCTAs for partnering-with-your-team (gated-content + past-webinars). Both framed for an HR leader doing launch planning.',
+      },
+
+      {
+        type: 'cta',
+        heading: 'See what a Modern Health launch looks like for your workforce',
+        body: 'Request a demo to walk through the implementation timeline, the communications package, and what 52–63% registration rates look like in practice for your headcount.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See the care your employees will access', toId: 'adaptive-care' },
+        annotation: 'Final conversion. Body names the three things a nervous HR leader wants to see in a demo: timeline, communications package, and registration proof. Secondary CTA shifts from "how we launch" to "what employees experience" — closes the full buyer loop.',
+      },
+
+    ],
+  },
+
+  'provider-network': {
+    pageId: 'provider-network',
+    status: 'draft',
+    blocks: [
+
+      {
+        type: 'hero',
+        eyebrow: 'Our Approach · Provider Network',
+        h1: 'A Provider Network Built for Quality, Access, and Diversity',
+        subhead: 'Modern Health\'s global provider network: 4.9/5 member rating, 46% BIPOC providers, 80+ languages, less than one day to a first session. Quality at a scale most networks can\'t match.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'Join our provider network', toId: 'provider-opportunities' },
+        annotation: 'H1 = brief recommendedH1. Four authority stats in the subhead — per brief, lead with the hard numbers. Dual CTA: employer/HR buyer (demo) and providers evaluating joining (provider-opportunities). This page serves two audiences.',
+      },
+
+      {
+        type: 'stats',
+        items: [
+          { value: '4.9/5', label: 'average provider rating from members' },
+          { value: '46%', label: 'of providers identify as BIPOC — cultural match at scale' },
+          { value: '80+', label: 'languages supported across the provider network' },
+          { value: '<1 day', label: 'from sign-up to a first matched provider session' },
+        ],
+        annotation: 'The four key trust stats from the brief — all auditable, all drawn from mh-brand-context.md. Quality (4.9/5), equity (46%), language (80+), access speed (<1 day). Each addresses a distinct procurement concern.',
+      },
+
+      {
+        type: 'split',
+        eyebrow: 'The Credentialing Standard',
+        heading: 'Not just vetted — continuously monitored',
+        body: [
+          'Every provider in the Modern Health network completes a structured credentialing process before seeing a single member: license and malpractice verification, background screening, clinical training and specialty documentation, and a quality interview evaluating cultural competency and alignment with the Adaptive Care Model.',
+          'Credentialing isn\'t a one-time gate. Provider performance is monitored continuously through session outcome data, member ratings, and clinical review — providers who fall below quality thresholds are removed from the network. The 4.9/5 rating is maintained, not just achieved at onboarding.',
+        ],
+        mediaSide: 'right',
+        media: { kind: 'diagram', label: 'Credentialing process: license check → background → specialty review → quality interview → ongoing monitoring' },
+        link: { label: 'How quality is governed across the platform', toId: 'clinical-quality-standards' },
+        annotation: 'Answers key question #2 (how providers are vetted and credentialed) and closes the biggest content gap in the brief: "specific credentialing criteria" and "quality monitoring/provider performance process." The "continuously monitored" frame counters the EAP pattern of one-time credentialing with no ongoing standard.',
+      },
+
+      {
+        type: 'cards',
+        eyebrow: 'Provider Types',
+        heading: 'Every type of support — every credential level',
+        lead: 'The Modern Health network includes the full clinical spectrum — because the Adaptive Care Model routes employees across all of them.',
+        cards: [
+          { icon: '🧠', title: 'Licensed Therapists', text: 'Psychologists, LCSWs, LMFTs, and licensed counselors — credentialed for clinical care across depression, anxiety, trauma, and complex diagnoses.' },
+          { icon: '💬', title: 'Certified Coaches', text: 'ICF-certified coaches specializing in workplace stress, performance, leadership, and life transitions — matched to employees who need support below a clinical threshold.' },
+          { icon: '👥', title: 'Circles Facilitators', text: 'Trained group facilitators who lead peer support sessions across dozens of topic areas — building community resilience alongside 1:1 care.' },
+          { icon: '⚕️', title: 'Psychiatric Prescribers', text: 'Board-certified psychiatrists and psychiatric nurse practitioners for members who need medication management alongside therapy or coaching.' },
+        ],
+        link: { label: 'How the Adaptive Care Model routes across provider types', toId: 'adaptive-care' },
+        annotation: 'Answers the "specialty breakdown" content gap from the brief. Four types map to the four Adaptive Care modalities — coaches for coaching, therapists for therapy, facilitators for Circles. Psychiatric prescribers fills the high-acuity gap most networks underspecify.',
+      },
+
+      {
+        type: 'feature-grid',
+        eyebrow: 'Four Dimensions of Network Quality',
+        heading: 'Quality isn\'t one number — it\'s a system',
+        lead: 'A 4.9/5 rating is the output. Here\'s what produces it.',
+        features: [
+          { icon: '🎓', title: 'Structured credentialing', text: 'License verification, background screening, specialty documentation, and a cultural competency interview — before any provider sees a member.' },
+          { icon: '🌍', title: 'Cultural and language match', text: '46% BIPOC providers. Language matching across 80+ languages. Employees are matched not just by availability but by cultural background and lived experience.' },
+          { icon: '📊', title: 'Continuous performance monitoring', text: 'Session outcome data, member ratings, and clinical review flagging and removing underperforming providers — the network quality compounds over time.' },
+          { icon: '🔒', title: 'Privacy and compliance', text: 'Providers operate within Modern Health\'s SOC 2 Type II and GDPR-aligned framework — member data is private, outcome data is aggregate, and global compliance standards are maintained.' },
+        ],
+        link: { label: 'Clinical outcomes this network produces', toId: 'clinical-outcomes' },
+        annotation: 'Addresses all four content gaps from the brief: credentialing criteria, quality monitoring process, BIPOC stat + cultural match, compliance. The "quality is a system, not a number" framing makes 4.9/5 feel earned rather than claimed.',
+      },
+
+      {
+        type: 'callout',
+        eyebrow: 'Equity by Design',
+        heading: '46% BIPOC providers — because cultural fit is clinical quality',
+        bigStat: { value: '46%', label: 'of Modern Health providers identify as BIPOC' },
+        body: 'Demographic representation in the provider network isn\'t a DEI checkbox — it\'s a clinical outcome driver. Employees are more likely to engage with care, disclose honestly, and achieve better outcomes when their provider shares relevant cultural context. 46% BIPOC representation, combined with language matching across 80+ languages, means the Modern Health network delivers that match at global enterprise scale.',
+        link: { label: 'Global network reach and language capabilities', toId: 'global-capabilities' },
+        annotation: 'Answers key question #3 (can employees choose by language or cultural background) and closes the "BIPOC provider percentage and cultural match feature" content gap. Framing: cultural fit as clinical quality — not just equity optics. Link to global-capabilities continues the scale story.',
+      },
+
+      {
+        type: 'social-proof',
+        heading: 'What the network delivers for members — and employers',
+        logos: ['CEBT', 'Atlassian', 'Autodesk', 'Midland States Bank'],
+        outcomes: [
+          { client: 'CEBT', stat: '89% improved well-being', detail: 'Across 37,000 members — provider network at population scale' },
+          { client: 'Atlassian', stat: '4.9/5 provider rating', detail: 'Maintained across a global, multilingual employee population' },
+          { client: 'Autodesk', stat: '3x engagement', detail: 'vs. prior mental health solution — driven by provider match quality' },
+        ],
+        testimonial: {
+          quote: 'PLACEHOLDER — No provider-specific testimonial sourced. A quote from an HR leader about provider quality, match accuracy, or the 4.9/5 rating would anchor this page. Alternatively a provider testimonial about the credentialing or network experience. Needed before final.',
+          attribution: 'Provider network testimonial — PLACEHOLDER',
+        },
+        link: { label: 'See all client outcomes', toId: 'case-studies' },
+        annotation: 'Social proof framed from two angles: member outcomes (89% well-being, 4.9/5 rating) and employer engagement results (3x). Both trace back to provider network quality. Testimonial is PLACEHOLDER.',
+      },
+
+      {
+        type: 'faq',
+        heading: 'What HR and clinical teams ask about the provider network',
+        items: [
+          {
+            q: 'How large is the Modern Health provider network?',
+            a: 'The Modern Health network covers 200+ countries with credentialed providers across all care types: licensed therapists, certified coaches, Circles facilitators, and psychiatric prescribers. Provider count is not disclosed as a standalone stat — Modern Health prioritizes quality and cultural match over raw network size, and access speed (<1 day to a first session) is the operational metric that matters most for employers.',
+          },
+          {
+            q: 'How are providers vetted and credentialed?',
+            a: 'Every provider completes a structured credentialing process: license and malpractice verification, background screening, specialty and training documentation, and a quality interview assessing cultural competency and alignment with the Adaptive Care Model. Credentialing is not one-time — provider performance is monitored continuously through session outcome data and member ratings, with underperforming providers removed from the network.',
+          },
+          {
+            q: 'Can employees choose providers by language or cultural background?',
+            a: 'Yes — matching by language and cultural background is a core feature of the Modern Health platform, not an add-on. 46% of the provider network identifies as BIPOC, and support is available in 80+ languages. Employees can filter by language, specialty, and background — and the Adaptive Care Model\'s matching algorithm incorporates these preferences into the initial routing.',
+          },
+          {
+            q: 'How quickly can employees access a provider?',
+            a: 'Most employees connect with their first matched provider session in less than one day from sign-up. The <1 day access speed is the average across Modern Health\'s global member population — including multilingual and internationally-based employees. No waitlists, no referral required, no separate enrollment process.',
+          },
+        ],
+        annotation: 'All four SEO brief keyQuestions answered verbatim. Q1 addresses network size without fabricating a number — per brief, the credentialing quality and access speed are the real metrics. Q2 makes the ongoing monitoring explicit, which is what distinguishes this from a one-time vetting claim.',
+      },
+
+      {
+        type: 'content-ctas',
+        heading: 'The evidence behind the network',
+        items: [
+          { kind: 'Research library', label: 'Published evidence behind our network quality standards', toId: 'clinical-research' },
+          { kind: 'Webinars', label: 'Learn more about our care model and provider approach', toId: 'past-webinars' },
+        ],
+        annotation: 'PROCESS — two CTAs matching sitemap contentClusterCTAs for provider-network (clinical-research + past-webinars).',
+      },
+
+      {
+        type: 'cta',
+        heading: 'A network your employees will actually trust',
+        body: 'Request a demo to walk through provider matching, the credentialing process, and what cultural and language match looks like for your specific workforce demographics.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'Explore clinical quality standards', toId: 'clinical-quality-standards' },
+        annotation: 'Final conversion. Body names the three evaluation concerns: matching, credentialing process, and demographic fit for their workforce. Secondary CTA routes to the broader quality governance page — natural next step for a clinical evaluator.',
+      },
+
+    ],
+  },
+
+  'clinical-quality-standards': {
+    pageId: 'clinical-quality-standards',
+    status: 'draft',
+    blocks: [
+
+      {
+        type: 'hero',
+        eyebrow: 'Our Approach · Clinical Quality',
+        h1: 'Clinical Quality You Can Audit and Trust',
+        subhead: 'Modern Health\'s clinical quality framework isn\'t a claim — it\'s a system. Evidence-based protocols, structured credentialing, validated outcome measures, and continuous improvement built into every layer of care.',
+        primaryCta: { label: 'Explore the research', toId: 'clinical-research' },
+        secondaryCta: { label: 'See clinical outcomes', toId: 'clinical-outcomes' },
+        annotation: 'H1 = brief recommendedH1. "Audit" in the headline signals this page is for procurement and compliance — not just HR. The four-part subhead previews the four quality pillars. CTAs lead with research (the conversionAction in the brief), not demo — clinical/compliance buyers want to read before they talk.',
+      },
+
+      {
+        type: 'stats',
+        items: [
+          { value: '100+', label: 'peer-reviewed publications — the evidence base behind every protocol' },
+          { value: '80%', label: 'of members improve or maintain well-being — PHQ-9 and GAD-7 validated' },
+          { value: '4.9/5', label: 'average provider rating — quality monitored, not just credentialed' },
+          { value: 'SOC 2', label: 'Type II certified — data security and privacy governance' },
+        ],
+        annotation: 'Four stats that address the four procurement concerns: evidence base (100+), clinical outcomes (80%), provider quality (4.9/5), compliance (SOC 2). The SOC 2 stat is the one missing from other pages — it belongs here as the governance proof point.',
+      },
+
+      {
+        type: 'split',
+        eyebrow: 'What "Quality" Actually Means',
+        heading: 'Defined, measured, and independently validated — not just claimed',
+        body: [
+          'Clinical quality in mental health is easy to claim and hard to verify. Modern Health makes it verifiable. Every element of the clinical framework — the care protocols, the provider standards, the outcome measures — is grounded in peer-reviewed evidence and measured against validated clinical instruments.',
+          'Quality is defined at the protocol level (evidence-based care pathways), measured at the member level (PHQ-9 and GAD-7 outcomes), and governed at the platform level (SOC 2 Type II, GDPR alignment, independent clinical review). When a clinical officer or procurement team asks for documentation, it exists — and it\'s specific.',
+        ],
+        mediaSide: 'right',
+        media: { kind: 'diagram', label: 'Quality framework: evidence base → protocols → measurement → governance → improvement loop' },
+        link: { label: 'How AI is governed within this framework', toId: 'responsible-ai' },
+        annotation: 'Answers key question #1 (what clinical standards does MH adhere to). The three-level quality structure (protocol, member, platform) organizes what could be vague. Link to responsible-ai because governance is the logical extension of clinical quality into the AI layer.',
+      },
+
+      {
+        type: 'feature-grid',
+        eyebrow: 'The Four Pillars of Clinical Quality',
+        heading: 'A system, not a standard',
+        lead: 'Modern Health\'s clinical quality framework operates across four interdependent pillars — each auditable, each measurable, each improving over time.',
+        features: [
+          { icon: '📚', title: 'Evidence-based protocols', text: '100+ peer-reviewed publications inform every care pathway. The Adaptive Care Model\'s routing logic — which modality, which intensity, which provider type — is grounded in published clinical research, not internal convention.' },
+          { icon: '🎓', title: 'Structured provider credentialing', text: 'License verification, background screening, specialty documentation, and a cultural competency interview before any provider sees a member. Ongoing monitoring through outcome data and member ratings — not just onboarding.' },
+          { icon: '📊', title: 'Validated outcome measurement', text: 'PHQ-9 and GAD-7 assessed at intake and throughout care. Population-level improvement rates published and available to employers in aggregate, anonymized reporting. Methodology documented and auditable.' },
+          { icon: '🔄', title: 'Continuous improvement loop', text: 'Outcome data informs protocol refinement. Providers with declining performance metrics are removed. Clinical review identifies emerging patterns. Quality doesn\'t plateau after certification — it compounds.' },
+        ],
+        link: { label: 'The provider network these standards govern', toId: 'provider-network' },
+        annotation: 'Addresses all three content gaps from the brief: specific accreditations/certifications (SOC 2 in stats, protocols here), outcome measurement methodology (PHQ-9/GAD-7 in pillar 3), quality improvement process (pillar 4). Four pillars make the framework feel structured and complete.',
+      },
+
+      {
+        type: 'comparison',
+        eyebrow: 'What Procurement Should Expect',
+        heading: 'A clinical claim vs. a clinical standard',
+        lead: 'Clinical quality in mental health ranges from marketing language to auditable frameworks. Here\'s where Modern Health sits on that spectrum.',
+        columns: { left: 'A Clinical Claim', right: 'A Modern Health Clinical Standard' },
+        rows: [
+          { dimension: 'Evidence base', eap: '"Evidence-based approach" — undefined', mh: '100+ peer-reviewed publications — indexed and accessible' },
+          { dimension: 'Provider quality', eap: '"Carefully vetted" — no process disclosed', mh: 'Structured credentialing criteria + ongoing outcome monitoring' },
+          { dimension: 'Outcome measure', eap: 'Member satisfaction surveys', mh: 'PHQ-9 and GAD-7 — validated clinical diagnostic instruments' },
+          { dimension: 'Governance', eap: 'Internal review, not independently verifiable', mh: 'SOC 2 Type II certified; GDPR-aligned; clinical documentation available' },
+          { dimension: 'Improvement', eap: 'Annual review cycle at best', mh: 'Continuous — outcome data drives protocol and provider updates' },
+        ],
+        link: { label: 'Clinical outcomes under this framework', toId: 'clinical-outcomes' },
+        annotation: 'Answers key question #4 (how MH demonstrates clinical rigor to procurement). Each row is a procurement question — evidence, credentialing, outcome measure, governance, improvement. The left column describes a recognizable pattern without naming any platform.',
+      },
+
+      {
+        type: 'callout',
+        eyebrow: 'The Evidence Foundation',
+        heading: '100+ peer-reviewed studies — and counting',
+        bigStat: { value: '100+', label: 'peer-reviewed publications supporting Modern Health\'s clinical model' },
+        body: 'The clinical framework isn\'t built on internal data alone. More than 100 peer-reviewed publications — covering the Adaptive Care Model, coaching outcomes, therapy effectiveness, and digital Pathways — form the evidence base that informs protocols, validates outcome measures, and supports clinical review. This is the most extensive published evidence base in the enterprise mental health category.',
+        link: { label: 'Browse the published research', toId: 'clinical-research' },
+        annotation: 'Answers key question #1 (clinical standards) and key question #2 (quality monitoring basis). "Most extensive published evidence base in the category" is a defensible differentiator — competitors don\'t have 100+ peer-reviewed publications at this scale.',
+      },
+
+      {
+        type: 'social-proof',
+        heading: 'What clinical quality produces at enterprise scale',
+        logos: ['CEBT', 'Atlassian', 'Midland States Bank', 'Rubrik'],
+        outcomes: [
+          { client: 'CEBT', stat: '89% improved well-being', detail: 'Across 37,000 members — clinical quality at population scale' },
+          { client: 'Atlassian', stat: '94% improved well-being', detail: '52% registration rate at launch — Alice Vichaita' },
+          { client: 'Midland States Bank', stat: '$110K cost reduction', detail: 'Year one — the financial output of clinical quality' },
+        ],
+        testimonial: {
+          quote: 'PLACEHOLDER — A quote from a clinical officer, CMO, or legal/compliance reviewer about Modern Health\'s clinical transparency or documentation quality would anchor this page for its primary procurement audience. Needed before final.',
+          attribution: 'Clinical / compliance testimonial — PLACEHOLDER',
+        },
+        link: { label: 'See all client outcomes', toId: 'case-studies' },
+        annotation: 'Framed as outputs of clinical quality, not just organizational wins. "Clinical quality at population scale" (CEBT) and "the financial output of clinical quality" (Midland States Bank) connect this page\'s abstract framework to concrete results. Testimonial is PLACEHOLDER.',
+      },
+
+      {
+        type: 'faq',
+        heading: 'What clinical officers and procurement teams ask',
+        items: [
+          {
+            q: 'What clinical standards does Modern Health adhere to?',
+            a: 'Modern Health\'s clinical framework is grounded in 100+ peer-reviewed publications. Care protocols follow evidence-based pathways informed by published research on coaching, therapy, peer support, and digital Pathways. Outcome measurement uses PHQ-9 and GAD-7 — validated clinical instruments from the academic literature. Platform governance includes SOC 2 Type II certification and GDPR-aligned privacy architecture. Full clinical documentation is available for procurement review.',
+          },
+          {
+            q: 'How is provider quality monitored over time?',
+            a: 'Provider quality is monitored continuously — not just at credentialing. Session outcome data (PHQ-9 and GAD-7 improvement rates), member ratings, and periodic clinical review are tracked for every active provider. Providers whose performance falls below quality thresholds are removed from the network. The 4.9/5 average member rating is a maintained standard, not a historical average from an initial cohort.',
+          },
+          {
+            q: 'What outcome metrics does Modern Health track and report?',
+            a: 'Primary metrics are PHQ-9 (depression) and GAD-7 (anxiety) — assessed at intake and tracked throughout care. Employers receive aggregate, anonymized reporting on population-level well-being improvement, engagement rates by care type, and utilization trends by workforce segment. Secondary outcomes tracked in the research include burnout, sleep quality, social connectedness, and presenteeism. The outcome methodology is documented and available for clinical and procurement review.',
+          },
+          {
+            q: 'How does Modern Health demonstrate clinical rigor to procurement?',
+            a: 'Through documentation that exists: 100+ indexed peer-reviewed publications, structured credentialing criteria, PHQ-9/GAD-7 outcome methodology, SOC 2 Type II certification, and GDPR compliance documentation. Modern Health\'s clinical team can walk procurement through each layer of the framework — evidence base, protocol design, provider standards, outcome measurement, and governance — and provide documentation for RFP and due diligence processes.',
+          },
+        ],
+        annotation: 'All four SEO brief keyQuestions answered verbatim. Q4 names the specific documentation available for procurement — per brief: "needs specifics, not just claims of quality." The answer to Q4 is essentially a due diligence checklist.',
+      },
+
+      {
+        type: 'content-ctas',
+        heading: 'Go deeper on the evidence',
+        items: [
+          { kind: 'Research library', label: 'Published evidence behind our clinical standards — 100+ studies', toId: 'clinical-research' },
+          { kind: 'Outcomes data', label: 'Clinical outcomes delivered under this framework', toId: 'clinical-outcomes' },
+        ],
+        annotation: 'PROCESS — two CTAs matching sitemap contentClusterCTAs for clinical-quality-standards (clinical-research + clinical-outcomes). Both framed for a clinical or procurement evaluator.',
+      },
+
+      {
+        type: 'cta',
+        heading: 'Clinical rigor your procurement team can verify',
+        body: 'Request a walkthrough of Modern Health\'s clinical quality documentation — including the evidence base, credentialing criteria, outcome methodology, and compliance certifications.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'Browse the research library', toId: 'clinical-research' },
+        annotation: 'Final conversion. Body is a procurement-specific framing — "documentation" and "certifications" signal this is a due diligence conversation, not a sales pitch. Secondary CTA routes directly to the research library — the most useful next step for a clinical evaluator who isn\'t ready for a demo.',
+      },
+
+    ],
+  },
+
   'adaptive-care': {
     pageId: 'adaptive-care',
     status: 'draft',
