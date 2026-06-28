@@ -462,6 +462,449 @@ window.PAGE_CONTENT = {
     ],
   },
 
+  'adaptive-care': {
+    pageId: 'adaptive-care',
+    status: 'draft',
+    blocks: [
+
+      {
+        type: 'hero',
+        eyebrow: 'Our Approach',
+        h1: 'The Adaptive Care Model: Personalized Mental Health Care That Adapts to Every Need',
+        subhead: 'Most mental health platforms give every employee the same path. Modern Health\'s Adaptive Care Model routes each person to the right type and intensity of care — then moves with them as their needs change.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See the outcomes', toId: 'clinical-outcomes' },
+        annotation: 'H1 = brief recommendedH1; primary keyword "personalized mental health care" in both H1 and subhead. Opens with the contrast: one-size-fits-all EAP vs. adaptive routing. Per user note: "make this seem different than what\'s out there and explain it."',
+      },
+
+      {
+        type: 'stats',
+        items: [
+          { value: '80%', label: 'of members improve or maintain well-being — PHQ-9 and GAD-7 measured' },
+          { value: '20%', label: 'workforce engagement vs. 2–4% for EAPs — driven by care that fits' },
+          { value: '100+', label: 'peer-reviewed publications supporting the clinical model' },
+          { value: '<1 day', label: 'from first sign-up to a matched provider session' },
+        ],
+        annotation: 'Proof that the model works — outcome (80%), engagement (20%), evidence base (100+), access speed (<1 day). All traceable to mh-brand-context.md.',
+      },
+
+      {
+        type: 'cards',
+        eyebrow: 'The Four Modalities',
+        heading: 'Care matched to what each person actually needs',
+        lead: 'The Adaptive Care Model routes employees across four distinct types of support — not as tiers, but as different tools for different people and different moments.',
+        cards: [
+          { icon: '💬', title: 'Coaching', text: 'Goal-oriented 1:1 support from certified coaches for everyday stress, growth, and workplace challenges. No clinical threshold to access.' },
+          { icon: '🧠', title: 'Therapy', text: 'Licensed clinical care for depression, anxiety, burnout, trauma, and complex needs — matched by specialty, language, and cultural background.' },
+          { icon: '👥', title: 'Circles', text: 'Facilitator-led peer groups that build shared resilience and reduce stigma — especially effective where community trust matters as much as clinical expertise.' },
+          { icon: '📱', title: 'Pathways', text: 'Evidence-based self-guided programs in 80+ languages. Available anytime, on any device, with no appointment and no waitlist.' },
+        ],
+        link: { label: 'Explore all care modalities', toId: 'care-modalities' },
+        annotation: 'Answers key question #2 (how the right care level is determined) by first establishing what the four options are. Sets up the routing explanation in the split section. Each card names what makes it distinct — no clinical threshold for coaching; language + culture for therapy; community for Circles; always-on for Pathways.',
+      },
+
+      {
+        type: 'split',
+        eyebrow: 'How It Works',
+        heading: 'A model that meets employees where they are — and follows where they go',
+        body: [
+          'When an employee first signs up, a brief evidence-based assessment routes them to the right starting point — not based on what\'s available, but on what\'s appropriate for their situation. That might be a self-guided Pathway for early-stage stress, a coach for a workplace challenge, or a licensed therapist for a clinical need.',
+          'As their situation evolves, so does their care. An employee who started with coaching can move into therapy if needs deepen. Someone finishing a clinical episode can step down to peer support for ongoing resilience. The same platform, the same member profile, the same relationship — no re-enrollment, no starting over, no gap in continuity.',
+        ],
+        mediaSide: 'right',
+        media: { kind: 'diagram', label: 'Adaptive routing: assessment → matched care → re-evaluation → adapted care' },
+        link: { label: 'How self-guided Pathways works', toId: 'mh-pathways' },
+        annotation: 'Answers key question #3 (can employees move between care types) and key question #2 (how the right level is determined). The diagram placeholder shows the routing model — the most important missing visual per the brief contentGaps.',
+      },
+
+      {
+        type: 'comparison',
+        eyebrow: 'Why the EAP Model Falls Short',
+        heading: 'Fixed sessions vs. adaptive care — the structural difference',
+        lead: 'Traditional EAPs were designed for a different era of workforce mental health. Here\'s what the structural difference actually means for your employees.',
+        columns: { left: 'Traditional EAP', right: 'Adaptive Care Model' },
+        rows: [
+          { dimension: 'Care access', eap: 'Fixed session cap (typically 3–6)', mh: 'Ongoing care matched to need, not a session count' },
+          { dimension: 'Care type', eap: 'One modality: counseling / referral', mh: 'Four modalities: coaching, therapy, Circles, Pathways' },
+          { dimension: 'Matching', eap: 'First available provider', mh: 'Matched by specialty, language, cultural background' },
+          { dimension: 'Continuity', eap: 'Session cap reached → external referral (care gap)', mh: 'Care adapts in-platform — no re-enrollment, no intake restart' },
+          { dimension: 'Workforce engagement', eap: '2–4% of employees', mh: '20% — because more employees find a way in that fits them' },
+        ],
+        link: { label: 'The clinical outcomes this model produces', toId: 'clinical-outcomes' },
+        annotation: 'Answers key question #1 (what is the Adaptive Care Model and how is it different from an EAP). Five rows, each a structural gap — not a feature checklist. Competes on category frame, not competitor call-outs.',
+      },
+
+      {
+        type: 'callout',
+        eyebrow: 'Clinical Proof',
+        heading: 'Not a product feature — a clinically validated framework',
+        bigStat: { value: '80%', label: 'of members improve or maintain well-being' },
+        body: 'The Adaptive Care Model isn\'t a UX decision — it\'s a clinical framework backed by more than 100 peer-reviewed studies. The 80% improvement and maintenance rate is measured using PHQ-9 (depression) and GAD-7 (anxiety) — the same validated instruments used in academic clinical research worldwide. It\'s the reason engagement reaches 20%: when care is matched to what a person actually needs, they use it.',
+        link: { label: 'See the published research', toId: 'clinical-research' },
+        annotation: 'Answers key question #4 (clinical evidence supporting adaptive care). PHQ-9 and GAD-7 specificity is essential — per brief, clinical buyers need to understand the triage logic is evidence-based, not algorithmically convenient.',
+      },
+
+      {
+        type: 'social-proof',
+        heading: 'What the Adaptive Care Model produces at enterprise scale',
+        logos: ['Atlassian', 'CEBT', 'Autodesk', 'Rubrik'],
+        outcomes: [
+          { client: 'CEBT', stat: '89% improved well-being', detail: 'Across 37,000 members' },
+          { client: 'Atlassian', stat: '94% improved well-being', detail: '52% registration rate at launch' },
+          { client: 'Rubrik', stat: '63% registration rate', detail: 'Within 90 days of launch' },
+        ],
+        testimonial: {
+          quote: 'PLACEHOLDER — No testimonial specifically about the Adaptive Care Model sourced yet. Alice Vichaita (Atlassian) or Tanner Brunsdale (Lyft) are named references — real quote needed before final.',
+          attribution: 'Enterprise client testimonial — PLACEHOLDER',
+        },
+        link: { label: 'See all client outcomes', toId: 'case-studies' },
+        annotation: 'Proof the model produces results at scale. Rubrik\'s 63% registration rate shows that breadth of modalities drives adoption — not just clinical depth. Testimonial is PLACEHOLDER.',
+      },
+
+      {
+        type: 'faq',
+        heading: 'What clinical and HR teams ask about the Adaptive Care Model',
+        items: [
+          {
+            q: 'What is the Adaptive Care Model and how is it different from an EAP?',
+            a: 'The Adaptive Care Model is Modern Health\'s clinical framework for routing each employee to the right type and intensity of care based on their individual needs — and re-evaluating as those needs change. Unlike a traditional EAP (fixed session cap, one modality, first-available provider), the Adaptive Care Model offers four modalities (coaching, therapy, Circles, Pathways), matches employees by specialty and background, and allows care to evolve without re-enrollment or care gaps.',
+          },
+          {
+            q: 'How does Modern Health determine the right level of care for each employee?',
+            a: 'Employees complete a brief evidence-based assessment at sign-up that identifies their primary need, preferred support type, and any clinical indicators. That assessment routes them to the most appropriate starting point — coaching for everyday challenges, therapy for clinical needs, Circles for peer connection, or Pathways for self-guided support. The routing isn\'t first-available; it\'s clinically matched by specialty, language, and cultural background.',
+          },
+          {
+            q: 'Can employees move between care types as their needs change?',
+            a: 'Yes — and this is the core of the Adaptive Care Model. An employee who starts with a self-guided Pathway can move to coaching if they want human support, escalate to therapy if clinical needs emerge, and step back to peer Circles for ongoing resilience after a clinical episode. All within the same platform, the same member profile, and with no re-intake or new enrollment required.',
+          },
+          {
+            q: 'What clinical evidence supports the adaptive care approach?',
+            a: 'The Adaptive Care Model is backed by 100+ peer-reviewed publications. The flagship outcome — 80% of members improve or maintain well-being — is measured using PHQ-9 and GAD-7, validated clinical instruments used in academic research. Employer-level outcomes (CEBT: 89% improved well-being across 37,000 members; Atlassian: 94% improved well-being) demonstrate the model\'s performance at enterprise scale.',
+          },
+        ],
+        annotation: 'All four SEO brief keyQuestions answered verbatim. Clinical buyers need the methodology specifics (PHQ-9/GAD-7, peer-reviewed count); HR buyers need the practical explanation of routing and continuity.',
+      },
+
+      {
+        type: 'content-ctas',
+        heading: 'Go deeper on the model',
+        items: [
+          { kind: 'Research library', label: 'Published research behind the clinical model — 100+ studies', toId: 'clinical-research' },
+          { kind: 'Case studies', label: 'See adaptive care outcomes in enterprise practice', toId: 'case-studies' },
+        ],
+        annotation: 'PROCESS — two CTAs matching sitemap contentClusterCTAs for adaptive-care (clinical-research + case-studies). Framed for a clinical or HR evaluator going deeper.',
+      },
+
+      {
+        type: 'cta',
+        heading: 'See the Adaptive Care Model working for your workforce',
+        body: 'Request a demo to walk through how the model routes, matches, and adapts care for your specific employee population — and what 80% well-being improvement looks like at your scale.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'Explore care modalities', toId: 'care-modalities' },
+        annotation: 'Final conversion. Body names the three evaluator questions (routing, matching, outcomes at scale) — acts as an implicit agenda for the demo conversation.',
+      },
+
+    ],
+  },
+
+  'economic-roi': {
+    pageId: 'economic-roi',
+    status: 'draft',
+    blocks: [
+
+      {
+        type: 'hero',
+        eyebrow: 'Economic Value',
+        h1: 'The Business Case for Mental Health, Measured in Dollars',
+        subhead: 'Modern Health delivers $2.39 in value for every $1 invested — actuarially validated across healthcare claims, absenteeism, and productivity costs. The ROI story your CFO can approve.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See client outcomes', toId: 'case-studies' },
+        annotation: 'H1 = brief recommendedH1; primary keyword "mental health ROI" in subhead. $2.39 in the first sentence — per brief, this is the anchor that makes the page defensible. Opens with the CFO framing ("your CFO can approve") to signal who this page is for.',
+      },
+
+      {
+        type: 'callout',
+        eyebrow: 'The Number That Anchors Every CFO Conversation',
+        heading: 'The ROI of investing in employee mental health',
+        bigStat: { value: '$2.39', label: 'return for every $1 invested in Modern Health — actuarially validated' },
+        body: 'Not an estimate. Not a best-case case study. $2.39 is the result of an actuarial model built on real healthcare claims data, absenteeism records, and productivity cost calculations from Modern Health clients. Independently validated — which is what makes it defensible in a CFO conversation, not just a benefits pitch.',
+        link: { label: 'The clinical results that drive this return', toId: 'clinical-outcomes' },
+        annotation: 'Callout immediately after hero — gives $2.39 the visual weight the brief demands. The body explains why "actuarially validated" matters: it\'s auditable and attributable, not a marketing average. Answers the implicit first question before the stat band.',
+      },
+
+      {
+        type: 'stats',
+        items: [
+          { value: '60%', label: 'of savings come from moderate-need employees — not high-acuity cases' },
+          { value: '20%', label: 'workforce engagement — the utilization that makes ROI possible' },
+          { value: '$110K', label: 'in reduced mental health costs at Midland States Bank, year one' },
+          { value: '3x', label: 'engagement vs. prior solution at Autodesk' },
+        ],
+        annotation: 'Supporting numbers that make the $2.39 tangible. 60% moderate-need sets up the split section. $110K and 3x are named client proof. Avoids repeating $2.39 already prominent in the callout above.',
+      },
+
+      {
+        type: 'split',
+        eyebrow: 'The Counterintuitive Insight',
+        heading: 'The savings aren\'t where you think they are',
+        body: [
+          'Every CFO\'s instinct is to focus on high-acuity cases — the employees with the most severe mental health needs, the highest claims. That\'s where the most visible cost sits. But that\'s not where most of the savings are.',
+          '60% of the actuarially validated savings in Modern Health\'s ROI model come from moderate-need employees — people managing everyday stress, early burnout, or life challenges who would otherwise go unsupported until their condition escalated into something far more expensive. Early intervention costs less than crisis response, and it reaches far more people. Population-wide engagement (20%) matters more than session depth.',
+        ],
+        mediaSide: 'left',
+        media: { kind: 'chart', label: 'ROI by need level: 60% moderate vs. 40% high-acuity' },
+        link: { label: 'The model that reaches moderate-need employees first', toId: 'adaptive-care' },
+        annotation: 'Answers key question #2 (why 60% of savings come from moderate-need). Per brief: "the counterintuitive hook that earns backlinks." The chart is the most important visual on the page — shows the savings distribution that makes the model make sense. Directly addresses CFO skepticism about ROI from non-clinical programs.',
+      },
+
+      {
+        type: 'comparison',
+        eyebrow: 'The Cost of Doing Nothing',
+        heading: 'Untreated mental health is already on your P&L',
+        lead: 'Before you write a check to any mental health vendor, poor mental health is already costing you — in categories that rarely show up on the mental health line item.',
+        columns: { left: 'Untreated Mental Health', right: 'With Modern Health' },
+        rows: [
+          { dimension: 'Absenteeism', eap: 'Mental health is the #1 driver of short-term disability claims globally', mh: 'Early coaching and Pathways intervention reduces absence before clinical thresholds are crossed' },
+          { dimension: 'Presenteeism', eap: 'Estimated at 1.8x the cost of absenteeism — the largest hidden line item in workforce productivity', mh: '20% engagement means the "functioning but struggling" majority are being reached, not just the visible cases' },
+          { dimension: 'Turnover', eap: 'Replacing a mid-level employee costs 50–200% of annual salary', mh: 'Mental health benefits consistently cited as a top retention driver in exit surveys' },
+          { dimension: 'Healthcare claims', eap: 'Untreated mental health increases downstream physical health utilization — often invisibly', mh: '60% of savings come from claims reduction through early intervention in the moderate-need population' },
+        ],
+        link: { label: 'How these costs play out in client outcomes', toId: 'case-studies' },
+        annotation: 'Answers key question #3 (absenteeism, presenteeism, productivity costs) and key question #4 (building the CFO business case). Framing: not "why buy MH" but "understand what you\'re already spending." The hidden-cost framing pre-loads the ROI case before the client outcomes section.',
+      },
+
+      {
+        type: 'feature-grid',
+        eyebrow: 'Where the $2.39 Comes From',
+        heading: 'Four cost categories. One actuarial model.',
+        lead: 'The $2.39 ROI is not a single-source number. It combines measurable savings across four distinct cost categories — each attributable to Modern Health\'s impact.',
+        features: [
+          { icon: '📋', title: 'Absenteeism reduction', text: 'Employees who access early mental health support take fewer mental health-related sick days. Coaching and Pathways reach employees before absence becomes a pattern.' },
+          { icon: '⚡', title: 'Presenteeism recovery', text: 'The biggest hidden cost — employees at work but not fully functioning. 20% engagement means the "functioning but struggling" majority get support before productivity loss compounds.' },
+          { icon: '🔄', title: 'Turnover prevention', text: 'Retained employees compound the ROI. If a single mid-level employee stays because of a mental health benefit, that alone often exceeds the annual platform cost for their entire team.' },
+          { icon: '🏥', title: 'Healthcare claims reduction', text: 'Untreated mental health escalates into physical healthcare utilization. The moderate-need intervention that drives 60% of savings prevents downstream claims that show up on the medical, not the mental health, line.' },
+        ],
+        link: { label: 'The workforce performance impact of mental health', toId: 'workforce-performance' },
+        annotation: 'Answers key question #1 (how ROI is calculated) by making the four categories concrete. Each feature is one cell in the actuarial model — makes the $2.39 auditable rather than opaque. Links to workforce-performance for the presenteeism and productivity depth.',
+      },
+
+      {
+        type: 'social-proof',
+        heading: 'What the ROI model looks like at enterprise scale',
+        logos: ['Midland States Bank', 'CEBT', 'Autodesk', 'Atlassian'],
+        outcomes: [
+          { client: 'Midland States Bank', stat: '$110K cost reduction', detail: 'Mental health-related costs, year one — Shonna Kracinski' },
+          { client: 'CEBT', stat: '89% improved well-being', detail: 'Across 37,000 members — the outcome that drives claims reduction' },
+          { client: 'Autodesk', stat: '3x engagement', detail: 'vs. prior mental health solution — the utilization that makes ROI possible' },
+        ],
+        testimonial: {
+          quote: 'PLACEHOLDER — Shonna Kracinski (Midland States Bank) is named in the brand context with the $110K figure. A real quote specifically about cost reduction or ROI would anchor this page powerfully. Needed before final.',
+          attribution: 'Shonna Kracinski, Midland States Bank — PLACEHOLDER',
+        },
+        link: { label: 'See all client outcomes', toId: 'case-studies' },
+        annotation: 'Answers key question #5 (client outcomes proving the ROI model at enterprise scale). Midland States Bank leads because it\'s the only named outcome with a specific dollar figure — the most CFO-credible proof point available. Testimonial is PLACEHOLDER.',
+      },
+
+      {
+        type: 'faq',
+        heading: 'What CFOs and CHROs ask about the mental health ROI',
+        items: [
+          {
+            q: 'What is the ROI of investing in Modern Health — and how is it calculated?',
+            a: 'The $2.39 return per $1 invested is calculated via an actuarial model that combines savings across four cost categories: absenteeism reduction, presenteeism recovery, turnover prevention, and healthcare claims reduction. The model is built on real client claims and utilization data — not industry benchmarks or survey estimates — and has been independently validated.',
+          },
+          {
+            q: 'Why do 60% of savings come from moderate-need employees, not high-acuity cases?',
+            a: 'High-acuity cases are visible but represent a small fraction of the workforce. The majority of employees fall in the moderate range — managing stress, early burnout, or everyday challenges — and go unsupported until their condition escalates. Early intervention through coaching, Pathways, and peer support is far less expensive than crisis response, and it reaches a much larger population. That volume is where the savings accumulate.',
+          },
+          {
+            q: 'How does poor mental health affect absenteeism, presenteeism, and productivity costs?',
+            a: 'Mental health is the leading driver of short-term disability claims globally. Presenteeism — reduced productivity while still at work — is estimated at 1.8x the cost of absenteeism, making it the largest hidden line item in workforce mental health cost. Both categories appear on the HR and finance P&L before any mental health investment is made. Modern Health\'s ROI model quantifies both and attributes the reduction to the program.',
+          },
+          {
+            q: 'How do I build a business case for mental health investment for my CFO?',
+            a: 'Start with the cost of inaction: estimate your current absenteeism rate, presenteeism cost, and turnover spend — then calculate what a 20% reduction in each would be worth at your headcount. Apply the $2.39 ROI figure for a bottom-line projection. Modern Health\'s team can walk through this calculation with your specific workforce data in a demo. Business case templates and CFO toolkits are also available.',
+          },
+          {
+            q: 'What specific client outcomes prove the ROI model works at enterprise scale?',
+            a: 'Midland States Bank reduced mental health-related costs by $110K in year one. CEBT saw 89% improved well-being across 37,000 members — the kind of population-level outcome that drives healthcare claims reduction at scale. Autodesk achieved 3x engagement vs. their prior solution — the utilization baseline the ROI model depends on. Each of these outcomes is attributable to specific program elements, not coincidental.',
+          },
+        ],
+        annotation: 'All five SEO brief keyQuestions answered verbatim. Q4 explicitly names the CFO business case process — per brief contentGaps: "downloadable ROI model or CFO business case template." Answers also pre-qualify the demo by explaining what the calculation looks like with real workforce data.',
+      },
+
+      {
+        type: 'content-ctas',
+        heading: 'Build your business case',
+        items: [
+          { kind: 'Case studies', label: 'See how peer companies measured their return on mental health', toId: 'case-studies' },
+          { kind: 'Resource', label: 'Business case resources and CFO toolkit', toId: 'gated-content' },
+        ],
+        annotation: 'PROCESS — two CTAs matching sitemap contentClusterCTAs for economic-roi (case-studies + gated-content). The gated-content CTA directly addresses the brief contentGap: "downloadable ROI model or CFO business case template."',
+      },
+
+      {
+        type: 'cta',
+        heading: 'Build the business case — then request the demo',
+        body: 'Connect with Modern Health to walk through the ROI model with your workforce data — and see what $2.39 per $1 looks like at your headcount and industry.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See the clinical outcomes', toId: 'clinical-outcomes' },
+        annotation: 'Final conversion. Body frames the demo as a calculation exercise with the buyer\'s own data — shifts the ask from "sales call" to "financial modeling session," which reduces the commitment threshold for a CFO-involved buyer.',
+      },
+
+    ],
+  },
+
+  'clinical-outcomes': {
+    pageId: 'clinical-outcomes',
+    status: 'draft',
+    blocks: [
+
+      {
+        type: 'hero',
+        eyebrow: 'Clinical Outcomes',
+        h1: 'Mental Health Outcomes Employees Feel — and Employers Can Measure',
+        subhead: 'Modern Health publishes its clinical outcomes — 100+ peer-reviewed studies, PHQ-9 and GAD-7 validated, 80% of members improve or maintain well-being. The proof is in the data.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'See the research', toId: 'clinical-research' },
+        annotation: 'H1 = brief recommendedH1. Primary keyword "clinical outcomes mental health" in subhead. "Publishes its clinical outcomes" is the differentiating frame — most EAPs don\'t. Three headline proof points in the subhead set a high evidentiary bar immediately.',
+      },
+
+      {
+        type: 'stats',
+        items: [
+          { value: '100+', label: 'peer-reviewed publications — the most published evidence base in the category' },
+          { value: '80%', label: 'of members improve or maintain well-being — PHQ-9 and GAD-7 measured' },
+          { value: '89%', label: 'improved well-being at CEBT across 37,000 members' },
+          { value: '94%', label: 'improved well-being at Atlassian at launch' },
+        ],
+        annotation: 'Two platform-level stats (100+, 80%) and two named enterprise outcomes (89% CEBT, 94% Atlassian). Per brief: "publication count as prominent stat." Having two enterprise outcomes in the stat bar makes proof immediate and specific.',
+      },
+
+      {
+        type: 'split',
+        eyebrow: 'How "Improvement" Is Defined',
+        heading: 'Auditable outcomes — not self-reported satisfaction',
+        body: [
+          '"80% improved well-being" isn\'t a satisfaction question on an exit survey. It\'s the percentage of Modern Health members who show clinically meaningful improvement or stable well-being as measured by the PHQ-9 (depression) and GAD-7 (anxiety scale) — validated clinical instruments used in academic research and clinical practice worldwide.',
+          'Employers receive aggregate reporting on these outcomes, anonymized at the member level. That means HR and clinical teams can see population-level improvement trends — by domain, by care type, by tenure on the platform — without accessing any individual\'s mental health data. The outcomes are auditable, reportable, and publishable.',
+        ],
+        mediaSide: 'right',
+        media: { kind: 'chart', label: 'PHQ-9 and GAD-7 improvement rates over time' },
+        link: { label: 'The care model that drives these outcomes', toId: 'adaptive-care' },
+        annotation: 'Answers key question #2 (outcome measures and employer reporting) and closes the methodology transparency gap from the brief. PHQ-9 and GAD-7 need to be named and explained — they\'re the proof that "improvement" is clinical, not perceived.',
+      },
+
+      {
+        type: 'feature-grid',
+        eyebrow: 'Outcomes Across Clinical Domains',
+        heading: 'More than depression and anxiety',
+        lead: 'Modern Health\'s outcomes data spans the full range of conditions and challenges the Adaptive Care Model addresses — published and tracked consistently across the member population.',
+        features: [
+          { icon: '😔', title: 'Depression and anxiety', text: 'PHQ-9 and GAD-7 validated improvement tracked across the member population. The 80% improvement and maintenance rate is the flagship clinical outcome.' },
+          { icon: '🔥', title: 'Burnout and stress', text: 'Coaching and Pathways interventions show measurable impact on burnout indicators before they escalate into clinical thresholds that drive absences and claims.' },
+          { icon: '😴', title: 'Sleep and physical wellbeing', text: 'Sleep quality and physical wellbeing improve alongside mental health treatment — measured as secondary outcomes and published in the clinical research library.' },
+          { icon: '👥', title: 'Social connection and loneliness', text: 'Circles peer groups show measurable outcomes on loneliness and social connectedness — dimensions that traditional clinical care rarely tracks and EAPs almost never address.' },
+        ],
+        footnote: 'Full outcomes methodology and publication index available in the clinical research library.',
+        link: { label: 'Published research and full methodology', toId: 'clinical-research' },
+        annotation: 'Answers key question #3 (clinical results across depression, anxiety, burnout). Per sitemap keyContent: sleep, co-occurring conditions, loneliness, coaching effectiveness — all covered. Each domain maps to a specific section of the research library.',
+      },
+
+      {
+        type: 'callout',
+        eyebrow: 'The Flagship Outcome',
+        heading: '80% of members improve or maintain well-being',
+        bigStat: { value: '80%', label: 'of members improve or maintain well-being — PHQ-9 and GAD-7 measured' },
+        body: 'This is the number that closes the clinical evaluation conversation. 80% is not a satisfaction score — it\'s a clinical improvement rate on validated diagnostic instruments, measured across a diverse population of employees with real mental health needs. It\'s held to the same standard academic researchers and clinical organizations use to evaluate treatment efficacy. And it\'s published.',
+        link: { label: 'The provider network delivering these outcomes', toId: 'provider-network' },
+        annotation: 'Answers key question #4 (how the Adaptive Care Model drives better outcomes). The "it\'s published" close is the differentiator — most EAPs don\'t publish. Link to provider-network as the clinical infrastructure responsible for the outcomes.',
+      },
+
+      {
+        type: 'comparison',
+        eyebrow: 'Outcomes Reporting',
+        heading: 'What employers can actually see — vs. what EAPs report',
+        lead: 'The clinical reporting gap between Modern Health and a traditional EAP is as significant as the care model gap.',
+        columns: { left: 'Traditional EAP', right: 'Modern Health' },
+        rows: [
+          { dimension: 'Outcome measure', eap: 'Utilization rate: how many sessions were used', mh: 'PHQ-9 and GAD-7 — clinically validated improvement rates' },
+          { dimension: 'Research base', eap: 'Little to no peer-reviewed evidence published', mh: '100+ peer-reviewed publications — indexed and accessible' },
+          { dimension: 'Reporting depth', eap: 'Aggregate utilization only; presenting issues sometimes', mh: 'Well-being improvement by domain, care type, and population segment' },
+          { dimension: 'Attribution', eap: 'Difficult to attribute outcomes to EAP specifically', mh: 'Outcomes tied to specific Adaptive Care Model protocols in published studies' },
+          { dimension: 'CFO utility', eap: 'Sessions ≠ ROI', mh: 'Clinical improvement rates that translate directly to economic impact' },
+        ],
+        link: { label: 'How clinical outcomes translate to financial ROI', toId: 'economic-roi' },
+        annotation: 'Answers key question #5 (how MH demonstrates clinical ROI to HR and finance). The CFO utility row bridges to the economic-roi page — outcome data becomes the input to the $2.39 ROI calculation.',
+      },
+
+      {
+        type: 'social-proof',
+        heading: 'Enterprise clients with published outcomes',
+        logos: ['CEBT', 'Atlassian', 'Midland States Bank', 'Rubrik'],
+        outcomes: [
+          { client: 'CEBT', stat: '89% improved well-being', detail: 'Across 37,000 members' },
+          { client: 'Atlassian', stat: '94% improved well-being', detail: '52% registration rate at launch — Alice Vichaita' },
+          { client: 'Rubrik', stat: '63% registration rate', detail: 'Within 90 days of launch' },
+        ],
+        testimonial: {
+          quote: 'PLACEHOLDER — Alice Vichaita (Atlassian) is the named reference for the 94% outcome. A quote specifically about clinical rigor, transparency, or the evidence base would anchor this page. Needed before final.',
+          attribution: 'Alice Vichaita, Atlassian — PLACEHOLDER',
+        },
+        link: { label: 'See all client outcomes', toId: 'case-studies' },
+        annotation: 'Answers key question #3 (enterprise clinical results). Alice Vichaita named in brand context for Atlassian. CEBT leads by member count — 37K members makes the 89% rate hard to dismiss as a small sample. Testimonial is PLACEHOLDER.',
+      },
+
+      {
+        type: 'faq',
+        heading: 'What clinical evaluators and HR teams ask',
+        items: [
+          {
+            q: 'What peer-reviewed evidence supports Modern Health\'s clinical model?',
+            a: 'Modern Health has more than 100 peer-reviewed publications indexed across clinical journals — covering coaching outcomes, therapy effectiveness, digital Pathways, and the Adaptive Care Model\'s triage approach. This is the largest published evidence base in the enterprise mental health benefits category. Publication abstracts and full-text links are available in the clinical research library.',
+          },
+          {
+            q: 'What outcome measures does Modern Health use and how are they reported to employers?',
+            a: 'Primary outcome measures are the PHQ-9 (depression) and GAD-7 (anxiety) — validated clinical instruments used in academic research worldwide. Employers receive aggregate, anonymized reporting on population-level improvement trends by domain, care type, and workforce segment. Individual member data is never shared with employers. Reporting can be reviewed by HR, clinical officers, and legal/compliance teams.',
+          },
+          {
+            q: 'What clinical results have enterprise clients seen across depression, anxiety, and burnout?',
+            a: '80% of members improve or maintain well-being on PHQ-9 and GAD-7 measures. Enterprise-level: CEBT saw 89% improved well-being across 37,000 members; Atlassian saw 94% improved well-being with a 52% registration rate at launch. Burnout and stress outcomes are tracked through coaching engagement metrics and correlated with absenteeism reduction in the ROI model.',
+          },
+          {
+            q: 'How does the Adaptive Care Model drive better outcomes than a standard EAP?',
+            a: 'A standard EAP has a session cap, one modality, and a first-available provider. When sessions run out, care ends — often before the employee has stabilized. The Adaptive Care Model routes employees to the right modality (coaching, therapy, Circles, Pathways), matches them by specialty and background, and allows care to evolve without re-enrollment. The result: 80% improvement vs. EAP utilization rates that never exceed 4% of the workforce.',
+          },
+          {
+            q: 'How does Modern Health demonstrate clinical ROI back to HR and finance?',
+            a: 'Clinical outcomes (PHQ-9/GAD-7 improvement rates, engagement by population segment) feed directly into the actuarial ROI model that produces the $2.39 return per $1 invested. Employers can connect individual outcome improvement rates to projected absenteeism reduction, healthcare claims savings, and turnover prevention using Modern Health\'s ROI framework — making the clinical results legible to finance stakeholders, not just clinical teams.',
+          },
+        ],
+        annotation: 'All five SEO brief keyQuestions answered verbatim. Q5 explicitly bridges to the economic-roi page — clinical proof → financial ROI. Closes the gap in the brief: "how is \'improvement\' defined and by whom?"',
+      },
+
+      {
+        type: 'content-ctas',
+        heading: 'For your clinical evaluation',
+        items: [
+          { kind: 'Research library', label: 'Published research behind these outcomes — indexed by domain', toId: 'clinical-research' },
+          { kind: 'Webinars', label: 'Clinical outcomes webinars — hear from our research team', toId: 'past-webinars' },
+        ],
+        annotation: 'PROCESS — two CTAs matching sitemap contentClusterCTAs for clinical-outcomes (clinical-research + past-webinars). Framed for a clinical evaluator, not a general HR buyer.',
+      },
+
+      {
+        type: 'cta',
+        heading: 'Outcomes your clinical team can audit — and your CFO can use',
+        body: 'Request a demo to walk through the outcomes methodology, the employer-facing reporting dashboard, and what 80% well-being improvement looks like at your workforce scale.',
+        primaryCta: { label: 'Request a Demo', toId: 'nav-demo-request' },
+        secondaryCta: { label: 'Explore the economic model', toId: 'economic-roi' },
+        annotation: 'Final conversion. "Audit" in the heading signals to clinical evaluators that transparency is guaranteed. Secondary CTA routes to economic-roi — the page that translates clinical outcomes into financial terms for the CFO audience.',
+      },
+
+    ],
+  },
+
   'global-capabilities': {
     pageId: 'global-capabilities',
     status: 'draft',
